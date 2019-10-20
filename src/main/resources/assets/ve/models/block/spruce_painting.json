@@ -1,0 +1,7 @@
+{
+    "parent": "ve:block/painting",
+    "textures":
+	{
+		"frame": "block/spruce_log"
+    }
+}

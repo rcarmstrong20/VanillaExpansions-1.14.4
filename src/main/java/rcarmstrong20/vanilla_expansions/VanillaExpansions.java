@@ -45,6 +45,7 @@ import rcarmstrong20.vanilla_expansions.proxy.CommonProxy;
 @Mod("ve")
 public class VanillaExpansions
 {
+	//Is this Working?
 	public static Object modInstance;
 	public static final String MOD_ID = "ve";
 	public static final String MINECRAFT_ID = "minecraft";

@@ -1,0 +1,7 @@
+{
+    "parent": "ve:block/painting_top",
+    "textures":
+	{
+		"frame": "block/oak_log"
+    }
+}

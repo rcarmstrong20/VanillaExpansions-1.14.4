@@ -1,0 +1,7 @@
+{
+    "parent": "ve:block/oak_painting_bottom",
+    "textures":
+	{
+        "picture": "ve:painting/wanderer_painting_bottom"
+    }
+}

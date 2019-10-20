@@ -1,0 +1,7 @@
+{
+    "parent": "ve:block/dark_oak_painting",
+    "textures":
+	{
+		"picture": "ve:painting/water"
+    }
+}
