@@ -7,9 +7,9 @@ import net.minecraft.util.Direction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class VeTransparentBlock extends Block
+public class VeTranslucentBlock extends Block
 {
-	public VeTransparentBlock(Block.Properties properties)
+	public VeTranslucentBlock(Block.Properties properties)
 	{
 		super(properties);
 	}

@@ -31,7 +31,7 @@ import rcarmstrong20.vanilla_expansions.block.VeSlimDoorBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSlimeBlock;
 import rcarmstrong20.vanilla_expansions.block.VeStairsBlock;
 import rcarmstrong20.vanilla_expansions.block.VeThreeStageCropBlock;
-import rcarmstrong20.vanilla_expansions.block.VeTransparentBlock;
+import rcarmstrong20.vanilla_expansions.block.VeTranslucentBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTurkeyBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTwoHighPaintingBlock;
 
@@ -100,8 +100,8 @@ public class VeBlocks
 	public static Block regigigas_pokedoll = new VeCutoutDirectionalBlock(Block.Properties.create(Material.CLAY, MaterialColor.STONE).hardnessAndResistance(VeBlock.CLOTH_HARDNESS).sound(SoundType.CLOTH)).setRegistryName(VanillaExpansions.location("regigigas_pokedoll"));
 	public static Block ruby_ore = new VeOreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("nether_ruby_ore"));
 	public static Block ruby_block = new Block(Block.Properties.create(Material.IRON, MaterialColor.RED).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("ruby_block"));
-	public static Block airite_ore = new VeTransparentBlock(Block.Properties.create(Material.IRON, MaterialColor.LIGHT_BLUE).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("airite_ore"));
-	public static Block airite_block = new VeTransparentBlock(Block.Properties.create(Material.IRON, MaterialColor.LIGHT_BLUE).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("airite_block"));
+	public static Block airite_ore = new VeTranslucentBlock(Block.Properties.create(Material.IRON, MaterialColor.LIGHT_BLUE).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("airite_ore"));
+	public static Block airite_block = new VeTranslucentBlock(Block.Properties.create(Material.IRON, MaterialColor.LIGHT_BLUE).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("airite_block"));
 	public static Block smoky_quartz_ore = new VeOreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)).setRegistryName(VanillaExpansions.location("nether_smoky_quartz_ore"));
 	public static Block smoky_quartz_block = new Block(Block.Properties.from(Blocks.QUARTZ_BLOCK)).setRegistryName(VanillaExpansions.location("smoky_quartz_block"));
 	public static Block chiseled_smoky_quartz_block = new Block(Block.Properties.from(VeBlocks.smoky_quartz_block)).setRegistryName(VanillaExpansions.location("chiseled_smoky_quartz_block"));
