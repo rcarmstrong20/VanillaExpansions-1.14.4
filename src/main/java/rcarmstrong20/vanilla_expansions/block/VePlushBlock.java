@@ -160,7 +160,7 @@ public class VePlushBlock extends VeDirectionalBlock
 		{
 			return VePlushBlock.defineShapes(state, ENDERMAN_SOUTH_AABB, ENDERMAN_NORTH_AABB, ENDERMAN_WEST_AABB, ENDERMAN_EAST_AABB);
 		}
-		else if(this == VeBlocks.cow_plush || this == VeBlocks.red_mooshroom_plush || this == VeBlocks.pig_plush || this == VeBlocks.guardian_plush)
+		else if(this == VeBlocks.cow_plush || this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush || this == VeBlocks.pig_plush || this == VeBlocks.guardian_plush)
 		{
 			return VePlushBlock.defineShapes(state, COW_Z_AABB, COW_Z_AABB, COW_X_AABB, COW_X_AABB);
 		}
