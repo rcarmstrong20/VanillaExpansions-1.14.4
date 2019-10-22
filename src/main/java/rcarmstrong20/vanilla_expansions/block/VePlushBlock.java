@@ -49,7 +49,9 @@ public class VePlushBlock extends VeDirectionalBlock
 	protected static final VoxelShape BLAZE_NORTH_HEAD_AABB = Block.makeCuboidShape(6.0D, 8.0D, 5.0D, 11.0D, 13.0D, 10.0D);
 	protected static final VoxelShape BLAZE_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(6.0D, 11.0D, 4.5D, 8.0D, 12.0D, 5.0D);
 	protected static final VoxelShape BLAZE_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(9.0D, 11.0D, 4.5D, 11.0D, 12.0D, 5.0D);
+	
 	protected static final VoxelShape BLAZE_NORTH_MIDDLE_FRONT_LEG_AABB = Block.makeCuboidShape(8.0D, 7.0D, 3.0D, 9.0D, 13.0D, 4.0D);
+	
 	protected static final VoxelShape BLAZE_NORTH_RIGHT_FRONT_LEG_AABB = Block.makeCuboidShape(5.0D, 1.0D, 4.0D, 6.0D, 7.0D, 5.0D);
 	protected static final VoxelShape BLAZE_NORTH_LEFT_FRONT_LEG_AABB = Block.makeCuboidShape(11.0D, 1.0D, 4.0D, 12.0D, 7.0D, 5.0D);
 	
@@ -59,7 +61,7 @@ public class VePlushBlock extends VeDirectionalBlock
 	protected static final VoxelShape BLAZE_NORTH_FRONT_EYES_AND_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_AND_LEFT_EYES_AABB, BLAZE_NORTH_FRONT_LEGS_AABB);
 	protected static final VoxelShape BLAZE_NORTH_AABB = VoxelShapes.or(BLAZE_NORTH_FRONT_EYES_AND_LEGS_AABB, BLAZE_NORTH_HEAD_AABB);
 	
-	// 
+	//
 	
 	protected static final VoxelShape BAT_NORTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
