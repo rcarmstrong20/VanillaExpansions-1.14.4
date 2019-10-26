@@ -58,7 +58,9 @@ public class VePlantingPotBlock extends VeCutoutBlock implements IWaterLoggable
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context)
 	{
-		return this.getDefaultState().with(WATERLOGGED, false);
+		BlockPos blockpos = context.getPos();
+		IFluidState ifluidstate = context.getWorld().getFluidState(blockpos);
+		return this.getDefaultState().with(WATERLOGGED, Boolean.valueOf(ifluidstate.getFluid() == Fluids.WATER));
 	}
 	
 	@Override
