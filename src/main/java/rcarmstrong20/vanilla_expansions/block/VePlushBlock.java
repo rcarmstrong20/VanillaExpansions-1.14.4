@@ -10,7 +10,6 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -58,27 +57,45 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Blaze Bounding Boxes
 	
-	protected static final VoxelShape BLAZE_NORTH_HEAD_AABB = Block.makeCuboidShape(6.0D, 8.0D, 5.0D, 11.0D, 13.0D, 10.0D);
-	protected static final VoxelShape BLAZE_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(6.0D, 11.0D, 4.5D, 8.0D, 12.0D, 5.0D);
-	protected static final VoxelShape BLAZE_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(9.0D, 11.0D, 4.5D, 11.0D, 12.0D, 5.0D);
-	protected static final VoxelShape BLAZE_NORTH_MIDDLE_TOP_LEG_AABB = Block.makeCuboidShape(8.0D, 7.0D, 11.0D, 9.0D, 13.0D, 12.0D);
-	protected static final VoxelShape BLAZE_NORTH_RIGHT_TOP_LEG_AABB = Block.makeCuboidShape(4.0D, 7.0D, 7.0D, 5.0D, 13.0D, 8.0D);
-	protected static final VoxelShape BLAZE_NORTH_LEFT_TOP_LEG_AABB = Block.makeCuboidShape(12.0D, 7.0D, 7.0D, 13.0D, 13.0D, 8.0D);
-	protected static final VoxelShape BLAZE_NORTH_RIGHT_FRONT_BOTTOM_LEG_AABB = Block.makeCuboidShape(5.0D, 1.0D, 4.0D, 6.0D, 7.0D, 5.0D);
-	protected static final VoxelShape BLAZE_NORTH_LEFT_FRONT_BOTTOM_LEG_AABB = Block.makeCuboidShape(11.0D, 1.0D, 4.0D, 12.0D, 7.0D, 5.0D);
-	protected static final VoxelShape BLAZE_NORTH_RIGHT_BACK_BOTTOM_LEG_AABB = Block.makeCuboidShape(5.0D, 1.0D, 10.0D, 6.0D, 7.0D, 11.0D);
-	protected static final VoxelShape BLAZE_NORTH_LEFT_BACK_BOTTOM_LEG_AABB = Block.makeCuboidShape(11.0D, 1.0D, 10.0D, 12.0D, 7.0D, 11.0D);
+	protected static final VoxelShape BLAZE_HEAD_AABB = Block.makeCuboidShape(5.5D, 8.0D, 5.5D, 10.5D, 13.0D, 10.5D);
+	protected static final VoxelShape BLAZE_NORTH_WEST_BOTTOM_LEG_AABB = Block.makeCuboidShape(4.5D, 1.0D, 4.5D, 5.5D, 7.0D, 5.5D);
+	protected static final VoxelShape BLAZE_NORTH_EAST_BOTTOM_LEG_AABB = Block.makeCuboidShape(10.5D, 1.0D, 4.5D, 11.5D, 7.0D, 5.5D);
+	protected static final VoxelShape BLAZE_SOUTH_WEST_BOTTOM_LEG_AABB = Block.makeCuboidShape(4.5D, 1.0D, 10.5D, 5.5D, 7.0D, 11.5D);
+	protected static final VoxelShape BLAZE_SOUTH_EAST_BOTTOM_LEG_AABB = Block.makeCuboidShape(10.5D, 1.0D, 10.5D, 11.5D, 7.0D, 11.5D);
+	protected static final VoxelShape BLAZE_NORTH_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_WEST_BOTTOM_LEG_AABB, BLAZE_NORTH_EAST_BOTTOM_LEG_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_SOUTH_WEST_BOTTOM_LEG_AABB, BLAZE_SOUTH_EAST_BOTTOM_LEG_AABB);
+	protected static final VoxelShape BLAZE_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_BOTTOM_LEGS_AABB, BLAZE_SOUTH_BOTTOM_LEGS_AABB);
+	protected static final VoxelShape BLAZE_BOTTOM_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AABB, BLAZE_HEAD_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_TOP_LEG_AABB = Block.makeCuboidShape(7.5D, 7.0D, 11.5D, 8.5D, 13.0D, 12.5D);
+	protected static final VoxelShape BLAZE_WEST_TOP_LEG_AABB = Block.makeCuboidShape(3.5D, 7.0D, 7.5D, 4.5D, 13.0D, 8.5D);
+	protected static final VoxelShape BLAZE_EAST_TOP_LEG_AABB = Block.makeCuboidShape(11.5D, 7.0D, 7.5D, 12.5D, 13.0D, 8.5D);
+	protected static final VoxelShape BLAZE_NORTH_TOP_LEG_AABB = Block.makeCuboidShape(7.5D, 7.0D, 3.5D, 8.5D, 13.0D, 4.5D);
+	protected static final VoxelShape BLAZE_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(5.5D, 11.0D, 5.0D, 7.5D, 12.0D, 5.5D);
+	protected static final VoxelShape BLAZE_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(8.5D, 11.0D, 5.0D, 10.5D, 12.0D, 5.5D);
 	protected static final VoxelShape BLAZE_NORTH_EYES_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_EYE_AABB, BLAZE_NORTH_LEFT_EYE_AABB);
-	protected static final VoxelShape BLAZE_NORTH_RIGHT_AND_LEFT_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_TOP_LEG_AABB, BLAZE_NORTH_LEFT_TOP_LEG_AABB);
-	protected static final VoxelShape BLAZE_NORTH_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_AND_LEFT_TOP_LEGS_AABB, BLAZE_NORTH_MIDDLE_TOP_LEG_AABB);
-	protected static final VoxelShape BLAZE_NORTH_FRONT_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_FRONT_BOTTOM_LEG_AABB, BLAZE_NORTH_LEFT_FRONT_BOTTOM_LEG_AABB);
-	protected static final VoxelShape BLAZE_NORTH_BACK_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_RIGHT_BACK_BOTTOM_LEG_AABB, BLAZE_NORTH_LEFT_BACK_BOTTOM_LEG_AABB);
-	protected static final VoxelShape BLAZE_NORTH_BOTTOM_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_FRONT_BOTTOM_LEGS_AABB, BLAZE_NORTH_BACK_BOTTOM_LEGS_AABB);
-	protected static final VoxelShape BLAZE_NORTH_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_BOTTOM_LEGS_AABB, BLAZE_NORTH_TOP_LEGS_AABB);
-	protected static final VoxelShape BLAZE_NORTH_EYES_AND_LEGS_AABB = VoxelShapes.or(BLAZE_NORTH_EYES_AABB, BLAZE_NORTH_LEGS_AABB);
-	protected static final VoxelShape BLAZE_NORTH_AABB = VoxelShapes.or(BLAZE_NORTH_EYES_AND_LEGS_AABB, BLAZE_NORTH_HEAD_AABB);
-	
-	
+	protected static final VoxelShape BLAZE_WEST_AND_EAST_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_WEST_TOP_LEG_AABB, BLAZE_EAST_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_NORTH_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_WEST_AND_EAST_TOP_LEGS_AABB, BLAZE_SOUTH_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_NORTH_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AND_HEAD_AABB, BLAZE_NORTH_TOP_LEGS_AABB);
+	protected static final VoxelShape BLAZE_NORTH_AABB = VoxelShapes.or(BLAZE_NORTH_EYES_AABB, BLAZE_NORTH_LEGS_AND_HEAD_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_RIGHT_EYE_AABB = Block.makeCuboidShape(5.5D, 11.0D, 10.5D, 7.5D, 12.0D, 11.0D);
+	protected static final VoxelShape BLAZE_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(8.5D, 11.0D, 10.5D, 10.5D, 12.0D, 11.0D);
+	protected static final VoxelShape BLAZE_SOUTH_EYES_AABB = VoxelShapes.or(BLAZE_SOUTH_RIGHT_EYE_AABB, BLAZE_SOUTH_LEFT_EYE_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_WEST_AND_EAST_TOP_LEGS_AABB, BLAZE_NORTH_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AND_HEAD_AABB, BLAZE_SOUTH_TOP_LEGS_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_AABB = VoxelShapes.or(BLAZE_SOUTH_EYES_AABB, BLAZE_SOUTH_LEGS_AND_HEAD_AABB);
+	protected static final VoxelShape BLAZE_WEST_RIGHT_EYE_AABB = Block.makeCuboidShape(5.0D, 11.0D, 5.5D, 5.5D, 12.0D, 7.5D);
+	protected static final VoxelShape BLAZE_WEST_LEFT_EYE_AABB = Block.makeCuboidShape(5.0D, 11.0D, 8.5D, 5.5D, 12.0D, 10.5D);
+	protected static final VoxelShape BLAZE_WEST_EYES_AABB = VoxelShapes.or(BLAZE_WEST_RIGHT_EYE_AABB, BLAZE_WEST_LEFT_EYE_AABB);
+	protected static final VoxelShape BLAZE_SOUTH_AND_NORTH_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_SOUTH_TOP_LEG_AABB, BLAZE_NORTH_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_WEST_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_SOUTH_AND_NORTH_TOP_LEGS_AABB, BLAZE_EAST_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_WEST_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AND_HEAD_AABB, BLAZE_WEST_TOP_LEGS_AABB);
+	protected static final VoxelShape BLAZE_WEST_AABB = VoxelShapes.or(BLAZE_WEST_EYES_AABB, BLAZE_WEST_LEGS_AND_HEAD_AABB);
+	protected static final VoxelShape BLAZE_EAST_RIGHT_EYE_AABB = Block.makeCuboidShape(10.5D, 11.0D, 5.5D, 11.0D, 12.0D, 7.5D);
+	protected static final VoxelShape BLAZE_EAST_LEFT_EYE_AABB = Block.makeCuboidShape(10.5D, 11.0D, 8.5D, 11.0D, 12.0D, 10.5D);
+	protected static final VoxelShape BLAZE_EAST_EYES_AABB = VoxelShapes.or(BLAZE_EAST_RIGHT_EYE_AABB, BLAZE_EAST_LEFT_EYE_AABB);
+	protected static final VoxelShape BLAZE_EAST_TOP_LEGS_AABB = VoxelShapes.or(BLAZE_SOUTH_AND_NORTH_TOP_LEGS_AABB, BLAZE_WEST_TOP_LEG_AABB);
+	protected static final VoxelShape BLAZE_EAST_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AND_HEAD_AABB, BLAZE_EAST_TOP_LEGS_AABB);
+	protected static final VoxelShape BLAZE_EAST_AABB = VoxelShapes.or(BLAZE_EAST_EYES_AABB, BLAZE_EAST_LEGS_AND_HEAD_AABB);
 	
 	//
 	
@@ -125,7 +142,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape CREEPER_Z_AABB = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 14.0D);
 	protected static final VoxelShape CREEPER_X_AABB = Block.makeCuboidShape(2.0D, 0.0D, 4.0D, 14.0D, 16.0D, 12.0D);
 	
-	protected static final VoxelShape BLAZE_AABB = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D);
 	protected static final VoxelShape SPIDER_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
 	protected static final VoxelShape CAVE_SPIDER_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
 	protected static final VoxelShape GHAST_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
@@ -184,7 +200,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.blaze_plush)
 		{
-			return VePlushBlock.defineShapes(state, BLAZE_AABB, BLAZE_NORTH_AABB, BLAZE_AABB, BLAZE_AABB);
+			return VePlushBlock.defineShapes(state, BLAZE_SOUTH_AABB, BLAZE_NORTH_AABB, BLAZE_WEST_AABB, BLAZE_EAST_AABB);
 		}
 		else if(this == VeBlocks.bat_plush)
 		{
