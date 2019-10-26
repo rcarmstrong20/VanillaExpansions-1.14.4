@@ -1,9 +1,17 @@
 {
     "variants":
 	{
-        "facing=north": { "model": "ve:block/slime_plush" },
-        "facing=south": { "model": "ve:block/slime_plush", "y": 180 },
-        "facing=west":  { "model": "ve:block/slime_plush", "y": 270 },
-        "facing=east":  { "model": "ve:block/slime_plush", "y": 90 }
+        "facing=north,plush_stack=1": { "model": "ve:block/one_slime_plush" },
+		"facing=north,plush_stack=2": { "model": "ve:block/two_slime_plushs" },
+		"facing=north,plush_stack=3": { "model": "ve:block/three_slime_plushs" },
+        "facing=south,plush_stack=1": { "model": "ve:block/one_slime_plush", "y": 180 },
+		"facing=south,plush_stack=2": { "model": "ve:block/two_slime_plushs", "y": 180 },
+		"facing=south,plush_stack=3": { "model": "ve:block/three_slime_plushs", "y": 180 },
+        "facing=west,plush_stack=1":  { "model": "ve:block/one_slime_plush", "y": 270 },
+		"facing=west,plush_stack=2":  { "model": "ve:block/two_slime_plushs", "y": 270 },
+		"facing=west,plush_stack=3":  { "model": "ve:block/three_slime_plushs", "y": 270 },
+        "facing=east,plush_stack=1":  { "model": "ve:block/one_slime_plush", "y": 90 },
+		"facing=east,plush_stack=2":  { "model": "ve:block/two_slime_plushs", "y": 90 },
+		"facing=east,plush_stack=3":  { "model": "ve:block/three_slime_plushs", "y": 90 }
     }
 }
