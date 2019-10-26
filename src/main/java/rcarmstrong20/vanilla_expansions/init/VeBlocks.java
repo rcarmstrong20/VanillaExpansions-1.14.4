@@ -16,6 +16,7 @@ import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
 import rcarmstrong20.vanilla_expansions.block.VeDoubleSlabBlock;
 import rcarmstrong20.vanilla_expansions.block.VeGlassBlock;
 import rcarmstrong20.vanilla_expansions.block.VeLadderBlock;
+import rcarmstrong20.vanilla_expansions.block.VeMultiPlushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeMushroomBlock;
 import rcarmstrong20.vanilla_expansions.block.VeNetherWartBlock;
 import rcarmstrong20.vanilla_expansions.block.VeOreBlock;
@@ -55,7 +56,7 @@ public class VeBlocks
 	public static Block brown_horse_plush = new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)).setRegistryName(VanillaExpansions.location("brown_horse_plush"));
 	public static Block black_horse_plush = new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)).setRegistryName(VanillaExpansions.location("black_horse_plush"));
 	public static Block purple_horse_plush = new VePlushBlock(Block.Properties.from(Blocks.PURPLE_WOOL)).setRegistryName(VanillaExpansions.location("purple_horse_plush"));
-	public static Block magma_cube_plush = new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)).setRegistryName(VanillaExpansions.location("magma_cube_plush"));
+	public static Block magma_cube_plush = new VeMultiPlushBlock(Block.Properties.from(Blocks.RED_WOOL)).setRegistryName(VanillaExpansions.location("magma_cube_plush"));
 	public static Block red_mooshroom_plush = new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)).setRegistryName(VanillaExpansions.location("red_mooshroom_plush"));
 	public static Block brown_mooshroom_plush = new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)).setRegistryName(VanillaExpansions.location("brown_mooshroom_plush"));
 	public static Block ocelot_plush = new VePlushBlock(Block.Properties.from(Blocks.YELLOW_WOOL)).setRegistryName(VanillaExpansions.location("ocelot_plush"));
@@ -79,7 +80,7 @@ public class VeBlocks
 	public static Block black_sheep_plush = new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)).setRegistryName(VanillaExpansions.location("black_sheep_plush"));
 	public static Block silverfish_plush = new VePlushBlock(Block.Properties.from(Blocks.LIGHT_GRAY_WOOL)).setRegistryName(VanillaExpansions.location("silverfish_plush"));
 	public static Block skeleton_plush = new VePlushBlock(Block.Properties.from(Blocks.LIGHT_GRAY_WOOL)).setRegistryName(VanillaExpansions.location("skeleton_plush"));
-	public static Block slime_plush = new VePlushBlock(Block.Properties.from(Blocks.LIME_WOOL)).setRegistryName(VanillaExpansions.location("slime_plush"));
+	public static Block slime_plush = new VeMultiPlushBlock(Block.Properties.from(Blocks.LIME_WOOL)).setRegistryName(VanillaExpansions.location("slime_plush"));
 	public static Block spider_plush = new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)).setRegistryName(VanillaExpansions.location("spider_plush"));
 	public static Block squid_plush = new VePlushBlock(Block.Properties.from(Blocks.BLUE_WOOL)).setRegistryName(VanillaExpansions.location("squid_plush"));
 	public static Block plains_villager_plush = new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)).setRegistryName(VanillaExpansions.location("plains_villager_plush"));
