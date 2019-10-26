@@ -1,7 +1,0 @@
-{
-    "parent": "ve:block/slime_block",
-    "textures":
-	{
-        "material": "ve:block/orange_slime_block"
-    }
-}
