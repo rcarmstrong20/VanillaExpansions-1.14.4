@@ -22,38 +22,8 @@ import rcarmstrong20.vanilla_expansions.init.VeBlocks;
 
 public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 {
+	public static final VoxelShape NORMAL_CUBE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	
-	//Magma Cube Bounding Boxes
-	
-	protected static final VoxelShape MAGMA_CUBE_BODY_AABB = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
-	protected static final VoxelShape MAGMA_CUBE_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(4.0D, 5.0D, 13.0D, 6.0D, 7.0D, 13.5D);
-	protected static final VoxelShape MAGMA_CUBE_SOUTH_RIGHT_EYE_AABB = Block.makeCuboidShape(10.0D, 5.0D, 13.0D, 12.0D, 7.0D, 13.5D);
-	protected static final VoxelShape MAGMA_CUBE_BODY_AND_SOUTH_RIGHT_EYE_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AABB, MAGMA_CUBE_SOUTH_RIGHT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_SOUTH_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AND_SOUTH_RIGHT_EYE_AABB, MAGMA_CUBE_SOUTH_LEFT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(10.0D, 5.0D, 3.0D, 12.0D, 7.0D, 2.5D);
-	protected static final VoxelShape MAGMA_CUBE_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(4.0D, 5.0D, 3.0D, 6.0D, 7.0D, 2.5D);
-	protected static final VoxelShape MAGMA_CUBE_BODY_AND_NORTH_RIGHT_EYE_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AABB, MAGMA_CUBE_NORTH_RIGHT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_NORTH_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AND_NORTH_RIGHT_EYE_AABB, MAGMA_CUBE_NORTH_LEFT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_WEST_LEFT_EYE_AABB = Block.makeCuboidShape(2.5D, 5.0D, 10.0D, 3.0D, 7.0D, 12.0D);
-	protected static final VoxelShape MAGMA_CUBE_WEST_RIGHT_EYE_AABB = Block.makeCuboidShape(2.5D, 5.0D, 4.0D, 3.0D, 7.0D, 6.0D);
-	protected static final VoxelShape MAGMA_CUBE_BODY_AND_WEST_RIGHT_EYE_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AABB, MAGMA_CUBE_WEST_RIGHT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_WEST_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AND_WEST_RIGHT_EYE_AABB, MAGMA_CUBE_WEST_LEFT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_EAST_LEFT_EYE_AABB = Block.makeCuboidShape(13.0D, 5.0D, 10.0D, 13.5D, 7.0D, 12.0D);
-	protected static final VoxelShape MAGMA_CUBE_EAST_RIGHT_EYE_AABB = Block.makeCuboidShape(13.0D, 5.0D, 4.0D, 13.5D, 7.0D, 6.0D);
-	protected static final VoxelShape MAGMA_CUBE_BODY_AND_EAST_RIGHT_EYE_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AABB, MAGMA_CUBE_EAST_RIGHT_EYE_AABB);
-	protected static final VoxelShape MAGMA_CUBE_EAST_AABB = VoxelShapes.or(MAGMA_CUBE_BODY_AND_EAST_RIGHT_EYE_AABB, MAGMA_CUBE_EAST_LEFT_EYE_AABB);
-	
-	//Slime Bounding Boxes
-	
-	protected static final VoxelShape SLIME_SOUTH_MOUTH_AABB = Block.makeCuboidShape(9.0D, 2.0D, 13.0D, 10.0D, 3.0D, 13.5D);
-	protected static final VoxelShape SLIME_SOUTH_AABB = VoxelShapes.or(MAGMA_CUBE_SOUTH_AABB, SLIME_SOUTH_MOUTH_AABB);
-	protected static final VoxelShape SLIME_NORTH_MOUTH_AABB = Block.makeCuboidShape(7.0D, 2.0D, 3.0D, 6.0D, 3.0D, 2.5D);
-	protected static final VoxelShape SLIME_NORTH_AABB = VoxelShapes.or(MAGMA_CUBE_NORTH_AABB, SLIME_NORTH_MOUTH_AABB);
-	protected static final VoxelShape SLIME_WEST_MOUTH_AABB = Block.makeCuboidShape(2.5D, 2.0D, 9.0D, 3.0D, 3.0D, 10.0D);
-	protected static final VoxelShape SLIME_WEST_AABB = VoxelShapes.or(MAGMA_CUBE_WEST_AABB, SLIME_WEST_MOUTH_AABB);
-	protected static final VoxelShape SLIME_EAST_MOUTH_AABB = Block.makeCuboidShape(13.0D, 2.0D, 6.0D, 13.5D, 3.0D, 7.0D);
-	protected static final VoxelShape SLIME_EAST_AABB = VoxelShapes.or(MAGMA_CUBE_EAST_AABB, SLIME_EAST_MOUTH_AABB);
 	
 	//Blaze Bounding Boxes
 	
@@ -190,15 +160,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
 	{
-		if(this == VeBlocks.magma_cube_plush)
-		{
-			return VePlushBlock.defineShapes(state, MAGMA_CUBE_SOUTH_AABB, MAGMA_CUBE_NORTH_AABB, MAGMA_CUBE_WEST_AABB, MAGMA_CUBE_EAST_AABB);
-		}
-		else if(this == VeBlocks.slime_plush)
-		{
-			return VePlushBlock.defineShapes(state, SLIME_SOUTH_AABB, SLIME_NORTH_AABB, SLIME_WEST_AABB, SLIME_EAST_AABB);
-		}
-		else if(this == VeBlocks.blaze_plush)
+		if(this == VeBlocks.blaze_plush)
 		{
 			return VePlushBlock.defineShapes(state, BLAZE_SOUTH_AABB, BLAZE_NORTH_AABB, BLAZE_WEST_AABB, BLAZE_EAST_AABB);
 		}
@@ -262,10 +224,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return GHAST_AABB;
 		}
-		else
-		{
-			return Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-		}
+		return NORMAL_CUBE;
 	}
 	
 	private static VoxelShape defineShapes(BlockState state, VoxelShape southShape, VoxelShape northShape, VoxelShape westShape, VoxelShape eastShape)
