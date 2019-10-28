@@ -20,6 +20,8 @@ import rcarmstrong20.vanilla_expansions.init.VeBlocks;
 
 public class VeMultiPlushBlock extends VePlushBlock
 {
+	//Block Properties
+	
 	public static final IntegerProperty PLUSH_STACK = VeBlockStateProperties.PLUSH_STACK_1_3;
 	
 	//One Magma Cube Bounding Boxes
