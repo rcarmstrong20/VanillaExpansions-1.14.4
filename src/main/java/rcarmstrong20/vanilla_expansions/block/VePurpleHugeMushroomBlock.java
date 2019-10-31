@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HugeMushroomBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -19,23 +20,28 @@ public class VePurpleHugeMushroomBlock extends HugeMushroomBlock
 	}
 	
 	@Override
-	public void onLanded(IBlockReader worldIn, Entity entityIn)
-	{
-		
-	}
+	public void onLanded(IBlockReader worldIn, Entity entityIn) {}
 	
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
 	{
-		float height = entityIn.fallDistance;
+		float strength = 1.0F;
+		float height = entityIn.fallDistance * strength;
         if(height > 0 && !entityIn.isSneaking())
         {
-            if(height >= 5)
-            {
-            	height = 5;
-            }
-            worldIn.playSound(null, pos, VeSoundEvents.MUSHROOM_BOUNCE, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+            if(height >= 5) height = 5;
             entityIn.addVelocity(0, height + 0.5, 0);
+            if(worldIn.isRemote)
+            {
+            	for(int i = 0; i < 5; i++)
+                {
+                    worldIn.addParticle(ParticleTypes.ENTITY_EFFECT, entityIn.posX, entityIn.posY, entityIn.posZ, 1.0, 1.0, 1.0);
+                }
+            	else
+            	{
+            		worldIn.playSound(null, pos, VeSoundEvents.MUSHROOM_BOUNCE, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
+            	}
+            }
         }
         entityIn.fallDistance = 0;
 	}
