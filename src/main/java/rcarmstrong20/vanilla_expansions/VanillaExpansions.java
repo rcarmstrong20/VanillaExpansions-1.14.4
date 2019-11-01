@@ -2325,7 +2325,7 @@ public class VanillaExpansions
 		{
 			event.getRegistry().registerAll
 			(
-				VeSoundEvents.MUSHROOM_BOUNCE
+				VeSoundEvents.BLOCK_MUSHROOM_BOUNCE
 			);
 		}
 		
