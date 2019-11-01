@@ -1,3 +1,3 @@
 {
-	"mushroom_bounce": {"category": "blocks", "subtitle": "Mushroom bounces", "sounds": [{"name": "ve:mushroom_bounce", "stream": false}]}
+	"block.mushroom_bounce": {"category": "blocks", "subtitle": "Mushroom bounces", "sounds": [{"name": "ve:block/mushroom_bounce", "stream": false}]}
 }
