@@ -163,22 +163,6 @@ public class VeItems
 	public static Item acacia_wind_painting = registerBlockItem(VeBlocks.acacia_wind_painting);
 	public static Item dark_oak_wind_painting = registerBlockItem(VeBlocks.dark_oak_wind_painting);
 	public static Item oak_wanderer_painting = registerBlockItem(VeBlocks.oak_wanderer_painting);
-	public static Item white_slimeblock = registerBlockItem(VeBlocks.white_slime_block);
-	public static Item orange_slimeblock = registerBlockItem(VeBlocks.orange_slime_block);
-	public static Item magenta_slimeblock;
-	public static Item light_blue_slimeblock;
-	public static Item yellow_slimeblock;
-	public static Item lime_slimeblock;
-	public static Item pink_slimeblock;
-	public static Item gray_slimeblock;
-	public static Item light_gray_slimeblock;
-	public static Item cyan_slimeblock;
-	public static Item purple_slimeblock;
-	public static Item blue_slimeblock;
-	public static Item brown_slimeblock;
-	public static Item green_slimeblock;
-	public static Item red_slimeblock;
-	public static Item black_slimeblock;
 	public static Item glass_of_darkness = registerBlockItem(VeBlocks.glass_of_darkness);
 	public static Item gingerbread_house = registerBlockItem(VeBlocks.gingerbread_house);
 	public static Item snow_bricks = registerBlockItem(VeBlocks.snow_bricks);
@@ -198,6 +182,21 @@ public class VeItems
 	public static Item purple_mushroom = registerBlockItem(VeBlocks.purple_mushroom);
 	public static Item purple_mushroom_block = registerBlockItem(VeBlocks.purple_mushroom_block);
 	public static Item saw = registerBlockItem(VeBlocks.saw);
+	public static Item white_campfire = registerBlockItem(VeBlocks.white_campfire);
+	public static Item magenta_campfire = registerBlockItem(VeBlocks.magenta_campfire);
+	public static Item light_blue_campfire = registerBlockItem(VeBlocks.light_blue_campfire);
+	public static Item yellow_campfire = registerBlockItem(VeBlocks.yellow_campfire);
+	public static Item lime_campfire = registerBlockItem(VeBlocks.lime_campfire);
+	public static Item pink_campfire = registerBlockItem(VeBlocks.pink_campfire);
+	public static Item gray_campfire = registerBlockItem(VeBlocks.gray_campfire);
+	public static Item light_gray_campfire = registerBlockItem(VeBlocks.light_gray_campfire);
+	public static Item cyan_campfire = registerBlockItem(VeBlocks.cyan_campfire);
+	public static Item purple_campfire = registerBlockItem(VeBlocks.purple_campfire);
+	public static Item blue_campfire = registerBlockItem(VeBlocks.blue_campfire);
+	public static Item brown_campfire = registerBlockItem(VeBlocks.brown_campfire);
+	public static Item green_campfire = registerBlockItem(VeBlocks.green_campfire);
+	public static Item red_campfire = registerBlockItem(VeBlocks.red_campfire);
+	public static Item black_campfire = registerBlockItem(VeBlocks.black_campfire);
 	
 	//Vanilla Expansions Items
 	
