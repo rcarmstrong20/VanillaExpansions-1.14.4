@@ -1,4 +1,4 @@
-package rcarmstrong20.vanilla_expansions.init;
+package rcarmstrong20.vanilla_expansions.core;
 
 import net.minecraft.item.Food;
 import net.minecraft.potion.EffectInstance;

@@ -1,15 +1,19 @@
-package rcarmstrong20.vanilla_expansions.init;
+package rcarmstrong20.vanilla_expansions.core;
 
-import net.minecraft.block.Block;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SoupItem;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.enums.VeArmorMaterial;
 import rcarmstrong20.vanilla_expansions.enums.VeItemTier;
@@ -26,181 +30,11 @@ public class VeItems
 	
 	public static final Item.Properties VE_ITEMS = new Item.Properties().group(VanillaExpansions.VE_GROUP);
 	public static final Item.Properties VE_SINGLE_ITEMS = new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP);
-	
-	//Vanilla Expansions Block Items
-	
-	public static Item bat_plush = registerBlockItem(VeBlocks.bat_plush);
-	public static Item blaze_plush = registerBlockItem(VeBlocks.blaze_plush);
-	public static Item cave_spider_plush = registerBlockItem(VeBlocks.cave_spider_plush);
-	public static Item chicken_plush = registerBlockItem(VeBlocks.chicken_plush);
-	public static Item cow_plush = registerBlockItem(VeBlocks.cow_plush);
-	public static Item creeper_plush = registerBlockItem(VeBlocks.creeper_plush);
-	public static Item enderman_plush = registerBlockItem(VeBlocks.enderman_plush);
-	public static Item endermite_plush = registerBlockItem(VeBlocks.endermite_plush);
-	public static Item ghast_plush = registerBlockItem(VeBlocks.ghast_plush);
-	public static Item guardian_plush = registerBlockItem(VeBlocks.guardian_plush);
-	public static Item white_horse_plush = registerBlockItem(VeBlocks.white_horse_plush);
-	public static Item gray_horse_plush = registerBlockItem(VeBlocks.gray_horse_plush);
-	public static Item light_gray_horse_plush = registerBlockItem(VeBlocks.light_gray_horse_plush);
-	public static Item brown_horse_plush = registerBlockItem(VeBlocks.brown_horse_plush);
-	public static Item black_horse_plush = registerBlockItem(VeBlocks.black_horse_plush);
-	public static Item purple_horse_plush = registerBlockItem(VeBlocks.purple_horse_plush);
-	public static Item magma_cube_plush = registerBlockItem(VeBlocks.magma_cube_plush);
-	public static Item red_mooshroom_plush = registerBlockItem(VeBlocks.red_mooshroom_plush);
-	public static Item brown_mooshroom_plush = registerBlockItem(VeBlocks.brown_mooshroom_plush);
-	public static Item ocelot_plush = registerBlockItem(VeBlocks.ocelot_plush);
-	public static Item pig_plush = registerBlockItem(VeBlocks.pig_plush);
-	public static Item rabbit_plush = registerBlockItem(VeBlocks.rabbit_plush);
-	public static Item white_sheep_plush = registerBlockItem(VeBlocks.white_sheep_plush);
-	public static Item orange_sheep_plush = registerBlockItem(VeBlocks.orange_sheep_plush);
-	public static Item magenta_sheep_plush = registerBlockItem(VeBlocks.magenta_sheep_plush);
-	public static Item light_blue_sheep_plush = registerBlockItem(VeBlocks.light_blue_sheep_plush);
-	public static Item yellow_sheep_plush = registerBlockItem(VeBlocks.yellow_sheep_plush);
-	public static Item lime_sheep_plush = registerBlockItem(VeBlocks.lime_sheep_plush);
-	public static Item pink_sheep_plush = registerBlockItem(VeBlocks.pink_sheep_plush);
-	public static Item gray_sheep_plush = registerBlockItem(VeBlocks.gray_sheep_plush);
-	public static Item light_gray_sheep_plush = registerBlockItem(VeBlocks.light_gray_sheep_plush);
-	public static Item cyan_sheep_plush = registerBlockItem(VeBlocks.cyan_sheep_plush);
-	public static Item purple_sheep_plush = registerBlockItem(VeBlocks.purple_sheep_plush);
-	public static Item blue_sheep_plush = registerBlockItem(VeBlocks.blue_sheep_plush);
-	public static Item brown_sheep_plush = registerBlockItem(VeBlocks.brown_sheep_plush);
-	public static Item green_sheep_plush = registerBlockItem(VeBlocks.green_sheep_plush);
-	public static Item red_sheep_plush = registerBlockItem(VeBlocks.red_sheep_plush);
-	public static Item black_sheep_plush = registerBlockItem(VeBlocks.black_sheep_plush);
-	public static Item silverfish_plush = registerBlockItem(VeBlocks.silverfish_plush);
-	public static Item skeleton_plush = registerBlockItem(VeBlocks.skeleton_plush);
-	public static Item slime_plush = registerBlockItem(VeBlocks.slime_plush);
-	public static Item spider_plush = registerBlockItem(VeBlocks.spider_plush);
-	public static Item squid_plush = registerBlockItem(VeBlocks.squid_plush);
-	public static Item plains_villager_plush = registerBlockItem(VeBlocks.plains_villager_plush);
-	public static Item desert_villager_plush = registerBlockItem(VeBlocks.desert_villager_plush);
-	public static Item jungle_villager_plush = registerBlockItem(VeBlocks.jungle_villager_plush);
-	public static Item savanna_villager_plush = registerBlockItem(VeBlocks.savanna_villager_plush);
-	public static Item snow_villager_plush = registerBlockItem(VeBlocks.snow_villager_plush);
-	public static Item swamp_villager_plush = registerBlockItem(VeBlocks.swamp_villager_plush);
-	public static Item taiga_villager_plush = registerBlockItem(VeBlocks.taiga_villager_plush);
-	public static Item witch_plush = registerBlockItem(VeBlocks.witch_plush);
-	public static Item wolf_plush = registerBlockItem(VeBlocks.wolf_plush);
-	public static Item zombie_plush = registerBlockItem(VeBlocks.zombie_plush);
-	public static Item zombie_demon_plush = registerBlockItem(VeBlocks.zombie_demon_plush);
-	public static Item zombie_pigman_plush = registerBlockItem(VeBlocks.zombie_pigman_plush);
-	public static Item regirock_pokedoll = registerBlockItem(VeBlocks.regirock_pokedoll);
-	public static Item registeel_pokedoll = registerBlockItem(VeBlocks.registeel_pokedoll);
-	public static Item regice_pokedoll = registerBlockItem(VeBlocks.regice_pokedoll);
-	public static Item regigigas_pokedoll = registerBlockItem(VeBlocks.regigigas_pokedoll);
-	public static Item ruby_ore = registerBlockItem(VeBlocks.ruby_ore);
-	public static Item ruby_block = registerBlockItem(VeBlocks.ruby_block);
-	public static Item airite_ore = registerBlockItem(VeBlocks.airite_ore);
-	public static Item airite_block = registerBlockItem(VeBlocks.airite_block);
-	public static Item smoky_quartz_ore = registerBlockItem(VeBlocks.smoky_quartz_ore);
-	public static Item smoky_quartz_block = registerBlockItem(VeBlocks.smoky_quartz_block);
-	public static Item chiseled_smoky_quartz_block = registerBlockItem(VeBlocks.chiseled_smoky_quartz_block);
-	public static Item smoky_quartz_pillar = registerBlockItem(VeBlocks.smoky_quartz_pillar);
-	public static Item smoky_quartz_stairs = registerBlockItem(VeBlocks.smoky_quartz_stairs);
-	public static Item smoky_quartz_slab = registerBlockItem(VeBlocks.smoky_quartz_slab);
-	public static Item smooth_smoky_quartz = registerBlockItem(VeBlocks.smooth_smoky_quartz);
-	public static Item smooth_smoky_quartz_stairs = registerBlockItem(VeBlocks.smooth_smoky_quartz_stairs);
-	public static Item smooth_smoky_quartz_slab = registerBlockItem(VeBlocks.smooth_smoky_quartz_slab);
-	public static Item cracked_stone_brick_stairs = registerBlockItem(VeBlocks.cracked_stone_brick_stairs);
-	public static Item cracked_stone_brick_slab = registerBlockItem(VeBlocks.cracked_stone_brick_slab);
-	public static Item cracked_stone_brick_wall = registerBlockItem(VeBlocks.cracked_stone_brick_wall);
-	public static Item stone_wall = registerBlockItem(VeBlocks.stone_wall);
-	public static Item red_glass = registerBlockItem(VeBlocks.red_glass);
-	public static Item red_glass_pane = registerBlockItem(VeBlocks.red_glass_pane);
-	public static Item oak_planting_pot = registerBlockItem(VeBlocks.oak_planting_pot);
-	public static Item spruce_planting_pot = registerBlockItem(VeBlocks.spruce_planting_pot);
-	public static Item birch_planting_pot = registerBlockItem(VeBlocks.birch_planting_pot);
-	public static Item jungle_planting_pot = registerBlockItem(VeBlocks.jungle_planting_pot);
-	public static Item acacia_planting_pot = registerBlockItem(VeBlocks.acacia_planting_pot);
-	public static Item dark_oak_planting_pot = registerBlockItem(VeBlocks.dark_oak_planting_pot);
-	public static Item nether_planting_pot = registerBlockItem(VeBlocks.nether_planting_pot);
-	public static Item end_planting_pot = registerBlockItem(VeBlocks.end_planting_pot);
-	public static Item oak_wall = registerBlockItem(VeBlocks.oak_wall);
-	public static Item spruce_wall = registerBlockItem(VeBlocks.spruce_wall);
-	public static Item birch_wall = registerBlockItem(VeBlocks.birch_wall);
-	public static Item jungle_wall = registerBlockItem(VeBlocks.jungle_wall);
-	public static Item acacia_wall = registerBlockItem(VeBlocks.acacia_wall);
-	public static Item dark_oak_wall = registerBlockItem(VeBlocks.dark_oak_wall);
-	public static Item stripped_oak_wall = registerBlockItem(VeBlocks.stripped_oak_wall);
-	public static Item stripped_spruce_wall = registerBlockItem(VeBlocks.stripped_spruce_wall);
-	public static Item stripped_birch_wall = registerBlockItem(VeBlocks.stripped_birch_wall);
-	public static Item stripped_jungle_wall = registerBlockItem(VeBlocks.stripped_jungle_wall);
-	public static Item stripped_acacia_wall = registerBlockItem(VeBlocks.stripped_acacia_wall);
-	public static Item stripped_dark_oak_wall = registerBlockItem(VeBlocks.stripped_dark_oak_wall);
-	public static Item spruce_ladder = registerBlockItem(VeBlocks.spruce_ladder);
-	public static Item birch_ladder = registerBlockItem(VeBlocks.birch_ladder);
-	public static Item jungle_ladder = registerBlockItem(VeBlocks.jungle_ladder);
-	public static Item acacia_ladder = registerBlockItem(VeBlocks.acacia_ladder);
-	public static Item dark_oak_ladder = registerBlockItem(VeBlocks.dark_oak_ladder);
-	public static Item iron_ladder = registerBlockItem(VeBlocks.iron_ladder);
-	public static Item modern_door = registerBlockItem(VeBlocks.modern_door);
-	public static Item dirt_slab = registerBlockItem(VeBlocks.dirt_slab);
-	public static Item dirt_stairs = registerBlockItem(VeBlocks.dirt_stairs);
-	public static Item coarse_dirt_slab = registerBlockItem(VeBlocks.coarse_dirt_slab);
-	public static Item coarse_dirt_stairs = registerBlockItem(VeBlocks.coarse_dirt_stairs);
-	public static Item oak_fire_painting = registerBlockItem(VeBlocks.oak_fire_painting);
-	public static Item spruce_fire_painting = registerBlockItem(VeBlocks.spruce_fire_painting);
-	public static Item birch_fire_painting = registerBlockItem(VeBlocks.birch_fire_painting);
-	public static Item jungle_fire_painting = registerBlockItem(VeBlocks.jungle_fire_painting);
-	public static Item acacia_fire_painting = registerBlockItem(VeBlocks.acacia_fire_painting);
-	public static Item dark_oak_fire_painting = registerBlockItem(VeBlocks.dark_oak_fire_painting);
-	public static Item oak_water_painting = registerBlockItem(VeBlocks.oak_water_painting);
-	public static Item spruce_water_painting = registerBlockItem(VeBlocks.spruce_water_painting);
-	public static Item birch_water_painting = registerBlockItem(VeBlocks.birch_water_painting);
-	public static Item jungle_water_painting = registerBlockItem(VeBlocks.jungle_water_painting);
-	public static Item acacia_water_painting = registerBlockItem(VeBlocks.acacia_water_painting);
-	public static Item dark_oak_water_painting = registerBlockItem(VeBlocks.dark_oak_water_painting);
-	public static Item oak_earth_painting = registerBlockItem(VeBlocks.oak_earth_painting);
-	public static Item spruce_earth_painting = registerBlockItem(VeBlocks.spruce_earth_painting);
-	public static Item birch_earth_painting = registerBlockItem(VeBlocks.birch_earth_painting);
-	public static Item jungle_earth_painting = registerBlockItem(VeBlocks.jungle_earth_painting);
-	public static Item acacia_earth_painting = registerBlockItem(VeBlocks.acacia_earth_painting);
-	public static Item dark_oak_earth_painting = registerBlockItem(VeBlocks.dark_oak_earth_painting);
-	public static Item oak_wind_painting = registerBlockItem(VeBlocks.oak_wind_painting);
-	public static Item spruce_wind_painting = registerBlockItem(VeBlocks.spruce_wind_painting);
-	public static Item birch_wind_painting = registerBlockItem(VeBlocks.birch_wind_painting);
-	public static Item jungle_wind_painting = registerBlockItem(VeBlocks.jungle_wind_painting);
-	public static Item acacia_wind_painting = registerBlockItem(VeBlocks.acacia_wind_painting);
-	public static Item dark_oak_wind_painting = registerBlockItem(VeBlocks.dark_oak_wind_painting);
-	public static Item oak_wanderer_painting = registerBlockItem(VeBlocks.oak_wanderer_painting);
-	public static Item glass_of_darkness = registerBlockItem(VeBlocks.glass_of_darkness);
-	public static Item gingerbread_house = registerBlockItem(VeBlocks.gingerbread_house);
-	public static Item snow_bricks = registerBlockItem(VeBlocks.snow_bricks);
-	public static Item snow_brick_stairs = registerBlockItem(VeBlocks.snow_brick_stairs);
-	public static Item snow_brick_slab = registerBlockItem(VeBlocks.snow_brick_slab);
-	public static Item snow_brick_wall = registerBlockItem(VeBlocks.snow_brick_wall);
-	public static Item packed_snow_block = registerBlockItem(VeBlocks.packed_snow_block);
-	public static Item packed_snow_stairs = registerBlockItem(VeBlocks.packed_snow_stairs);
-	public static Item packed_snow_slab = registerBlockItem(VeBlocks.packed_snow_slab);
-	public static Item spider_glass = registerBlockItem(VeBlocks.spider_glass);
-	public static Item spider_glass_pane = registerBlockItem(VeBlocks.spider_glass_pane);
-	public static Item red_spider_glass = registerBlockItem(VeBlocks.red_spider_glass);
-	public static Item red_spider_glass_pane = registerBlockItem(VeBlocks.red_spider_glass_pane);
-	public static Item fancy_spider_glass = registerBlockItem(VeBlocks.fancy_spider_glass);
-	public static Item fancy_spider_glass_pane = registerBlockItem(VeBlocks.fancy_spider_glass_pane);
-	public static Item turkey = registerBlockItem(VeBlocks.turkey, 1);
-	public static Item purple_mushroom = registerBlockItem(VeBlocks.purple_mushroom);
-	public static Item purple_mushroom_block = registerBlockItem(VeBlocks.purple_mushroom_block);
-	public static Item saw = registerBlockItem(VeBlocks.saw);
-	public static Item white_campfire = registerBlockItem(VeBlocks.white_campfire);
-	public static Item magenta_campfire = registerBlockItem(VeBlocks.magenta_campfire);
-	public static Item light_blue_campfire = registerBlockItem(VeBlocks.light_blue_campfire);
-	public static Item yellow_campfire = registerBlockItem(VeBlocks.yellow_campfire);
-	public static Item lime_campfire = registerBlockItem(VeBlocks.lime_campfire);
-	public static Item pink_campfire = registerBlockItem(VeBlocks.pink_campfire);
-	public static Item gray_campfire = registerBlockItem(VeBlocks.gray_campfire);
-	public static Item light_gray_campfire = registerBlockItem(VeBlocks.light_gray_campfire);
-	public static Item cyan_campfire = registerBlockItem(VeBlocks.cyan_campfire);
-	public static Item purple_campfire = registerBlockItem(VeBlocks.purple_campfire);
-	public static Item blue_campfire = registerBlockItem(VeBlocks.blue_campfire);
-	public static Item brown_campfire = registerBlockItem(VeBlocks.brown_campfire);
-	public static Item green_campfire = registerBlockItem(VeBlocks.green_campfire);
-	public static Item red_campfire = registerBlockItem(VeBlocks.red_campfire);
-	public static Item black_campfire = registerBlockItem(VeBlocks.black_campfire);
+	private static final List<Item> ITEMS = new ArrayList<>();
 	
 	//Vanilla Expansions Items
 	
-	public static Item ruby = new Item(VE_ITEMS).setRegistryName(VanillaExpansions.location("ruby"));
+	public static Item ruby = register(VanillaExpansions.location("ruby"), new Item(VE_ITEMS));
 	public static Item ruby_axe = new VeAxeItem(VeItemTier.RUBY, 5.0F, -2.8F, new Item.Properties().addToolType(ToolType.AXE, 4).group(VanillaExpansions.VE_GROUP)).setRegistryName(VanillaExpansions.location("ruby_axe"));
 	public static Item ruby_pickaxe = new VePickaxeItem(VeItemTier.RUBY, 1, new Item.Properties().addToolType(ToolType.PICKAXE, 4).group(VanillaExpansions.VE_GROUP)).setRegistryName(VanillaExpansions.location("ruby_pickaxe"));
 	public static Item ruby_shovel = new VeShovelItem(VeItemTier.RUBY, 1.5F, new Item.Properties().addToolType(ToolType.SHOVEL, 4).group(VanillaExpansions.VE_GROUP)).setRegistryName(VanillaExpansions.location("ruby_shovel"));
@@ -277,56 +111,18 @@ public class VeItems
 	public static Item potato = new BlockNamedItem(VeBlocks.potatoes, new Item.Properties().group(ItemGroup.FOOD)).setRegistryName("minecraft", "potato");
 	public static Item sweet_berries = new BlockNamedItem(VeBlocks.sweet_berry_bush, new Item.Properties().group(ItemGroup.FOOD)).setRegistryName("minecraft", "sweet_berries");
 	
-	//Vanilla Replacement Block Items
-	
-	public static Item prismarine_slab = registerVanillaBlockItem(VeBlocks.prismarine_slab);
-	public static Item prismarine_brick_slab = registerVanillaBlockItem(VeBlocks.prismarine_brick_slab);
-	public static Item dark_prismarine_slab = registerVanillaBlockItem(VeBlocks.dark_prismarine_slab);
-	public static Item oak_slab = registerVanillaBlockItem(VeBlocks.oak_slab);
-	public static Item spruce_slab = registerVanillaBlockItem(VeBlocks.spruce_slab);
-	public static Item birch_slab = registerVanillaBlockItem(VeBlocks.birch_slab);
-	public static Item jungle_slab = registerVanillaBlockItem(VeBlocks.jungle_slab);
-	public static Item acacia_slab = registerVanillaBlockItem(VeBlocks.acacia_slab);
-	public static Item dark_oak_slab = registerVanillaBlockItem(VeBlocks.dark_oak_slab);
-	public static Item stone_slab = registerVanillaBlockItem(VeBlocks.stone_slab);
-	public static Item smooth_stone_slab = registerVanillaBlockItem(VeBlocks.smooth_stone_slab);
-	public static Item sandstone_slab = registerVanillaBlockItem(VeBlocks.sandstone_slab);
-	public static Item cut_sandstone_slab = registerVanillaBlockItem(VeBlocks.cut_sandstone_slab);
-	public static Item petrified_oak_slab = registerVanillaBlockItem(VeBlocks.petrified_oak_slab);
-	public static Item cobblestone_slab = registerVanillaBlockItem(VeBlocks.cobblestone_slab);
-	public static Item brick_slab = registerVanillaBlockItem(VeBlocks.brick_slab);
-	public static Item stone_brick_slab = registerVanillaBlockItem(VeBlocks.stone_brick_slab);
-	public static Item nether_brick_slab = registerVanillaBlockItem(VeBlocks.nether_brick_slab);
-	public static Item quartz_slab = registerVanillaBlockItem(VeBlocks.quartz_slab);
-	public static Item red_sandstone_slab = registerVanillaBlockItem(VeBlocks.red_sandstone_slab);
-	public static Item cut_red_sandstone_slab = registerVanillaBlockItem(VeBlocks.cut_red_sandstone_slab);
-	public static Item purpur_slab = registerVanillaBlockItem(VeBlocks.purpur_slab);
-	public static Item polished_granite_slab = registerVanillaBlockItem(VeBlocks.polished_granite_slab);
-	public static Item smooth_red_sandstone_slab = registerVanillaBlockItem(VeBlocks.smooth_red_sandstone_slab);
-	public static Item mossy_stone_brick_slab = registerVanillaBlockItem(VeBlocks.mossy_stone_brick_slab);
-	public static Item polished_diorite_slab = registerVanillaBlockItem(VeBlocks.polished_diorite_slab);
-	public static Item mossy_cobblestone_slab = registerVanillaBlockItem(VeBlocks.mossy_cobblestone_slab);
-	public static Item end_stone_brick_slab = registerVanillaBlockItem(VeBlocks.end_stone_brick_slab);
-	public static Item smooth_sandstone_slab = registerVanillaBlockItem(VeBlocks.smooth_sandstone_slab);
-	public static Item smooth_quartz_slab = registerVanillaBlockItem(VeBlocks.smooth_quartz_slab);
-	public static Item granite_slab = registerVanillaBlockItem(VeBlocks.granite_slab);
-	public static Item andesite_slab = registerVanillaBlockItem(VeBlocks.andesite_slab);
-	public static Item red_nether_brick_slab = registerVanillaBlockItem(VeBlocks.red_nether_brick_slab);
-	public static Item polished_andesite_slab = registerVanillaBlockItem(VeBlocks.polished_andesite_slab);
-	public static Item diorite_slab = registerVanillaBlockItem(VeBlocks.diorite_slab);
-	
-	private static Item registerBlockItem(Block block)
+	private static Item register(ResourceLocation name, Item item)
 	{
-		return new BlockItem(block, VE_ITEMS).setRegistryName(block.getRegistryName());
+		
+		item.setRegistryName(name);
+		ITEMS.add(item);
+		return item;
 	}
 	
-	private static Item registerBlockItem(Block block, int size)
-	{
-		return new BlockItem(block, new Item.Properties().maxStackSize(size).group(VanillaExpansions.VE_GROUP)).setRegistryName(block.getRegistryName());
-	}
-	
-	private static Item registerVanillaBlockItem(Block block)
-	{
-		return new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName());
-	}
+	@SubscribeEvent
+    public static void registerItemBlocks(final RegistryEvent.Register<Item> event)
+    {
+        ITEMS.forEach(item -> event.getRegistry().register(item));
+        ITEMS.clear();
+    }
 }
