@@ -8,8 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.BigMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
 
 public class VeMushroomBlock extends MushroomBlock
 {

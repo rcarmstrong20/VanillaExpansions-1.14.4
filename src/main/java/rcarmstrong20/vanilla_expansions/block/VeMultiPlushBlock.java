@@ -16,7 +16,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import rcarmstrong20.vanilla_expansions.VeBlockStateProperties;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VeMultiPlushBlock extends VePlushBlock
 {

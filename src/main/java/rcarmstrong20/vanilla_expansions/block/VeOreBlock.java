@@ -6,7 +6,7 @@ import net.minecraft.block.OreBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorldReader;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VeOreBlock extends OreBlock
 {

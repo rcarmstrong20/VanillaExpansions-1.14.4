@@ -17,7 +17,7 @@ import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.feature.BigMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VeBigPurpleMushroomFeature extends Feature<BigMushroomFeatureConfig>
 {

@@ -6,7 +6,7 @@ import net.minecraft.block.GlassBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VeGlassBlock extends GlassBlock
 {

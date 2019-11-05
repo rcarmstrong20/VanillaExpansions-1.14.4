@@ -10,7 +10,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeVoidBucketItem extends Item
 {

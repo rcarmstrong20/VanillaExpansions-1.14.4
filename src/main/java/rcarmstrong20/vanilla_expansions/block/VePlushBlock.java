@@ -18,7 +18,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 {

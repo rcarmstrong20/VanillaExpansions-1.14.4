@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeSoupItem extends Item
 {

@@ -11,7 +11,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public enum VeArmorMaterial implements IArmorMaterial
 {

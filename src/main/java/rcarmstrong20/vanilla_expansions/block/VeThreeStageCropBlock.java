@@ -10,8 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeThreeStageCropBlock extends VeSevenStageCropBlock
 {

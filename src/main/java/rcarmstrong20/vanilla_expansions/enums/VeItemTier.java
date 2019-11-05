@@ -6,7 +6,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadBase;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public enum VeItemTier implements IItemTier
 {

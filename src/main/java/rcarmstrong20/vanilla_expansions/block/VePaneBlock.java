@@ -3,7 +3,7 @@ package rcarmstrong20.vanilla_expansions.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.util.BlockRenderLayer;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VePaneBlock extends PaneBlock
 {

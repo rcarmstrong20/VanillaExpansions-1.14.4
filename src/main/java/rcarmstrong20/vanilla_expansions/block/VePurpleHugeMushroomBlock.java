@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import rcarmstrong20.vanilla_expansions.init.VeSoundEvents;
+import rcarmstrong20.vanilla_expansions.core.VeSoundEvents;
 
 public class VePurpleHugeMushroomBlock extends HugeMushroomBlock
 {

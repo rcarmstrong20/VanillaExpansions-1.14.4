@@ -5,7 +5,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ScatteredPlantFeature;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class VeFeature
 {

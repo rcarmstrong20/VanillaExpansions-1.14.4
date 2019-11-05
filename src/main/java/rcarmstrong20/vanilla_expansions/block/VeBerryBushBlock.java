@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.VeBlockTags;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeBerryBushBlock extends SweetBerryBushBlock
 {

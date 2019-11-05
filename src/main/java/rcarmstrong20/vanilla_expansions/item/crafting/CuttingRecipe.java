@@ -8,7 +8,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.crafting.SingleItemRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 public class CuttingRecipe extends SingleItemRecipe
 {

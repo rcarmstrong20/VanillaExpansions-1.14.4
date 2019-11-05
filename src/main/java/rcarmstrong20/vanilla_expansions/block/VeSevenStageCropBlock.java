@@ -15,8 +15,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.VeBlockTags;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeSevenStageCropBlock extends CropsBlock
 {
