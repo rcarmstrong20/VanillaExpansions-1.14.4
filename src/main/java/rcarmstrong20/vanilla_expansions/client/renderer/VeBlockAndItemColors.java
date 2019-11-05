@@ -11,8 +11,7 @@ import net.minecraft.world.GrassColors;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import rcarmstrong20.vanilla_expansions.init.VeBlocks;
-import rcarmstrong20.vanilla_expansions.init.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 
 @OnlyIn(Dist.CLIENT)
 public class VeBlockAndItemColors
@@ -67,6 +66,6 @@ public class VeBlockAndItemColors
 			return blockColors.getColor(state, null, null, tintIndex);
 		};
 		
-		itemColors.register(itemBlockColorHandler, VeItems.enderman_plush, VeItems.regigigas_pokedoll);
+		itemColors.register(itemBlockColorHandler, VeBlocks.enderman_plush, VeBlocks.regigigas_pokedoll);
 	}
 }
