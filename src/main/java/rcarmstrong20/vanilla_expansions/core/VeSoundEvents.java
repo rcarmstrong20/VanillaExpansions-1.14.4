@@ -1,14 +1,38 @@
-package rcarmstrong20.vanilla_expansions.init;
+package rcarmstrong20.vanilla_expansions.core;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 
+/**
+ * Author: rcarmstrong20
+ */
+@Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VeSoundEvents
 {
-	public static final SoundEvent BLOCK_MUSHROOM_BOUNCE = registerSoundEvent("block.mushroom_bounce");
+	private static final List<SoundEvent> SOUNDS = new ArrayList<>();
 	
-	private static SoundEvent registerSoundEvent(String soundName)
-	{
-		return new SoundEvent(VanillaExpansions.location(soundName)).setRegistryName(VanillaExpansions.location(soundName));
-	}
+	public static final SoundEvent BLOCK_MUSHROOM_BOUNCE = register("block.mushroom_bounce");
+	
+	private static SoundEvent register(String name)
+    {
+		ResourceLocation location = VanillaExpansions.location(name);
+        SoundEvent event = new SoundEvent(location);
+        event.setRegistryName(location);
+        SOUNDS.add(event);
+        return event;
+    }
+
+    @SubscribeEvent
+    public static void registerSounds(final RegistryEvent.Register<SoundEvent> event)
+    {
+        SOUNDS.forEach(soundEvent -> event.getRegistry().register(soundEvent));
+        SOUNDS.clear();
+    }
 }
