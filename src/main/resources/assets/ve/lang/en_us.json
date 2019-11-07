@@ -156,6 +156,10 @@
   "block.ve.purple_mushroom": "Purple Mushroom",
   "block.ve.purple_mushroom_block": "Purple Mushroom Block",
   "block.ve.saw": "Saw",
+  "block.ve.quartz_wall": "Quartz Wall",
+  "block.ve.smooth_quartz_wall": "Smooth Quartz Wall",
+  "block.ve.smoky_quartz_wall": "Smoky Quartz Wall",
+  "block.ve.smooth_smoky_quartz_wall": "Smooth Smoky Quartz Wall",
   
   "item.ve.ruby": "Nether Ruby",
   "item.ve.ruby_axe": "Ruby Axe",
@@ -225,12 +229,6 @@
   "item.ve.ginger_root": "Ginger Root",
   "item.ve.spruce_cone": "Spruce Cone",
   "item.ve.forests_bounty": "Forest's Bounty",
-  "item.ve.oak_stick": "Oak Stick",
-  "item.ve.spruce_stick": "Spruce Stick",
-  "item.ve.birch_stick": "Birch Stick",
-  "item.ve.jungle_stick": "Jungle Stick",
-  "item.ve.acacia_stick": "Acacia Stick",
-  "item.ve.dark_oak_stick": "Dark Oak Stick",
   
   "block.minecraft.ladder": "Oak Ladder",
   
