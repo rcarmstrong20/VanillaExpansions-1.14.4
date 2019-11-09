@@ -44,7 +44,6 @@ import rcarmstrong20.vanilla_expansions.block.VeStairsBlock;
 import rcarmstrong20.vanilla_expansions.block.VeThreeStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTranslucentBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTurkeyBlock;
-import rcarmstrong20.vanilla_expansions.block.VeTwoHighPaintingBlock;
 
 /*
  * Author: rcarmstrong20
