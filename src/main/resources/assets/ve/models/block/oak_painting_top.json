@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/painting_top",
+    "parent": "ve:block/template_painting_top",
     "textures":
 	{
 		"frame": "block/oak_log"
