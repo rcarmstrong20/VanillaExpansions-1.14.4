@@ -203,7 +203,7 @@ public class VeBlocks
 	public static Block jungle_wind_painting = register(VanillaExpansions.location("jungle_wind_painting"), true, new VeSinglePaintingBlock(Block.Properties.from(VeBlocks.jungle_fire_painting)));
 	public static Block acacia_wind_painting = register(VanillaExpansions.location("acacia_wind_painting"), true, new VeSinglePaintingBlock(Block.Properties.from(VeBlocks.acacia_fire_painting)));
 	public static Block dark_oak_wind_painting = register(VanillaExpansions.location("dark_oak_wind_painting"), true, new VeSinglePaintingBlock(Block.Properties.from(VeBlocks.dark_oak_fire_painting)));
-	public static Block oak_wanderer_painting = register(VanillaExpansions.location("oak_wanderer_painting"), true, new VeTwoHighPaintingBlock(Block.Properties.from(VeBlocks.oak_fire_painting)));
+	//public static Block oak_wanderer_painting = register(VanillaExpansions.location("oak_wanderer_painting"), true, new VeTwoHighPaintingBlock(Block.Properties.from(VeBlocks.oak_fire_painting)));
 	public static Block gingerbread_house = register(VanillaExpansions.location("gingerbread_house"), true, new VeCutoutDirectionalBlock(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(VeBlock.STONE_HARDNESS).sound(SoundType.STONE)));
 	public static Block snow_bricks = register(VanillaExpansions.location("snow_bricks"), true, new Block(Block.Properties.create(Material.ROCK, MaterialColor.LIGHT_BLUE).hardnessAndResistance(VeBlock.STONE_HARDNESS, VeBlock.STONE_RESISTANCE).sound(SoundType.STONE)));
 	public static Block snow_brick_stairs = register(VanillaExpansions.location("snow_brick_stairs"), true, new VeStairsBlock(VeBlocks.snow_bricks.getDefaultState(), Block.Properties.from(VeBlocks.snow_bricks)));
