@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/dark_oak_painting",
+    "parent": "ve:block/template_dark_oak_painting",
     "textures":
 	{
 		"picture": "ve:painting/earth"
