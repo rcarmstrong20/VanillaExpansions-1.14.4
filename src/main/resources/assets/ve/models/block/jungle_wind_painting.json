@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/jungle_painting",
+    "parent": "ve:block/template_jungle_painting",
     "textures":
 	{
         "picture": "ve:painting/wind"
