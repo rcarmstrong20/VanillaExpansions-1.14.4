@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/oak_painting",
+    "parent": "ve:block/template_oak_painting",
     "textures":
 	{
         "picture": "ve:painting/wind"
