@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/painting",
+    "parent": "ve:block/template_painting",
     "textures":
 	{
 		"frame": "block/spruce_log"
