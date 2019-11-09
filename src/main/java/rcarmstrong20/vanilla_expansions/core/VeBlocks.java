@@ -224,6 +224,7 @@ public class VeBlocks
 	public static Block purple_mushroom_block = register(VanillaExpansions.location("purple_mushroom_block"), true, new VePurpleHugeMushroomBlock(Block.Properties.from(Blocks.RED_MUSHROOM_BLOCK)));
 	public static Block saw = register(VanillaExpansions.location("saw"), true, new VeSawBlock(Block.Properties.from(Blocks.STONECUTTER)));
 	public static Block white_campfire = register(VanillaExpansions.location("white_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
+	public static Block orange_campfire = register(VanillaExpansions.location("orange_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block magenta_campfire = register(VanillaExpansions.location("magenta_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block light_blue_campfire = register(VanillaExpansions.location("light_blue_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block yellow_campfire = register(VanillaExpansions.location("yellow_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
