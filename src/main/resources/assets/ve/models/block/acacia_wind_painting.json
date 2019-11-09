@@ -1,5 +1,5 @@
 {
-    "parent": "ve:block/acacia_painting",
+    "parent": "ve:block/template_acacia_painting",
     "textures":
 	{
         "picture": "ve:painting/wind"
