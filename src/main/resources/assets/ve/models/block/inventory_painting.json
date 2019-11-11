@@ -13,7 +13,7 @@
 			"to": [ 15, 15, 8 ],
 			"faces": {
 				"north": { "uv": [ 1, 1, 15, 15 ], "texture": "#picture" },
-				"south": { "uv": [ 1, 1, 15, 15 ], "texture": "#picture" }
+				"south": { "uv": [ 1, 1, 15, 15 ], "texture": "#frame" }
 			}
 		},
 		{
