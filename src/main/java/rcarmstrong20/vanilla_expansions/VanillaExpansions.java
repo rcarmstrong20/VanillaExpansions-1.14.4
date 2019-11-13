@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -34,7 +33,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.core.VeItems;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
-import rcarmstrong20.vanilla_expansions.inventory.container.VeSawContainerType;
 import rcarmstrong20.vanilla_expansions.proxy.ClientProxy;
 import rcarmstrong20.vanilla_expansions.proxy.CommonProxy;
 
@@ -73,15 +71,6 @@ public class VanillaExpansions
 	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistrationHandler
 	{
-		@SubscribeEvent
-		public static void registerContainerTypes(final RegistryEvent.Register<ContainerType<?>> event)
-		{
-			event.getRegistry().registerAll
-			(
-				VeSawContainerType.SAW
-			);
-		}
-		
 		@SubscribeEvent
 		public static void registerFillBucketEvents(FillBucketEvent event)
 		{
