@@ -1,4 +1,4 @@
-package rcarmstrong20.vanilla_expansions.inventory.container;
+package rcarmstrong20.vanilla_expansions.core;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
+import rcarmstrong20.vanilla_expansions.inventory.container.VeSawContainer;
 
 public class VeSawContainerType
 {

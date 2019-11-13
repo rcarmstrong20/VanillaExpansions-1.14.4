@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.core.VeSawContainerType;
 import rcarmstrong20.vanilla_expansions.item.crafting.CuttingRecipe;
 import rcarmstrong20.vanilla_expansions.item.crafting.IVeRecipeType;
 
