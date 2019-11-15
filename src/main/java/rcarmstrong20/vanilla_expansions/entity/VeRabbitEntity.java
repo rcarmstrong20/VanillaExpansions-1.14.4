@@ -21,7 +21,7 @@ public class VeRabbitEntity extends RabbitEntity
 	{
 		super(p_i50247_1_, p_i50247_2_);
 	}
-	CowEntity
+	
 	/**
 	 * Called when a lightning bolt hits the entity.
 	 */
@@ -33,7 +33,7 @@ public class VeRabbitEntity extends RabbitEntity
 			if(this.getRabbitType() == 1 || this.getRabbitType() == 99)
 			{
 				this.setRabbitType(this.getRabbitType() == 1 ? 99 : 1);
-				this.setCustomName(this.getCustomName() == TranslationTextComponent(Util.makeTranslationKey("entity", VanillaExpansions.vanillaLocation("killer_bunny"))) ? null : this.getCustomName());
+				this.setCustomName(this.getCustomName() == new TranslationTextComponent(Util.makeTranslationKey("entity", VanillaExpansions.vanillaLocation("killer_bunny"))) ? null : this.getCustomName());
 				
 				this.lightningUUID = uuid;
 				this.playSound(SoundEvents.ENTITY_MOOSHROOM_CONVERT, 2.0F, 1.0F);
