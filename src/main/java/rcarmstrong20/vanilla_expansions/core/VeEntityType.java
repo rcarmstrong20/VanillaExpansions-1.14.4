@@ -25,7 +25,7 @@ public class VeEntityType
 	
 	private static <T extends Entity> EntityType<T> buildType(String id, String name, EntityType.Builder<T> builder)
     {
-        EntityType<T> type = builder.build(id + name);
+        EntityType<T> type = builder.build(id + ":" + name);
         type.setRegistryName(new ResourceLocation(id, name));
         ENTITY_TYPES.add(type);
         return type;
