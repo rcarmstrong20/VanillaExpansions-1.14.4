@@ -1,49 +1,40 @@
 package rcarmstrong20.vanilla_expansions.entity;
 
-import java.util.UUID;
-
+import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.passive.RabbitEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.Util;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import rcarmstrong20.vanilla_expansions.VanillaExpansions;
+import rcarmstrong20.vanilla_expansions.core.VeEntityType;
 
 public class VeRabbitEntity extends RabbitEntity
 {
-	/** Stores the UUID of the most recent lightning bolt to strike */
-	private UUID lightningUUID;
-	
-	public VeRabbitEntity(EntityType<? extends RabbitEntity> p_i50247_1_, World p_i50247_2_)
+	public VeRabbitEntity(EntityType<? extends RabbitEntity> rabbitEntity, World world)
 	{
-		super(p_i50247_1_, p_i50247_2_);
+		super(rabbitEntity, world);
 	}
 	
 	/**
-	 * Called when a lightning bolt hits the entity.
+	 * Adds the functionality to change a white bunny to a killer bunny with a name tag.
 	 */
-	public void onStruckByLightning(LightningBoltEntity lightningBolt)
+	@Override
+	public void baseTick()
 	{
-		UUID uuid = lightningBolt.getUniqueID();
-		if (!uuid.equals(this.lightningUUID))
+		super.baseTick();
+		if(this.getRabbitType() == 1 || this.getRabbitType() == 99)
 		{
-			if(this.getRabbitType() == 1 || this.getRabbitType() == 99)
-			{
-				this.setRabbitType(this.getRabbitType() == 1 ? 99 : 1);
-				this.setCustomName(this.getCustomName() == new TranslationTextComponent(Util.makeTranslationKey("entity", VanillaExpansions.vanillaLocation("killer_bunny"))) ? null : this.getCustomName());
-				
-				this.lightningUUID = uuid;
-				this.playSound(SoundEvents.ENTITY_MOOSHROOM_CONVERT, 2.0F, 1.0F);
-				/*
-				if(this.getCustomName() != null && this.getRabbitType() == 1)
-				{
-					this.setCustomName(null);
-				}
-				*/
-			}
+			this.setRabbitType(this.hasCustomName() && "The Killer Bunny".equals(this.getName().getUnformattedComponentText()) ? 99 : 1);
 		}
+	}
+	
+	/*
+	 * Fix the bug with the spawn egg to spawn a baby rabbit instead of a baby pig
+	 */
+	@Override
+	public RabbitEntity createChild(AgeableEntity ageable)
+	{
+		VeRabbitEntity rabbitEntity = VeEntityType.rabbit.create(this.world);
+		int parentType = this.getRabbitType();
+		rabbitEntity.setRabbitType(parentType);
+		return rabbitEntity;
 	}
 }
