@@ -238,6 +238,10 @@ public class VeBlocks
 	public static Block green_campfire = register(VanillaExpansions.location("green_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block red_campfire = register(VanillaExpansions.location("red_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
+	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new CampfireBlock(Block.Properties.from(Blocks.WHEAT)));
+	
+	//Double slabs
+	
 	public static Block smoky_quartz_smooth_smoky_quartz_double_slab = register(VanillaExpansions.location("smoky_quartz_smooth_smoky_quartz_double_slab"), false, new VeDoubleSlabBlock(Block.Properties.from(VeBlocks.smoky_quartz_block)));
 	public static Block smoky_quartz_cracked_stone_brick_double_slab = register(VanillaExpansions.location("smoky_quartz_cracked_stone_brick_double_slab"), false, new VeDoubleSlabBlock(Block.Properties.from(VeBlocks.smoky_quartz_block)));
 	public static Block smoky_quartz_dirt_double_slab = register(VanillaExpansions.location("smoky_quartz_dirt_double_slab"), false, new VeDoubleSlabBlock(Block.Properties.from(VeBlocks.smoky_quartz_block)));
