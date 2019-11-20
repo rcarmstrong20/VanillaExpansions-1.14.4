@@ -3,6 +3,7 @@ package rcarmstrong20.vanilla_expansions.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockNamedItem;
@@ -10,6 +11,7 @@ import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SoupItem;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -106,6 +108,8 @@ public class VeItems
 	public static Item porkchop_bits = register(VanillaExpansions.location("porkchop_bits"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.PORKCHOP_BITS)));
 	public static Item spruce_cone = register(VanillaExpansions.location("spruce_cone"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.SPRUCE_CONE)));
 	public static Item forests_bounty = register(VanillaExpansions.location("forests_bounty"), new SoupItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.FORESTS_BOUNTY)));
+	public static Item witchs_cradle_branch = register(VanillaExpansions.location("witchs_cradle_branch"), new Item(VE_ITEMS));
+	public static Item witchs_cradle_soup = register(VanillaExpansions.location("witchs_cradle_soup"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.FORESTS_BOUNTY)));
 	
 	//Vanilla Replacement Items
 	
@@ -115,10 +119,10 @@ public class VeItems
 	public static Item carrot = register(VanillaExpansions.vanillaLocation("carrot"), new BlockNamedItem(VeBlocks.carrots, new Item.Properties().group(ItemGroup.FOOD)));
 	public static Item potato = register(VanillaExpansions.vanillaLocation("potato"), new BlockNamedItem(VeBlocks.potatoes, new Item.Properties().group(ItemGroup.FOOD)));
 	public static Item sweet_berries = register(VanillaExpansions.vanillaLocation("sweet_berries"), new BlockNamedItem(VeBlocks.sweet_berry_bush, new Item.Properties().group(ItemGroup.FOOD)));
+	public static Item rabbit_spawn_egg = register(VanillaExpansions.vanillaLocation("rabbit_spawn_egg"), new SpawnEggItem(VeEntityType.rabbit, 10051392, 7555121, (new Item.Properties()).group(ItemGroup.MISC)));
 	
 	private static Item register(ResourceLocation name, Item item)
 	{
-		
 		item.setRegistryName(name);
 		ITEMS.add(item);
 		return item;
