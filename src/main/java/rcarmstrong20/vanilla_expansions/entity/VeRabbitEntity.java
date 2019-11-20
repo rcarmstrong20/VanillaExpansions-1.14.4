@@ -27,7 +27,7 @@ public class VeRabbitEntity extends RabbitEntity
 	}
 	
 	/*
-	 * Fix the bug with the spawn egg to spawn a baby rabbit instead of a baby pig
+	 * Fix the spawn egg bug with spawning a baby rabbit instead of a baby pig
 	 */
 	@Override
 	public RabbitEntity createChild(AgeableEntity ageable)
