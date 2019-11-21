@@ -2,8 +2,8 @@ package rcarmstrong20.vanilla_expansions.core;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.BigMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.BushConfig;
@@ -35,6 +35,12 @@ public class VeBiomes
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		
+		/*
+		if(Feature.SWAMP_HUT.getStructureName() == "Swamp_Hut")
+		{
+			registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.COUNT_HEIGHTMAP_32, new FrequencyConfig(7)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
+		}
+		*/
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
