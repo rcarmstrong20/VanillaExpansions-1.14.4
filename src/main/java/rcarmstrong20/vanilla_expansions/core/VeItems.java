@@ -107,8 +107,9 @@ public class VeItems
 	public static Item porkchop_bits = register(VanillaExpansions.location("porkchop_bits"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.PORKCHOP_BITS)));
 	public static Item spruce_cone = register(VanillaExpansions.location("spruce_cone"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.SPRUCE_CONE)));
 	public static Item forests_bounty = register(VanillaExpansions.location("forests_bounty"), new SoupItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.FORESTS_BOUNTY)));
-	public static Item witchs_cradle_branch = register(VanillaExpansions.location("witchs_cradle_branch"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.WITCHS_CRADLE_BRANCH)));
+	public static Item witchs_cradle_branch = register(VanillaExpansions.location("witchs_cradle_branch"), new BlockNamedItem(VeBlocks.witchs_cradle, new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.WITCHS_CRADLE_BRANCH)));
 	public static Item witchs_cradle_soup = register(VanillaExpansions.location("witchs_cradle_soup"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.WITCHS_CRADLE_SOUP)));
+	public static Item blood_vial = register(VanillaExpansions.location("blood_vial"), new Item(VE_ITEMS));
 	
 	//Vanilla Replacement Items
 	
