@@ -238,7 +238,7 @@ public class VeBlocks
 	public static Block green_campfire = register(VanillaExpansions.location("green_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block red_campfire = register(VanillaExpansions.location("red_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
-	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new CampfireBlock(Block.Properties.from(Blocks.WHEAT)));
+	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.WHEAT)));
 	
 	//Double slabs
 	
