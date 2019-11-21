@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures":
 	{
-        "layer0": "ve:item/blood_vile"
+        "layer0": "ve:item/blood_vial"
     }
 }
