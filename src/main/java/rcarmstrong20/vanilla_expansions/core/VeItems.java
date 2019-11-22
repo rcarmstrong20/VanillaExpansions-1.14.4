@@ -20,6 +20,7 @@ import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.enums.VeArmorMaterial;
 import rcarmstrong20.vanilla_expansions.enums.VeItemTier;
 import rcarmstrong20.vanilla_expansions.item.VeAxeItem;
+import rcarmstrong20.vanilla_expansions.item.VeGlassVialItem;
 import rcarmstrong20.vanilla_expansions.item.VePickaxeItem;
 import rcarmstrong20.vanilla_expansions.item.VeShovelItem;
 import rcarmstrong20.vanilla_expansions.item.VeSoupItem;
@@ -109,6 +110,7 @@ public class VeItems
 	public static Item forests_bounty = register(VanillaExpansions.location("forests_bounty"), new SoupItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.FORESTS_BOUNTY)));
 	public static Item witchs_cradle_branch = register(VanillaExpansions.location("witchs_cradle_branch"), new BlockNamedItem(VeBlocks.witchs_cradle, new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.WITCHS_CRADLE_BRANCH)));
 	public static Item witchs_cradle_soup = register(VanillaExpansions.location("witchs_cradle_soup"), new Item(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.WITCHS_CRADLE_SOUP)));
+	public static Item glass_vial = register(VanillaExpansions.location("glass_vial"), new VeGlassVialItem(VE_ITEMS));
 	public static Item blood_vial = register(VanillaExpansions.location("blood_vial"), new Item(VE_ITEMS));
 	
 	//Vanilla Replacement Items
