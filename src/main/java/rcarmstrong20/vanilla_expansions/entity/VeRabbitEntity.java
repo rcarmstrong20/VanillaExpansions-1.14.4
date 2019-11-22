@@ -20,9 +20,9 @@ public class VeRabbitEntity extends RabbitEntity
 	public void baseTick()
 	{
 		super.baseTick();
-		if(this.getRabbitType() == 1 || this.getRabbitType() == 99)
+		if(this.getRabbitType() == 1 || this.getRabbitType() == 99 && this.hasCustomName())
 		{
-			this.setRabbitType(this.hasCustomName() && "The Killer Bunny".equals(this.getName().getUnformattedComponentText()) ? 99 : 1);
+			this.setRabbitType("The Killer Bunny".equals(this.getName().getUnformattedComponentText()) ? 99 : 1);
 		}
 	}
 	
