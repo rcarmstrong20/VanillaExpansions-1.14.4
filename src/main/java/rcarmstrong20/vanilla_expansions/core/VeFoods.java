@@ -18,6 +18,7 @@ public class VeFoods
 	public static final Food CARAMEL_APPLE = new Food.Builder().hunger(5).saturation(6.5F).build();
 	public static final Food WITCHS_CRADLE_BRANCH = new Food.Builder().hunger(4).saturation(0.6F).build();
 	public static final Food WITCHS_CRADLE_SOUP = new Food.Builder().hunger(7).saturation(0.6F).build();
+	public static final Food BLOOD_VIAL = new Food.Builder().hunger(3).saturation(0.6F).build();
 	public static final Food BREAD_CRUMBS = new Food.Builder().hunger(2).saturation(3F).build();
 	public static final Food CRANBERRIES = new Food.Builder().hunger(2).saturation(0.5F).build();
 	public static final Food CRANBERRY_SAUCE = new Food.Builder().hunger(5).saturation(1.5F).build();
