@@ -19,6 +19,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
+import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -34,13 +35,8 @@ public class VeBiomes
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.CRANBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
 		
-		/*
-		if(Feature.SWAMP_HUT.getStructureName() == "Swamp_Hut")
-		{
-			registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.COUNT_HEIGHTMAP_32, new FrequencyConfig(7)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
-		}
-		*/
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
