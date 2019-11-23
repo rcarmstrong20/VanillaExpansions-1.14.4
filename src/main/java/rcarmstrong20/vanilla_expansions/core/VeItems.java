@@ -20,6 +20,7 @@ import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.enums.VeArmorMaterial;
 import rcarmstrong20.vanilla_expansions.enums.VeItemTier;
 import rcarmstrong20.vanilla_expansions.item.VeAxeItem;
+import rcarmstrong20.vanilla_expansions.item.VeDrinkItem;
 import rcarmstrong20.vanilla_expansions.item.VeGlassVialItem;
 import rcarmstrong20.vanilla_expansions.item.VePickaxeItem;
 import rcarmstrong20.vanilla_expansions.item.VeShovelItem;
@@ -89,7 +90,7 @@ public class VeItems
 	public static Item ginger_root = register(VanillaExpansions.location("ginger_root"), new BlockNamedItem(VeBlocks.ginger, new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.GINGER_ROOT)));
 	public static Item blueberries = register(VanillaExpansions.location("blueberries"), new BlockNamedItem(VeBlocks.blueberry_bush, VE_ITEMS.food(VeFoods.BLUEBERRIES)));
 	public static Item cranberries = register(VanillaExpansions.location("cranberries"), new BlockNamedItem(VeBlocks.cranberry_bush, new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.CRANBERRIES)));
-	public static Item cranberry_sauce = register(VanillaExpansions.location("cranberry_sauce"), new VeSoupItem(new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.CRANBERRY_SAUCE)));
+	public static Item cranberry_sauce = register(VanillaExpansions.location("cranberry_sauce"), new VeDrinkItem(new Item.Properties().maxStackSize(16).group(VanillaExpansions.VE_GROUP).food(VeFoods.CRANBERRY_SAUCE)));
 	public static Item noodles = register(VanillaExpansions.location("noodles"), new Item(VE_ITEMS));
 	public static Item cooked_noodles = register(VanillaExpansions.location("cooked_noodles"), new Item(VE_ITEMS));
 	public static Item noodle_soup = register(VanillaExpansions.location("noodle_soup"), new VeSoupItem(new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.NOODLE_SOUP)));
@@ -111,7 +112,7 @@ public class VeItems
 	public static Item witchs_cradle_branch = register(VanillaExpansions.location("witchs_cradle_branch"), new BlockNamedItem(VeBlocks.witchs_cradle, new Item.Properties().group(VanillaExpansions.VE_GROUP).food(VeFoods.WITCHS_CRADLE_BRANCH)));
 	public static Item witchs_cradle_soup = register(VanillaExpansions.location("witchs_cradle_soup"), new VeSoupItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.WITCHS_CRADLE_SOUP)));
 	public static Item glass_vial = register(VanillaExpansions.location("glass_vial"), new VeGlassVialItem(VE_ITEMS));
-	public static Item blood_vial = register(VanillaExpansions.location("blood_vial"), new Item(VE_ITEMS));
+	public static Item blood_vial = register(VanillaExpansions.location("blood_vial"), new VeDrinkItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(16).food(VeFoods.BLOOD_VIAL)));
 	
 	//Vanilla Replacement Items
 	
