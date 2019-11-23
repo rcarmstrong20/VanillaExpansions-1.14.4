@@ -30,10 +30,6 @@ public class VeSoupItem extends Item
 		{
 			return new ItemStack(Items.STICK);
 		}
-		else if(this == VeItems.cranberry_sauce)
-		{
-			return new ItemStack(Items.GLASS_BOTTLE);
-		}
 	    return new ItemStack(Items.BOWL);
 	}
 }
