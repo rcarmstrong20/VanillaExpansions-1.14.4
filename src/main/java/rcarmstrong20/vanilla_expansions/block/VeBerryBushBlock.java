@@ -49,6 +49,10 @@ public class VeBerryBushBlock extends SweetBerryBushBlock
 		{
 			return new ItemStack(VeItems.cranberries);
 		}
+		else if(this == VeBlocks.witchs_cradle)
+		{
+			return new ItemStack(VeItems.witchs_cradle_branch);
+		}
 		return new ItemStack(VeItems.sweet_berries);
 	}
 	
@@ -83,7 +87,7 @@ public class VeBerryBushBlock extends SweetBerryBushBlock
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn)
 	{
-		if(this == VeBlocks.sweet_berry_bush)
+		if(this == VeBlocks.sweet_berry_bush || this == VeBlocks.witchs_cradle)
 		{
 			super.onEntityCollision(state, worldIn, pos, entityIn);
 		}
