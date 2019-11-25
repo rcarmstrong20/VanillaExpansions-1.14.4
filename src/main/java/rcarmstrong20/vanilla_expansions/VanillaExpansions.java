@@ -3,18 +3,12 @@ package rcarmstrong20.vanilla_expansions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.FillBucketEvent;
-import net.minecraftforge.eventbus.api.Event.Result;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import rcarmstrong20.vanilla_expansions.core.VeItems;
 import rcarmstrong20.vanilla_expansions.proxy.ClientProxy;
 import rcarmstrong20.vanilla_expansions.proxy.CommonProxy;
 
@@ -53,20 +47,29 @@ public class VanillaExpansions
 	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistrationHandler
 	{
-		@SubscribeEvent
-		public static void registerFillBucketEvents(FillBucketEvent event)
+		
+		
+		/*
+		@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+		public static void registerFillBucketEvents(final FillBucketEvent event)
 		{
 			DimensionType dimensionType = event.getWorld().getDimension().getType();
+			ItemStack stack = event.getPlayer().getHeldItemMainhand();
 			
-			if(dimensionType == DimensionType.THE_END && !event.getWorld().isRemote)
+			if(dimensionType == DimensionType.THE_END && !event.getWorld().isRemote && event.getPlayer().getHeight() < 15)
 			{
-				event.setFilledBucket(new ItemStack(VeItems.void_bucket));
+				event.getPlayer().addItemStackToInventory(new ItemStack(VeItems.void_bucket));
+				stack.shrink(1);
 				event.setResult(Result.ALLOW);
 			}
-			event.setResult(Result.DENY);
+			else
+			{
+				event.setResult(Result.DEFAULT);
+			}
 			
-			LOGGER.info("Fill bucket events registered");
+			VanillaExpansions.LOGGER.info("Fill bucket events registered");
 		}
+		*/
 	}
 	
 	public static ResourceLocation location(String name)
