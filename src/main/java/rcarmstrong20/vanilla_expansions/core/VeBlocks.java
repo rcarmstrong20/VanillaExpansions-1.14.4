@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
@@ -2016,44 +2017,46 @@ public class VeBlocks
 	public static Block diorite_slab = register(VanillaExpansions.vanillaLocation("diorite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DIORITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	
 	private static Block register(ResourceLocation name, boolean hasItemBlock, Block block)
-    {
-        return register(name, hasItemBlock, block, new Item.Properties().group(VanillaExpansions.VE_GROUP));
-    }
+	{
+		return register(name, hasItemBlock, block, new Item.Properties().group(VanillaExpansions.VE_GROUP));
+	}
 	
 	private static Block register(ResourceLocation name, boolean hasItemBlock, Block block, ItemGroup group)
-    {
-        return register(name, hasItemBlock, block, new Item.Properties().group(group));
-    }
+	{
+		return register(name, hasItemBlock, block, new Item.Properties().group(group));
+	}
 	
-    private static Block register(ResourceLocation name, boolean hasItemBlock, Block block, Item.Properties properties)
-    {
-        return register(name, hasItemBlock, block, new BlockItem(block, properties));
-    }
-
-    private static Block register(ResourceLocation name, boolean hasItemBlock, Block block, BlockItem item)
-    {
-        block.setRegistryName(name);
-        BLOCKS.add(block);
-        if(hasItemBlock && block.getRegistryName() != null)
-        {
-            item.setRegistryName(name);
-            ITEMS.add(item);
-        }
-        return block;
-    }
-
-    @SubscribeEvent
-    public static void registerBlocks(final RegistryEvent.Register<Block> event)
-    {
-        BLOCKS.forEach(block -> event.getRegistry().register(block));
-        BLOCKS.clear();
-        VanillaExpansions.LOGGER.info("All the blocks with the pre-fix 'minecraft:' are intended overrides");
-    }
+	private static Block register(ResourceLocation name, boolean hasItemBlock, Block block, Item.Properties properties)
+	{
+		return register(name, hasItemBlock, block, new BlockItem(block, properties));
+	}
     
-    @SubscribeEvent
-    public static void registerItemBlocks(final RegistryEvent.Register<Item> event)
-    {
-        ITEMS.forEach(item -> event.getRegistry().register(item));
-        ITEMS.clear();
-    }
+	private static Block register(ResourceLocation name, boolean hasItemBlock, Block block, BlockItem item)
+	{
+		block.setRegistryName(name);
+		BLOCKS.add(block);
+		if(hasItemBlock && block.getRegistryName() != null)
+		{
+			item.setRegistryName(name);
+			ITEMS.add(item);
+		}
+		return block;
+	}
+	
+	@SubscribeEvent
+	public static void registerBlocks(final RegistryEvent.Register<Block> event)
+	{
+		BLOCKS.forEach(block -> event.getRegistry().register(block));
+		BLOCKS.clear();
+		VanillaExpansions.LOGGER.info("All the blocks with the pre-fix 'minecraft:' are intended overrides");
+		VanillaExpansions.LOGGER.info("Blocks registered.");
+	}
+	
+	@SubscribeEvent
+	public static void registerItemBlocks(final RegistryEvent.Register<Item> event)
+	{
+		ITEMS.forEach(item -> event.getRegistry().register(item));
+		ITEMS.clear();
+		VanillaExpansions.LOGGER.info("Item blocks registered.");
+	}
 }
