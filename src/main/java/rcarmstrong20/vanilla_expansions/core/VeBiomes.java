@@ -22,6 +22,9 @@ import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
 
+/*
+ * Author: rcarmstrong20
+ */
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class VeBiomes
 {

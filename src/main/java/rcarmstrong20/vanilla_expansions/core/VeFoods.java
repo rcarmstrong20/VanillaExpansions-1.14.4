@@ -4,6 +4,9 @@ import net.minecraft.item.Food;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
+/*
+ * Author: rcarmstrong20
+ */
 public class VeFoods
 {
 	public static final Food VOID_WATER_BUCKET = new Food.Builder().setAlwaysEdible().effect(new EffectInstance(Effects.BLINDNESS, 600, 2, true, true), 1.0F).effect(new EffectInstance(Effects.NIGHT_VISION, 600, 2, true, true), 1.0F).effect(new EffectInstance(Effects.WITHER, 200, 0, true, true), 1.0F).effect(new EffectInstance(Effects.WEAKNESS, 600, 2, true, true), 1.0F).build();
