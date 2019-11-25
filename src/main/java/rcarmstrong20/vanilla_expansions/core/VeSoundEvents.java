@@ -34,5 +34,7 @@ public class VeSoundEvents
     {
         SOUNDS.forEach(soundEvent -> event.getRegistry().register(soundEvent));
         SOUNDS.clear();
+        
+        VanillaExpansions.LOGGER.info("Sound events registered.");
     }
 }
