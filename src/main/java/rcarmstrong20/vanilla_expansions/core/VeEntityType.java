@@ -36,5 +36,7 @@ public class VeEntityType
     {
         ENTITY_TYPES.forEach(type -> event.getRegistry().register(type));
         ENTITY_TYPES.clear();
+        
+        VanillaExpansions.LOGGER.info("Entity types registered.");
     }
 }
