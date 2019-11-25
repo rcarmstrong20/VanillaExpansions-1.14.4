@@ -3,6 +3,8 @@ package rcarmstrong20.vanilla_expansions.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.base.Suppliers;
+
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockNamedItem;
@@ -98,7 +100,7 @@ public class VeItems
 	public static Item chop_sticks = register(VanillaExpansions.location("chop_sticks"), new Item(VE_ITEMS));
 	public static Item quinoa_cerceal = register(VanillaExpansions.location("quinoa_cerceal"), new SoupItem(new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.QUINOA_CERCEAL)));
 	public static Item smoky_quartz = register(VanillaExpansions.location("smoky_quartz"), new Item(VE_ITEMS));
-	public static Item void_bucket = register(VanillaExpansions.location("void_bucket"), new VeVoidBucketItem(new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.VOID_WATER_BUCKET)));
+	public static Item void_bucket = register(VanillaExpansions.location("void_bucket"), new VeVoidBucketItem(Suppliers.ofInstance(VeFluids.VOID), new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.VOID_WATER_BUCKET)));
 	public static Item frosting = register(VanillaExpansions.location("frosting"), new Item(VE_ITEMS));
 	public static Item gingerbread = register(VanillaExpansions.location("gingerbread"), new Item(VE_ITEMS));
 	public static Item orange_gumdrop = register(VanillaExpansions.location("orange_gumdrop"), new Item(VE_ITEMS));
@@ -136,5 +138,7 @@ public class VeItems
     {
         ITEMS.forEach(item -> event.getRegistry().register(item));
         ITEMS.clear();
+        
+        VanillaExpansions.LOGGER.info("Items registered.");
     }
 }
