@@ -24,9 +24,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
-import rcarmstrong20.vanilla_expansions.core.VeSawContainerType;
-import rcarmstrong20.vanilla_expansions.item.crafting.CuttingRecipe;
-import rcarmstrong20.vanilla_expansions.item.crafting.IVeRecipeType;
+import rcarmstrong20.vanilla_expansions.core.VeContainerType;
+import rcarmstrong20.vanilla_expansions.item.crafting.WoodCuttingRecipe;
+import rcarmstrong20.vanilla_expansions.item.crafting.VeRecipeType;
 
 public class VeSawContainer extends Container
 {
@@ -34,7 +34,7 @@ public class VeSawContainer extends Container
 	private final IWorldPosCallable world_callable;
 	private final IntReferenceHolder single_interface_holder = IntReferenceHolder.single();
 	private final World world;
-	private List<CuttingRecipe> recipes = Lists.newArrayList();
+	private List<WoodCuttingRecipe> recipes = Lists.newArrayList();
 	private ItemStack empty_stack = ItemStack.EMPTY;
 	private long field_217093_l;
 	final Slot slot1;
@@ -62,7 +62,7 @@ public class VeSawContainer extends Container
 	}
 	
 	public VeSawContainer(int p_i50060_1_, PlayerInventory p_i50060_2_, final IWorldPosCallable p_i50060_3_) {
-		super(VeSawContainerType.SAW, p_i50060_1_);
+		super(VeContainerType.SAW, p_i50060_1_);
 		this.world_callable = p_i50060_3_;
 		this.world = p_i50060_2_.player.world;
 		this.slot1 = this.addSlot(new Slot(this.inventorySlot1, 0, 20, 33));
@@ -112,7 +112,7 @@ public class VeSawContainer extends Container
 	   }
 
 	   @OnlyIn(Dist.CLIENT)
-	   public List<CuttingRecipe> getRecipeList() {
+	   public List<WoodCuttingRecipe> getRecipeList() {
 	      return this.recipes;
 	   }
 
@@ -162,14 +162,14 @@ public class VeSawContainer extends Container
 	      this.single_interface_holder.set(-1);
 	      this.slot2.putStack(ItemStack.EMPTY);
 	      if (!p_217074_2_.isEmpty()) {
-	         this.recipes = this.world.getRecipeManager().getRecipes(IVeRecipeType.CUTTING, p_217074_1_, this.world);
+	         this.recipes = this.world.getRecipeManager().getRecipes(VeRecipeType.WOOD_CUTTING, p_217074_1_, this.world);
 	      }
 
 	   }
 	   
 	   private void func_217082_i() {
 	      if (!this.recipes.isEmpty()) {
-	         CuttingRecipe cuttingrecipe = this.recipes.get(this.single_interface_holder.get());
+	         WoodCuttingRecipe cuttingrecipe = this.recipes.get(this.single_interface_holder.get());
 	         this.slot2.putStack(cuttingrecipe.getCraftingResult(this.inventorySlot1));
 	      } else {
 	         this.slot2.putStack(ItemStack.EMPTY);
@@ -181,7 +181,7 @@ public class VeSawContainer extends Container
 	   @Override
 	   public ContainerType<?> getType()
 	   {
-	      return VeSawContainerType.SAW;
+	      return VeContainerType.SAW;
 	   }
 
 	   @OnlyIn(Dist.CLIENT)
