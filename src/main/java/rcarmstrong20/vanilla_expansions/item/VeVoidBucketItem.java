@@ -1,26 +1,18 @@
 package rcarmstrong20.vanilla_expansions.item;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionType;
-import rcarmstrong20.vanilla_expansions.core.VeItems;
+import java.util.function.Supplier;
 
-public class VeVoidBucketItem extends Item
+import net.minecraft.fluid.Fluid;
+import net.minecraft.item.BucketItem;
+
+public class VeVoidBucketItem extends BucketItem
 {
-	private static DimensionType dimType;
-	
-	public VeVoidBucketItem(Properties properties)
+	public VeVoidBucketItem(Supplier<? extends Fluid> supplier, Properties properties)
 	{
-		super(properties);
+		super(supplier, properties);
 	}
 	
+	/*
 	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving)
 	{
@@ -40,4 +32,5 @@ public class VeVoidBucketItem extends Item
 		}
 		return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
+	*/
 }
