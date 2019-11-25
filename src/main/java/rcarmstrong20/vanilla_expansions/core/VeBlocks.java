@@ -3,6 +3,8 @@ package rcarmstrong20.vanilla_expansions.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.base.Suppliers;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CampfireBlock;
@@ -11,12 +13,14 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.VeBlock;
@@ -24,6 +28,7 @@ import rcarmstrong20.vanilla_expansions.block.VeBeetrootBlock;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
 import rcarmstrong20.vanilla_expansions.block.VeDoubleSlabBlock;
+import rcarmstrong20.vanilla_expansions.block.VeFlowingVoidWaterBlock;
 import rcarmstrong20.vanilla_expansions.block.VeGlassBlock;
 import rcarmstrong20.vanilla_expansions.block.VeLadderBlock;
 import rcarmstrong20.vanilla_expansions.block.VeMultiPlushBlock;
@@ -239,6 +244,7 @@ public class VeBlocks
 	public static Block red_campfire = register(VanillaExpansions.location("red_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.WHEAT)));
+	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidWaterBlock(Suppliers.ofInstance(VeFluids.VOID), Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
 	
 	//Double slabs
 	
