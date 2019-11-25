@@ -35,6 +35,7 @@ public class VeContainerType
     {
 		CONTAINER_TYPES.forEach(type -> event.getRegistry().register(type));
 		CONTAINER_TYPES.clear();
+		VanillaExpansions.LOGGER.info("Container types registered.");
     }
 	/*
 	@OnlyIn(Dist.CLIENT)
