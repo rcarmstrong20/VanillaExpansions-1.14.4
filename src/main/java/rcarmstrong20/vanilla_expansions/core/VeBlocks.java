@@ -29,7 +29,7 @@ import rcarmstrong20.vanilla_expansions.block.VeBeetrootBlock;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
 import rcarmstrong20.vanilla_expansions.block.VeDoubleSlabBlock;
-import rcarmstrong20.vanilla_expansions.block.VeFlowingVoidWaterBlock;
+import rcarmstrong20.vanilla_expansions.block.VeFlowingVoidBlock;
 import rcarmstrong20.vanilla_expansions.block.VeGlassBlock;
 import rcarmstrong20.vanilla_expansions.block.VeLadderBlock;
 import rcarmstrong20.vanilla_expansions.block.VeMultiPlushBlock;
@@ -245,7 +245,7 @@ public class VeBlocks
 	public static Block red_campfire = register(VanillaExpansions.location("red_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new CampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.WHEAT)));
-	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidWaterBlock(Suppliers.ofInstance(VeFluids.VOID), Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
+	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidBlock(Suppliers.ofInstance(VeFluids.VOID), Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
 	
 	//Double slabs
 	
