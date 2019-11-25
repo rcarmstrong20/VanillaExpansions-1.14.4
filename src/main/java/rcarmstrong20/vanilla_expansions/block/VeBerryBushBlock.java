@@ -1,5 +1,6 @@
 package rcarmstrong20.vanilla_expansions.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.entity.Entity;
@@ -12,6 +13,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
@@ -23,6 +26,8 @@ import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public class VeBerryBushBlock extends SweetBerryBushBlock
 {
+	private static final VoxelShape WITCHS_CRADLE_STAGE_0_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 9.0D, 14.0D);
+	
 	public VeBerryBushBlock(Properties properties)
 	{
 		super(properties);
@@ -36,6 +41,16 @@ public class VeBerryBushBlock extends SweetBerryBushBlock
 	private int getMaxAge()
 	{
 		return 3;
+	}
+	
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context)
+	{
+		if(this == VeBlocks.witchs_cradle && state.get(AGE) == 0)
+		{
+			return WITCHS_CRADLE_STAGE_0_SHAPE;
+		}
+		return super.getShape(state, worldIn, pos, context);
 	}
 	
 	@OnlyIn(Dist.CLIENT)
