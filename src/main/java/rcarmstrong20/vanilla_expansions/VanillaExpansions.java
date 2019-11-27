@@ -47,7 +47,7 @@ public class VanillaExpansions
 	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistrationHandler
 	{
-		
+		 
 		
 		/*
 		@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
