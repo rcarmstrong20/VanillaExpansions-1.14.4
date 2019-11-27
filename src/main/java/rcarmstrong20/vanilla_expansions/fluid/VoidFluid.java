@@ -16,6 +16,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -24,6 +25,8 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fluids.FluidAttributes;
+import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.core.VeFluids;
 import rcarmstrong20.vanilla_expansions.core.VeItems;
@@ -59,6 +62,14 @@ public class VoidFluid extends WaterFluid
 	public boolean func_215665_a(IFluidState state, IBlockReader reader, BlockPos pos, Fluid fluid, Direction direction)
 	{
 		return direction == Direction.DOWN && !fluid.isIn(FluidTags.WATER);
+	}
+	
+	protected FluidAttributes createAttributes()
+	{
+		FluidAttributes.Builder builder = FluidAttributes.builder(VanillaExpansions.location("block/void_still"), VanillaExpansions.location("block/void_flow"));
+		
+		builder.luminosity(15).density(1000).viscosity(3000);
+		return builder.build((Fluid)this);
 	}
 	
 	@Override
@@ -131,7 +142,8 @@ public class VoidFluid extends WaterFluid
 		}
 		
 		@Override
-		public boolean isSource(IFluidState state) {
+		public boolean isSource(IFluidState state)
+		{
 			return false;
 		}
 	}
