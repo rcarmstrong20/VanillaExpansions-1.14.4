@@ -1,7 +1,7 @@
 {
     "textures":
 	{
-        "particle": "block/end_portal"
+        "particle": "ve:block/void_still"
     }
 }
 
