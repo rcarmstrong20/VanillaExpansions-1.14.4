@@ -5,6 +5,6 @@
         "material": "block/obsidian",
 		"soil" : "block/end_stone",
 		"pillar" : "block/bedrock",
-		"liquid" : "ve:block/end_portal"
+		"liquid" : "ve:block/void_flow"
     }
 }
