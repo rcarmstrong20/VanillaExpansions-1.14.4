@@ -126,6 +126,9 @@ public class VeItems
 	public static Item sweet_berries = register(VanillaExpansions.vanillaLocation("sweet_berries"), new BlockNamedItem(VeBlocks.sweet_berry_bush, new Item.Properties().group(ItemGroup.FOOD)));
 	public static Item rabbit_spawn_egg = register(VanillaExpansions.vanillaLocation("rabbit_spawn_egg"), new SpawnEggItem(VeEntityType.rabbit, 10051392, 7555121, (new Item.Properties()).group(ItemGroup.MISC)));
 	
+	/*
+	 * Set the registry name the items and add them to the registry list.
+	 */
 	private static Item register(ResourceLocation name, Item item)
 	{
 		item.setRegistryName(name);
@@ -133,8 +136,11 @@ public class VeItems
 		return item;
 	}
 	
+	/*
+	 * Register the Items to the game
+	 */
 	@SubscribeEvent
-    public static void registerItemBlocks(final RegistryEvent.Register<Item> event)
+    public static void registerItems(final RegistryEvent.Register<Item> event)
     {
         ITEMS.forEach(item -> event.getRegistry().register(item));
         ITEMS.clear();
