@@ -13,7 +13,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -48,12 +47,6 @@ public class VeFluids
 	}
 	
 	@SubscribeEvent
-	public static void onStitch(TextureStitchEvent.Pre event)
-	{
-		VanillaExpansions.LOGGER.info("Fluid textures registered.");
-	}
-	
-	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public void onFogColor(EntityViewRenderEvent.FogColors event)
 	{
@@ -64,7 +57,7 @@ public class VeFluids
 			event.setRed(0.0F);
 			event.setGreen(0.0F);
 			event.setBlue(0.0F);
-		} 
+		}
 	}
 	
 	

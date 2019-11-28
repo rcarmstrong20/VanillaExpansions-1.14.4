@@ -29,6 +29,7 @@ import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.core.VeFluids;
 import rcarmstrong20.vanilla_expansions.core.VeItems;
+import rcarmstrong20.vanilla_expansions.core.VeParticleTypes;
 
 public class VoidFluid extends WaterFluid
 {
@@ -87,14 +88,14 @@ public class VoidFluid extends WaterFluid
 			worldIn.addParticle(ParticleTypes.UNDERWATER, (double)((float)pos.getX() + random.nextFloat()), (double)((float)pos.getY() + random.nextFloat()), (double)((float)pos.getZ() + random.nextFloat()), 0.0D, 0.0D, 0.0D);
 		}	
 	}
-	
+	/*
 	@Nullable
 	@OnlyIn(Dist.CLIENT)
 	public IParticleData getDripParticleData()
 	{
-		return ParticleTypes.DRIPPING_WATER;
+		return VeParticleTypes.DRIPPING_VOID;
 	}
-	
+	*/
 	@Override
 	public BlockState getBlockState(IFluidState state)
 	{
