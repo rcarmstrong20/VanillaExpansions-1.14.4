@@ -41,12 +41,14 @@ public class VeBiomes
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
-		
 		registerFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
 		
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
+	/*
+	 * Add a new feature to be spawned into the world.
+	 */
 	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, Biome... biomes)
 	{
 		for(Biome biome : biomes)
@@ -58,6 +60,9 @@ public class VeBiomes
 		}
 	}
 	
+	/*
+	 * Add a new entity to be spawned into the world.
+	 */
 	@SuppressWarnings("unused")
 	private static void registerEntitySpawn(EntityType<?> entity, int weight, int maxCount, Biome... biomes)
 	{
