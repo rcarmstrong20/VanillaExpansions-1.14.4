@@ -9,13 +9,12 @@ import net.minecraft.item.crafting.SingleItemRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
-import rcarmstrong20.vanilla_expansions.core.VeRecipeSerializers;
 
 public class WoodCuttingRecipe extends SingleItemRecipe
 {
 	public WoodCuttingRecipe(IRecipeType<?> type, IRecipeSerializer<?> serializer, ResourceLocation id, String group, Ingredient ingredient, ItemStack result)
 	{
-		super(VeRecipeType.WOOD_CUTTING, VeRecipeSerializers.WOOD_CUTTING, id, group, ingredient, result);
+		super(VeRecipeType.WOOD_CUTTING, serializer, id, group, ingredient, result);
 	}
 	
 	@Override
