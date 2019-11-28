@@ -44,39 +44,17 @@ public class VanillaExpansions
 		PROXY.onSetupClient();
 	}
 	
-	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-	public static class RegistrationHandler
-	{
-		 
-		
-		/*
-		@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-		public static void registerFillBucketEvents(final FillBucketEvent event)
-		{
-			DimensionType dimensionType = event.getWorld().getDimension().getType();
-			ItemStack stack = event.getPlayer().getHeldItemMainhand();
-			
-			if(dimensionType == DimensionType.THE_END && !event.getWorld().isRemote && event.getPlayer().getHeight() < 15)
-			{
-				event.getPlayer().addItemStackToInventory(new ItemStack(VeItems.void_bucket));
-				stack.shrink(1);
-				event.setResult(Result.ALLOW);
-			}
-			else
-			{
-				event.setResult(Result.DEFAULT);
-			}
-			
-			VanillaExpansions.LOGGER.info("Fill bucket events registered");
-		}
-		*/
-	}
-	
+	/*
+	 * Get the location ve:name
+	 */
 	public static ResourceLocation location(String name)
 	{
 		return new ResourceLocation(VanillaExpansions.MOD_ID, name);
 	}
 	
+	/*
+	 * Get the location of minecraft:name
+	 */
 	public static ResourceLocation vanillaLocation(String name)
 	{
 		return new ResourceLocation(VanillaExpansions.MINECRAFT_ID, name);
