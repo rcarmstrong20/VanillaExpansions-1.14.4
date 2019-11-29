@@ -24,6 +24,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.fluids.FluidAttributes;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
@@ -88,14 +89,14 @@ public class VoidFluid extends WaterFluid
 			worldIn.addParticle(ParticleTypes.UNDERWATER, (double)((float)pos.getX() + random.nextFloat()), (double)((float)pos.getY() + random.nextFloat()), (double)((float)pos.getZ() + random.nextFloat()), 0.0D, 0.0D, 0.0D);
 		}	
 	}
-	/*
+	
 	@Nullable
 	@OnlyIn(Dist.CLIENT)
 	public IParticleData getDripParticleData()
 	{
 		return VeParticleTypes.DRIPPING_VOID;
 	}
-	*/
+	
 	@Override
 	public BlockState getBlockState(IFluidState state)
 	{
