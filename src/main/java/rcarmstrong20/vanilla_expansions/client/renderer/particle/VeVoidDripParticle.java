@@ -17,11 +17,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.core.VeFluids;
 import rcarmstrong20.vanilla_expansions.core.VeParticleTypes;
 
-public class VoidDripParticle extends SpriteTexturedParticle
+public class VeVoidDripParticle extends SpriteTexturedParticle
 {	
 	private final Fluid fluid;
 	
-	private VoidDripParticle(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn)
+	private VeVoidDripParticle(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn)
 	{
 		super(worldIn, xIn, yIn, zIn);
 		this.setSize(0.01F, 0.01F);
@@ -74,13 +74,13 @@ public class VoidDripParticle extends SpriteTexturedParticle
 	protected void func_217577_h() {}
 	
 	@OnlyIn(Dist.CLIENT)
-	static class Dripping extends VoidDripParticle
+	static class Dripping extends VeVoidDripParticle
 	{
-		private final IParticleData field_217579_C;
+		private final IParticleData data;
 		
-		private Dripping(World worldIn, double p_i50509_2_, double p_i50509_4_, double p_i50509_6_, Fluid p_i50509_8_, IParticleData p_i50509_9_) {
-			super(worldIn, p_i50509_2_, p_i50509_4_, p_i50509_6_, p_i50509_8_);
-			this.field_217579_C = p_i50509_9_;
+		private Dripping(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn) {
+			super(worldIn, xIn, yIn, zIn, fluidIn);
+			this.data = dataIn;
 			this.particleGravity *= 0.02F;
 			this.maxAge = 40;
 		}
@@ -88,7 +88,7 @@ public class VoidDripParticle extends SpriteTexturedParticle
 		protected void func_217576_g() {
 			if (this.maxAge-- <= 0) {
 				this.setExpired();
-				this.world.addParticle(this.field_217579_C, this.posX, this.posY, this.posZ, this.motionX, this.motionY, this.motionZ);
+				this.world.addParticle(this.data, this.posX, this.posY, this.posZ, this.motionX, this.motionY, this.motionZ);
 			}
 		}
 		
@@ -100,11 +100,11 @@ public class VoidDripParticle extends SpriteTexturedParticle
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	static class DrippingVoid extends VoidDripParticle.Dripping
+	static class DrippingVoid extends VeVoidDripParticle.Dripping
 	{
-		private DrippingVoid(World worldIn, double p_i50513_2_, double p_i50513_4_, double p_i50513_6_, Fluid p_i50513_8_, IParticleData p_i50513_9_)
+		private DrippingVoid(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn)
 		{
-			super(worldIn, p_i50513_2_, p_i50513_4_, p_i50513_6_, p_i50513_8_, p_i50513_9_);
+			super(worldIn, xIn, yIn, zIn, fluidIn, dataIn);
 		}
 		
 		protected void func_217576_g()
@@ -128,21 +128,21 @@ public class VoidDripParticle extends SpriteTexturedParticle
 		
 		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VoidDripParticle.DrippingVoid(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
+			VeVoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VeVoidDripParticle.DrippingVoid(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
 			dripparticle$drippingvoid.selectSpriteRandomly(this.spriteSet);
 			return dripparticle$drippingvoid;
 		}
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	static class Falling extends VoidDripParticle
+	static class Falling extends VeVoidDripParticle
 	{
-		private final IParticleData field_217578_C;
+		private final IParticleData data;
 		
-		private Falling(World p_i50511_1_, double p_i50511_2_, double p_i50511_4_, double p_i50511_6_, Fluid p_i50511_8_, IParticleData p_i50511_9_)
+		private Falling(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn)
 		{
-			super(p_i50511_1_, p_i50511_2_, p_i50511_4_, p_i50511_6_, p_i50511_8_);
-			this.field_217578_C = p_i50511_9_;
+			super(worldIn, xIn, yIn, zIn, fluidIn);
+			this.data = dataIn;
 			this.maxAge = (int)(64.0D / (Math.random() * 0.8D + 0.2D));
 		}
 		
@@ -151,7 +151,7 @@ public class VoidDripParticle extends SpriteTexturedParticle
 			if (this.onGround)
 			{
 				this.setExpired();
-				this.world.addParticle(this.field_217578_C, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+				this.world.addParticle(this.data, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}
@@ -168,18 +168,18 @@ public class VoidDripParticle extends SpriteTexturedParticle
 		
 		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VoidDripParticle dripparticle = new VoidDripParticle.Falling(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.LANDING_VOID);
+			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Falling(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.LANDING_VOID);
 			dripparticle.selectSpriteRandomly(this.spriteSet);
 			return dripparticle;
 		}
 	}
 	
 	@OnlyIn(Dist.CLIENT)
-	static class Landing extends VoidDripParticle
+	static class Landing extends VeVoidDripParticle
 	{
-		private Landing(World p_i50507_1_, double p_i50507_2_, double p_i50507_4_, double p_i50507_6_, Fluid p_i50507_8_)
+		private Landing(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn)
 		{
-			super(p_i50507_1_, p_i50507_2_, p_i50507_4_, p_i50507_6_, p_i50507_8_);
+			super(worldIn, xIn, yIn, zIn, fluidIn);
 			this.maxAge = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
 		}
 	}
@@ -189,14 +189,14 @@ public class VoidDripParticle extends SpriteTexturedParticle
 	{
 		protected final IAnimatedSprite spriteSet;
 		
-		public LandingVoidFactory(IAnimatedSprite sprite)
+		public LandingVoidFactory(IAnimatedSprite spriteIn)
 		{
-			this.spriteSet = sprite;
+			this.spriteSet = spriteIn;
 		}
 		
 		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VoidDripParticle dripparticle = new VoidDripParticle.Landing(worldIn, x, y, z, VeFluids.VOID);
+			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Landing(worldIn, x, y, z, VeFluids.VOID);
 			dripparticle.selectSpriteRandomly(this.spriteSet);
 			return dripparticle;
 		}
