@@ -24,7 +24,6 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.fluids.FluidAttributes;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
