@@ -19,6 +19,7 @@ public class VeParticleTypes
 	public static final BasicParticleType DRIPPING_VOID = register(VanillaExpansions.location("dripping_void"), false);
 	public static final BasicParticleType FALLING_VOID = register(VanillaExpansions.location("falling_void"), false);
 	public static final BasicParticleType LANDING_VOID = register(VanillaExpansions.location("landing_void"), false);
+	public static final BasicParticleType UNDERVOID = register(VanillaExpansions.location("undervoid"), false);
 	
 	private static BasicParticleType register(ResourceLocation name, boolean alwaysShow)
 	{
