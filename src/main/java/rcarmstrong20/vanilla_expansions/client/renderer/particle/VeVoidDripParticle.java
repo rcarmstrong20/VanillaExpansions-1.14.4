@@ -17,6 +17,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.core.VeFluids;
 import rcarmstrong20.vanilla_expansions.core.VeParticleTypes;
 
+@OnlyIn(Dist.CLIENT)
 public class VeVoidDripParticle extends SpriteTexturedParticle
 {	
 	private final Fluid fluid;
