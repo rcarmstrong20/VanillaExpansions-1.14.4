@@ -18,9 +18,9 @@ public class VeUndervoidParticle extends SpriteTexturedParticle
 	private VeUndervoidParticle(World world, double x, double y, double z)
 	{
 		super(world, x, y, z);
-		this.particleRed = 0.0F;
-		this.particleGreen = 0.0F;
-		this.particleBlue = 0.0F;
+		this.particleRed = 14.0F;
+		this.particleGreen = 14.0F;
+		this.particleBlue = 14.0F;
 		this.setSize(0.01F, 0.01F);
 		this.particleScale *= this.rand.nextFloat() * 0.6F + 0.2F;
 		this.maxAge = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
