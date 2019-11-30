@@ -9,7 +9,6 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.IFluidState;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,22 +21,17 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 {	
 	private final Fluid fluid;
 	
-	private VeVoidDripParticle(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn)
+	private VeVoidDripParticle(World world, double x, double y, double z, Fluid fluid)
 	{
-		super(worldIn, xIn, yIn, zIn);
+		super(world, x, y, z);
 		this.setSize(0.01F, 0.01F);
 		this.particleGravity = 0.06F;
-		this.fluid = fluidIn;
+		this.fluid = fluid;
 	}
 	
 	public IParticleRenderType getRenderType()
 	{
 		return IParticleRenderType.PARTICLE_SHEET_OPAQUE;
-	}
-	
-	public int getBrightnessForRender(float partialTick)
-	{
-		return this.fluid.isIn(FluidTags.LAVA) ? 20 : super.getBrightnessForRender(partialTick);
 	}
 	
 	public void tick()
@@ -77,23 +71,27 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 	@OnlyIn(Dist.CLIENT)
 	static class Dripping extends VeVoidDripParticle
 	{
-		private final IParticleData data;
+		private final IParticleData particleData;
 		
-		private Dripping(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn) {
-			super(worldIn, xIn, yIn, zIn, fluidIn);
-			this.data = dataIn;
+		private Dripping(World world, double x, double y, double z, Fluid fluid, IParticleData particleData)
+		{
+			super(world, x, y, z, fluid);
+			this.particleData = particleData;
 			this.particleGravity *= 0.02F;
 			this.maxAge = 40;
 		}
 		
-		protected void func_217576_g() {
-			if (this.maxAge-- <= 0) {
+		protected void func_217576_g()
+		{
+			if (this.maxAge-- <= 0)
+			{
 				this.setExpired();
-				this.world.addParticle(this.data, this.posX, this.posY, this.posZ, this.motionX, this.motionY, this.motionZ);
+				this.world.addParticle(this.particleData, this.posX, this.posY, this.posZ, this.motionX, this.motionY, this.motionZ);
 			}
 		}
 		
-		protected void func_217577_h() {
+		protected void func_217577_h()
+		{
 			this.motionX *= 0.02D;
 			this.motionY *= 0.02D;
 			this.motionZ *= 0.02D;
@@ -103,16 +101,13 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 	@OnlyIn(Dist.CLIENT)
 	static class DrippingVoid extends VeVoidDripParticle.Dripping
 	{
-		private DrippingVoid(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn)
+		private DrippingVoid(World world, double x, double y, double z, Fluid fluid, IParticleData data)
 		{
-			super(worldIn, xIn, yIn, zIn, fluidIn, dataIn);
+			super(world, x, y, z, fluid, data);
 		}
 		
 		protected void func_217576_g()
 		{
-			this.particleRed = 1.0F;
-			this.particleGreen = 16.0F / (float)(40 - this.maxAge + 16);
-			this.particleBlue = 4.0F / (float)(40 - this.maxAge + 8);
 			super.func_217576_g();
 		}
 	}
@@ -122,14 +117,14 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 	{
 		protected final IAnimatedSprite spriteSet;
 		
-		public DrippingVoidFactory(IAnimatedSprite spriteSetIn)
+		public DrippingVoidFactory(IAnimatedSprite spriteSet)
 		{
-			this.spriteSet = spriteSetIn;
+			this.spriteSet = spriteSet;
 		}
 		
-		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
+		public Particle makeParticle(BasicParticleType basicParticleType, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VeVoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VeVoidDripParticle.DrippingVoid(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
+			VeVoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VeVoidDripParticle.DrippingVoid(world, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
 			dripparticle$drippingvoid.selectSpriteRandomly(this.spriteSet);
 			return dripparticle$drippingvoid;
 		}
@@ -138,12 +133,12 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 	@OnlyIn(Dist.CLIENT)
 	static class Falling extends VeVoidDripParticle
 	{
-		private final IParticleData data;
+		private final IParticleData particleData;
 		
-		private Falling(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn, IParticleData dataIn)
+		private Falling(World world, double x, double y, double z, Fluid fluid, IParticleData particleData)
 		{
-			super(worldIn, xIn, yIn, zIn, fluidIn);
-			this.data = dataIn;
+			super(world, x, y, z, fluid);
+			this.particleData = particleData;
 			this.maxAge = (int)(64.0D / (Math.random() * 0.8D + 0.2D));
 		}
 		
@@ -152,7 +147,7 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 			if (this.onGround)
 			{
 				this.setExpired();
-				this.world.addParticle(this.data, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+				this.world.addParticle(this.particleData, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}
@@ -167,9 +162,9 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 			this.spriteSet = spriteIn;
 		}
 		
-		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
+		public Particle makeParticle(BasicParticleType basicParticleType, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Falling(worldIn, x, y, z, VeFluids.VOID, VeParticleTypes.LANDING_VOID);
+			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Falling(world, x, y, z, VeFluids.VOID, VeParticleTypes.LANDING_VOID);
 			dripparticle.selectSpriteRandomly(this.spriteSet);
 			return dripparticle;
 		}
@@ -178,9 +173,9 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 	@OnlyIn(Dist.CLIENT)
 	static class Landing extends VeVoidDripParticle
 	{
-		private Landing(World worldIn, double xIn, double yIn, double zIn, Fluid fluidIn)
+		private Landing(World world, double x, double y, double z, Fluid fluid)
 		{
-			super(worldIn, xIn, yIn, zIn, fluidIn);
+			super(world, x, y, z, fluid);
 			this.maxAge = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
 		}
 	}
@@ -195,9 +190,9 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 			this.spriteSet = spriteIn;
 		}
 		
-		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
+		public Particle makeParticle(BasicParticleType basicParticalType, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Landing(worldIn, x, y, z, VeFluids.VOID);
+			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Landing(world, x, y, z, VeFluids.VOID);
 			dripparticle.selectSpriteRandomly(this.spriteSet);
 			return dripparticle;
 		}
