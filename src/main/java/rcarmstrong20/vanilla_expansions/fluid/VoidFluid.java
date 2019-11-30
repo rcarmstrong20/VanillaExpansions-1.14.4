@@ -11,7 +11,6 @@ import net.minecraft.fluid.IFluidState;
 import net.minecraft.fluid.WaterFluid;
 import net.minecraft.item.Item;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
@@ -85,7 +84,7 @@ public class VoidFluid extends WaterFluid
 		}
 		else if (random.nextInt(10) == 0)
 		{
-			worldIn.addParticle(ParticleTypes.UNDERWATER, (double)((float)pos.getX() + random.nextFloat()), (double)((float)pos.getY() + random.nextFloat()), (double)((float)pos.getZ() + random.nextFloat()), 0.0D, 0.0D, 0.0D);
+			worldIn.addParticle(VeParticleTypes.UNDERVOID, (double)((float)pos.getX() + random.nextFloat()), (double)((float)pos.getY() + random.nextFloat()), (double)((float)pos.getZ() + random.nextFloat()), 0.0D, 0.0D, 0.0D);
 		}	
 	}
 	
