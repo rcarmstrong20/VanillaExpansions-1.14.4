@@ -44,16 +44,16 @@ public class VanillaExpansions
 		PROXY.onSetupClient();
 	}
 	
-	/*
-	 * Get the location ve:name
+	/**
+	 * Get the resource location ve:name
 	 */
 	public static ResourceLocation location(String name)
 	{
 		return new ResourceLocation(VanillaExpansions.MOD_ID, name);
 	}
 	
-	/*
-	 * Get the location of minecraft:name
+	/**
+	 * Get the resource location minecraft:name
 	 */
 	public static ResourceLocation vanillaLocation(String name)
 	{
