@@ -1,6 +1,6 @@
 {
     "variants":
 	{
-        "": { "model": "block/void" }
+        "": { "model": "ve:block/void" }
     }
 }

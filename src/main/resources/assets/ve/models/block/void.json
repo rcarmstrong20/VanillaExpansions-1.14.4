@@ -1,7 +1,7 @@
 {
     "textures":
 	{
-        "particle": "block/void_still"
+        "particle": "ve:block/void_still"
     }
 }
 
