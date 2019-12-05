@@ -240,7 +240,7 @@ public class VeBlocks
 	public static Block red_campfire = register(VanillaExpansions.location("red_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.WHEAT)));
-	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidBlock(() -> VeFluids.FLOWING_VOID, Block.Properties.from(Blocks.WATER)));
+	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidBlock(() -> VeFluids.FLOWING_VOID, Block.Properties.create(Material.WATER, MaterialColor.BLACK).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
 	
 	//Double slabs
 	
