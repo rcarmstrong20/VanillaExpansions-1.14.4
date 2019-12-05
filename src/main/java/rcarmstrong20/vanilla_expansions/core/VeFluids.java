@@ -27,8 +27,8 @@ public class VeFluids
 {
 	private static final List<Fluid> FLUIDS = new ArrayList<>();
 	
+	public static final Fluid VOID = register(VanillaExpansions.location("void"), new VoidFluid.Source());
 	public static final FlowingFluid FLOWING_VOID = register(VanillaExpansions.location("flowing_void"), new VoidFluid.Flowing());
-	public static final FlowingFluid VOID = register(VanillaExpansions.location("void"), new VoidFluid.Source());
 	
 	private static FlowingFluid register(ResourceLocation location, FlowingFluid fluid)
 	{
