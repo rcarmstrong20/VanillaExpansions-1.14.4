@@ -1,9 +1,0 @@
-{
-    "variants":
-	{
-        "facing=north": { "model": "ve:block/saw" },
-        "facing=south": { "model": "ve:block/saw", "y": 180 },
-        "facing=west": { "model": "ve:block/saw", "y": 270 },
-        "facing=east": { "model": "ve:block/saw", "y": 90 }
-    }
-}
