@@ -1,4 +1,4 @@
-package rcarmstrong20.vanilla_expansions.client.renderer;
+package rcarmstrong20.vanilla_expansions.client.renderer.tile_entity;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 
