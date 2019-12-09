@@ -17,13 +17,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.core.VeContainerTypes;
 import rcarmstrong20.vanilla_expansions.core.VeRecipeTypes;
+import rcarmstrong20.vanilla_expansions.core.VeSoundEvents;
 import rcarmstrong20.vanilla_expansions.item.crafting.VeWoodCuttingRecipe;
 
 public class VeWoodcutterContainer extends Container
@@ -82,7 +82,7 @@ public class VeWoodcutterContainer extends Container
 				{
 					long l = p_216954_1_.getGameTime();
 					if (VeWoodcutterContainer.this.field_217093_l != l) {
-						p_216954_1_.playSound((PlayerEntity)null, p_216954_2_, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						p_216954_1_.playSound((PlayerEntity)null, p_216954_2_, VeSoundEvents.UI_WOODCUTTER_TAKE_RESULT, SoundCategory.BLOCKS, 1.0F, 1.0F);
 						VeWoodcutterContainer.this.field_217093_l = l;
 					}
 				});
