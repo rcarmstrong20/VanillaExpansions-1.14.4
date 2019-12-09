@@ -36,7 +36,7 @@ import rcarmstrong20.vanilla_expansions.block.VePlantingPotBlock;
 import rcarmstrong20.vanilla_expansions.block.VePlushBlock;
 import rcarmstrong20.vanilla_expansions.block.VePotatoBlock;
 import rcarmstrong20.vanilla_expansions.block.VePurpleHugeMushroomBlock;
-import rcarmstrong20.vanilla_expansions.block.VeSawBlock;
+import rcarmstrong20.vanilla_expansions.block.VeWoodcutterBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSevenStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSinglePaintingBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSlabBlock;
@@ -222,7 +222,7 @@ public class VeBlocks
 	public static Block glass_of_darkness = register(VanillaExpansions.location("glass_of_darkness"), true, new VeGlassBlock(Block.Properties.from(Blocks.GLASS)));
 	public static Block purple_mushroom = register(VanillaExpansions.location("purple_mushroom"), true, new VeMushroomBlock(Block.Properties.from(Blocks.RED_MUSHROOM)));
 	public static Block purple_mushroom_block = register(VanillaExpansions.location("purple_mushroom_block"), true, new VePurpleHugeMushroomBlock(Block.Properties.from(Blocks.RED_MUSHROOM_BLOCK)));
-	public static Block saw = register(VanillaExpansions.location("saw"), true, new VeSawBlock(Block.Properties.from(Blocks.STONECUTTER)));
+	public static Block woodcutter = register(VanillaExpansions.location("woodcutter"), true, new VeWoodcutterBlock(Block.Properties.from(Blocks.STONECUTTER)));
 	public static Block white_campfire = register(VanillaExpansions.location("white_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block orange_campfire = register(VanillaExpansions.location("orange_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block magenta_campfire = register(VanillaExpansions.location("magenta_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));

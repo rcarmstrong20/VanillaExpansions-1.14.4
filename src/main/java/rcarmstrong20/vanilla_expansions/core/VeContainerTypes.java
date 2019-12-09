@@ -3,24 +3,28 @@ package rcarmstrong20.vanilla_expansions.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
-import rcarmstrong20.vanilla_expansions.inventory.container.VeSawContainer;
+import rcarmstrong20.vanilla_expansions.client.renderer.screen.VeWoodcutterScreen;
+import rcarmstrong20.vanilla_expansions.inventory.container.VeWoodcutterContainer;
 
 /*
  * Author: rcarmstrong20
  */
 @Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class VeContainerType
+public class VeContainerTypes
 {
 	public static final List<ContainerType<?>> CONTAINER_TYPES = new ArrayList<>();
 	
-	public static final ContainerType<VeSawContainer> SAW = buildType(VanillaExpansions.location("saw"), VeSawContainer::new);
+	public static final ContainerType<VeWoodcutterContainer> WOODCUTTER = buildType(VanillaExpansions.location("saw"), VeWoodcutterContainer::new);
 	
 	public static <T extends Container> ContainerType<T> buildType(ResourceLocation name, ContainerType.IFactory<T> factory)
 	{
@@ -37,10 +41,10 @@ public class VeContainerType
 		CONTAINER_TYPES.clear();
 		VanillaExpansions.LOGGER.info("Container types registered.");
     }
-	/*
+	
 	@OnlyIn(Dist.CLIENT)
     public static void registerScreenFactories()
     {
-        ScreenManager.registerFactory(SAW, StonecutterScreen::new);
-    }*/
+        ScreenManager.registerFactory(WOODCUTTER, VeWoodcutterScreen::new);
+    }
 }
