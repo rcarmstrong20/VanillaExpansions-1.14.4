@@ -124,7 +124,7 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 		
 		public Particle makeParticle(BasicParticleType basicParticleType, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VeVoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VeVoidDripParticle.DrippingVoid(world, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
+			VeVoidDripParticle.DrippingVoid dripparticle$drippingvoid = new VeVoidDripParticle.DrippingVoid(world, x, y, z, VeFluids.VOID, VeParticleTypes.DRIPPING_VOID);
 			dripparticle$drippingvoid.selectSpriteRandomly(this.spriteSet);
 			return dripparticle$drippingvoid;
 		}
@@ -164,7 +164,7 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 		
 		public Particle makeParticle(BasicParticleType basicParticleType, World world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
-			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Falling(world, x, y, z, VeFluids.VOID, VeParticleTypes.LANDING_VOID);
+			VeVoidDripParticle dripparticle = new VeVoidDripParticle.Falling(world, x, y, z, VeFluids.VOID, VeParticleTypes.FALLING_VOID);
 			dripparticle.selectSpriteRandomly(this.spriteSet);
 			return dripparticle;
 		}
