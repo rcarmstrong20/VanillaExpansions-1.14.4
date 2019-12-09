@@ -67,7 +67,7 @@ public class VoidFluid extends WaterFluid
 	{
 		FluidAttributes.Builder builder = FluidAttributes.builder(VanillaExpansions.location("block/void_still"), VanillaExpansions.location("block/void_flow"));
 		
-		builder.luminosity(20).density(1000).viscosity(3000).color(0xFF000000);
+		builder.luminosity(20).density(1000).viscosity(3000);
 		return builder.build((Fluid)this);
 	}
 	
