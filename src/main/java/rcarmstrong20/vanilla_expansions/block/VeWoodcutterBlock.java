@@ -14,7 +14,7 @@ import rcarmstrong20.vanilla_expansions.inventory.container.VeWoodcutterContaine
 
 public class VeWoodcutterBlock extends StonecutterBlock
 {
-	private static final TranslationTextComponent name = new TranslationTextComponent("container.saw");
+	private static final TranslationTextComponent name = new TranslationTextComponent("container.woodcutter");
 	
 	public VeWoodcutterBlock(Properties properties)
 	{
