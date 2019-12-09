@@ -4,7 +4,7 @@
         "bottom": "ve:block/woodcutter_bottom",
         "top": "ve:block/woodcutter_top",
         "side": "ve:block/woodcutter_side",
-        "woodcutter": "block/stonecutter_woodcutter"
+        "woodcutter": "block/stonecutter_saw"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
