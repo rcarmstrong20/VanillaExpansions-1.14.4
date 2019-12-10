@@ -26,20 +26,24 @@ import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.block.VeCampfireBlock;
 import rcarmstrong20.vanilla_expansions.core.VeTileEntityType;
 
-public class VeCampfireTileEntity extends TileEntity implements IClearable, ITickableTileEntity {
-   private final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
-   private final int[] cookingTimes = new int[4];
-   private final int[] cookingTotalTimes = new int[4];
-
-   public VeCampfireTileEntity() {
-      super(VeTileEntityType.campfire);
-   }
-
-   public void tick() {
-      boolean flag = this.getBlockState().get(VeCampfireBlock.LIT);
-      boolean flag1 = this.world.isRemote;
-      if (flag1) {
-         if (flag) {
+public class VeCampfireTileEntity extends TileEntity implements IClearable, ITickableTileEntity
+{
+	private final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
+	private final int[] cookingTimes = new int[4];
+	private final int[] cookingTotalTimes = new int[4];
+	
+	public VeCampfireTileEntity()
+	{
+		super(VeTileEntityType.campfire);
+	}
+	
+	public void tick()
+	{
+		boolean flag = this.getBlockState().get(VeCampfireBlock.LIT);
+		boolean flag1 = this.world.isRemote;
+		if (flag1)
+		{
+			if (flag) {
             this.addParticles();
          }
 
