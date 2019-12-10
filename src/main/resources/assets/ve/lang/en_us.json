@@ -159,7 +159,7 @@
   "block.ve.turkey": "Turkey",
   "block.ve.purple_mushroom": "Purple Mushroom",
   "block.ve.purple_mushroom_block": "Purple Mushroom Block",
-  "block.ve.saw": "Saw",
+  "block.ve.woodcutter": "Woodcutter",
   "block.ve.white_campfire": "White Campfire",
   "block.ve.orange_campfire": "Orange Campfire",
   "block.ve.magenta_campfire": "Magenta Campfire",
@@ -176,6 +176,8 @@
   "block.ve.green_campfire": "Green Campfire",
   "block.ve.red_campfire": "Red Campfire",
   "block.ve.black_campfire": "Black Campfire",
+  
+  "container.woodcutter": "Woodcutter",
   
   "item.ve.ruby": "Nether Ruby",
   "item.ve.ruby_axe": "Ruby Axe",
