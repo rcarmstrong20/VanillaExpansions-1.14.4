@@ -34,7 +34,7 @@ public class VeParticleTypes
 	}
 	
 	@SubscribeEvent
-	public static void registerItemBlocks(final RegistryEvent.Register<ParticleType<?>> event)
+	public static void registerParticles(final RegistryEvent.Register<ParticleType<?>> event)
 	{
 		PARTICLES.forEach(particle -> event.getRegistry().register(particle));
 		PARTICLES.clear();
