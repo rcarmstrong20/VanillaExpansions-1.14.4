@@ -2,8 +2,8 @@
   "type": "ve:woodcutting",
   "ingredient":
   {
-    "tag": "ve:birch_logs"
+    "tag": "minecraft:birch_logs"
   },
   "result": "minecraft:birch_planks",
-  "count": 4
+  "count": 5
 }

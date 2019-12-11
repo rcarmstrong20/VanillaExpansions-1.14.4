@@ -2,8 +2,8 @@
   "type": "ve:woodcutting",
   "ingredient":
   {
-    "tag": "ve:dark_oak_logs"
+    "tag": "minecraft:dark_oak_logs"
   },
   "result": "minecraft:dark_oak_planks",
-  "count": 4
+  "count": 5
 }

@@ -2,8 +2,8 @@
   "type": "ve:woodcutting",
   "ingredient":
   {
-    "tag": "minecraft:oak_logs"
+    "tag": "minecraft:planks"
   },
-  "result": "minecraft:oak_planks",
+  "result": "minecraft:stick",
   "count": 5
 }

@@ -2,8 +2,8 @@
   "type": "ve:woodcutting",
   "ingredient":
   {
-    "tag": "ve:spruce_logs"
+    "tag": "minecraft:spruce_logs"
   },
   "result": "minecraft:spruce_planks",
-  "count": 4
+  "count": 5
 }
