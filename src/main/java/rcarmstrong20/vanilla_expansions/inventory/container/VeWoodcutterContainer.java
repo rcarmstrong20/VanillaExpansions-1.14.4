@@ -214,6 +214,7 @@ public class VeWoodcutterContainer extends Container
 	 * Handle when the stack in slot {@code index} is shift-clicked. Normally this moves the stack between the player
 	 * inventory and the other inventory(s).
 	 */
+	
 	public ItemStack transferStackInSlot(PlayerEntity playerIn, int index)
 	{
 		ItemStack itemStack = ItemStack.EMPTY;
@@ -239,7 +240,13 @@ public class VeWoodcutterContainer extends Container
 					return ItemStack.EMPTY;
 				}
 			}
-			
+			else if (this.recipeHasStack(itemstack1))
+			{
+				if (!this.mergeItemStack(itemstack1, 0, 1, false))
+				{
+					return ItemStack.EMPTY;
+				}
+			}
 			else if (index >= 2 && index < 29)
 			{
 				if (!this.mergeItemStack(itemstack1, 29, 38, false))
@@ -264,6 +271,11 @@ public class VeWoodcutterContainer extends Container
 			this.detectAndSendChanges();
 		}
 		return itemStack;
+	}
+	
+	protected boolean recipeHasStack(ItemStack itemStack)
+	{
+		return this.world.getRecipeManager().getRecipe(VeRecipeTypes.WOODCUTTING, new Inventory(itemStack), this.world).isPresent();
 	}
 	
 	/**
