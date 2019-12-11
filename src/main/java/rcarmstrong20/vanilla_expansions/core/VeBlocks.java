@@ -36,7 +36,6 @@ import rcarmstrong20.vanilla_expansions.block.VePlantingPotBlock;
 import rcarmstrong20.vanilla_expansions.block.VePlushBlock;
 import rcarmstrong20.vanilla_expansions.block.VePotatoBlock;
 import rcarmstrong20.vanilla_expansions.block.VePurpleHugeMushroomBlock;
-import rcarmstrong20.vanilla_expansions.block.VeWoodcutterBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSevenStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSinglePaintingBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSlabBlock;
@@ -45,6 +44,7 @@ import rcarmstrong20.vanilla_expansions.block.VeStairsBlock;
 import rcarmstrong20.vanilla_expansions.block.VeThreeStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTranslucentBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTurkeyBlock;
+import rcarmstrong20.vanilla_expansions.block.VeWoodcutterBlock;
 
 /*
  * Author: rcarmstrong20
