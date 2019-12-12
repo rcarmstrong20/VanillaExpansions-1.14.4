@@ -5,6 +5,8 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.WallBlock;
@@ -241,6 +243,8 @@ public class VeBlocks
 	public static Block black_campfire = register(VanillaExpansions.location("black_campfire"), true, new VeCampfireBlock(Block.Properties.from(Blocks.CAMPFIRE)));
 	public static Block witchs_cradle = register(VanillaExpansions.location("witchs_cradle"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.WHEAT)));
 	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidBlock(() -> VeFluids.FLOWING_VOID, Block.Properties.create(Material.WATER, MaterialColor.BLACK).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
+	public static Block bamboo_fence = register(VanillaExpansions.location("bamboo_fence"), true, new FenceBlock(Block.Properties.from(Blocks.BAMBOO)));
+	public static Block bamboo_fence_gate = register(VanillaExpansions.location("bamboo_fence_gate"), true, new FenceGateBlock(Block.Properties.from(Blocks.BAMBOO)));
 	
 	//Double slabs
 	
