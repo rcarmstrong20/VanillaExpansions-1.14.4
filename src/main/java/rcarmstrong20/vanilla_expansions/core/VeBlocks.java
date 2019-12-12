@@ -245,6 +245,7 @@ public class VeBlocks
 	public static Block void_liquid = register(VanillaExpansions.location("void"), false, new VeFlowingVoidBlock(() -> VeFluids.FLOWING_VOID, Block.Properties.create(Material.WATER, MaterialColor.BLACK).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
 	public static Block bamboo_fence = register(VanillaExpansions.location("bamboo_fence"), true, new FenceBlock(Block.Properties.from(Blocks.BAMBOO)));
 	public static Block bamboo_fence_gate = register(VanillaExpansions.location("bamboo_fence_gate"), true, new FenceGateBlock(Block.Properties.from(Blocks.BAMBOO)));
+	public static Block bamboo_wall = register(VanillaExpansions.location("bamboo_wall"), true, new WallBlock(Block.Properties.from(Blocks.BAMBOO)));
 	
 	//Double slabs
 	
