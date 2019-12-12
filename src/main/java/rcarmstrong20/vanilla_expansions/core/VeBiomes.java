@@ -12,6 +12,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LakesConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
@@ -42,11 +43,12 @@ public class VeBiomes
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
 		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
 		registerFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
+		registerStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
 		
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
-	/*
+	/**
 	 * Add a new feature to be spawned into the world.
 	 */
 	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, Biome... biomes)
@@ -60,7 +62,21 @@ public class VeBiomes
 		}
 	}
 	
-	/*
+	/**
+	 * Add a new structure to be spawned into the world.
+	 */
+	private static <C extends IFeatureConfig> void registerStructure(Structure<C> structureIn, C config, Biome... biomes)
+	{
+		for(Biome biome : biomes)
+		{
+			if(biome != null)
+			{
+				biome.addStructure(structureIn, config);
+			}
+		}
+	}
+	
+	/**
 	 * Add a new entity to be spawned into the world.
 	 */
 	@SuppressWarnings("unused")
