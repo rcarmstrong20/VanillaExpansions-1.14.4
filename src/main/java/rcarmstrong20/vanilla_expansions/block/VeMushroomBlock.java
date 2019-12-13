@@ -9,7 +9,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.BigMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
-import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
+import rcarmstrong20.vanilla_expansions.core.VeFeature;
 
 public class VeMushroomBlock extends MushroomBlock
 {
