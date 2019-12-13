@@ -1,10 +1,13 @@
 package rcarmstrong20.vanilla_expansions.core;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.BigMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.BushConfig;
@@ -12,11 +15,14 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LakesConfig;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.LakeChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.event.RegistryEvent;
@@ -25,6 +31,8 @@ import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinPiece;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructure;
 
 /*
  * Author: rcarmstrong20
@@ -32,28 +40,55 @@ import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class VeBiomes
 {
+	//public static final Structure<NoFeatureConfig> TAIGA_CABIN = null;
+	
+	public static IStructurePieceType TAIGA_CABIN_PIECE;
+	
+	public static final List<Biome> COLD_BIOMES = Arrays.asList(Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
+	public static final List<Biome> NETHER_BIOMES = Arrays.asList(Biomes.NETHER);
+	public static final List<Biome> FOREST_BIOMES = Arrays.asList(Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
+	public static final List<Biome> DARK_FOREST_BIOMES = Arrays.asList(Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
+	public static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
+	public static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
+	public static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
+	
+	/*
+	 * Register structure Features
+	 */
+	@SubscribeEvent
+	public static void registerStructureFeatures(RegistryEvent.Register<Feature<?>> event)
+	{
+		//Using the registry directly like this is bad, however this is currently the only way to register a structure piece
+		//Specifically, this is to avoid the error that occurs in StructurePiece.write()
+		//The piece's registry id is saved to nbt, and without the structure will not be saved properly and users will experience errors in the console whenever the chunk is loaded or unloaded
+		TAIGA_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.MOD_ID + ":taiga_cabin", TaigaCabinPiece::new);
+		
+		TaigaCabinStructure taiga_cabin = new TaigaCabinStructure(NoFeatureConfig::deserialize);
+		taiga_cabin.setRegistryName(VanillaExpansions.location("taiga_cabin"));
+		event.getRegistry().register(taiga_cabin);
+	}
+	
 	@SubscribeEvent
 	public static void registerBiomes(final RegistryEvent.Register<Biome> event)
 	{
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, VeBlocks.airite_ore.getDefaultState(), 9), Placement.COUNT_RANGE, new CountRangeConfig(2, 0, 0, 32)), Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.smoky_quartz_ore.getDefaultState(), 14), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), Biomes.NETHER);
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.ruby_ore.getDefaultState(), 8), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), Biomes.NETHER);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.BLUEBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(12)), Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.CRANBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), Biomes.SWAMP, Biomes.SWAMP_HILLS);
-		registerFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
-		//registerFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
-		registerFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP, new ChanceConfig(1000)), Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
-		
+		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, VeBlocks.airite_ore.getDefaultState(), 9), Placement.COUNT_RANGE, new CountRangeConfig(2, 0, 0, 32)), COLD_BIOMES);
+		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.smoky_quartz_ore.getDefaultState(), 14), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
+		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.ruby_ore.getDefaultState(), 8), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.BLUEBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(12)), FOREST_BIOMES);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.CRANBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), FOREST_BIOMES);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), DARK_FOREST_BIOMES);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), DARK_FOREST_BIOMES);
+		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), SWAMP_BIOMES);
+		registerFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
+		AddStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, TAIGA_BIOMES);
+		registerFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), TAIGA_BIOMES);
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
 	/**
 	 * Add a new feature to be spawned into the world.
 	 */
-	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, Biome... biomes)
+	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, List<Biome> biomes)
 	{
 		if(featureIn != null)
 		{
@@ -72,7 +107,7 @@ public class VeBiomes
 	/**
 	 * Add a new structure to be spawned into the world.
 	 */
-	private static <C extends IFeatureConfig> void registerStructure(Structure<C> structureIn, C config, Biome... biomes)
+	private static <C extends IFeatureConfig> void AddStructure(Structure<C> structureIn, C config, List<Biome> biomes)
 	{
 		for(Biome biome : biomes)
 		{
@@ -87,7 +122,7 @@ public class VeBiomes
 	 * Add a new entity to be spawned into the world.
 	 */
 	@SuppressWarnings("unused")
-	private static void registerEntitySpawn(EntityType<?> entity, int weight, int maxCount, Biome... biomes)
+	private static void registerEntitySpawn(EntityType<?> entity, int weight, int maxCount, List<Biome> biomes)
 	{
 		for(Biome biome : biomes)
 		{
@@ -97,4 +132,78 @@ public class VeBiomes
 			}
 		}
 	}
+	/*
+	private static void addOverworldStructures(Biome biome)
+	{
+		biome.addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
+	}
+	
+	@SubscribeEvent
+	public static void applyFeatures(FMLCommonSetupEvent event) {
+		for(Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			switch(biome.getCategory()) {
+				case NONE:
+					addOverworldStructures(biome);
+					break;
+				case TAIGA:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case EXTREME_HILLS:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case JUNGLE:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case MESA:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case PLAINS:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case SAVANNA:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case ICY:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case THEEND:
+					break;
+				case BEACH:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case FOREST:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case OCEAN:
+					addOverworldStructures(biome);
+					break;
+				case DESERT:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case RIVER:
+					addOverworldStructures(biome);
+					break;
+				case SWAMP:
+					addOverworldStructures(biome);
+					break;
+				case MUSHROOM:
+					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
+					addOverworldStructures(biome);
+					break;
+				case NETHER:
+					break;
+			}
+		}
+	}
+	*/
 }
