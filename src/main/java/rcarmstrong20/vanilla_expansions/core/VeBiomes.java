@@ -30,7 +30,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
-import rcarmstrong20.vanilla_expansions.gen.feature.VeFeature;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinPiece;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructure;
 
@@ -40,33 +39,13 @@ import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructur
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class VeBiomes
 {
-	//public static final Structure<NoFeatureConfig> TAIGA_CABIN = null;
-	
-	public static IStructurePieceType TAIGA_CABIN_PIECE;
-	
-	public static final List<Biome> COLD_BIOMES = Arrays.asList(Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
-	public static final List<Biome> NETHER_BIOMES = Arrays.asList(Biomes.NETHER);
-	public static final List<Biome> FOREST_BIOMES = Arrays.asList(Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
-	public static final List<Biome> DARK_FOREST_BIOMES = Arrays.asList(Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
-	public static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
-	public static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
-	public static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
-	
-	/*
-	 * Register structure Features
-	 */
-	@SubscribeEvent
-	public static void registerStructureFeatures(RegistryEvent.Register<Feature<?>> event)
-	{
-		//Using the registry directly like this is bad, however this is currently the only way to register a structure piece
-		//Specifically, this is to avoid the error that occurs in StructurePiece.write()
-		//The piece's registry id is saved to nbt, and without the structure will not be saved properly and users will experience errors in the console whenever the chunk is loaded or unloaded
-		TAIGA_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.MOD_ID + ":taiga_cabin", TaigaCabinPiece::new);
-		
-		TaigaCabinStructure taiga_cabin = new TaigaCabinStructure(NoFeatureConfig::deserialize);
-		taiga_cabin.setRegistryName(VanillaExpansions.location("taiga_cabin"));
-		event.getRegistry().register(taiga_cabin);
-	}
+	private static final List<Biome> COLD_BIOMES = Arrays.asList(Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
+	private static final List<Biome> NETHER_BIOMES = Arrays.asList(Biomes.NETHER);
+	private static final List<Biome> FOREST_BIOMES = Arrays.asList(Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
+	private static final List<Biome> DARK_FOREST_BIOMES = Arrays.asList(Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
+	private static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
+	private static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
+	private static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
 	
 	@SubscribeEvent
 	public static void registerBiomes(final RegistryEvent.Register<Biome> event)
@@ -90,11 +69,6 @@ public class VeBiomes
 	 */
 	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, List<Biome> biomes)
 	{
-		if(featureIn != null)
-		{
-			System.out.print(featureIn);
-		}
-		
 		for(Biome biome : biomes)
 		{
 			if(biome != null)
@@ -132,78 +106,4 @@ public class VeBiomes
 			}
 		}
 	}
-	/*
-	private static void addOverworldStructures(Biome biome)
-	{
-		biome.addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
-	}
-	
-	@SubscribeEvent
-	public static void applyFeatures(FMLCommonSetupEvent event) {
-		for(Biome biome : ForgeRegistries.BIOMES.getValues()) {
-			switch(biome.getCategory()) {
-				case NONE:
-					addOverworldStructures(biome);
-					break;
-				case TAIGA:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case EXTREME_HILLS:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case JUNGLE:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case MESA:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case PLAINS:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case SAVANNA:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case ICY:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case THEEND:
-					break;
-				case BEACH:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case FOREST:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case OCEAN:
-					addOverworldStructures(biome);
-					break;
-				case DESERT:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case RIVER:
-					addOverworldStructures(biome);
-					break;
-				case SWAMP:
-					addOverworldStructures(biome);
-					break;
-				case MUSHROOM:
-					biome.addStructure(TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG);
-					addOverworldStructures(biome);
-					break;
-				case NETHER:
-					break;
-			}
-		}
-	}
-	*/
 }
