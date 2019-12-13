@@ -15,7 +15,7 @@ import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
-import rcarmstrong20.vanilla_expansions.core.VeBiomes;
+import rcarmstrong20.vanilla_expansions.core.VeFeature;
 
 /**
  * Pieces are where the structure is actually added to the world, a structure can have one or more of them
@@ -35,7 +35,7 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	 */
 	public TaigaCabinPiece(TemplateManager templateManager, ResourceLocation templateResource, BlockPos pos, Rotation rotation)
 	{
-		super(VeBiomes.TAIGA_CABIN_PIECE, 0);
+		super(VeFeature.TAIGA_CABIN_PIECE, 0);
 		this.templateResource = templateResource;
 		this.rotation = rotation;
 		this.templatePosition = pos;
@@ -47,7 +47,7 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	 */
 	public TaigaCabinPiece(TemplateManager templateManager, CompoundNBT nbt)
 	{
-		super(VeBiomes.TAIGA_CABIN_PIECE, nbt);
+		super(VeFeature.TAIGA_CABIN_PIECE, nbt);
 		this.templateResource = new ResourceLocation(nbt.getString("template"));
 		this.rotation = Rotation.valueOf(nbt.getString("rotation"));
 		setupTemplate(templateManager);
