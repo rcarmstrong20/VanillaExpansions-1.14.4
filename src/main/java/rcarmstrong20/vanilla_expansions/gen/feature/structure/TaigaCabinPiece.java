@@ -16,7 +16,6 @@ import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
-import net.minecraft.world.storage.loot.LootTables;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeFeature;
 
@@ -89,8 +88,6 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	@Override
 	protected void handleDataMarker(String function, BlockPos pos, IWorld world, Random rand, MutableBoundingBox boundingBox)
 	{
-		//In this example I add loot to a chest and set a block to a random flower pot
-		
 		if("taiga_cabin_chest".equals(function))
 		{
 			LockableLootTileEntity.setLootTable(world, rand, pos.down(), VanillaExpansions.location("chests/taiga_cabin"));
