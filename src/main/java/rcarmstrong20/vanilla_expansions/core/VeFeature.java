@@ -27,10 +27,10 @@ import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructur
 @Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VeFeature
 {
+	public static IStructurePieceType TAIGA_CABIN_PIECE;
+	
 	private static final List<Feature<?>> FEATURES = new ArrayList<>();
 	private static final List<Structure<?>> STRUCTURES = new ArrayList<>();
-	
-	public static IStructurePieceType TAIGA_CABIN_PIECE;
 	
 	public static final Feature<BigMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM = register(VanillaExpansions.location("huge_purple_mushroom"), new VeBigPurpleMushroomFeature(BigMushroomFeatureConfig::deserialize));
 	public static final Feature<NoFeatureConfig> BLUEBERRY_BUSH = register(VanillaExpansions.location("blueberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.blueberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
