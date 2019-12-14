@@ -25,11 +25,11 @@
               }
             }
           ],
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:spruce_planks"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:spruce_log"
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
@@ -56,15 +56,15 @@
               }
             }
           ],
-          "name": "minecraft:bread"
+          "name": "minecraft:cooked_salmon"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:spruce_planks"
+          "name": "minecraft:spruce_log"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_axe"
+          "name": "minecraft:iron_axe"
         },
         {
           "type": "minecraft:item",
