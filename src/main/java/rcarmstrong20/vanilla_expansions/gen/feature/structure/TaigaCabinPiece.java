@@ -3,6 +3,7 @@ package rcarmstrong20.vanilla_expansions.gen.feature.structure;
 import java.util.Random;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -15,6 +16,8 @@ import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.storage.loot.LootTables;
+import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.core.VeFeature;
 
 /**
@@ -87,17 +90,11 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	protected void handleDataMarker(String function, BlockPos pos, IWorld world, Random rand, MutableBoundingBox boundingBox)
 	{
 		//In this example I add loot to a chest and set a block to a random flower pot
-		/*
-		if("hut_chest".equals(function))
+		
+		if("taiga_cabin_chest".equals(function))
 		{
-			LockableLootTileEntity.setLootTable(world, rand, pos.down(), LootTables.CHESTS_SIMPLE_DUNGEON);
+			LockableLootTileEntity.setLootTable(world, rand, pos.down(), VanillaExpansions.location("chests/taiga_cabin"));
 		}
-		else if("hut_flower".equals(function))
-		{
-			BlockState state = ((Block) BlockTags.FLOWER_POTS.getAllElements().toArray()[rand.nextInt(BlockTags.FLOWER_POTS.getAllElements().size())]).getDefaultState();
-			world.setBlockState(pos, state, 0);
-		}
-		*/
 	}
 	
 	/**
