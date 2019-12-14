@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.biome.Biomes;
@@ -15,9 +14,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LakesConfig;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
@@ -30,8 +27,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
-import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinPiece;
-import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructure;
 
 /*
  * Author: rcarmstrong20
@@ -50,24 +45,24 @@ public class VeBiomes
 	@SubscribeEvent
 	public static void registerBiomes(final RegistryEvent.Register<Biome> event)
 	{
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, VeBlocks.airite_ore.getDefaultState(), 9), Placement.COUNT_RANGE, new CountRangeConfig(2, 0, 0, 32)), COLD_BIOMES);
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.smoky_quartz_ore.getDefaultState(), 14), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
-		registerFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.ruby_ore.getDefaultState(), 8), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.BLUEBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(12)), FOREST_BIOMES);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.CRANBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), FOREST_BIOMES);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), DARK_FOREST_BIOMES);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), DARK_FOREST_BIOMES);
-		registerFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), SWAMP_BIOMES);
-		registerFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
-		AddStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, TAIGA_BIOMES);
-		registerFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), TAIGA_BIOMES);
+		addFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, VeBlocks.airite_ore.getDefaultState(), 9), Placement.COUNT_RANGE, new CountRangeConfig(2, 0, 0, 32)), COLD_BIOMES);
+		addFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.smoky_quartz_ore.getDefaultState(), 14), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
+		addFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, VeBlocks.ruby_ore.getDefaultState(), 8), Placement.COUNT_RANGE, new CountRangeConfig(16, 10, 20, 128)), NETHER_BIOMES);
+		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.BLUEBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(12)), FOREST_BIOMES);
+		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.CRANBERRY_BUSH, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), FOREST_BIOMES);
+		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(VeFeature.HUGE_PURPLE_MUSHROOM, new BigMushroomFeatureConfig(false), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(4)), DARK_FOREST_BIOMES);
+		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), DARK_FOREST_BIOMES);
+		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), SWAMP_BIOMES);
+		addFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
+		addStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, TAIGA_BIOMES);
+		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), TAIGA_BIOMES);
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
 	/**
 	 * Add a new feature to be spawned into the world.
 	 */
-	private static void registerFeature(Decoration decoration, ConfiguredFeature<?> featureIn, List<Biome> biomes)
+	private static void addFeature(Decoration decoration, ConfiguredFeature<?> featureIn, List<Biome> biomes)
 	{
 		for(Biome biome : biomes)
 		{
@@ -81,7 +76,7 @@ public class VeBiomes
 	/**
 	 * Add a new structure to be spawned into the world.
 	 */
-	private static <C extends IFeatureConfig> void AddStructure(Structure<C> structureIn, C config, List<Biome> biomes)
+	private static <C extends IFeatureConfig> void addStructure(Structure<C> structureIn, C config, List<Biome> biomes)
 	{
 		for(Biome biome : biomes)
 		{
