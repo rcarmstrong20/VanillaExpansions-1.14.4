@@ -94,14 +94,8 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 		{
 			ResourceLocation templateResource = VanillaExpansions.location("taiga_cabin");
 			Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
-			
 			TaigaCabinPiece piece = new TaigaCabinPiece(templateManager, templateResource, new BlockPos(chunkX * 16, 0, chunkZ * 16), rotation);
-			
-			//The important thing is that pieces are added like this
-			//See the shipwreck and igloo for an alternate take on this process
 			this.components.add(piece);
-			
-			//This should be called last, after all components have been added
 			this.recalculateStructureSize();
 		}
 	}
