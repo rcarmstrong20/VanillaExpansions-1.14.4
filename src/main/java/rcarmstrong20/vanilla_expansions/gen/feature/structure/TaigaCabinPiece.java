@@ -59,7 +59,7 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	private void setupTemplate(TemplateManager templateManager)
 	{
 		Template template = templateManager.getTemplateDefaulted(this.templateResource);
-		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setCenterOffset(new BlockPos(1, 0, 2)).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
+		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setCenterOffset(new BlockPos(0, 0, 0)).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
 		this.setup(template, this.templatePosition, placementsettings);
 	}
 	
@@ -118,9 +118,9 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 			height += k;
 		}
 		
-		height = height / (this.template.getSize().getX() * this.template.getSize().getZ()) - 1;
+		height = height / (this.template.getSize().getX() * this.template.getSize().getZ());
 		
-		this.templatePosition = new BlockPos(this.templatePosition.getX() + 8, height, this.templatePosition.getZ() + 8);
+		this.templatePosition = new BlockPos(this.templatePosition.getX(), height, this.templatePosition.getZ());
 		
 		return super.addComponentParts(world, rand, boundingBox, chunkPos);
 	}
