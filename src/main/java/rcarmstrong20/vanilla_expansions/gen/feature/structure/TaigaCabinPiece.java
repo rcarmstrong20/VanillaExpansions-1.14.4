@@ -59,7 +59,7 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	private void setupTemplate(TemplateManager templateManager)
 	{
 		Template template = templateManager.getTemplateDefaulted(this.templateResource);
-		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setCenterOffset(new BlockPos(3, 0, 4)).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
+		PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setCenterOffset(new BlockPos(1, 0, 2)).addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
 		this.setup(template, this.templatePosition, placementsettings);
 	}
 	
