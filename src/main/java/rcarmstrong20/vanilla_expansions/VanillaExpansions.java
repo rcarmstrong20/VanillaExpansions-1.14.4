@@ -5,10 +5,14 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import rcarmstrong20.vanilla_expansions.core.VeVillagerProfessions;
+import rcarmstrong20.vanilla_expansions.core.VeVillagerTrades;
 import rcarmstrong20.vanilla_expansions.proxy.ClientProxy;
 import rcarmstrong20.vanilla_expansions.proxy.CommonProxy;
 
@@ -28,6 +32,8 @@ public class VanillaExpansions
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
+		
+		MinecraftForge.EVENT_BUS.post(new VillagerTradesEvent(VeVillagerTrades.LUMBERJACK_TRADES, VeVillagerProfessions.LUMBERJACK));
 		
 		MinecraftForge.EVENT_BUS.register(this);
 	}
