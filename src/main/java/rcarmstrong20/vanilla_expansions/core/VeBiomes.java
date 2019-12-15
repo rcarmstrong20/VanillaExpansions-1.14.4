@@ -41,6 +41,8 @@ public class VeBiomes
 	private static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
 	private static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
 	private static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
+	private static final List<Biome> FOREST_BIOME = Arrays.asList(Biomes.FOREST);
+	private static final List<Biome> BIRCH_FOREST_BIOMES = Arrays.asList(Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.TALL_BIRCH_HILLS);
 	
 	@SubscribeEvent
 	public static void registerBiomes(final RegistryEvent.Register<Biome> event)
@@ -56,6 +58,10 @@ public class VeBiomes
 		addFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
 		addStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, TAIGA_BIOMES);
 		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), TAIGA_BIOMES);
+		addStructure(VeFeature.FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, FOREST_BIOME);
+		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), FOREST_BIOME);
+		addStructure(VeFeature.BIRCH_FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, BIRCH_FOREST_BIOMES);
+		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.BIRCH_FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), BIRCH_FOREST_BIOMES);
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
