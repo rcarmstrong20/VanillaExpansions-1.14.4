@@ -18,6 +18,9 @@ import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeBigPurpleMushroomFeature;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.BirchForestCabinStructure;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.ForestCabinPiece;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.ForestCabinStructure;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinPiece;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructure;
 
@@ -28,6 +31,8 @@ import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructur
 public class VeFeature
 {
 	public static IStructurePieceType TAIGA_CABIN_PIECE;
+	public static IStructurePieceType FOREST_CABIN_PIECE;
+	public static IStructurePieceType BIRCH_FOREST_CABIN_PIECE;
 	
 	private static final List<Feature<?>> FEATURES = new ArrayList<>();
 	private static final List<Structure<?>> STRUCTURES = new ArrayList<>();
@@ -36,6 +41,8 @@ public class VeFeature
 	public static final Feature<NoFeatureConfig> BLUEBERRY_BUSH = register(VanillaExpansions.location("blueberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.blueberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
 	public static final Feature<NoFeatureConfig> CRANBERRY_BUSH = register(VanillaExpansions.location("cranberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.cranberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
 	public static final Structure<NoFeatureConfig> TAIGA_CABIN = register(VanillaExpansions.location("taiga_cabin"), new TaigaCabinStructure(NoFeatureConfig::deserialize));
+	public static final Structure<NoFeatureConfig> FOREST_CABIN = register(VanillaExpansions.location("forest_cabin"), new ForestCabinStructure(NoFeatureConfig::deserialize));
+	public static final Structure<NoFeatureConfig> BIRCH_FOREST_CABIN = register(VanillaExpansions.location("birch_forest_cabin"), new BirchForestCabinStructure(NoFeatureConfig::deserialize));
 	
 	/*
 	 * Set the registry name for the features and add them to the registry list.
@@ -66,7 +73,9 @@ public class VeFeature
 		FEATURES.forEach(feature -> event.getRegistry().register(feature));
 		FEATURES.clear();
 		
-		TAIGA_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.MOD_ID + ":taiga_cabin", TaigaCabinPiece::new);
+		TAIGA_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("taiga_cabin"), TaigaCabinPiece::new);
+		FOREST_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("forest_cabin"), ForestCabinPiece::new);
+		BIRCH_FOREST_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("forest_cabin"), ForestCabinPiece::new);
 		
 		STRUCTURES.forEach(structure -> event.getRegistry().register(structure));
 		STRUCTURES.clear();
