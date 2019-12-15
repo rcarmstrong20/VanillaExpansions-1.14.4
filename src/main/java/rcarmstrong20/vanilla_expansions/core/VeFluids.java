@@ -38,7 +38,7 @@ public class VeFluids
 	}
 	
 	@SubscribeEvent
-	public static void registerBlocks(final RegistryEvent.Register<Fluid> event)
+	public static void registerFluids(final RegistryEvent.Register<Fluid> event)
 	{
 		FLUIDS.forEach(fluid -> event.getRegistry().register(fluid));
 		FLUIDS.clear();
