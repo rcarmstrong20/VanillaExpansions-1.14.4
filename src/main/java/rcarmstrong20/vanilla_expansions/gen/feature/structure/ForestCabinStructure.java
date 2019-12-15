@@ -17,9 +17,9 @@ import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 
-public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
+public class ForestCabinStructure extends ScatteredStructure<NoFeatureConfig>
 {
-	public TaigaCabinStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config)
+	public ForestCabinStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config)
 	{
 		super(config);
 	}
@@ -44,7 +44,7 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 	@Override
 	public Structure.IStartFactory getStartFactory()
 	{
-		return TaigaCabinStructure.Start::new;
+		return ForestCabinStructure.Start::new;
 	}
 	
 	/**
@@ -58,7 +58,7 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 	@Override
 	public String getStructureName()
 	{
-		return VanillaExpansions.location("taiga_cabin").toString();
+		return VanillaExpansions.location("forest_cabin").toString();
 	}
 	
 	/**
@@ -93,9 +93,9 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 		@Override
 		public void init(ChunkGenerator<?> generator, TemplateManager templateManager, int chunkX, int chunkZ, Biome biome)
 		{
-			ResourceLocation templateResource = VanillaExpansions.location("taiga_cabin");
+			ResourceLocation templateResource = VanillaExpansions.location("forest_cabin");
 			Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
-			TaigaCabinPiece piece = new TaigaCabinPiece(templateManager, templateResource, new BlockPos(chunkX * 16, 0, chunkZ * 16), rotation);
+			ForestCabinPiece piece = new ForestCabinPiece(templateManager, templateResource, new BlockPos(chunkX * 16, 0, chunkZ * 16), rotation);
 			this.components.add(piece);
 			this.recalculateStructureSize();
 		}
