@@ -2,7 +2,7 @@
 	"__comment": "Designed by Rcarmstrong20 with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "ve:bamboo_up",
+		"particle": "ve:block/bamboo_up",
 		"up": "ve:block/bamboo_up",
 		"across": "ve:block/bamboo_across"
 	},
