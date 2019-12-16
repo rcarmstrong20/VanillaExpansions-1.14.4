@@ -176,7 +176,10 @@
   "block.ve.green_campfire": "Green Campfire",
   "block.ve.red_campfire": "Red Campfire",
   "block.ve.black_campfire": "Black Campfire",
-  
+  "block.ve.bamboo_fence_gate": "Bamboo Fence Gate",
+  "block.ve.bamboo_fence": "Bamboo Fence",
+  "block.ve.bamboo_wall": "Bamboo Wall",  
+
   "container.woodcutter": "Woodcutter",
   
   "item.ve.ruby": "Nether Ruby",
@@ -251,9 +254,6 @@
   "item.ve.witchs_cradle_soup": "Witch's Cradle Soup",
   "item.ve.glass_vial": "Glass Vial",
   "item.ve.blood_vial": "Blood Vial",
-  "item.ve.bamboo_fence_gate": "Bamboo Fence Gate",
-  "item.ve.bamboo_fence": "Bamboo Fence",
-  "item.ve.bamboo_wall": "Bamboo Wall",
   
   "block.minecraft.ladder": "Oak Ladder",
   
