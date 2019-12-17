@@ -67,7 +67,21 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape BLAZE_EAST_LEGS_AND_HEAD_AABB = VoxelShapes.or(BLAZE_BOTTOM_LEGS_AND_HEAD_AABB, BLAZE_EAST_TOP_LEGS_AABB);
 	protected static final VoxelShape BLAZE_EAST_AABB = VoxelShapes.or(BLAZE_EAST_EYES_AABB, BLAZE_EAST_LEGS_AND_HEAD_AABB);
 	
-	//
+	//Creeper Bounding Boxes
+	
+	protected static final VoxelShape CREEPER_SOUTH_HEAD_AABB = Block.makeCuboidShape(4.5D, 9.0D, 4.5D, 11.5D, 16.0D, 11.5D);
+	
+	protected static final VoxelShape CREEPER_SOUTH_RIGHT_EYE_AABB = Block.makeCuboidShape(8.5D, 12.5D, 11.5D, 10.5D, 14.5D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(4.5D, 9.0D, 11.5D, 11.5D, 16.0D, 12.0D);
+	
+	protected static final VoxelShape CREEPER_SOUTH_BODY_AABB = Block.makeCuboidShape(5.5D, 3.0D, 5.5D, 10.5D, 9.0D, 10.5D);
+	protected static final VoxelShape CREEPER_SOUTH_BACK_LEG_AABB = Block.makeCuboidShape(5.5D, 0.0D, 2.5D, 10.5D, 3.0D, 5.5D);
+	protected static final VoxelShape CREEPER_SOUTH_FRONT_LEG_AABB = Block.makeCuboidShape(5.5D, 0.0D, 10.5D, 10.5D, 3.0D, 13.5D);
+	
+	
+	protected static final VoxelShape CREEPER_NORTH_AABB = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 14.0D);
+	
+	protected static final VoxelShape CREEPER_X_AABB = Block.makeCuboidShape(2.0D, 0.0D, 4.0D, 14.0D, 16.0D, 12.0D);
 	
 	protected static final VoxelShape BAT_NORTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
@@ -108,9 +122,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	protected static final VoxelShape OCELOT_Z_AABB = Block.makeCuboidShape(5.0D, 0.0D, 0.0D, 11.0D, 8.0D, 16.0D);
 	protected static final VoxelShape OCELOT_X_AABB = Block.makeCuboidShape(0.0D, 0.0D, 5.0D, 16.0D, 8.0D, 11.0D);
-	
-	protected static final VoxelShape CREEPER_Z_AABB = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 14.0D);
-	protected static final VoxelShape CREEPER_X_AABB = Block.makeCuboidShape(2.0D, 0.0D, 4.0D, 14.0D, 16.0D, 12.0D);
 	
 	protected static final VoxelShape SPIDER_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
 	protected static final VoxelShape CAVE_SPIDER_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
@@ -164,6 +175,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, BLAZE_SOUTH_AABB, BLAZE_NORTH_AABB, BLAZE_WEST_AABB, BLAZE_EAST_AABB);
 		}
+		else if(this == VeBlocks.creeper_plush)
+		{
+			return VePlushBlock.defineShapes(state, CREEPER_SOUTH_RIGHT_EYE_AABB, CREEPER_NORTH_AABB, CREEPER_X_AABB, CREEPER_X_AABB);
+		}
 		else if(this == VeBlocks.bat_plush)
 		{
 			return VePlushBlock.defineShapes(state, BAT_SOUTH_AABB, BAT_NORTH_AABB, BAT_WEST_AABB, BAT_EAST_AABB);
@@ -203,10 +218,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		else if(this == VeBlocks.ocelot_plush || this == VeBlocks.wolf_plush)
 		{
 			return VePlushBlock.defineShapes(state, OCELOT_Z_AABB, OCELOT_Z_AABB, OCELOT_X_AABB, OCELOT_X_AABB);
-		}
-		else if(this == VeBlocks.creeper_plush)
-		{
-			return VePlushBlock.defineShapes(state, CREEPER_Z_AABB, CREEPER_Z_AABB, CREEPER_X_AABB, CREEPER_X_AABB);
 		}
 		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.witch_plush || this == VeBlocks.squid_plush)
 		{
