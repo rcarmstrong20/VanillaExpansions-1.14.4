@@ -69,29 +69,141 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Creeper Bounding Boxes
 	
-	protected static final VoxelShape CREEPER_SOUTH_HEAD_AABB = Block.makeCuboidShape(4.5D, 9.0D, 4.5D, 11.5D, 16.0D, 11.5D);
-	
+	protected static final VoxelShape CREEPER_HEAD_AABB = Block.makeCuboidShape(4.5D, 9.0D, 4.5D, 11.5D, 16.0D, 11.5D);
+	protected static final VoxelShape CREEPER_TORSO_AABB = Block.makeCuboidShape(5.5D, 3.0D, 5.5D, 10.5D, 9.0D, 10.5D);
+	protected static final VoxelShape CREEPER_HEAD_AND_TORSO_AABB = VoxelShapes.or(CREEPER_HEAD_AABB, CREEPER_TORSO_AABB);
+	protected static final VoxelShape CREEPER_Z_FOOT1_AABB = Block.makeCuboidShape(5.5D, 0.0D, 2.5D, 10.5D, 3.0D, 5.5D);
+	protected static final VoxelShape CREEPER_Z_FOOT2_AABB = Block.makeCuboidShape(5.5D, 0.0D, 10.5D, 10.5D, 3.0D, 13.5D);
+	protected static final VoxelShape CREEPER_Z_FEET_AABB = VoxelShapes.or(CREEPER_Z_FOOT1_AABB, CREEPER_Z_FOOT2_AABB);
+	protected static final VoxelShape CREEPER_Z_BODY_AABB = VoxelShapes.or(CREEPER_HEAD_AND_TORSO_AABB, CREEPER_Z_FEET_AABB);
 	protected static final VoxelShape CREEPER_SOUTH_RIGHT_EYE_AABB = Block.makeCuboidShape(8.5D, 12.5D, 11.5D, 10.5D, 14.5D, 12.0D);
-	protected static final VoxelShape CREEPER_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(4.5D, 9.0D, 11.5D, 11.5D, 16.0D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(5.5D, 12.5D, 11.5D, 7.5D, 14.5D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(7.5D, 10.5D, 11.5D, 8.5D, 12.5D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_RIGHT_MOUTH_AABB = Block.makeCuboidShape(8.5D, 9.5D, 11.5D, 9.5D, 11.5D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_LEFT_MOUTH_AABB = Block.makeCuboidShape(6.5D, 9.5D, 11.5D, 7.5D, 11.5D, 12.0D);
+	protected static final VoxelShape CREEPER_SOUTH_EYES_AABB = VoxelShapes.or(CREEPER_SOUTH_RIGHT_EYE_AABB, CREEPER_SOUTH_LEFT_EYE_AABB);
+	protected static final VoxelShape CREEPER_SOUTH_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(CREEPER_SOUTH_MIDDLE_MOUTH_AABB, CREEPER_SOUTH_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_SOUTH_MOUTH_AABB = VoxelShapes.or(CREEPER_SOUTH_MIDDLE_AND_RIGHT_MOUTH_AABB, CREEPER_SOUTH_LEFT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_SOUTH_FACE_AABB = VoxelShapes.or(CREEPER_SOUTH_MOUTH_AABB, CREEPER_SOUTH_EYES_AABB);
+	protected static final VoxelShape CREEPER_SOUTH_AABB = VoxelShapes.or(CREEPER_SOUTH_FACE_AABB, CREEPER_Z_BODY_AABB);
+	protected static final VoxelShape CREEPER_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(8.5D, 12.5D, 4.0D, 10.5D, 14.5D, 4.5D);
+	protected static final VoxelShape CREEPER_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(5.5D, 12.5D, 4.0D, 7.5D, 14.5D, 4.5D);
+	protected static final VoxelShape CREEPER_NORTH_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(7.5D, 10.5D, 4.0D, 8.5D, 12.5D, 4.5D);
+	protected static final VoxelShape CREEPER_NORTH_RIGHT_MOUTH_AABB = Block.makeCuboidShape(8.5D, 9.5D, 4.0D, 9.5D, 11.5D, 4.5D);
+	protected static final VoxelShape CREEPER_NORTH_LEFT_MOUTH_AABB = Block.makeCuboidShape(6.5D, 9.5D, 4.0D, 7.5D, 11.5D, 4.5D);
+	protected static final VoxelShape CREEPER_NORTH_EYES_AABB = VoxelShapes.or(CREEPER_NORTH_RIGHT_EYE_AABB, CREEPER_NORTH_LEFT_EYE_AABB);
+	protected static final VoxelShape CREEPER_NORTH_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(CREEPER_NORTH_MIDDLE_MOUTH_AABB, CREEPER_NORTH_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_NORTH_MOUTH_AABB = VoxelShapes.or(CREEPER_NORTH_MIDDLE_AND_RIGHT_MOUTH_AABB, CREEPER_NORTH_LEFT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_NORTH_FACE_AABB = VoxelShapes.or(CREEPER_NORTH_MOUTH_AABB, CREEPER_NORTH_EYES_AABB);
+	protected static final VoxelShape CREEPER_NORTH_AABB = VoxelShapes.or(CREEPER_NORTH_FACE_AABB, CREEPER_Z_BODY_AABB);
+	protected static final VoxelShape CREEPER_X_FOOT1_AABB = Block.makeCuboidShape(2.5D, 0.0D, 5.5D, 5.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CREEPER_X_FOOT2_AABB = Block.makeCuboidShape(10.5D, 0.0D, 5.5D, 13.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CREEPER_X_FEET_AABB = VoxelShapes.or(CREEPER_X_FOOT1_AABB, CREEPER_X_FOOT2_AABB);
+	protected static final VoxelShape CREEPER_X_BODY_AABB = VoxelShapes.or(CREEPER_HEAD_AND_TORSO_AABB, CREEPER_X_FEET_AABB);
+	protected static final VoxelShape CREEPER_WEST_RIGHT_EYE_AABB = Block.makeCuboidShape(4.0D, 12.5D, 8.5D, 4.5D, 14.5D, 10.5D);
+	protected static final VoxelShape CREEPER_WEST_LEFT_EYE_AABB = Block.makeCuboidShape(4.0D, 12.5D, 5.5D, 4.5D, 14.5D, 7.5D);
+	protected static final VoxelShape CREEPER_WEST_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(4.0D, 10.5D, 7.5D, 4.5D, 12.5D, 8.5D);
+	protected static final VoxelShape CREEPER_WEST_RIGHT_MOUTH_AABB = Block.makeCuboidShape(4.0D, 9.5D, 8.5D, 4.5D, 11.5D, 9.5D);
+	protected static final VoxelShape CREEPER_WEST_LEFT_MOUTH_AABB = Block.makeCuboidShape(4.0D, 9.5D, 6.5D, 4.5D, 11.5D, 7.5D);
+	protected static final VoxelShape CREEPER_WEST_EYES_AABB = VoxelShapes.or(CREEPER_WEST_RIGHT_EYE_AABB, CREEPER_WEST_LEFT_EYE_AABB);
+	protected static final VoxelShape CREEPER_WEST_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(CREEPER_WEST_MIDDLE_MOUTH_AABB, CREEPER_WEST_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_WEST_MOUTH_AABB = VoxelShapes.or(CREEPER_WEST_MIDDLE_AND_RIGHT_MOUTH_AABB, CREEPER_WEST_LEFT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_WEST_FACE_AABB = VoxelShapes.or(CREEPER_WEST_MOUTH_AABB, CREEPER_WEST_EYES_AABB);
+	protected static final VoxelShape CREEPER_WEST_AABB = VoxelShapes.or(CREEPER_WEST_FACE_AABB, CREEPER_X_BODY_AABB);
+	protected static final VoxelShape CREEPER_EAST_RIGHT_EYE_AABB = Block.makeCuboidShape(11.5D, 12.5D, 8.5D, 12.0D, 14.5D, 10.5D);
+	protected static final VoxelShape CREEPER_EAST_LEFT_EYE_AABB = Block.makeCuboidShape(11.5D, 12.5D, 5.5D, 12.0D, 14.5D, 7.5D);
+	protected static final VoxelShape CREEPER_EAST_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(11.5D, 10.5D, 7.5D, 12.0D, 12.5D, 8.5D);
+	protected static final VoxelShape CREEPER_EAST_RIGHT_MOUTH_AABB = Block.makeCuboidShape(11.5D, 9.5D, 8.5D, 12.0D, 11.5D, 9.5D);
+	protected static final VoxelShape CREEPER_EAST_LEFT_MOUTH_AABB = Block.makeCuboidShape(11.5D, 9.5D, 6.5D, 12.0D, 11.5D, 7.5D);
+	protected static final VoxelShape CREEPER_EAST_EYES_AABB = VoxelShapes.or(CREEPER_EAST_RIGHT_EYE_AABB, CREEPER_EAST_LEFT_EYE_AABB);
+	protected static final VoxelShape CREEPER_EAST_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(CREEPER_EAST_MIDDLE_MOUTH_AABB, CREEPER_EAST_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_EAST_MOUTH_AABB = VoxelShapes.or(CREEPER_EAST_MIDDLE_AND_RIGHT_MOUTH_AABB, CREEPER_EAST_LEFT_MOUTH_AABB);
+	protected static final VoxelShape CREEPER_EAST_FACE_AABB = VoxelShapes.or(CREEPER_EAST_MOUTH_AABB, CREEPER_EAST_EYES_AABB);
+	protected static final VoxelShape CREEPER_EAST_AABB = VoxelShapes.or(CREEPER_EAST_FACE_AABB, CREEPER_X_BODY_AABB);
 	
-	protected static final VoxelShape CREEPER_SOUTH_BODY_AABB = Block.makeCuboidShape(5.5D, 3.0D, 5.5D, 10.5D, 9.0D, 10.5D);
-	protected static final VoxelShape CREEPER_SOUTH_BACK_LEG_AABB = Block.makeCuboidShape(5.5D, 0.0D, 2.5D, 10.5D, 3.0D, 5.5D);
-	protected static final VoxelShape CREEPER_SOUTH_FRONT_LEG_AABB = Block.makeCuboidShape(5.5D, 0.0D, 10.5D, 10.5D, 3.0D, 13.5D);
+	//Zombie Bounding Boxes
 	
+	protected static final VoxelShape ZOMBIE_SOUTH_HEAD_AABB = Block.makeCuboidShape(5.0D, 11.0D, 4.0D, 11.0D, 16.0D, 8.5D);
+	protected static final VoxelShape ZOMBIE_SOUTH_TORSO_AABB = Block.makeCuboidShape(5.5D, 0.0D, 4.5D, 10.5D, 11.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_SOUTH_RIGHT_ARM_AABB = Block.makeCuboidShape(10.5D, 9.0D, 5.0D, 12.5D, 11.0D, 12.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_LEFT_ARM_AABB = Block.makeCuboidShape(3.5D, 9.0D, 5.0D, 5.5D, 11.0D, 12.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_RIGHT_EYE_AABB = Block.makeCuboidShape(9.0D, 14.0D, 8.5D, 10.5D, 15.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_LEFT_EYE_AABB = Block.makeCuboidShape(5.5D, 14.0D, 8.5D, 7.0D, 15.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(7.0D, 13.0D, 8.5D, 9.0D, 14.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_RIGHT_MOUTH_AABB = Block.makeCuboidShape(9.0D, 11.0D, 8.5D, 10.0D, 13.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_LEFT_MOUTH_AABB = Block.makeCuboidShape(6.0D, 12.0D, 8.5D, 7.0D, 13.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_SOUTH_ARMS_AABB = VoxelShapes.or(ZOMBIE_SOUTH_RIGHT_ARM_AABB, ZOMBIE_SOUTH_LEFT_ARM_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_EYES_AABB = VoxelShapes.or(ZOMBIE_SOUTH_RIGHT_EYE_AABB, ZOMBIE_SOUTH_LEFT_EYE_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(ZOMBIE_SOUTH_MIDDLE_MOUTH_AABB, ZOMBIE_SOUTH_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_MOUTH_AABB = VoxelShapes.or(ZOMBIE_SOUTH_MIDDLE_AND_RIGHT_MOUTH_AABB, ZOMBIE_SOUTH_LEFT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_FACE_AABB = VoxelShapes.or(ZOMBIE_SOUTH_EYES_AABB, ZOMBIE_SOUTH_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_FACE_AND_ARMS_AABB = VoxelShapes.or(ZOMBIE_SOUTH_FACE_AABB, ZOMBIE_SOUTH_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_BODY_AABB = VoxelShapes.or(ZOMBIE_SOUTH_HEAD_AABB, ZOMBIE_SOUTH_TORSO_AABB);
+	protected static final VoxelShape ZOMBIE_SOUTH_AABB = VoxelShapes.or(ZOMBIE_SOUTH_BODY_AABB, ZOMBIE_SOUTH_FACE_AND_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_HEAD_AABB = Block.makeCuboidShape(5.0D, 11.0D, 7.5D, 11.0D, 16.0D, 12.0D);
+	protected static final VoxelShape ZOMBIE_NORTH_TORSO_AABB = Block.makeCuboidShape(5.5D, 0.0D, 8.5D, 10.5D, 11.0D, 11.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_RIGHT_ARM_AABB = Block.makeCuboidShape(10.5D, 9.0D, 4.0D, 12.5D, 11.0D, 11.0D);
+	protected static final VoxelShape ZOMBIE_NORTH_LEFT_ARM_AABB = Block.makeCuboidShape(3.5D, 9.0D, 4.0D, 5.5D, 11.0D, 11.0D);
+	protected static final VoxelShape ZOMBIE_NORTH_RIGHT_EYE_AABB = Block.makeCuboidShape(9.0D, 14.0D, 7.0D, 10.5D, 15.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_LEFT_EYE_AABB = Block.makeCuboidShape(5.5D, 14.0D, 7.0D, 7.0D, 15.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(7.0D, 13.0D, 7.0D, 9.0D, 14.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_RIGHT_MOUTH_AABB = Block.makeCuboidShape(9.0D, 12.0D, 7.0D, 10.0D, 13.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_LEFT_MOUTH_AABB = Block.makeCuboidShape(6.0D, 11.0D, 7.0D, 7.0D, 13.0D, 7.5D);
+	protected static final VoxelShape ZOMBIE_NORTH_ARMS_AABB = VoxelShapes.or(ZOMBIE_NORTH_RIGHT_ARM_AABB, ZOMBIE_NORTH_LEFT_ARM_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_EYES_AABB = VoxelShapes.or(ZOMBIE_NORTH_RIGHT_EYE_AABB, ZOMBIE_NORTH_LEFT_EYE_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(ZOMBIE_NORTH_MIDDLE_MOUTH_AABB, ZOMBIE_NORTH_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_MOUTH_AABB = VoxelShapes.or(ZOMBIE_NORTH_MIDDLE_AND_RIGHT_MOUTH_AABB, ZOMBIE_NORTH_LEFT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_FACE_AABB = VoxelShapes.or(ZOMBIE_NORTH_EYES_AABB, ZOMBIE_NORTH_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_FACE_AND_ARMS_AABB = VoxelShapes.or(ZOMBIE_NORTH_FACE_AABB, ZOMBIE_NORTH_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_BODY_AABB = VoxelShapes.or(ZOMBIE_NORTH_HEAD_AABB, ZOMBIE_NORTH_TORSO_AABB);
+	protected static final VoxelShape ZOMBIE_NORTH_AABB = VoxelShapes.or(ZOMBIE_NORTH_BODY_AABB, ZOMBIE_NORTH_FACE_AND_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_HEAD_AABB = Block.makeCuboidShape(7.5D, 11.0D, 5.0D, 12.0D, 16.0D, 11.0D);
+	protected static final VoxelShape ZOMBIE_WEST_TORSO_AABB = Block.makeCuboidShape(8.5D, 0.0D, 5.5D, 11.5D, 11.0D, 10.5D);
+	protected static final VoxelShape ZOMBIE_WEST_RIGHT_ARM_AABB = Block.makeCuboidShape(4.0D, 9.0D, 10.5D, 11.0D, 11.0D, 12.5D);
+	protected static final VoxelShape ZOMBIE_WEST_LEFT_ARM_AABB = Block.makeCuboidShape(4.0D, 9.0D, 3.5D, 11.0D, 11.0D, 5.5D);
+	protected static final VoxelShape ZOMBIE_WEST_RIGHT_EYE_AABB = Block.makeCuboidShape(7.0D, 14.0D, 9.0D, 7.5D, 15.0D, 10.5D);
+	protected static final VoxelShape ZOMBIE_WEST_LEFT_EYE_AABB = Block.makeCuboidShape(7.0D, 14.0D, 5.5D, 7.5D, 15.0D, 7.0D);
+	protected static final VoxelShape ZOMBIE_WEST_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(7.0D, 13.0D, 7.0D, 7.5D, 14.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_WEST_RIGHT_MOUTH_AABB = Block.makeCuboidShape(7.0D, 11.0D, 9.0D, 7.5D, 13.0D, 10.0D);
+	protected static final VoxelShape ZOMBIE_WEST_LEFT_MOUTH_AABB = Block.makeCuboidShape(7.0D, 12.0D, 6.0D, 7.5D, 13.0D, 7.0D);
+	protected static final VoxelShape ZOMBIE_WEST_ARMS_AABB = VoxelShapes.or(ZOMBIE_WEST_RIGHT_ARM_AABB, ZOMBIE_WEST_LEFT_ARM_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_EYES_AABB = VoxelShapes.or(ZOMBIE_WEST_RIGHT_EYE_AABB, ZOMBIE_WEST_LEFT_EYE_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(ZOMBIE_WEST_MIDDLE_MOUTH_AABB, ZOMBIE_WEST_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_MOUTH_AABB = VoxelShapes.or(ZOMBIE_WEST_MIDDLE_AND_RIGHT_MOUTH_AABB, ZOMBIE_WEST_LEFT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_FACE_AABB = VoxelShapes.or(ZOMBIE_WEST_EYES_AABB, ZOMBIE_WEST_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_FACE_AND_ARMS_AABB = VoxelShapes.or(ZOMBIE_WEST_FACE_AABB, ZOMBIE_WEST_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_BODY_AABB = VoxelShapes.or(ZOMBIE_WEST_HEAD_AABB, ZOMBIE_WEST_TORSO_AABB);
+	protected static final VoxelShape ZOMBIE_WEST_AABB = VoxelShapes.or(ZOMBIE_WEST_BODY_AABB, ZOMBIE_WEST_FACE_AND_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_HEAD_AABB = Block.makeCuboidShape(4.0D, 11.0D, 5.0D, 8.5D, 16.0D, 11.0D);
+	protected static final VoxelShape ZOMBIE_EAST_TORSO_AABB = Block.makeCuboidShape(4.5D, 0.0D, 5.5D, 7.5D, 11.0D, 10.5D);
+	protected static final VoxelShape ZOMBIE_EAST_RIGHT_ARM_AABB = Block.makeCuboidShape(5.0D, 9.0D, 10.5D, 12.0D, 11.0D, 12.5D);
+	protected static final VoxelShape ZOMBIE_EAST_LEFT_ARM_AABB = Block.makeCuboidShape(5.0D, 9.0D, 3.5D, 12.0D, 11.0D, 5.5D);
+	protected static final VoxelShape ZOMBIE_EAST_RIGHT_EYE_AABB = Block.makeCuboidShape(8.5D, 14.0D, 9.0D, 9.0D, 15.0D, 10.5D);
+	protected static final VoxelShape ZOMBIE_EAST_LEFT_EYE_AABB = Block.makeCuboidShape(8.5D, 14.0D, 5.5D, 9.0D, 15.0D, 7.0D);
+	protected static final VoxelShape ZOMBIE_EAST_MIDDLE_MOUTH_AABB = Block.makeCuboidShape(8.5D, 13.0D, 7.0D, 9.0D, 14.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_EAST_RIGHT_MOUTH_AABB = Block.makeCuboidShape(8.5D, 12.0D, 9.0D, 9.0D, 13.0D, 10.0D);
+	protected static final VoxelShape ZOMBIE_EAST_LEFT_MOUTH_AABB = Block.makeCuboidShape(8.5D, 11.0D, 6.0D, 9.0D, 13.0D, 7.0D);
+	protected static final VoxelShape ZOMBIE_EAST_ARMS_AABB = VoxelShapes.or(ZOMBIE_EAST_RIGHT_ARM_AABB, ZOMBIE_EAST_LEFT_ARM_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_EYES_AABB = VoxelShapes.or(ZOMBIE_EAST_RIGHT_EYE_AABB, ZOMBIE_EAST_LEFT_EYE_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_MIDDLE_AND_RIGHT_MOUTH_AABB = VoxelShapes.or(ZOMBIE_EAST_MIDDLE_MOUTH_AABB, ZOMBIE_EAST_RIGHT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_MOUTH_AABB = VoxelShapes.or(ZOMBIE_EAST_MIDDLE_AND_RIGHT_MOUTH_AABB, ZOMBIE_EAST_LEFT_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_FACE_AABB = VoxelShapes.or(ZOMBIE_EAST_EYES_AABB, ZOMBIE_EAST_MOUTH_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_FACE_AND_ARMS_AABB = VoxelShapes.or(ZOMBIE_EAST_FACE_AABB, ZOMBIE_EAST_ARMS_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_BODY_AABB = VoxelShapes.or(ZOMBIE_EAST_HEAD_AABB, ZOMBIE_EAST_TORSO_AABB);
+	protected static final VoxelShape ZOMBIE_EAST_AABB = VoxelShapes.or(ZOMBIE_EAST_BODY_AABB, ZOMBIE_EAST_FACE_AND_ARMS_AABB);
 	
-	protected static final VoxelShape CREEPER_NORTH_AABB = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 14.0D);
+	//Sheep Bounding Boxes
 	
-	protected static final VoxelShape CREEPER_X_AABB = Block.makeCuboidShape(2.0D, 0.0D, 4.0D, 14.0D, 16.0D, 12.0D);
+	protected static final VoxelShape SHEEP_SOUTH_HEAD_AABB = Block.makeCuboidShape(5.5D, 9.0D, 10.0D, 10.5D, 14.0D, 15.0D);
+	protected static final VoxelShape SHEEP_SOUTH_BODY_AABB = Block.makeCuboidShape(4.5D, 4.0D, 4.0D, 11.5D, 11.0D, 13.0D);
+	protected static final VoxelShape SHEEP_SOUTH_LEG1_AABB = Block.makeCuboidShape(2.5D, 0.0D, 4.0D, 9.5D, 4.0D, 6.0D);
+	
+	//
 	
 	protected static final VoxelShape BAT_NORTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_AABB = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
 	protected static final VoxelShape BAT_EAST_AABB = Block.makeCuboidShape(5.0D, 0.0D, 0.1D, 10.0D, 12.0D, 15.0D);
 	protected static final VoxelShape BAT_WEST_AABB = Block.makeCuboidShape(6.0D, 0.0D, 0.1D, 11.0D, 12.0D, 16.0D);
-	
-    protected static final VoxelShape ZOMBIE_NORTH_AABB = Block.makeCuboidShape(2.0D, 0.0D, 6.0D, 14.0D, 16.0D, 14.0D);
-    protected static final VoxelShape ZOMBIE_SOUTH_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 10.0D);
-    protected static final VoxelShape ZOMBIE_EAST_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 10.0D, 16.0D, 14.0D);
-    protected static final VoxelShape ZOMBIE_WEST_AABB = Block.makeCuboidShape(6.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 	
 	protected static final VoxelShape CHICKEN_NORTH_AABB = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 16.0D);
 	protected static final VoxelShape CHICKEN_SOUTH_AABB = Block.makeCuboidShape(2.0D, 0.0D, 0.0D, 14.0D, 16.0D, 14.0D);
@@ -177,13 +289,22 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.creeper_plush)
 		{
-			return VePlushBlock.defineShapes(state, CREEPER_SOUTH_RIGHT_EYE_AABB, CREEPER_NORTH_AABB, CREEPER_X_AABB, CREEPER_X_AABB);
+			return VePlushBlock.defineShapes(state, CREEPER_SOUTH_AABB, CREEPER_NORTH_AABB, CREEPER_WEST_AABB, CREEPER_EAST_AABB);
 		}
+		else if(this == VeBlocks.zombie_plush || this == VeBlocks.zombie_demon_plush)
+		{
+			return VePlushBlock.defineShapes(state, ZOMBIE_SOUTH_AABB, ZOMBIE_NORTH_AABB, ZOMBIE_WEST_AABB, ZOMBIE_EAST_AABB);
+		}
+		else if(this == VeBlocks.white_sheep_plush || this == VeBlocks.orange_sheep_plush || this == VeBlocks.magenta_sheep_plush || this == VeBlocks.light_blue_sheep_plush || this == VeBlocks.yellow_sheep_plush || this == VeBlocks.lime_sheep_plush || this == VeBlocks.pink_sheep_plush || this == VeBlocks.gray_sheep_plush || this == VeBlocks.light_gray_sheep_plush || this == VeBlocks.cyan_sheep_plush || this == VeBlocks.purple_sheep_plush || this == VeBlocks.blue_sheep_plush || this == VeBlocks.brown_sheep_plush || this == VeBlocks.green_sheep_plush || this == VeBlocks.red_sheep_plush || this == VeBlocks.black_sheep_plush)
+		{
+			return VePlushBlock.defineShapes(state, SHEEP_SOUTH_LEG1_AABB, HORSE_Z_AABB, HORSE_X_AABB, HORSE_X_AABB);
+		}
+		
 		else if(this == VeBlocks.bat_plush)
 		{
 			return VePlushBlock.defineShapes(state, BAT_SOUTH_AABB, BAT_NORTH_AABB, BAT_WEST_AABB, BAT_EAST_AABB);
 		}
-		else if(this == VeBlocks.zombie_plush || this == VeBlocks.zombie_demon_plush || this == VeBlocks.zombie_pigman_plush)
+		else if(this == VeBlocks.zombie_pigman_plush)
 		{
 			return VePlushBlock.defineShapes(state, ZOMBIE_SOUTH_AABB, ZOMBIE_NORTH_AABB, ZOMBIE_WEST_AABB, ZOMBIE_EAST_AABB);
 		}
@@ -195,7 +316,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			 return VePlushBlock.defineShapes(state, SKELETON_SOUTH_AABB, SKELETON_NORTH_AABB, SKELETON_WEST_AABB, SKELETON_EAST_AABB);
 		}
-		else if(this == VeBlocks.white_horse_plush || this == VeBlocks.gray_horse_plush || this == VeBlocks.light_gray_horse_plush || this == VeBlocks.brown_horse_plush || this == VeBlocks.black_horse_plush || this == VeBlocks.purple_horse_plush || this == VeBlocks.white_sheep_plush || this == VeBlocks.orange_sheep_plush || this == VeBlocks.magenta_sheep_plush || this == VeBlocks.light_blue_sheep_plush || this == VeBlocks.yellow_sheep_plush || this == VeBlocks.lime_sheep_plush || this == VeBlocks.pink_sheep_plush || this == VeBlocks.gray_sheep_plush || this == VeBlocks.light_gray_sheep_plush || this == VeBlocks.cyan_sheep_plush || this == VeBlocks.purple_sheep_plush || this == VeBlocks.blue_sheep_plush || this == VeBlocks.brown_sheep_plush || this == VeBlocks.green_sheep_plush || this == VeBlocks.red_sheep_plush || this == VeBlocks.black_sheep_plush)
+		else if(this == VeBlocks.white_horse_plush || this == VeBlocks.gray_horse_plush || this == VeBlocks.light_gray_horse_plush || this == VeBlocks.brown_horse_plush || this == VeBlocks.black_horse_plush || this == VeBlocks.purple_horse_plush)
 		{
 			return VePlushBlock.defineShapes(state, HORSE_Z_AABB, HORSE_Z_AABB, HORSE_X_AABB, HORSE_X_AABB);
 		}
@@ -238,6 +359,9 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		return NORMAL_CUBE;
 	}
 	
+	/**
+	 * Decide what shape the block should have depending on its direction property
+	 */
 	private static VoxelShape defineShapes(BlockState state, VoxelShape southShape, VoxelShape northShape, VoxelShape westShape, VoxelShape eastShape)
 	{
 		switch((Direction)state.get(HORIZONTAL_FACING))
