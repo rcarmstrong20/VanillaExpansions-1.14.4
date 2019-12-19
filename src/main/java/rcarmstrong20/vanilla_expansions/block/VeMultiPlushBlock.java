@@ -195,7 +195,14 @@ public class VeMultiPlushBlock extends VePlushBlock
 			{
 				worldIn.destroyBlock(pos.up(), false);
 			}
-			worldIn.destroyBlock(pos, false);
+			if(player.isCreative())
+			{
+				worldIn.destroyBlock(pos, false);
+			}
+			else
+			{
+				worldIn.destroyBlock(pos, true);
+			}
 		}
 	}
 	
