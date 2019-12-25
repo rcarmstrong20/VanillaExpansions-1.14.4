@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.gen.feature.VeBigPurpleMushroomFeature;
+import rcarmstrong20.vanilla_expansions.gen.feature.structure.BirchForestCabinPiece;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.BirchForestCabinStructure;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.ForestCabinPiece;
 import rcarmstrong20.vanilla_expansions.gen.feature.structure.ForestCabinStructure;
@@ -30,12 +31,13 @@ import rcarmstrong20.vanilla_expansions.gen.feature.structure.TaigaCabinStructur
 @Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VeFeature
 {
-	public static IStructurePieceType TAIGA_CABIN_PIECE;
-	public static IStructurePieceType FOREST_CABIN_PIECE;
-	public static IStructurePieceType BIRCH_FOREST_CABIN_PIECE;
-	
 	private static final List<Feature<?>> FEATURES = new ArrayList<>();
+	private static final List<IStructurePieceType> STRUCTURE_PIECES = new ArrayList<>();
 	private static final List<Structure<?>> STRUCTURES = new ArrayList<>();
+	
+	public static final IStructurePieceType TAIGA_CABIN_PIECE = register(VanillaExpansions.location("taiga_cabin"), TaigaCabinPiece::new);
+	public static final IStructurePieceType FOREST_CABIN_PIECE = register(VanillaExpansions.location("forest_cabin"), ForestCabinPiece::new);
+	public static final IStructurePieceType BIRCH_FOREST_CABIN_PIECE = register(VanillaExpansions.location("forest_cabin"), BirchForestCabinPiece::new);
 	
 	public static final Feature<BigMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM = register(VanillaExpansions.location("huge_purple_mushroom"), new VeBigPurpleMushroomFeature(BigMushroomFeatureConfig::deserialize));
 	public static final Feature<NoFeatureConfig> BLUEBERRY_BUSH = register(VanillaExpansions.location("blueberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.blueberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
@@ -44,7 +46,7 @@ public class VeFeature
 	public static final Structure<NoFeatureConfig> FOREST_CABIN = register(VanillaExpansions.location("forest_cabin"), new ForestCabinStructure(NoFeatureConfig::deserialize));
 	public static final Structure<NoFeatureConfig> BIRCH_FOREST_CABIN = register(VanillaExpansions.location("birch_forest_cabin"), new BirchForestCabinStructure(NoFeatureConfig::deserialize));
 	
-	/*
+	/**
 	 * Set the registry name for the features and add them to the registry list.
 	 */
 	private static <C extends IFeatureConfig> Feature<C> register(ResourceLocation name, Feature<C> feature)
@@ -54,7 +56,17 @@ public class VeFeature
 		return feature;
 	}
 	
-	/*
+	/**
+	 * Create registers for the structure pieces and add them to the registry list.
+	 */
+	private static IStructurePieceType register(ResourceLocation name, IStructurePieceType structurePieceType)
+	{
+		IStructurePieceType pieceRegistry = Registry.register(Registry.STRUCTURE_PIECE, name, structurePieceType);
+		STRUCTURE_PIECES.add(pieceRegistry);
+		return pieceRegistry;
+	}
+	
+	/**
 	 * Set the registry name for the structures and add them to the registry list.
 	 */
 	private static <C extends IFeatureConfig> Structure<C> register(ResourceLocation name, Structure<C> structure)
@@ -64,7 +76,7 @@ public class VeFeature
 		return structure;
 	}
 	
-	/*
+	/**
 	 * Register the Features to the game
 	 */
 	@SubscribeEvent
@@ -73,9 +85,8 @@ public class VeFeature
 		FEATURES.forEach(feature -> event.getRegistry().register(feature));
 		FEATURES.clear();
 		
-		TAIGA_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("taiga_cabin"), TaigaCabinPiece::new);
-		FOREST_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("forest_cabin"), ForestCabinPiece::new);
-		BIRCH_FOREST_CABIN_PIECE = Registry.register(Registry.STRUCTURE_PIECE, VanillaExpansions.location("forest_cabin"), ForestCabinPiece::new);
+		STRUCTURE_PIECES.forEach(structurePiece -> STRUCTURE_PIECES.iterator());
+		STRUCTURE_PIECES.clear();
 		
 		STRUCTURES.forEach(structure -> event.getRegistry().register(structure));
 		STRUCTURES.clear();
