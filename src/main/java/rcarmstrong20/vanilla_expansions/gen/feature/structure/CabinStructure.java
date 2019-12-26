@@ -1,5 +1,6 @@
 package rcarmstrong20.vanilla_expansions.gen.feature.structure;
 
+import java.util.List;
 import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
@@ -9,6 +10,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.ScatteredStructure;
@@ -16,10 +18,11 @@ import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
+import rcarmstrong20.vanilla_expansions.core.VeBiomes;
 
-public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
+public class CabinStructure extends ScatteredStructure<NoFeatureConfig>
 {
-	public TaigaCabinStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config)
+	public CabinStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config)
 	{
 		super(config);
 	}
@@ -44,7 +47,7 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 	@Override
 	public Structure.IStartFactory getStartFactory()
 	{
-		return TaigaCabinStructure.Start::new;
+		return CabinStructure.Start::new;
 	}
 	
 	/**
@@ -58,7 +61,7 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 	@Override
 	public String getStructureName()
 	{
-		return VanillaExpansions.location("taiga_cabin").toString();
+		return VanillaExpansions.MOD_ID + ":cabin";
 	}
 	
 	/**
@@ -93,11 +96,39 @@ public class TaigaCabinStructure extends ScatteredStructure<NoFeatureConfig>
 		@Override
 		public void init(ChunkGenerator<?> generator, TemplateManager templateManager, int chunkX, int chunkZ, Biome biome)
 		{
-			ResourceLocation templateResource = VanillaExpansions.location("taiga_cabin");
+			ResourceLocation templateResource = null;
+			if(isBiome(biome, VeBiomes.TAIGA_BIOMES))
+			{
+				templateResource = VanillaExpansions.location("taiga_cabin");
+			}
+			else if(biome == Biomes.FOREST)
+			{
+				templateResource = VanillaExpansions.location("forest_cabin");
+			}
+			else if(isBiome(biome, VeBiomes.BIRCH_FOREST_BIOMES))
+			{
+				templateResource = VanillaExpansions.location("birch_forest_cabin");
+			}
+			
 			Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
-			TaigaCabinPiece piece = new TaigaCabinPiece(templateManager, templateResource, new BlockPos(chunkX * 16, 0, chunkZ * 16), rotation);
+			CabinPiece piece = new CabinPiece(templateManager, templateResource, new BlockPos(chunkX * 16, 0, chunkZ * 16), rotation);
 			this.components.add(piece);
 			this.recalculateStructureSize();
+		}
+		
+		/**
+		 * Check to see if the current biome exists in the given list of biomes.
+		 */
+		private static boolean isBiome(Biome currentBiome, List<Biome> biomes)
+		{
+			for(Biome biome : biomes)
+			{
+				if(currentBiome == biome)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }

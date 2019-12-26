@@ -25,7 +25,7 @@ import rcarmstrong20.vanilla_expansions.core.VeFeature;
  * Pieces are very customisable, see vanilla classes for different ways they can be used
  * This particular class layout is similar to what vanilla uses for more recent structures
  */
-public class TaigaCabinPiece extends TemplateStructurePiece
+public class CabinPiece extends TemplateStructurePiece
 {
 	//You can store whatever you want in this class, just make sure it is saved and loaded from nbt when it needs to be
 	private final ResourceLocation templateResource;
@@ -35,9 +35,9 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	 * This is the constructor we use ourselves, the other constructor is needed for the piece type
 	 * @return 
 	 */
-	public TaigaCabinPiece(TemplateManager templateManager, ResourceLocation templateResource, BlockPos pos, Rotation rotation)
+	public CabinPiece(TemplateManager templateManager, ResourceLocation templateResource, BlockPos pos, Rotation rotation)
 	{
-		super(VeFeature.TAIGA_CABIN_PIECE, 0);
+		super(VeFeature.CABIN_PIECE, 0);
 		this.templateResource = templateResource;
 		this.rotation = rotation;
 		this.templatePosition = pos;
@@ -47,9 +47,9 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 	/**
 	 * This constructor must always be implemented, so that the piece type can be created
 	 */
-	public TaigaCabinPiece(TemplateManager templateManager, CompoundNBT nbt)
+	public CabinPiece(TemplateManager templateManager, CompoundNBT nbt)
 	{
-		super(VeFeature.TAIGA_CABIN_PIECE, nbt);
+		super(VeFeature.CABIN_PIECE, nbt);
 		this.templateResource = new ResourceLocation(nbt.getString("template"));
 		this.rotation = Rotation.valueOf(nbt.getString("rotation"));
 		setupTemplate(templateManager);
@@ -91,6 +91,14 @@ public class TaigaCabinPiece extends TemplateStructurePiece
 		if("taiga_cabin_chest".equals(function))
 		{
 			LockableLootTileEntity.setLootTable(world, rand, pos.down(), VanillaExpansions.location("chests/taiga_cabin"));
+		}
+		else if("forest_cabin_chest".equals(function))
+		{
+			LockableLootTileEntity.setLootTable(world, rand, pos.down(), VanillaExpansions.location("chests/forest_cabin"));
+		}
+		else if("birch_forest_cabin_chest".equals(function))
+		{
+			LockableLootTileEntity.setLootTable(world, rand, pos.down(), VanillaExpansions.location("chests/birch_forest_cabin"));
 		}
 	}
 	

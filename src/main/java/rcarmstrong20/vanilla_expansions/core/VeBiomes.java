@@ -34,15 +34,17 @@ import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class VeBiomes
 {
-	private static final List<Biome> COLD_BIOMES = Arrays.asList(Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
-	private static final List<Biome> NETHER_BIOMES = Arrays.asList(Biomes.NETHER);
-	private static final List<Biome> FOREST_BIOMES = Arrays.asList(Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
-	private static final List<Biome> DARK_FOREST_BIOMES = Arrays.asList(Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
-	private static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
-	private static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
-	private static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
-	private static final List<Biome> FOREST_BIOME = Arrays.asList(Biomes.FOREST);
-	private static final List<Biome> BIRCH_FOREST_BIOMES = Arrays.asList(Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.TALL_BIRCH_HILLS);
+	public static final List<Biome> COLD_BIOMES = Arrays.asList(Biomes.MOUNTAINS, Biomes.MOUNTAIN_EDGE, Biomes.GRAVELLY_MOUNTAINS, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.TAIGA_MOUNTAINS, Biomes.WOODED_MOUNTAINS, Biomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.ICE_SPIKES, Biomes.FROZEN_RIVER, Biomes.FROZEN_OCEAN, Biomes.DEEP_FROZEN_OCEAN);
+	public static final List<Biome> NETHER_BIOMES = Arrays.asList(Biomes.NETHER);
+	public static final List<Biome> FOREST_BIOMES = Arrays.asList(Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.FLOWER_FOREST);
+	public static final List<Biome> DARK_FOREST_BIOMES = Arrays.asList(Biomes.DARK_FOREST, Biomes.DARK_FOREST_HILLS);
+	public static final List<Biome> SWAMP_BIOMES = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP_HILLS);
+	public static final List<Biome> END_CITY_BIOMES = Arrays.asList(Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS, Biomes.SMALL_END_ISLANDS);
+	public static final List<Biome> TAIGA_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS);
+	public static final List<Biome> FOREST_BIOME = Arrays.asList(Biomes.FOREST);
+	public static final List<Biome> BIRCH_FOREST_BIOMES = Arrays.asList(Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.TALL_BIRCH_HILLS);
+	public static final List<Biome> CABIN_BIOMES = Arrays.asList(Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.TAIGA_MOUNTAINS, Biomes.GIANT_SPRUCE_TAIGA, Biomes.GIANT_SPRUCE_TAIGA_HILLS, Biomes.GIANT_TREE_TAIGA, Biomes.GIANT_TREE_TAIGA_HILLS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.TALL_BIRCH_FOREST, Biomes.TALL_BIRCH_HILLS, Biomes.FOREST);
+	
 	
 	@SubscribeEvent
 	public static void registerBiomes(final RegistryEvent.Register<Biome> event)
@@ -56,12 +58,8 @@ public class VeBiomes
 		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), DARK_FOREST_BIOMES);
 		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), SWAMP_BIOMES);
 		addFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
-		addStructure(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, TAIGA_BIOMES);
-		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.TAIGA_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), TAIGA_BIOMES);
-		addStructure(VeFeature.FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, FOREST_BIOME);
-		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), FOREST_BIOME);
-		addStructure(VeFeature.BIRCH_FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, BIRCH_FOREST_BIOMES);
-		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.BIRCH_FOREST_CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), BIRCH_FOREST_BIOMES);
+		addStructure(VeFeature.CABIN, IFeatureConfig.NO_FEATURE_CONFIG, CABIN_BIOMES);
+		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), CABIN_BIOMES);
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
