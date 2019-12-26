@@ -17,11 +17,11 @@ public class VeVillagerProfessions
 {
 	private static final List<VillagerProfession> VILLAGER_PROFESSIONS = new ArrayList<>();
 	
-	public static final VillagerProfession LUMBERJACK = register("lumberjack", VePointOfInterestTypes.LUMBERJACK);
+	public static final VillagerProfession LUMBERJACK = register(VanillaExpansions.MOD_ID, "lumberjack", VePointOfInterestTypes.LUMBERJACK);
 	
-	private static VillagerProfession register(String name, PointOfInterestType pointOfInterest)
+	private static VillagerProfession register(String id, String name, PointOfInterestType pointOfInterest)
 	{
-		VillagerProfession profession = new VillagerProfession(name, pointOfInterest, ImmutableSet.of(), ImmutableSet.of());
+		VillagerProfession profession = new VillagerProfession(id + ":" + name, pointOfInterest, ImmutableSet.of(), ImmutableSet.of());
 		profession.setRegistryName(VanillaExpansions.location(name));
 		VILLAGER_PROFESSIONS.add(profession);
 		return profession;
