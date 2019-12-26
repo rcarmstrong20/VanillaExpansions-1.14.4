@@ -25,6 +25,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 
@@ -58,8 +59,8 @@ public class VeBiomes
 		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.purple_mushroom.getDefaultState()), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), DARK_FOREST_BIOMES);
 		addFeature(Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.BUSH, new BushConfig(VeBlocks.witchs_cradle.getDefaultState().with(VeBerryBushBlock.AGE, 3)), Placement.CHANCE_HEIGHTMAP_DOUBLE, new ChanceConfig(10)), SWAMP_BIOMES);
 		addFeature(Decoration.LOCAL_MODIFICATIONS, Biome.createDecoratedFeature(Feature.LAKE, new LakesConfig(VeBlocks.void_liquid.getDefaultState()), Placement.WATER_LAKE, new LakeChanceConfig(4)), END_CITY_BIOMES);
+		addFeatureToAll(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
 		addStructure(VeFeature.CABIN, IFeatureConfig.NO_FEATURE_CONFIG, CABIN_BIOMES);
-		addFeature(Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(VeFeature.CABIN, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG), CABIN_BIOMES);
 		VanillaExpansions.LOGGER.info("Biome Features registered.");
 	}
 	
@@ -74,6 +75,17 @@ public class VeBiomes
 			{
 				biome.addFeature(decoration, featureIn);
 			}
+		}
+	}
+	
+	/**
+	 * Add a new feature to be spawned into the world.
+	 */
+	private static void addFeatureToAll(Decoration decoration, ConfiguredFeature<?> featureIn)
+	{
+		for(Biome biome : ForgeRegistries.BIOMES)
+		{
+			biome.addFeature(decoration, featureIn);
 		}
 	}
 	
