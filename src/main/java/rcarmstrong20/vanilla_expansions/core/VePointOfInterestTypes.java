@@ -23,16 +23,16 @@ public class VePointOfInterestTypes
 {
 	private static final List<PointOfInterestType> POINT_OF_INTEREST_TYPES = new ArrayList<>();
 	
-	public static final PointOfInterestType LUMBERJACK = register("lumberjack", getAllStates(VeBlocks.woodcutter), 1, SoundEvents.ENTITY_VILLAGER_WORK_MASON, 1);
+	public static final PointOfInterestType LUMBERJACK = register(VanillaExpansions.MOD_ID, "lumberjack", getAllStates(VeBlocks.woodcutter), 1, SoundEvents.ENTITY_VILLAGER_WORK_MASON, 1);
 	
 	private static Set<BlockState> getAllStates(Block block)
 	{
 		return ImmutableSet.copyOf(block.getStateContainer().getValidStates());
 	}
 	
-	private static PointOfInterestType register(String name, Set<BlockState> blockState, int p_221051_2_, @Nullable SoundEvent soundEvent, int p_221051_4_)
+	private static PointOfInterestType register(String id, String name, Set<BlockState> blockState, int p_221051_2_, @Nullable SoundEvent soundEvent, int p_221051_4_)
 	{
-		return register(name, new PointOfInterestType(name, blockState, p_221051_2_, soundEvent, p_221051_4_));
+		return register(name, new PointOfInterestType(id + ":" + name, blockState, p_221051_2_, soundEvent, p_221051_4_));
 	}
 	
 	private static PointOfInterestType register(String name, PointOfInterestType pointOfInterest)
