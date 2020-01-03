@@ -1,5 +1,6 @@
 package rcarmstrong20.vanilla_expansions.core;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +17,7 @@ import net.minecraft.village.PointOfInterestType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -45,8 +47,33 @@ public class VePointOfInterestTypes
 	@SubscribeEvent
 	public static void registerPointOfInterestTypes(final RegistryEvent.Register<PointOfInterestType> event)
 	{
+		/*
 		POINT_OF_INTEREST_TYPES.forEach(pointOfInterestTypes -> event.getRegistry().register(pointOfInterestTypes));
 		POINT_OF_INTEREST_TYPES.clear();
+		*/
+		
+		//A work around for forge's broken point of interest system.
+		try
+		{
+			Method func_221052_a = ObfuscationReflectionHelper.findMethod(PointOfInterestType.class, "func_221052_a", PointOfInterestType.class);
+			func_221052_a.invoke(null, cyclePointOfInterestType(POINT_OF_INTEREST_TYPES));
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		VanillaExpansions.LOGGER.info("Point of Interests registered.");
+	}
+	
+	/*
+	 * Cycle through all the point of interest types in the given list.
+	 */
+	private static PointOfInterestType cyclePointOfInterestType(List<PointOfInterestType> pointOfInterestTypeList)
+	{
+		for(PointOfInterestType pointOfInterestType : pointOfInterestTypeList)
+		{
+			return pointOfInterestType;
+		}
+		return null;
 	}
 }
