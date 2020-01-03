@@ -85,7 +85,10 @@ public class VeBiomes
 	{
 		for(Biome biome : ForgeRegistries.BIOMES)
 		{
-			biome.addFeature(decoration, featureIn);
+			if(biome != null)
+			{
+				biome.addFeature(decoration, featureIn);
+			}
 		}
 	}
 	
