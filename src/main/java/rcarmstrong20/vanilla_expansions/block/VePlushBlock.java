@@ -261,8 +261,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape ZOMBIE_PIGMAN_SOUTH_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_SOUTH_RIGHT_EYE_AND_LEFT_HEAD_PIECE_SHAPE, ZOMBIE_PIGMAN_SOUTH_RIBCAGE_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_SOUTH_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_SOUTH_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE, ZOMBIE_PIGMAN_SOUTH_STRAPS_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_SOUTH_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_SOUTH_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE, ZOMBIE_SOUTH_BODY_SHAPE);
-	
-	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 14.0D, 8.5D, 11.0D, 15.0D, 9.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.0D, 14.0D, 7.0D, 7.0D, 15.0D, 7.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_LEFT_HEAD_PIECE1_FRONT_SHAPE = Block.makeCuboidShape(10.5D, 11.5D, 7.0D, 11.5D, 16.5D, 7.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_LEFT_HEAD_PIECE2_FRONT_SHAPE = Block.makeCuboidShape(9.0D, 12.5D, 7.0D, 10.5D, 16.5D, 7.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_LEFT_HEAD_PIECE3_FRONT_SHAPE = Block.makeCuboidShape(8.5D, 13.0D, 7.0D, 9.0D, 16.5D, 7.5D);
@@ -281,7 +280,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE1_SHAPE = Block.makeCuboidShape(7.5D, 8.5D, 8.0D, 10.5D, 10.5D, 8.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE2_SHAPE = Block.makeCuboidShape(10.5D, 8.0D, 8.0D, 9.0D, 8.5D, 8.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE3_SHAPE = Block.makeCuboidShape(7.5D, 8.0D, 8.0D, 8.5D, 8.5D, 8.5D);
-	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE4_SHAPE = Block.makeCuboidShape(8.5D, 9.5D, 8.0D, 9.5D, 10.5D, 8.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE4_SHAPE = Block.makeCuboidShape(6.5D, 9.5D, 8.0D, 7.5D, 10.5D, 8.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE_1_AND_2_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE1_SHAPE, ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE2_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE_3_AND_4_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE3_SHAPE, ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE4_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE_1_AND_2_SHAPE, ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE_3_AND_4_SHAPE);
@@ -292,7 +291,36 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIGHT_EYE_AND_LEFT_HEAD_PIECE_SHAPE, ZOMBIE_PIGMAN_NORTH_RIBCAGE_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE, ZOMBIE_PIGMAN_NORTH_STRAPS_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_NORTH_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_NORTH_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE, ZOMBIE_NORTH_BODY_SHAPE);
-	
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(7.0D, 14.0D, 9.0D, 7.5D, 15.0D, 11.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE1_FRONT_SHAPE = Block.makeCuboidShape(7.0D, 11.5D, 4.5D, 7.5D, 16.5D, 5.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE2_FRONT_SHAPE = Block.makeCuboidShape(7.0D, 12.5D, 5.5D, 7.5D, 16.5D, 7.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE3_FRONT_SHAPE = Block.makeCuboidShape(7.0D, 13.0D, 7.0D, 7.5D, 16.5D, 7.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE4_FRONT_SHAPE = Block.makeCuboidShape(7.0D, 14.0D, 7.5D, 7.5D, 16.5D, 8.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE1_SIDE_SHAPE = Block.makeCuboidShape(7.0D, 11.5D, 4.5D, 9.0D, 16.5D, 5.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE2_SIDE_SHAPE = Block.makeCuboidShape(9.0D, 12.0D, 4.5D, 9.5D, 16.5D, 5.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE3_SIDE_SHAPE = Block.makeCuboidShape(10.5D, 12.5D, 4.5D, 9.5D, 16.5D, 5.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE_TOP_SHAPE = Block.makeCuboidShape(7.0D, 16.0D, 4.5D, 10.5D, 16.5D, 8.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_1_AND_2_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE1_FRONT_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE2_FRONT_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_3_AND_4_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE3_FRONT_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE4_FRONT_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_1_AND_2_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_3_AND_4_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_SIDE_PIECES_SIDE_1_AND_2_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE1_SIDE_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE2_SIDE_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_SIDE_PIECES_SIDE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_SIDE_PIECES_SIDE_1_AND_2_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE3_SIDE_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_FRONT_AND_SIDE_HEAD_PIECES_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECES_FRONT_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_SIDE_PIECES_SIDE_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_LEFT_FRONT_AND_SIDE_HEAD_PIECES_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE_TOP_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE1_SHAPE = Block.makeCuboidShape(8.0D, 8.5D, 5.5D, 8.5D, 10.5D, 8.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE2_SHAPE = Block.makeCuboidShape(8.0D, 8.0D, 5.5D, 8.5D, 8.5D, 7.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE3_SHAPE = Block.makeCuboidShape(8.0D, 8.0D, 7.5D, 8.5D, 8.5D, 8.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE4_SHAPE = Block.makeCuboidShape(8.0D, 9.5D, 8.5D, 8.5D, 10.5D, 9.5D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE_1_AND_2_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE1_SHAPE, ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE2_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE_3_AND_4_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE3_SHAPE, ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE4_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE_1_AND_2_SHAPE, ZOMBIE_PIGMAN_WEST_RIBCAGE_PIECE_3_AND_4_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_TOP_STRAP_SHAPE = Block.makeCuboidShape(8.0D, 7.0D, 5.0D, 12.0D, 7.5D, 11.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_BOTTOM_STRAP_SHAPE = Block.makeCuboidShape(8.0D, 6.0D, 5.0D, 12.0D, 6.5D, 11.0D);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_STRAPS_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_TOP_STRAP_SHAPE, ZOMBIE_PIGMAN_WEST_BOTTOM_STRAP_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIGHT_EYE_AND_LEFT_HEAD_PIECE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIGHT_EYE_SHAPE, ZOMBIE_PIGMAN_WEST_LEFT_HEAD_PIECE_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIGHT_EYE_AND_LEFT_HEAD_PIECE_SHAPE, ZOMBIE_PIGMAN_WEST_RIBCAGE_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE, ZOMBIE_PIGMAN_WEST_STRAPS_SHAPE);
+	protected static final VoxelShape ZOMBIE_PIGMAN_WEST_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_WEST_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE, ZOMBIE_WEST_BODY_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 14.0D, 5.0D, 9.0D, 15.0D, 7.0D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_LEFT_HEAD_PIECE1_FRONT_SHAPE = Block.makeCuboidShape(8.5D, 11.5D, 10.5D, 9.0D, 16.5D, 11.5D);
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_LEFT_HEAD_PIECE2_FRONT_SHAPE = Block.makeCuboidShape(8.5D, 12.5D, 9.0D, 9.0D, 16.5D, 10.5D);
@@ -323,6 +351,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_EAST_RIGHT_EYE_AND_LEFT_HEAD_PIECE_SHAPE, ZOMBIE_PIGMAN_EAST_RIBCAGE_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_EAST_RIBCAGE_HEAD_PIECE_AND_EYE_SHAPE, ZOMBIE_PIGMAN_EAST_STRAPS_SHAPE);
 	protected static final VoxelShape ZOMBIE_PIGMAN_EAST_SHAPE = VoxelShapes.or(ZOMBIE_PIGMAN_EAST_RIBCAGE_HEAD_PIECE_EYE_AND_STRAPS_SHAPE, ZOMBIE_EAST_BODY_SHAPE);
+	
+	//Endermite Bounding Boxes
+	
+	
 	
 	//Sheep Bounding Boxes
 	
@@ -433,7 +465,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.zombie_pigman_plush)
 		{
-			return VePlushBlock.defineShapes(state, ZOMBIE_PIGMAN_SOUTH_SHAPE, ZOMBIE_PIGMAN_NORTH_RIBCAGE_PIECE2_SHAPE, ZOMBIE_WEST_SHAPE, ZOMBIE_PIGMAN_EAST_SHAPE);
+			return VePlushBlock.defineShapes(state, ZOMBIE_PIGMAN_SOUTH_SHAPE, ZOMBIE_PIGMAN_NORTH_SHAPE, ZOMBIE_PIGMAN_WEST_SHAPE, ZOMBIE_PIGMAN_EAST_SHAPE);
 		}
 		else if(this == VeBlocks.white_sheep_plush || this == VeBlocks.orange_sheep_plush || this == VeBlocks.magenta_sheep_plush || this == VeBlocks.light_blue_sheep_plush || this == VeBlocks.yellow_sheep_plush || this == VeBlocks.lime_sheep_plush || this == VeBlocks.pink_sheep_plush || this == VeBlocks.gray_sheep_plush || this == VeBlocks.light_gray_sheep_plush || this == VeBlocks.cyan_sheep_plush || this == VeBlocks.purple_sheep_plush || this == VeBlocks.blue_sheep_plush || this == VeBlocks.brown_sheep_plush || this == VeBlocks.green_sheep_plush || this == VeBlocks.red_sheep_plush || this == VeBlocks.black_sheep_plush)
 		{
