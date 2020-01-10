@@ -354,13 +354,123 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Endermite Bounding Boxes
 	
-	
+	protected static final VoxelShape ENDERMITE_SOUTH_FRONT_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 11.5D, 10.0D, 3.0D, 12.5D);
+	protected static final VoxelShape ENDERMITE_SOUTH_MIDDLE_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.5D, 11.0D, 5.0D, 11.5D);
+	protected static final VoxelShape ENDERMITE_SOUTH_BACK1_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 4.5D, 10.0D, 4.0D, 5.5D);
+	protected static final VoxelShape ENDERMITE_SOUTH_BACK2_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 3.5D, 9.0D, 2.0D, 4.5D);
+	protected static final VoxelShape ENDERMITE_SOUTH_FRONT_AND_MIDDLE_SHAPE = VoxelShapes.or(ENDERMITE_SOUTH_FRONT_SHAPE, ENDERMITE_SOUTH_MIDDLE_SHAPE);
+	protected static final VoxelShape ENDERMITE_SOUTH_BACK_SHAPE = VoxelShapes.or(ENDERMITE_SOUTH_BACK1_SHAPE, ENDERMITE_SOUTH_BACK2_SHAPE);
+	protected static final VoxelShape ENDERMITE_SOUTH_SHAPE = VoxelShapes.or(ENDERMITE_SOUTH_FRONT_AND_MIDDLE_SHAPE, ENDERMITE_SOUTH_BACK_SHAPE);
+	protected static final VoxelShape ENDERMITE_NORTH_FRONT_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 3.5D, 10.0D, 3.0D, 4.5D);
+	protected static final VoxelShape ENDERMITE_NORTH_MIDDLE_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 4.5D, 11.0D, 5.0D, 10.5D);
+	protected static final VoxelShape ENDERMITE_NORTH_BACK1_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 10.5D, 10.0D, 4.0D, 11.5D);
+	protected static final VoxelShape ENDERMITE_NORTH_BACK2_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 11.5D, 9.0D, 2.0D, 12.5D);
+	protected static final VoxelShape ENDERMITE_NORTH_FRONT_AND_MIDDLE_SHAPE = VoxelShapes.or(ENDERMITE_NORTH_FRONT_SHAPE, ENDERMITE_NORTH_MIDDLE_SHAPE);
+	protected static final VoxelShape ENDERMITE_NORTH_BACK_SHAPE = VoxelShapes.or(ENDERMITE_NORTH_BACK1_SHAPE, ENDERMITE_NORTH_BACK2_SHAPE);
+	protected static final VoxelShape ENDERMITE_NORTH_SHAPE = VoxelShapes.or(ENDERMITE_NORTH_FRONT_AND_MIDDLE_SHAPE, ENDERMITE_NORTH_BACK_SHAPE);
+	protected static final VoxelShape ENDERMITE_WEST_FRONT_SHAPE = Block.makeCuboidShape(3.5D, 0.0D, 6.0D, 4.5D, 3.0D, 10.0D);
+	protected static final VoxelShape ENDERMITE_WEST_MIDDLE_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 5.0D, 10.5D, 5.0D, 11.0D);
+	protected static final VoxelShape ENDERMITE_WEST_BACK1_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 6.0D, 11.5D, 4.0D, 10.0D);
+	protected static final VoxelShape ENDERMITE_WEST_BACK2_SHAPE = Block.makeCuboidShape(11.5D, 0.0D, 7.0D, 12.5D, 2.0D, 9.0D);
+	protected static final VoxelShape ENDERMITE_WEST_FRONT_AND_MIDDLE_SHAPE = VoxelShapes.or(ENDERMITE_WEST_FRONT_SHAPE, ENDERMITE_WEST_MIDDLE_SHAPE);
+	protected static final VoxelShape ENDERMITE_WEST_BACK_SHAPE = VoxelShapes.or(ENDERMITE_WEST_BACK1_SHAPE, ENDERMITE_WEST_BACK2_SHAPE);
+	protected static final VoxelShape ENDERMITE_WEST_SHAPE = VoxelShapes.or(ENDERMITE_WEST_FRONT_AND_MIDDLE_SHAPE, ENDERMITE_WEST_BACK_SHAPE);
+	protected static final VoxelShape ENDERMITE_EAST_FRONT_SHAPE = Block.makeCuboidShape(11.5D, 0.0D, 6.0D, 12.5D, 3.0D, 10.0D);
+	protected static final VoxelShape ENDERMITE_EAST_MIDDLE_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 5.0D, 11.5D, 5.0D, 11.0D);
+	protected static final VoxelShape ENDERMITE_EAST_BACK1_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 6.0D, 5.5D, 4.0D, 10.0D);
+	protected static final VoxelShape ENDERMITE_EAST_BACK2_SHAPE = Block.makeCuboidShape(3.5D, 0.0D, 7.0D, 4.5D, 2.0D, 9.0D);
+	protected static final VoxelShape ENDERMITE_EAST_FRONT_AND_MIDDLE_SHAPE = VoxelShapes.or(ENDERMITE_EAST_FRONT_SHAPE, ENDERMITE_EAST_MIDDLE_SHAPE);
+	protected static final VoxelShape ENDERMITE_EAST_BACK_SHAPE = VoxelShapes.or(ENDERMITE_EAST_BACK1_SHAPE, ENDERMITE_EAST_BACK2_SHAPE);
+	protected static final VoxelShape ENDERMITE_EAST_SHAPE = VoxelShapes.or(ENDERMITE_EAST_FRONT_AND_MIDDLE_SHAPE, ENDERMITE_EAST_BACK_SHAPE);
 	
 	//Sheep Bounding Boxes
 	
+	protected static final VoxelShape SHEEP_Z_BACK_RIGHT_LEG_TUFF_SHAPE = Block.makeCuboidShape(8.5D, 2.0D, 3.5D, 11.0D, 4.0D, 6.0D);
+	protected static final VoxelShape SHEEP_Z_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 4.0D, 10.5D, 2.0D, 5.5D);
+	protected static final VoxelShape SHEEP_Z_BACK_LEFT_LEG_TUFF_SHAPE = Block.makeCuboidShape(5.0D, 2.0D, 3.5D, 7.5D, 4.0D, 6.0D);
+	protected static final VoxelShape SHEEP_Z_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 4.0D, 7.0D, 2.0D, 5.5D);
+	protected static final VoxelShape SHEEP_Z_FRONT_RIGHT_LEG_TUFF_SHAPE = Block.makeCuboidShape(8.5D, 2.0D, 10.0D, 11.0D, 4.0D, 12.5D);
+	protected static final VoxelShape SHEEP_Z_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 10.5D, 10.5D, 2.0D, 12.0D);
+	protected static final VoxelShape SHEEP_Z_FRONT_LEFT_LEG_TUFF_SHAPE = Block.makeCuboidShape(5.0D, 2.0D, 10.0D, 7.5D, 4.0D, 12.5D);
+	protected static final VoxelShape SHEEP_Z_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 10.5D, 7.0D, 2.0D, 12.0D);
+	protected static final VoxelShape SHEEP_Z_BACK_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_Z_BACK_RIGHT_LEG_TUFF_SHAPE, SHEEP_Z_BACK_LEFT_LEG_TUFF_SHAPE);
+	protected static final VoxelShape SHEEP_Z_BACK_LEGS_SHAPE = VoxelShapes.or(SHEEP_Z_BACK_RIGHT_LEG_SHAPE, SHEEP_Z_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape SHEEP_Z_FRONT_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_Z_FRONT_RIGHT_LEG_TUFF_SHAPE, SHEEP_Z_FRONT_LEFT_LEG_TUFF_SHAPE);
+	protected static final VoxelShape SHEEP_Z_FRONT_LEGS_SHAPE = VoxelShapes.or(SHEEP_Z_FRONT_RIGHT_LEG_SHAPE, SHEEP_Z_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape SHEEP_Z_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_Z_BACK_LEG_TUFFS_SHAPE, SHEEP_Z_FRONT_LEG_TUFFS_SHAPE);
+	protected static final VoxelShape SHEEP_Z_LEGS_SHAPE = VoxelShapes.or(SHEEP_Z_BACK_LEGS_SHAPE, SHEEP_Z_FRONT_LEGS_SHAPE);
+	protected static final VoxelShape SHEEP_Z_LEG_AND_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_Z_LEGS_SHAPE, SHEEP_Z_LEG_TUFFS_SHAPE);
 	protected static final VoxelShape SHEEP_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 9.0D, 10.0D, 10.5D, 14.0D, 15.0D);
-	protected static final VoxelShape SHEEP_SOUTH_BODY_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 4.0D, 11.5D, 11.0D, 13.0D);
-	protected static final VoxelShape SHEEP_SOUTH_LEG1_SHAPE = Block.makeCuboidShape(2.5D, 0.0D, 4.0D, 9.5D, 4.0D, 6.0D);
+	protected static final VoxelShape SHEEP_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 2.0D, 11.5D, 11.0D, 13.0D);
+	protected static final VoxelShape SHEEP_SOUTH_FOREHEAD_SHAPE = Block.makeCuboidShape(6.0D, 9.5D, 15.5D, 10.0D, 13.5D, 15.0D);
+	protected static final VoxelShape SHEEP_SOUTH_EARS_SHAPE = Block.makeCuboidShape(5.5D, 11.0D, 15.0D, 10.5D, 12.5D, 15.5D);
+	protected static final VoxelShape SHEEP_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 12.0D, 15.5D, 10.0D, 11.0D, 16.0D);
+	protected static final VoxelShape SHEEP_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 12.0D, 15.5D, 7.5D, 11.0D, 16.0D);
+	protected static final VoxelShape SHEEP_SOUTH_MOUTH_SHAPE = Block.makeCuboidShape(7.5D, 9.5D, 15.5D, 8.5D, 10.5D, 16.0D);
+	protected static final VoxelShape SHEEP_SOUTH_BODY_SHAPE = VoxelShapes.or(SHEEP_SOUTH_HEAD_SHAPE, SHEEP_SOUTH_TORSO_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_EYES_SHAPE = VoxelShapes.or(SHEEP_SOUTH_RIGHT_EYE_SHAPE, SHEEP_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_FOREHEAD_AND_EARS_SHAPE = VoxelShapes.or(SHEEP_SOUTH_FOREHEAD_SHAPE, SHEEP_SOUTH_EARS_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_EYES_AND_MOUTH_SHAPE = VoxelShapes.or(SHEEP_SOUTH_EYES_SHAPE, SHEEP_SOUTH_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_FACE_SHAPE = VoxelShapes.or(SHEEP_SOUTH_FOREHEAD_AND_EARS_SHAPE, SHEEP_SOUTH_EYES_AND_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_FACE_AND_BODY_SHAPE = VoxelShapes.or(SHEEP_SOUTH_FACE_SHAPE, SHEEP_SOUTH_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_SOUTH_SHAPE = VoxelShapes.or(SHEEP_Z_LEG_AND_LEG_TUFFS_SHAPE, SHEEP_SOUTH_FACE_AND_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 9.0D, 1.0D, 10.5D, 14.0D, 6.0D);
+	protected static final VoxelShape SHEEP_NORTH_TORSO_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 3.0D, 11.5D, 11.0D, 14.0D);
+	protected static final VoxelShape SHEEP_NORTH_FOREHEAD_SHAPE = Block.makeCuboidShape(6.0D, 9.5D, 0.5D, 10.0D, 13.5D, 1.0D);
+	protected static final VoxelShape SHEEP_NORTH_EARS_SHAPE = Block.makeCuboidShape(5.5D, 11.0D, 0.5D, 10.5D, 12.5D, 1.0D);
+	protected static final VoxelShape SHEEP_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 12.0D, 0.5D, 10.0D, 11.0D, 0.0D);
+	protected static final VoxelShape SHEEP_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 12.0D, 0.5D, 7.5D, 11.0D, 0.0D);
+	protected static final VoxelShape SHEEP_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(7.5D, 9.5D, 0.5D, 8.5D, 10.5D, 0.0D);
+	protected static final VoxelShape SHEEP_NORTH_BODY_SHAPE = VoxelShapes.or(SHEEP_NORTH_HEAD_SHAPE, SHEEP_NORTH_TORSO_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_EYES_SHAPE = VoxelShapes.or(SHEEP_NORTH_RIGHT_EYE_SHAPE, SHEEP_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_FOREHEAD_AND_EARS_SHAPE = VoxelShapes.or(SHEEP_NORTH_FOREHEAD_SHAPE, SHEEP_NORTH_EARS_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_EYES_AND_MOUTH_SHAPE = VoxelShapes.or(SHEEP_NORTH_EYES_SHAPE, SHEEP_NORTH_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_FACE_SHAPE = VoxelShapes.or(SHEEP_NORTH_FOREHEAD_AND_EARS_SHAPE, SHEEP_NORTH_EYES_AND_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_FACE_AND_BODY_SHAPE = VoxelShapes.or(SHEEP_NORTH_FACE_SHAPE, SHEEP_NORTH_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_NORTH_SHAPE = VoxelShapes.or(SHEEP_Z_LEG_AND_LEG_TUFFS_SHAPE, SHEEP_NORTH_FACE_AND_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_X_BACK_RIGHT_LEG_TUFF_SHAPE = Block.makeCuboidShape(3.5D, 2.0D, 8.5D, 6.0D, 4.0D, 11.0D);
+	protected static final VoxelShape SHEEP_X_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 9.0D, 5.5D, 2.0D, 10.5D);
+	protected static final VoxelShape SHEEP_X_BACK_LEFT_LEG_TUFF_SHAPE = Block.makeCuboidShape(3.5D, 2.0D, 5.0D, 6.0D, 4.0D, 7.5D);
+	protected static final VoxelShape SHEEP_X_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 5.5D, 5.5D, 2.0D, 7.0D);
+	protected static final VoxelShape SHEEP_X_FRONT_RIGHT_LEG_TUFF_SHAPE = Block.makeCuboidShape(10.0D, 2.0D, 8.5D, 12.5D, 4.0D, 11.0D);
+	protected static final VoxelShape SHEEP_X_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 9.0D, 12.0D, 2.0D, 10.5D);
+	protected static final VoxelShape SHEEP_X_FRONT_LEFT_LEG_TUFF_SHAPE = Block.makeCuboidShape(10.0D, 2.0D, 5.0D, 12.5D, 4.0D, 7.5D);
+	protected static final VoxelShape SHEEP_X_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 5.5D, 12.0D, 2.0D, 7.0D);
+	protected static final VoxelShape SHEEP_X_BACK_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_X_BACK_RIGHT_LEG_TUFF_SHAPE, SHEEP_X_BACK_LEFT_LEG_TUFF_SHAPE);
+	protected static final VoxelShape SHEEP_X_BACK_LEGS_SHAPE = VoxelShapes.or(SHEEP_X_BACK_RIGHT_LEG_SHAPE, SHEEP_X_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape SHEEP_X_FRONT_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_X_FRONT_RIGHT_LEG_TUFF_SHAPE, SHEEP_X_FRONT_LEFT_LEG_TUFF_SHAPE);
+	protected static final VoxelShape SHEEP_X_FRONT_LEGS_SHAPE = VoxelShapes.or(SHEEP_X_FRONT_RIGHT_LEG_SHAPE, SHEEP_X_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape SHEEP_X_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_X_BACK_LEG_TUFFS_SHAPE, SHEEP_X_FRONT_LEG_TUFFS_SHAPE);
+	protected static final VoxelShape SHEEP_X_LEGS_SHAPE = VoxelShapes.or(SHEEP_X_BACK_LEGS_SHAPE, SHEEP_X_FRONT_LEGS_SHAPE);
+	protected static final VoxelShape SHEEP_X_LEG_AND_LEG_TUFFS_SHAPE = VoxelShapes.or(SHEEP_X_LEGS_SHAPE, SHEEP_X_LEG_TUFFS_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_HEAD_SHAPE = Block.makeCuboidShape(1.0D, 9.0D, 5.5D, 6.0D, 14.0D, 10.5D);
+	protected static final VoxelShape SHEEP_WEST_TORSO_SHAPE = Block.makeCuboidShape(3.0D, 4.0D, 4.5D, 14.0D, 11.0D, 11.5D);
+	protected static final VoxelShape SHEEP_WEST_FOREHEAD_SHAPE = Block.makeCuboidShape(0.5D, 9.5D, 6.0D, 1.0D, 13.5D, 10.0D);
+	protected static final VoxelShape SHEEP_WEST_EARS_SHAPE = Block.makeCuboidShape(0.5D, 11.0D, 5.5D, 1.0D, 12.5D, 10.5D);
+	protected static final VoxelShape SHEEP_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 12.0D, 8.5D, 0.0D, 11.0D, 10.0D);
+	protected static final VoxelShape SHEEP_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 12.0D, 6.0D, 0.0D, 11.0D, 7.5D);
+	protected static final VoxelShape SHEEP_WEST_MOUTH_SHAPE = Block.makeCuboidShape(0.5D, 9.5D, 7.5D, 0.0D, 10.5D, 8.5D);
+	protected static final VoxelShape SHEEP_WEST_BODY_SHAPE = VoxelShapes.or(SHEEP_WEST_HEAD_SHAPE, SHEEP_WEST_TORSO_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_EYES_SHAPE = VoxelShapes.or(SHEEP_WEST_RIGHT_EYE_SHAPE, SHEEP_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_FOREHEAD_AND_EARS_SHAPE = VoxelShapes.or(SHEEP_WEST_FOREHEAD_SHAPE, SHEEP_WEST_EARS_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_EYES_AND_MOUTH_SHAPE = VoxelShapes.or(SHEEP_WEST_EYES_SHAPE, SHEEP_WEST_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_FACE_SHAPE = VoxelShapes.or(SHEEP_WEST_FOREHEAD_AND_EARS_SHAPE, SHEEP_WEST_EYES_AND_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_FACE_AND_BODY_SHAPE = VoxelShapes.or(SHEEP_WEST_FACE_SHAPE, SHEEP_WEST_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_WEST_SHAPE = VoxelShapes.or(SHEEP_X_LEG_AND_LEG_TUFFS_SHAPE, SHEEP_WEST_FACE_AND_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_HEAD_SHAPE = Block.makeCuboidShape(10.0D, 9.0D, 5.5D, 15.0D, 14.0D, 10.5D);
+	protected static final VoxelShape SHEEP_EAST_TORSO_SHAPE = Block.makeCuboidShape(2.0D, 4.0D, 4.5D, 13.0D, 11.0D, 11.5D);
+	protected static final VoxelShape SHEEP_EAST_FOREHEAD_SHAPE = Block.makeCuboidShape(15.5D, 9.5D, 6.0D, 15.0D, 13.5D, 10.0D);
+	protected static final VoxelShape SHEEP_EAST_EARS_SHAPE = Block.makeCuboidShape(15.0D, 11.0D, 5.5D, 15.5D, 12.5D, 10.5D);
+	protected static final VoxelShape SHEEP_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(15.5D, 12.0D, 8.5D, 16.0D, 11.0D, 10.0D);
+	protected static final VoxelShape SHEEP_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(15.5D, 12.0D, 6.0D, 16.0D, 11.0D, 7.5D);
+	protected static final VoxelShape SHEEP_EAST_MOUTH_SHAPE = Block.makeCuboidShape(15.5D, 9.5D, 7.5D, 16.0D, 10.5D, 8.5D);
+	protected static final VoxelShape SHEEP_EAST_BODY_SHAPE = VoxelShapes.or(SHEEP_EAST_HEAD_SHAPE, SHEEP_EAST_TORSO_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_EYES_SHAPE = VoxelShapes.or(SHEEP_EAST_RIGHT_EYE_SHAPE, SHEEP_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_FOREHEAD_AND_EARS_SHAPE = VoxelShapes.or(SHEEP_EAST_FOREHEAD_SHAPE, SHEEP_EAST_EARS_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_EYES_AND_MOUTH_SHAPE = VoxelShapes.or(SHEEP_EAST_EYES_SHAPE, SHEEP_EAST_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_FACE_SHAPE = VoxelShapes.or(SHEEP_EAST_FOREHEAD_AND_EARS_SHAPE, SHEEP_EAST_EYES_AND_MOUTH_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_FACE_AND_BODY_SHAPE = VoxelShapes.or(SHEEP_EAST_FACE_SHAPE, SHEEP_EAST_BODY_SHAPE);
+	protected static final VoxelShape SHEEP_EAST_SHAPE = VoxelShapes.or(SHEEP_X_LEG_AND_LEG_TUFFS_SHAPE, SHEEP_EAST_FACE_AND_BODY_SHAPE);
 	
 	//
 	
@@ -467,10 +577,15 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, ZOMBIE_PIGMAN_SOUTH_SHAPE, ZOMBIE_PIGMAN_NORTH_SHAPE, ZOMBIE_PIGMAN_WEST_SHAPE, ZOMBIE_PIGMAN_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.endermite_plush)
+		{
+			return VePlushBlock.defineShapes(state, ENDERMITE_SOUTH_SHAPE, ENDERMITE_NORTH_SHAPE, ENDERMITE_WEST_SHAPE, ENDERMITE_EAST_SHAPE);
+		}
 		else if(this == VeBlocks.white_sheep_plush || this == VeBlocks.orange_sheep_plush || this == VeBlocks.magenta_sheep_plush || this == VeBlocks.light_blue_sheep_plush || this == VeBlocks.yellow_sheep_plush || this == VeBlocks.lime_sheep_plush || this == VeBlocks.pink_sheep_plush || this == VeBlocks.gray_sheep_plush || this == VeBlocks.light_gray_sheep_plush || this == VeBlocks.cyan_sheep_plush || this == VeBlocks.purple_sheep_plush || this == VeBlocks.blue_sheep_plush || this == VeBlocks.brown_sheep_plush || this == VeBlocks.green_sheep_plush || this == VeBlocks.red_sheep_plush || this == VeBlocks.black_sheep_plush)
 		{
-			return VePlushBlock.defineShapes(state, HORSE_Z_SHAPE, HORSE_Z_SHAPE, HORSE_X_SHAPE, HORSE_X_SHAPE);
+			return VePlushBlock.defineShapes(state, SHEEP_SOUTH_SHAPE, SHEEP_NORTH_SHAPE, SHEEP_WEST_SHAPE, SHEEP_EAST_SHAPE);
 		}
+		
 		else if(this == VeBlocks.bat_plush)
 		{
 			return VePlushBlock.defineShapes(state, BAT_SOUTH_SHAPE, BAT_NORTH_SHAPE, BAT_WEST_SHAPE, BAT_EAST_SHAPE);
@@ -495,10 +610,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, COW_Z_SHAPE, COW_Z_SHAPE, COW_X_SHAPE, COW_X_SHAPE);
 		}
-		else if(this == VeBlocks.endermite_plush)
-		{
-			return VePlushBlock.defineShapes(state, ENDERMITE_Z_SHAPE, ENDERMITE_Z_SHAPE, ENDERMITE_X_SHAPE, ENDERMITE_X_SHAPE);
-		}
+		
 		else if(this == VeBlocks.silverfish_plush)
 		{
 			return VePlushBlock.defineShapes(state, SILVERFISH_Z_SHAPE, SILVERFISH_Z_SHAPE, SILVERFISH_X_SHAPE, SILVERFISH_X_SHAPE);
