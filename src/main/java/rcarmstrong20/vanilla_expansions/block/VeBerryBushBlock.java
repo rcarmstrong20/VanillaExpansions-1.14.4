@@ -2,6 +2,7 @@ package rcarmstrong20.vanilla_expansions.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,11 +17,9 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import rcarmstrong20.vanilla_expansions.VeBlockTags;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
 import rcarmstrong20.vanilla_expansions.core.VeItems;
 
@@ -68,7 +67,7 @@ public class VeBerryBushBlock extends SweetBerryBushBlock
 		{
 			return new ItemStack(VeItems.witchs_cradle_branch);
 		}
-		return new ItemStack(VeItems.sweet_berries);
+		return new ItemStack(Items.SWEET_BERRIES);
 	}
 	
 	@Override
@@ -86,23 +85,9 @@ public class VeBerryBushBlock extends SweetBerryBushBlock
 	}
 	
 	@Override
-	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos)
-	{
-		return VeBlockTags.CompareBlock(state.getBlock(), VeBlockTags.OVERWORLD_GROUNDS) || VeBlockTags.CompareBlock(state.getBlock(), VeBlockTags.OVERWORLD_SOILS);
-	}
-	
-	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos)
-	{
-		//Use the blocks from the isValidGround method.
-		BlockPos blockpos = pos.down();
-		return this.isValidGround(worldIn.getBlockState(blockpos), worldIn, blockpos);
-	}
-	
-	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn)
 	{
-		if(this == VeBlocks.sweet_berry_bush || this == VeBlocks.witchs_cradle)
+		if(this == Blocks.SWEET_BERRY_BUSH || this == VeBlocks.witchs_cradle)
 		{
 			super.onEntityCollision(state, worldIn, pos, entityIn);
 		}

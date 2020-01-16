@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.util.Hand;
 import net.minecraft.util.IItemProvider;
@@ -56,7 +57,7 @@ public class VeSevenStageCropBlock extends CropsBlock
     	{
     		return VeItems.quinoa;
     	}
-		return VeItems.wheat_seeds;
+		return Items.WHEAT_SEEDS;
     }
 	
 	@Override
