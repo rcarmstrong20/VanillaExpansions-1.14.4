@@ -472,17 +472,180 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape SHEEP_EAST_FACE_AND_BODY_SHAPE = VoxelShapes.or(SHEEP_EAST_FACE_SHAPE, SHEEP_EAST_BODY_SHAPE);
 	protected static final VoxelShape SHEEP_EAST_SHAPE = VoxelShapes.or(SHEEP_X_LEG_AND_LEG_TUFFS_SHAPE, SHEEP_EAST_FACE_AND_BODY_SHAPE);
 	
-	//
+	//Chicken Bounding Boxes
+	
+	protected static final VoxelShape CHICKEN_Z_FEET_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 7.5D, 11.0D, 0.5D, 8.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 3.0D, 12.0D, 10.0D, 12.0D);
+	protected static final VoxelShape CHICKEN_SOUTH_WINGS_SHAPE = Block.makeCuboidShape(3.0D, 3.5D, 4.0D, 13.0D, 9.0D, 11.0D);
+	protected static final VoxelShape CHICKEN_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 9.0D, 11.0D, 10.5D, 14.0D, 14.0D);
+	protected static final VoxelShape CHICKEN_SOUTH_WATTLE_SHAPE = Block.makeCuboidShape(6.5D, 8.5D, 13.0D, 9.5D, 11.0D, 15.0D);
+	protected static final VoxelShape CHICKEN_SOUTH_BEAK_SHAPE = Block.makeCuboidShape(6.0D, 11.0D, 13.0D, 10.0D, 12.0D, 16.0D);
+	protected static final VoxelShape CHICKEN_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 12.0D, 14.0D, 7.0D, 13.0D, 14.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 12.0D, 14.0D, 10.0D, 13.0D, 14.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_LEFT_LEG_BACK_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 5.5D, 6.5D, 3.0D, 6.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_RIGHT_LEG_BACK_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 5.5D, 10.5D, 3.0D, 6.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_LEFT_LEG_FRONT_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 6.5D, 6.5D, 0.5D, 7.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_RIGHT_LEG_FRONT_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 6.5D, 10.5D, 0.5D, 7.5D);
+	protected static final VoxelShape CHICKEN_SOUTH_BODY_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_TORSO_SHAPE, CHICKEN_SOUTH_HEAD_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_WATTLE_AND_BEAK_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_WATTLE_SHAPE, CHICKEN_SOUTH_BEAK_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_EYES_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_RIGHT_EYE_SHAPE, CHICKEN_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_LEFT_LEG_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_LEFT_LEG_BACK_SHAPE, CHICKEN_SOUTH_LEFT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_RIGHT_LEG_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_RIGHT_LEG_BACK_SHAPE, CHICKEN_SOUTH_RIGHT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_LEGS_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_LEFT_LEG_SHAPE, CHICKEN_SOUTH_RIGHT_LEG_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_FACE_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_WATTLE_AND_BEAK_SHAPE, CHICKEN_SOUTH_EYES_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_BODY_SHAPE, CHICKEN_SOUTH_WINGS_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_LEGS_AND_FEET_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_LEGS_SHAPE, CHICKEN_Z_FEET_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_LEGS_FEET_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_LEGS_AND_FEET_SHAPE, CHICKEN_SOUTH_WINGS_AND_BODY_SHAPE);
+	protected static final VoxelShape CHICKEN_SOUTH_SHAPE = VoxelShapes.or(CHICKEN_SOUTH_LEGS_FEET_WINGS_AND_BODY_SHAPE, CHICKEN_SOUTH_FACE_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_TORSO_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 4.0D, 12.0D, 10.0D, 13.0D);
+	protected static final VoxelShape CHICKEN_NORTH_WINGS_SHAPE = Block.makeCuboidShape(3.0D, 3.5D, 5.0D, 13.0D, 9.0D, 12.0D);
+	protected static final VoxelShape CHICKEN_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 9.0D, 2.0D, 10.5D, 14.0D, 5.0D);
+	protected static final VoxelShape CHICKEN_NORTH_WATTLE_SHAPE = Block.makeCuboidShape(6.5D, 8.5D, 1.0D, 9.5D, 11.0D, 3.0D);
+	protected static final VoxelShape CHICKEN_NORTH_BEAK_SHAPE = Block.makeCuboidShape(6.0D, 11.0D, 0.0D, 10.0D, 12.0D, 3.0D);
+	protected static final VoxelShape CHICKEN_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 12.0D, 1.5D, 7.0D, 13.0D, 2.0D);
+	protected static final VoxelShape CHICKEN_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 12.0D, 1.5D, 10.0D, 13.0D, 2.0D);
+	protected static final VoxelShape CHICKEN_NORTH_LEFT_LEG_BACK_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 9.5D, 6.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_NORTH_RIGHT_LEG_BACK_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 9.5D, 10.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_NORTH_LEFT_LEG_FRONT_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 8.5D, 6.5D, 0.5D, 9.5D);
+	protected static final VoxelShape CHICKEN_NORTH_RIGHT_LEG_FRONT_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 8.5D, 10.5D, 0.5D, 9.5D);
+	protected static final VoxelShape CHICKEN_NORTH_BODY_SHAPE = VoxelShapes.or(CHICKEN_NORTH_TORSO_SHAPE, CHICKEN_NORTH_HEAD_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_WATTLE_AND_BEAK_SHAPE = VoxelShapes.or(CHICKEN_NORTH_WATTLE_SHAPE, CHICKEN_NORTH_BEAK_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_EYES_SHAPE = VoxelShapes.or(CHICKEN_NORTH_RIGHT_EYE_SHAPE, CHICKEN_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_LEFT_LEG_SHAPE = VoxelShapes.or(CHICKEN_NORTH_LEFT_LEG_BACK_SHAPE, CHICKEN_NORTH_LEFT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_RIGHT_LEG_SHAPE = VoxelShapes.or(CHICKEN_NORTH_RIGHT_LEG_BACK_SHAPE, CHICKEN_NORTH_RIGHT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_LEGS_SHAPE = VoxelShapes.or(CHICKEN_NORTH_LEFT_LEG_SHAPE, CHICKEN_NORTH_RIGHT_LEG_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_FACE_SHAPE = VoxelShapes.or(CHICKEN_NORTH_WATTLE_AND_BEAK_SHAPE, CHICKEN_NORTH_EYES_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_NORTH_BODY_SHAPE, CHICKEN_NORTH_WINGS_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_LEGS_AND_FEET_SHAPE = VoxelShapes.or(CHICKEN_NORTH_LEGS_SHAPE, CHICKEN_Z_FEET_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_LEGS_FEET_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_NORTH_LEGS_AND_FEET_SHAPE, CHICKEN_NORTH_WINGS_AND_BODY_SHAPE);
+	protected static final VoxelShape CHICKEN_NORTH_SHAPE = VoxelShapes.or(CHICKEN_NORTH_LEGS_FEET_WINGS_AND_BODY_SHAPE, CHICKEN_NORTH_FACE_SHAPE);
+	protected static final VoxelShape CHICKEN_X_FEET_SHAPE = Block.makeCuboidShape(7.5D, 0.0D, 5.0D, 8.5D, 0.5D, 11.0D);
+	protected static final VoxelShape CHICKEN_WEST_TORSO_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 4.0D, 13.0D, 10.0D, 12.0D);
+	protected static final VoxelShape CHICKEN_WEST_WINGS_SHAPE = Block.makeCuboidShape(5.0D, 3.5D, 3.0D, 12.0D, 9.0D, 13.0D);
+	protected static final VoxelShape CHICKEN_WEST_HEAD_SHAPE = Block.makeCuboidShape(2.0D, 9.0D, 5.5D, 5.0D, 14.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_WEST_WATTLE_SHAPE = Block.makeCuboidShape(1.0D, 8.5D, 6.5D, 3.0D, 11.0D, 9.5D);
+	protected static final VoxelShape CHICKEN_WEST_BEAK_SHAPE = Block.makeCuboidShape(0.0D, 11.0D, 6.0D, 3.0D, 12.0D, 10.0D);
+	protected static final VoxelShape CHICKEN_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(1.5D, 12.0D, 6.0D, 2.0D, 13.0D, 7.0D);
+	protected static final VoxelShape CHICKEN_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(1.5D, 12.0D, 9.0D, 2.0D, 13.0D, 10.0D);
+	protected static final VoxelShape CHICKEN_WEST_LEFT_LEG_BACK_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 5.5D, 10.5D, 3.0D, 6.5D);
+	protected static final VoxelShape CHICKEN_WEST_RIGHT_LEG_BACK_SHAPE = Block.makeCuboidShape(9.5D, 0.0D, 9.5D, 10.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_WEST_LEFT_LEG_FRONT_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 5.5D, 9.5D, 0.5D, 6.5D);
+	protected static final VoxelShape CHICKEN_WEST_RIGHT_LEG_FRONT_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 9.5D, 9.5D, 0.5D, 10.5D);
+	protected static final VoxelShape CHICKEN_WEST_BODY_SHAPE = VoxelShapes.or(CHICKEN_WEST_TORSO_SHAPE, CHICKEN_WEST_HEAD_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_WATTLE_AND_BEAK_SHAPE = VoxelShapes.or(CHICKEN_WEST_WATTLE_SHAPE, CHICKEN_WEST_BEAK_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_EYES_SHAPE = VoxelShapes.or(CHICKEN_WEST_RIGHT_EYE_SHAPE, CHICKEN_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_LEFT_LEG_SHAPE = VoxelShapes.or(CHICKEN_WEST_LEFT_LEG_BACK_SHAPE, CHICKEN_WEST_LEFT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_RIGHT_LEG_SHAPE = VoxelShapes.or(CHICKEN_WEST_RIGHT_LEG_BACK_SHAPE, CHICKEN_WEST_RIGHT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_LEGS_SHAPE = VoxelShapes.or(CHICKEN_WEST_LEFT_LEG_SHAPE, CHICKEN_WEST_RIGHT_LEG_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_FACE_SHAPE = VoxelShapes.or(CHICKEN_WEST_WATTLE_AND_BEAK_SHAPE, CHICKEN_WEST_EYES_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_WEST_BODY_SHAPE, CHICKEN_WEST_WINGS_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_LEGS_AND_FEET_SHAPE = VoxelShapes.or(CHICKEN_WEST_LEGS_SHAPE, CHICKEN_X_FEET_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_LEGS_FEET_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_WEST_LEGS_AND_FEET_SHAPE, CHICKEN_WEST_WINGS_AND_BODY_SHAPE);
+	protected static final VoxelShape CHICKEN_WEST_SHAPE = VoxelShapes.or(CHICKEN_WEST_LEGS_FEET_WINGS_AND_BODY_SHAPE, CHICKEN_WEST_FACE_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_TORSO_SHAPE = Block.makeCuboidShape(3.0D, 3.0D, 4.0D, 12.0D, 10.0D, 12.0D);
+	protected static final VoxelShape CHICKEN_EAST_WINGS_SHAPE = Block.makeCuboidShape(4.0D, 3.5D, 3.0D, 11.0D, 9.0D, 13.0D);
+	protected static final VoxelShape CHICKEN_EAST_HEAD_SHAPE = Block.makeCuboidShape(11.0D, 9.0D, 5.5D, 14.0D, 14.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_EAST_WATTLE_SHAPE = Block.makeCuboidShape(13.0D, 8.5D, 6.5D, 15.0D, 11.0D, 9.5D);
+	protected static final VoxelShape CHICKEN_EAST_BEAK_SHAPE = Block.makeCuboidShape(13.0D, 11.0D, 6.0D, 16.0D, 12.0D, 10.0D);
+	protected static final VoxelShape CHICKEN_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(14.0D, 12.0D, 6.0D, 14.5D, 13.0D, 7.0D);
+	protected static final VoxelShape CHICKEN_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(14.0D, 12.0D, 9.0D, 14.5D, 13.0D, 10.0D);
+	protected static final VoxelShape CHICKEN_EAST_LEFT_LEG_BACK_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 5.5D, 6.5D, 3.0D, 6.5D);
+	protected static final VoxelShape CHICKEN_EAST_RIGHT_LEG_BACK_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 9.5D, 6.5D, 3.0D, 10.5D);
+	protected static final VoxelShape CHICKEN_EAST_LEFT_LEG_FRONT_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 5.5D, 7.5D, 0.5D, 6.5D);
+	protected static final VoxelShape CHICKEN_EAST_RIGHT_LEG_FRONT_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 9.5D, 7.5D, 0.5D, 10.5D);
+	protected static final VoxelShape CHICKEN_EAST_BODY_SHAPE = VoxelShapes.or(CHICKEN_EAST_TORSO_SHAPE, CHICKEN_EAST_HEAD_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_WATTLE_AND_BEAK_SHAPE = VoxelShapes.or(CHICKEN_EAST_WATTLE_SHAPE, CHICKEN_EAST_BEAK_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_EYES_SHAPE = VoxelShapes.or(CHICKEN_EAST_RIGHT_EYE_SHAPE, CHICKEN_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_LEFT_LEG_SHAPE = VoxelShapes.or(CHICKEN_EAST_LEFT_LEG_BACK_SHAPE, CHICKEN_EAST_LEFT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_RIGHT_LEG_SHAPE = VoxelShapes.or(CHICKEN_EAST_RIGHT_LEG_BACK_SHAPE, CHICKEN_EAST_RIGHT_LEG_FRONT_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_LEGS_SHAPE = VoxelShapes.or(CHICKEN_EAST_LEFT_LEG_SHAPE, CHICKEN_EAST_RIGHT_LEG_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_FACE_SHAPE = VoxelShapes.or(CHICKEN_EAST_WATTLE_AND_BEAK_SHAPE, CHICKEN_EAST_EYES_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_EAST_BODY_SHAPE, CHICKEN_EAST_WINGS_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_LEGS_AND_FEET_SHAPE = VoxelShapes.or(CHICKEN_EAST_LEGS_SHAPE, CHICKEN_X_FEET_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_LEGS_FEET_WINGS_AND_BODY_SHAPE = VoxelShapes.or(CHICKEN_EAST_LEGS_AND_FEET_SHAPE, CHICKEN_EAST_WINGS_AND_BODY_SHAPE);
+	protected static final VoxelShape CHICKEN_EAST_SHAPE = VoxelShapes.or(CHICKEN_EAST_LEGS_FEET_WINGS_AND_BODY_SHAPE, CHICKEN_EAST_FACE_SHAPE);
+	
+	//Squid Bounding Boxes
+	
+	protected static final VoxelShape SQUID_BODY_SHAPE = Block.makeCuboidShape(4.0D, 5.0D, 4.0D, 12.0D, 15.0D, 12.0D);
+	protected static final VoxelShape SQUID_MOUTH_SHAPE = Block.makeCuboidShape(6.0D, 4.5D, 6.0D, 10.0D, 5.0D, 10.0D);
+	protected static final VoxelShape SQUID_LEG1_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 10.5D, 11.5D, 5.0D, 11.5D);
+	protected static final VoxelShape SQUID_LEG2_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 8.5D, 11.5D, 5.0D, 9.5D);
+	protected static final VoxelShape SQUID_LEG3_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 6.5D, 11.5D, 5.0D, 7.5D);
+	protected static final VoxelShape SQUID_LEG4_SHAPE = Block.makeCuboidShape(10.5D, 0.0D, 4.5D, 11.5D, 5.0D, 5.5D);
+	protected static final VoxelShape SQUID_LEG5_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 4.5D, 9.5D, 5.0D, 5.5D);
+	protected static final VoxelShape SQUID_LEG6_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 4.5D, 7.5D, 5.0D, 5.5D);
+	protected static final VoxelShape SQUID_LEG7_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 4.5D, 5.5D, 5.0D, 5.5D);
+	protected static final VoxelShape SQUID_LEG8_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 6.5D, 5.5D, 5.0D, 7.5D);
+	protected static final VoxelShape SQUID_LEG9_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 8.5D, 5.5D, 5.0D, 9.5D);
+	protected static final VoxelShape SQUID_LEG10_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 10.5D, 5.5D, 5.0D, 11.5D);
+	protected static final VoxelShape SQUID_LEG11_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 10.5D, 7.5D, 5.0D, 11.5D);
+	protected static final VoxelShape SQUID_LEG12_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 10.5D, 9.5D, 5.0D, 11.5D);
+	protected static final VoxelShape SQUID_TOOTH1_SHAPE = Block.makeCuboidShape(9.0D, 4.0D, 9.0D, 10.0D, 4.5D, 10.0D);
+	protected static final VoxelShape SQUID_TOOTH2_SHAPE = Block.makeCuboidShape(7.5D, 4.0D, 9.0D, 8.5D, 4.5D, 10.0D);
+	protected static final VoxelShape SQUID_TOOTH3_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 9.0D, 7.0D, 4.5D, 10.0D);
+	protected static final VoxelShape SQUID_TOOTH4_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 7.5D, 7.0D, 4.5D, 8.5D);
+	protected static final VoxelShape SQUID_TOOTH5_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 6.0D, 7.0D, 4.5D, 7.0D);
+	protected static final VoxelShape SQUID_TOOTH6_SHAPE = Block.makeCuboidShape(7.5D, 4.0D, 6.0D, 8.5D, 4.5D, 7.0D);
+	protected static final VoxelShape SQUID_TOOTH7_SHAPE = Block.makeCuboidShape(9.0D, 4.0D, 6.0D, 10.0D, 4.5D, 7.0D);
+	protected static final VoxelShape SQUID_TOOTH8_SHAPE = Block.makeCuboidShape(9.0D, 4.0D, 7.5D, 10.0D, 4.5D, 8.5D);
+	protected static final VoxelShape SQUID_LEG_1_AND_2_SHAPE = VoxelShapes.or(SQUID_LEG1_SHAPE, SQUID_LEG2_SHAPE);
+	protected static final VoxelShape SQUID_LEG_3_AND_4_SHAPE = VoxelShapes.or(SQUID_LEG3_SHAPE, SQUID_LEG4_SHAPE);
+	protected static final VoxelShape SQUID_LEG_5_AND_6_SHAPE = VoxelShapes.or(SQUID_LEG5_SHAPE, SQUID_LEG6_SHAPE);
+	protected static final VoxelShape SQUID_LEG_7_AND_8_SHAPE = VoxelShapes.or(SQUID_LEG7_SHAPE, SQUID_LEG8_SHAPE);
+	protected static final VoxelShape SQUID_LEG_9_AND_10_SHAPE = VoxelShapes.or(SQUID_LEG9_SHAPE, SQUID_LEG10_SHAPE);
+	protected static final VoxelShape SQUID_LEG_11_AND_12_SHAPE = VoxelShapes.or(SQUID_LEG11_SHAPE, SQUID_LEG12_SHAPE);
+	protected static final VoxelShape SQUID_LEG_1_2_3_AND_4_SHAPE = VoxelShapes.or(SQUID_LEG_1_AND_2_SHAPE, SQUID_LEG_3_AND_4_SHAPE);
+	protected static final VoxelShape SQUID_LEG_5_6_7_AND_8_SHAPE = VoxelShapes.or(SQUID_LEG_5_AND_6_SHAPE, SQUID_LEG_7_AND_8_SHAPE);
+	protected static final VoxelShape SQUID_LEG_9_10_11_AND_12_SHAPE = VoxelShapes.or(SQUID_LEG_9_AND_10_SHAPE, SQUID_LEG_11_AND_12_SHAPE);
+	protected static final VoxelShape SQUID_LEG_1_2_3_4_5_6_7_AND_8_SHAPE = VoxelShapes.or(SQUID_LEG_1_2_3_AND_4_SHAPE, SQUID_LEG_5_6_7_AND_8_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_1_AND_2_SHAPE = VoxelShapes.or(SQUID_TOOTH1_SHAPE, SQUID_TOOTH2_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_3_AND_4_SHAPE = VoxelShapes.or(SQUID_TOOTH3_SHAPE, SQUID_TOOTH4_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_5_AND_6_SHAPE = VoxelShapes.or(SQUID_TOOTH5_SHAPE, SQUID_TOOTH6_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_7_AND_8_SHAPE = VoxelShapes.or(SQUID_TOOTH7_SHAPE, SQUID_TOOTH8_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_1_2_3_AND_4_SHAPE = VoxelShapes.or(SQUID_TOOTH_1_AND_2_SHAPE, SQUID_TOOTH_3_AND_4_SHAPE);
+	protected static final VoxelShape SQUID_TOOTH_5_6_7_AND_8_SHAPE = VoxelShapes.or(SQUID_TOOTH_5_AND_6_SHAPE, SQUID_TOOTH_7_AND_8_SHAPE);
+	protected static final VoxelShape SQUID_TEETH_SHAPE = VoxelShapes.or(SQUID_TOOTH_1_2_3_AND_4_SHAPE, SQUID_TOOTH_5_6_7_AND_8_SHAPE);
+	protected static final VoxelShape SQUID_LEGS_SHAPE = VoxelShapes.or(SQUID_LEG_1_2_3_4_5_6_7_AND_8_SHAPE, SQUID_LEG_9_10_11_AND_12_SHAPE);
+	protected static final VoxelShape SQUID_LEGS_AND_TEETH_SHAPE = VoxelShapes.or(SQUID_LEGS_SHAPE, SQUID_TEETH_SHAPE);
+	protected static final VoxelShape SQUID_BODY_AND_MOUTH_SHAPE = VoxelShapes.or(SQUID_BODY_SHAPE, SQUID_MOUTH_SHAPE);
+	protected static final VoxelShape SQUID_BASIC_SHAPE = VoxelShapes.or(SQUID_LEGS_AND_TEETH_SHAPE, SQUID_BODY_AND_MOUTH_SHAPE);
+	protected static final VoxelShape SQUID_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.5D, 10.0D, 12.0D, 11.5D, 12.0D, 12.5D);
+	protected static final VoxelShape SQUID_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(4.5D, 10.0D, 12.0D, 6.5D, 12.0D, 12.5D);
+	protected static final VoxelShape SQUID_SOUTH_EYES_SHAPE = VoxelShapes.or(SQUID_SOUTH_RIGHT_EYE_SHAPE, SQUID_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SQUID_SOUTH_SHAPE = VoxelShapes.or(SQUID_BASIC_SHAPE, SQUID_SOUTH_EYES_SHAPE);
+	protected static final VoxelShape SQUID_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.5D, 10.0D, 3.5D, 11.5D, 12.0D, 4.0D);
+	protected static final VoxelShape SQUID_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(4.5D, 10.0D, 3.5D, 6.5D, 12.0D, 4.0D);
+	protected static final VoxelShape SQUID_NORTH_EYES_SHAPE = VoxelShapes.or(SQUID_NORTH_RIGHT_EYE_SHAPE, SQUID_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SQUID_NORTH_SHAPE = VoxelShapes.or(SQUID_BASIC_SHAPE, SQUID_NORTH_EYES_SHAPE);
+	protected static final VoxelShape SQUID_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 10.0D, 9.5D, 4.0D, 12.0D, 11.5D);
+	protected static final VoxelShape SQUID_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 10.0D, 4.5D, 4.0D, 12.0D, 6.5D);
+	protected static final VoxelShape SQUID_WEST_EYES_SHAPE = VoxelShapes.or(SQUID_WEST_RIGHT_EYE_SHAPE, SQUID_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SQUID_WEST_SHAPE = VoxelShapes.or(SQUID_BASIC_SHAPE, SQUID_WEST_EYES_SHAPE);
+	protected static final VoxelShape SQUID_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(12.0D, 10.0D, 9.5D, 12.5D, 12.0D, 11.5D);
+	protected static final VoxelShape SQUID_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(12.0D, 10.0D, 4.5D, 12.5D, 12.0D, 6.5D);
+	protected static final VoxelShape SQUID_EAST_EYES_SHAPE = VoxelShapes.or(SQUID_EAST_RIGHT_EYE_SHAPE, SQUID_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SQUID_EAST_SHAPE = VoxelShapes.or(SQUID_BASIC_SHAPE, SQUID_EAST_EYES_SHAPE);
+	
+	//Pig Bounding Boxes
+	
+	protected static final VoxelShape PIG_SOUTH_BODY_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 1.0D, 11.5D, 9.0D, 12.0D);
+	protected static final VoxelShape PIG_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 5.0D, 11.0D, 10.5D, 10.0D, 15.0D);
+	protected static final VoxelShape PIG_SOUTH_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 8.0D, 11.5D, 4.0D, 10.0D);
+	protected static final VoxelShape PIG_SOUTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 0.5D, 11.5D, 4.0D, 2.5D);
+	protected static final VoxelShape PIG_SOUTH_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 8.0D, 7.0D, 4.0D, 10.0D);
+	protected static final VoxelShape PIG_SOUTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 0.5D, 7.0D, 4.0D, 2.5D);
+	protected static final VoxelShape PIG_SOUTH_TAIL1_SHAPE = Block.makeCuboidShape(6.5D, 4.0D, 0.5D, 8.0D, 9.0D, 1.0D);
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
 	protected static final VoxelShape BAT_EAST_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 0.1D, 10.0D, 12.0D, 15.0D);
 	protected static final VoxelShape BAT_WEST_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 0.1D, 11.0D, 12.0D, 16.0D);
 	
-	protected static final VoxelShape CHICKEN_NORTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 16.0D);
-	protected static final VoxelShape CHICKEN_SOUTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 0.0D, 14.0D, 16.0D, 14.0D);
-	protected static final VoxelShape CHICKEN_WEST_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 16.0D, 16.0D, 14.0D);
-	protected static final VoxelShape CHICKEN_EAST_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
+	protected static final VoxelShape RABBIT_NORTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 16.0D);
+	protected static final VoxelShape RABBIT_SOUTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 0.0D, 14.0D, 16.0D, 14.0D);
+	protected static final VoxelShape RABBIT_WEST_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 16.0D, 16.0D, 14.0D);
+	protected static final VoxelShape RABBIT_EAST_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 	
     protected static final VoxelShape SKELETON_NORTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 3.0D, 14.0D, 16.0D, 15.0D);
     protected static final VoxelShape SKELETON_SOUTH_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 1.0D, 14.0D, 16.0D, 13.0D);
@@ -585,14 +748,26 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, SHEEP_SOUTH_SHAPE, SHEEP_NORTH_SHAPE, SHEEP_WEST_SHAPE, SHEEP_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.chicken_plush)
+		{
+			return VePlushBlock.defineShapes(state, CHICKEN_SOUTH_SHAPE, CHICKEN_NORTH_SHAPE, CHICKEN_WEST_SHAPE, CHICKEN_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.squid_plush)
+		{
+			return VePlushBlock.defineShapes(state, SQUID_SOUTH_SHAPE, SQUID_NORTH_SHAPE, SQUID_WEST_SHAPE, SQUID_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.pig_plush)
+		{
+			return VePlushBlock.defineShapes(state, PIG_SOUTH_TAIL1_SHAPE, COW_Z_SHAPE, COW_X_SHAPE, COW_X_SHAPE);
+		}
 		
 		else if(this == VeBlocks.bat_plush)
 		{
 			return VePlushBlock.defineShapes(state, BAT_SOUTH_SHAPE, BAT_NORTH_SHAPE, BAT_WEST_SHAPE, BAT_EAST_SHAPE);
 		}
-		else if(this == VeBlocks.chicken_plush || this == VeBlocks.rabbit_plush)
+		else if(this == VeBlocks.rabbit_plush)
 		{
-			return VePlushBlock.defineShapes(state, CHICKEN_SOUTH_SHAPE, CHICKEN_NORTH_SHAPE, CHICKEN_WEST_SHAPE, CHICKEN_EAST_SHAPE);
+			return VePlushBlock.defineShapes(state, RABBIT_SOUTH_SHAPE, RABBIT_NORTH_SHAPE, RABBIT_WEST_SHAPE, RABBIT_EAST_SHAPE);
 		}
 		else if(this == VeBlocks.skeleton_plush)
 		{
@@ -606,11 +781,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, ENDERMAN_SOUTH_SHAPE, ENDERMAN_NORTH_SHAPE, ENDERMAN_WEST_SHAPE, ENDERMAN_EAST_SHAPE);
 		}
-		else if(this == VeBlocks.cow_plush || this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush || this == VeBlocks.pig_plush || this == VeBlocks.guardian_plush)
+		else if(this == VeBlocks.cow_plush || this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush || this == VeBlocks.guardian_plush)
 		{
 			return VePlushBlock.defineShapes(state, COW_Z_SHAPE, COW_Z_SHAPE, COW_X_SHAPE, COW_X_SHAPE);
 		}
-		
 		else if(this == VeBlocks.silverfish_plush)
 		{
 			return VePlushBlock.defineShapes(state, SILVERFISH_Z_SHAPE, SILVERFISH_Z_SHAPE, SILVERFISH_X_SHAPE, SILVERFISH_X_SHAPE);
@@ -619,7 +793,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, OCELOT_Z_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
 		}
-		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.witch_plush || this == VeBlocks.squid_plush)
+		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.witch_plush)
 		{
 			return VILLAGER_SHAPE;
 		}
