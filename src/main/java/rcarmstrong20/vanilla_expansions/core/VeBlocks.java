@@ -21,7 +21,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.VeBlock;
-import rcarmstrong20.vanilla_expansions.block.VeBeetrootBlock;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCampfireBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
@@ -29,20 +28,18 @@ import rcarmstrong20.vanilla_expansions.block.VeDoubleSlabBlock;
 import rcarmstrong20.vanilla_expansions.block.VeFlowingVoidBlock;
 import rcarmstrong20.vanilla_expansions.block.VeGlassBlock;
 import rcarmstrong20.vanilla_expansions.block.VeLadderBlock;
-import rcarmstrong20.vanilla_expansions.block.VeTallPlushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeMushroomBlock;
-import rcarmstrong20.vanilla_expansions.block.VeNetherWartBlock;
 import rcarmstrong20.vanilla_expansions.block.VeOreBlock;
 import rcarmstrong20.vanilla_expansions.block.VePaneBlock;
 import rcarmstrong20.vanilla_expansions.block.VePlantingPotBlock;
 import rcarmstrong20.vanilla_expansions.block.VePlushBlock;
-import rcarmstrong20.vanilla_expansions.block.VePotatoBlock;
 import rcarmstrong20.vanilla_expansions.block.VePurpleHugeMushroomBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSevenStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSinglePaintingBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSlabBlock;
 import rcarmstrong20.vanilla_expansions.block.VeSlimDoorBlock;
 import rcarmstrong20.vanilla_expansions.block.VeStairsBlock;
+import rcarmstrong20.vanilla_expansions.block.VeTallPlushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeThreeStageCropBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTranslucentBlock;
 import rcarmstrong20.vanilla_expansions.block.VeTurkeyBlock;
@@ -51,6 +48,7 @@ import rcarmstrong20.vanilla_expansions.block.VeWoodcutterBlock;
 /*
  * Author: rcarmstrong20
  */
+
 @Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VeBlocks
 {
@@ -1974,12 +1972,6 @@ public class VeBlocks
 	
 	//Vanilla Replacements
 	
-	public static Block wheat = register(VanillaExpansions.vanillaLocation("wheat"), false, new VeSevenStageCropBlock(Block.Properties.from(Blocks.WHEAT)), ItemGroup.BUILDING_BLOCKS);
-	public static Block potatoes = register(VanillaExpansions.vanillaLocation("potatoes"), false, new VePotatoBlock(Block.Properties.from(Blocks.POTATOES)), ItemGroup.BUILDING_BLOCKS);
-	public static Block carrots = register(VanillaExpansions.vanillaLocation("carrots"), false, new VeSevenStageCropBlock(Block.Properties.from(Blocks.CARROTS)), ItemGroup.BUILDING_BLOCKS);
-	public static Block beetroots = register(VanillaExpansions.vanillaLocation("beetroots"), false, new VeBeetrootBlock(Block.Properties.from(Blocks.BEETROOTS)), ItemGroup.BUILDING_BLOCKS);
-	public static Block nether_wart = register(VanillaExpansions.vanillaLocation("nether_wart"), false, new VeNetherWartBlock(Block.Properties.from(Blocks.NETHER_WART)), ItemGroup.BUILDING_BLOCKS);
-	public static Block sweet_berry_bush = register(VanillaExpansions.vanillaLocation("sweet_berry_bush"), false, new VeBerryBushBlock(Block.Properties.from(Blocks.SWEET_BERRY_BUSH)), ItemGroup.BUILDING_BLOCKS);
 	public static Block prismarine_slab = register(VanillaExpansions.vanillaLocation("prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static Block prismarine_brick_slab = register(VanillaExpansions.vanillaLocation("prismarine_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	public static Block dark_prismarine_slab = register(VanillaExpansions.vanillaLocation("dark_prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DARK_PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
