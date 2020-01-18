@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.item.BlockItem;
+import net.minecraft.world.FoliageColors;
 import net.minecraft.world.GrassColors;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
@@ -44,6 +45,19 @@ public class VeBlockAndItemColors
 			return -1;
 		};
 		
+		final IBlockColor leavesColorHandler = (state, blockAccess, pos, tintIndex) ->
+		{
+			if(tintIndex == 1)
+			{
+				if (blockAccess != null && pos != null)
+				{
+					return BiomeColors.getFoliageColor(blockAccess, pos);
+				}
+				return FoliageColors.getDefault();
+			}
+			return -1;
+		};
+		
 		final IBlockColor waterColorHandler = (state, blockAccess, pos, tintIndex) ->
 		{
 			if (blockAccess != null && pos != null && tintIndex == 1)
@@ -53,7 +67,8 @@ public class VeBlockAndItemColors
 			return -1;
 		};
 		
-		blockColors.register(grassColorHandler, VeBlocks.enderman_plush, VeBlocks.regigigas_pokedoll);
+		blockColors.register(grassColorHandler, VeBlocks.enderman_plush);
+		blockColors.register(leavesColorHandler, VeBlocks.regigigas_pokedoll);
 		blockColors.register(waterColorHandler, VeBlocks.oak_planting_pot, VeBlocks.spruce_planting_pot, VeBlocks.birch_planting_pot, VeBlocks.jungle_planting_pot, VeBlocks.dark_oak_planting_pot, VeBlocks.acacia_planting_pot);
 	}
 	
