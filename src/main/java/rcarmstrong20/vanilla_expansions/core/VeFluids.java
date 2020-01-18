@@ -60,7 +60,6 @@ public class VeFluids
 		}
 	}
 	
-	
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public void onFogDensity(EntityViewRenderEvent.FogDensity event)
