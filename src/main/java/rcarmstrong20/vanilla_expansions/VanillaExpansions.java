@@ -97,16 +97,14 @@ public class VanillaExpansions
 				{
 					if(worldState.get(beetrootAge) == 3)
 					{
-						world.setBlockState(pos, worldState.with(beetrootAge, 0), 2);
-						playSoundAndSpawnDrops(worldState, world, pos, random);
+						resetCrop(worldState, world, pos, random, beetrootAge);
 						event.setResult(Result.ALLOW);
 						event.setCanceled(true);
 					}
 				}
 				else if(worldState.get(cropsAge) == 7)
 				{
-					world.setBlockState(pos, worldState.with(cropsAge, 0), 2);
-					playSoundAndSpawnDrops(worldState, world, pos, random);
+					resetCrop(worldState, world, pos, random, cropsAge);
 					event.setResult(Result.ALLOW);
 					event.setCanceled(true);
 				}
@@ -115,8 +113,7 @@ public class VanillaExpansions
 			{
 				if(worldState.get(netherWartAge) == 3)
 				{
-					world.setBlockState(pos, worldState.with(netherWartAge, 0), 2);
-					playSoundAndSpawnDrops(worldState, world, pos, random);
+					resetCrop(worldState, world, pos, random, netherWartAge);
 					event.setResult(Result.ALLOW);
 					event.setCanceled(true);
 				}
@@ -128,8 +125,9 @@ public class VanillaExpansions
 		}
 	}
 	
-	private static void playSoundAndSpawnDrops(BlockState state, World world, BlockPos pos, Random random)
+	private static void resetCrop(BlockState state, World world, BlockPos pos, Random random, IntegerProperty age)
 	{
+		world.setBlockState(pos, state.with(age, 0), 2);
 		Block.spawnDrops(state, world, pos);
 		world.playSound(null, pos, SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.BLOCKS, 1.0F + random.nextFloat(), random.nextFloat() * 0.7F + 0.3F);
 	}
