@@ -93,7 +93,7 @@ public class VePlantingPotBlock extends VeCutoutBlock implements IWaterLoggable
 		{
 			return true;
 		}
-		else if(this != VeBlocks.nether_planting_pot || this != VeBlocks.end_planting_pot)
+		else if(this == VeBlocks.oak_planting_pot || this == VeBlocks.spruce_planting_pot || this == VeBlocks.birch_planting_pot || this == VeBlocks.jungle_planting_pot || this == VeBlocks.acacia_planting_pot || this == VeBlocks.dark_oak_planting_pot)
 		{
 			if(plantBlock instanceof CropsBlock || plantBlock instanceof SweetBerryBushBlock)
 			{
