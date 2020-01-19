@@ -29,11 +29,13 @@ public class VeVoidDripParticle extends SpriteTexturedParticle
 		this.fluid = fluid;
 	}
 	
+	@Override
 	public IParticleRenderType getRenderType()
 	{
 		return IParticleRenderType.PARTICLE_SHEET_OPAQUE;
 	}
 	
+	@Override
 	public void tick()
 	{
 		this.prevPosX = this.posX;
