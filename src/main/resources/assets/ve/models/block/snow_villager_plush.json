@@ -216,10 +216,10 @@
 			"to": [ 12, 4, 6.5 ],
 			"faces": {
 				"down": { "uv": [ 9.5, 9.5, 12, 10 ], "texture": "#white_wool" },
-				"up": { "uv": [ 9.5, 6, 12, 6.5 ], "texture": "#cyan_wool" },
+				"up": { "uv": [ 9.5, 6, 12, 6.5 ], "texture": "#white_wool" },
 				"north": { "uv": [ 4, 12, 6.5, 14.5 ], "texture": "#white_wool" },
-				"south": { "uv": [ 9.5, 12, 12, 14.5 ], "texture": "#cyan_wool" },
-				"west": { "uv": [ 6, 12, 6.5, 14.5 ], "texture": "#cyan_wool" },
+				"south": { "uv": [ 9.5, 12, 12, 14.5 ], "texture": "#white_wool" },
+				"west": { "uv": [ 6, 12, 6.5, 14.5 ], "texture": "#white_wool" },
 				"east": { "uv": [ 9.5, 12, 10, 14.5 ], "texture": "#white_wool" }
 			}
 		},
