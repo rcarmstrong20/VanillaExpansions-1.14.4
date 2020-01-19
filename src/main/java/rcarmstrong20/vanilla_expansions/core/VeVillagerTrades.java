@@ -12,10 +12,7 @@ import net.minecraft.entity.merchant.villager.VillagerTrades.ITrade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraftforge.common.BasicTrade;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.fml.common.Mod;
-import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class VeVillagerTrades
@@ -25,12 +22,5 @@ public class VeVillagerTrades
 	private static Int2ObjectMap<List<ITrade>> register(ImmutableMap<Integer, List<ITrade>> trade)
 	{
 		return new Int2ObjectOpenHashMap<>(trade);
-	}
-	
-	//@SubscribeEvent
-	public static void registerVillagerTrades()
-	{
-		MinecraftForge.EVENT_BUS.post(new VillagerTradesEvent(LUMBERJACK_TRADES, VeVillagerProfessions.LUMBERJACK));
-		VanillaExpansions.LOGGER.info("Villager trades registered.");
 	}
 }
