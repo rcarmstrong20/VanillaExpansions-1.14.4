@@ -44,11 +44,12 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IEnviromentBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IBlockStatePalette;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.extensions.IForgeBlockState;
 import rcarmstrong20.vanilla_expansions.tile_entity.VeCampfireTileEntity;
 
 public class VeCampfireBlock extends ContainerBlock implements IWaterLoggable
@@ -94,7 +95,6 @@ public class VeCampfireBlock extends ContainerBlock implements IWaterLoggable
 		{
 			entityIn.attackEntityFrom(DamageSource.IN_FIRE, 1.0F);
 		}
-		super.onEntityCollision(state, worldIn, pos, entityIn);
 	}
 	
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
@@ -130,7 +130,7 @@ public class VeCampfireBlock extends ContainerBlock implements IWaterLoggable
 		{
 			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		}
-		return facing == Direction.DOWN ? stateIn.with(SIGNAL_FIRE, Boolean.valueOf(this.isHayBlock(facingState))) : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return facing == Direction.DOWN ? stateIn.with(SIGNAL_FIRE, Boolean.valueOf(this.isHayBlock(facingState))) : stateIn;
 	}
 	
 	/**
@@ -275,6 +275,7 @@ public class VeCampfireBlock extends ContainerBlock implements IWaterLoggable
 	 * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
 	 * fine.
 	 */
+	
 	public BlockState rotate(BlockState state, Rotation rot)
 	{
 		return state.with(FACING, rot.rotate(state.get(FACING)));
