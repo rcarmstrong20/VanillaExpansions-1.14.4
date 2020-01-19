@@ -26,11 +26,13 @@ public class VeUndervoidParticle extends SpriteTexturedParticle
 		this.maxAge = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
 	}
 	
+	@Override
 	public IParticleRenderType getRenderType()
 	{
 		return IParticleRenderType.PARTICLE_SHEET_OPAQUE;
 	}
 	
+	@Override
 	public void tick()
 	{
 		this.prevPosX = this.posX;
@@ -60,6 +62,7 @@ public class VeUndervoidParticle extends SpriteTexturedParticle
 			this.spriteSet = spriteSet;
 		}
 		
+		@Override
 		public Particle makeParticle(BasicParticleType typeIn, World worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed)
 		{
 			VeUndervoidParticle undervoidparticle = new VeUndervoidParticle(worldIn, x, y, z);
