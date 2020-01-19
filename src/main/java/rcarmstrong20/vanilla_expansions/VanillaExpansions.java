@@ -97,14 +97,14 @@ public class VanillaExpansions
 				{
 					if(worldState.get(beetrootAge) == 3)
 					{
-						resetCrop(worldState, world, pos, random, beetrootAge);
+						resetCropAndHarvest(worldState, world, pos, random, beetrootAge);
 						event.setResult(Result.ALLOW);
 						event.setCanceled(true);
 					}
 				}
 				else if(worldState.get(cropsAge) == 7)
 				{
-					resetCrop(worldState, world, pos, random, cropsAge);
+					resetCropAndHarvest(worldState, world, pos, random, cropsAge);
 					event.setResult(Result.ALLOW);
 					event.setCanceled(true);
 				}
@@ -113,7 +113,7 @@ public class VanillaExpansions
 			{
 				if(worldState.get(netherWartAge) == 3)
 				{
-					resetCrop(worldState, world, pos, random, netherWartAge);
+					resetCropAndHarvest(worldState, world, pos, random, netherWartAge);
 					event.setResult(Result.ALLOW);
 					event.setCanceled(true);
 				}
@@ -125,7 +125,10 @@ public class VanillaExpansions
 		}
 	}
 	
-	private static void resetCrop(BlockState state, World world, BlockPos pos, Random random, IntegerProperty age)
+	/*
+	 * Sets the crop to stage 0, plays the grass break sound, and spawns the drops for the designated crop
+	 */
+	private static void resetCropAndHarvest(BlockState state, World world, BlockPos pos, Random random, IntegerProperty age)
 	{
 		world.setBlockState(pos, state.with(age, 0), 2);
 		Block.spawnDrops(state, world, pos);
