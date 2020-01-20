@@ -793,7 +793,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, OCELOT_Z_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
 		}
-		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.witch_plush)
+		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.taiga_villager_plush || this == VeBlocks.snow_villager_plush || this == VeBlocks.swamp_villager_plush  || this == VeBlocks.savanna_villager_plush|| this == VeBlocks.witch_plush)
 		{
 			return VILLAGER_SHAPE;
 		}
