@@ -8,7 +8,7 @@
 	  [
         {
           "type": "minecraft:item",
-          "name": "ve:ginger"
+          "name": "ve:ginger_root"
         }
       ]
     },
@@ -31,7 +31,7 @@
               }
             }
           ],
-          "name": "ve:ginger"
+          "name": "ve:ginger_root"
         }
       ],
       "conditions":
