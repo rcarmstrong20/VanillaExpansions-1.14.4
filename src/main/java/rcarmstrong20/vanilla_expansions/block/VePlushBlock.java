@@ -635,7 +635,73 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape PIG_SOUTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 0.5D, 11.5D, 4.0D, 2.5D);
 	protected static final VoxelShape PIG_SOUTH_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 8.0D, 7.0D, 4.0D, 10.0D);
 	protected static final VoxelShape PIG_SOUTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 0.5D, 7.0D, 4.0D, 2.5D);
-	protected static final VoxelShape PIG_SOUTH_TAIL1_SHAPE = Block.makeCuboidShape(6.5D, 4.0D, 0.5D, 8.0D, 9.0D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL1_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 0.5D, 7.0D, 7.5D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL2_SHAPE = Block.makeCuboidShape(7.0D, 4.0D, 0.5D, 10.0D, 5.0D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL3_SHAPE = Block.makeCuboidShape(7.0D, 7.5D, 0.5D, 9.0D, 8.5D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL4_SHAPE = Block.makeCuboidShape(9.0D, 6.5D, 0.5D, 10.0D, 7.5D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL5_SHAPE = Block.makeCuboidShape(8.0D, 5.5D, 0.5D, 9.0D, 6.5D, 1.0D);
+	protected static final VoxelShape PIG_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 7.5D, 15.0D, 10.0D, 8.5D, 15.5D);
+	protected static final VoxelShape PIG_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 15.0D, 7.5D, 8.5D, 15.5D);
+	protected static final VoxelShape PIG_SOUTH_SNOUT_SHAPE = Block.makeCuboidShape(7.0D, 6.0D, 15.0D, 9.0D, 7.0D, 16.0D);
+	protected static final VoxelShape PIG_SOUTH_TAIL_1_AND_2_SHAPE = VoxelShapes.or(PIG_SOUTH_TAIL1_SHAPE, PIG_SOUTH_TAIL2_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_TAIL_3_AND_4_SHAPE = VoxelShapes.or(PIG_SOUTH_TAIL3_SHAPE, PIG_SOUTH_TAIL4_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_TAIL_1_2_3_AND_4_SHAPE = VoxelShapes.or(PIG_SOUTH_TAIL_1_AND_2_SHAPE, PIG_SOUTH_TAIL_3_AND_4_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_TAIL_SHAPE = VoxelShapes.or(PIG_SOUTH_TAIL_1_2_3_AND_4_SHAPE, PIG_SOUTH_TAIL5_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_BODY_AND_HEAD_SHAPE = VoxelShapes.or(PIG_SOUTH_BODY_SHAPE, PIG_SOUTH_HEAD_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_FRONT_LEGS_SHAPE = VoxelShapes.or(PIG_SOUTH_FRONT_RIGHT_LEG_SHAPE, PIG_SOUTH_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_BACK_LEGS_SHAPE = VoxelShapes.or(PIG_SOUTH_BACK_RIGHT_LEG_SHAPE, PIG_SOUTH_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_LEGS_SHAPE = VoxelShapes.or(PIG_SOUTH_FRONT_LEGS_SHAPE, PIG_SOUTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_SOUTH_LEGS_SHAPE, PIG_SOUTH_TAIL_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_EYES_SHAPE = VoxelShapes.or(PIG_SOUTH_RIGHT_EYE_SHAPE, PIG_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_SOUTH_EYES_SHAPE, PIG_SOUTH_SNOUT_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_SOUTH_LEGS_AND_TAIL_SHAPE, PIG_SOUTH_EYES_AND_SNOUT_SHAPE);
+	protected static final VoxelShape PIG_SOUTH_SHAPE = VoxelShapes.or(PIG_SOUTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_SOUTH_BODY_AND_HEAD_SHAPE);
+	
+	protected static final VoxelShape PIG_NORTH_BODY_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 4.0D, 11.5D, 9.0D, 15.0D);
+	protected static final VoxelShape PIG_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 5.0D, 1.0D, 10.5D, 10.0D, 5.0D);
+	protected static final VoxelShape PIG_NORTH_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 6.0D, 11.5D, 4.0D, 8.0D);
+	protected static final VoxelShape PIG_NORTH_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 6.0D, 7.0D, 4.0D, 8.0D);
+	protected static final VoxelShape PIG_NORTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 13.5D, 11.5D, 4.0D, 15.5D);
+	protected static final VoxelShape PIG_NORTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 13.5D, 7.0D, 4.0D, 15.5D);
+	protected static final VoxelShape PIG_NORTH_TAIL1_SHAPE = Block.makeCuboidShape(9.0D, 4.0D, 15.0D, 10.0D, 7.5D, 15.5D);
+	protected static final VoxelShape PIG_NORTH_TAIL2_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 15.0D, 9.0D, 5.0D, 15.5D);
+	
+	protected static final VoxelShape PIG_NORTH_TAIL3_SHAPE = Block.makeCuboidShape(7.0D, 7.5D, 15.0D, 9.0D, 8.5D, 15.5D);
+	
+	protected static final VoxelShape PIG_NORTH_TAIL4_SHAPE = Block.makeCuboidShape(9.0D, 6.5D, 0.5D, 10.0D, 7.5D, 1.0D);
+	protected static final VoxelShape PIG_NORTH_TAIL5_SHAPE = Block.makeCuboidShape(8.0D, 5.5D, 0.5D, 9.0D, 6.5D, 1.0D);
+	protected static final VoxelShape PIG_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 7.5D, 15.0D, 10.0D, 8.5D, 15.5D);
+	protected static final VoxelShape PIG_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 15.0D, 7.5D, 8.5D, 15.5D);
+	protected static final VoxelShape PIG_NORTH_SNOUT_SHAPE = Block.makeCuboidShape(7.0D, 6.0D, 15.0D, 9.0D, 7.0D, 16.0D);
+	
+	
+	protected static final VoxelShape PIG_EAST_BODY_SHAPE = Block.makeCuboidShape(1.0D, 4.0D, 4.5D, 12.0D, 9.0D, 11.5D);
+	protected static final VoxelShape PIG_EAST_HEAD_SHAPE = Block.makeCuboidShape(11.0D, 5.0D, 5.5D, 15.0D, 10.0D, 10.5D);
+	protected static final VoxelShape PIG_EAST_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.0D, 0.0D, 9.0D, 10.0D, 4.0D, 11.5D);
+	protected static final VoxelShape PIG_EAST_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(0.5D, 0.0D, 9.0D, 2.5D, 4.0D, 11.5D);
+	protected static final VoxelShape PIG_EAST_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(8.0D, 0.0D, 4.5D, 10.0D, 4.0D, 7.0D);
+	protected static final VoxelShape PIG_EAST_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(0.5D, 0.0D, 4.5D, 2.5D, 4.0D, 7.0D);
+	protected static final VoxelShape PIG_EAST_TAIL1_SHAPE = Block.makeCuboidShape(0.5D, 4.0D, 9.0D, 1.0D, 7.5D, 10.0D);
+	protected static final VoxelShape PIG_EAST_TAIL2_SHAPE = Block.makeCuboidShape(0.5D, 4.0D, 6.0D, 1.0D, 5.0D, 9.0D);
+	protected static final VoxelShape PIG_EAST_TAIL3_SHAPE = Block.makeCuboidShape(0.5D, 7.5D, 7.0D, 1.0D, 8.5D, 9.0D);
+	protected static final VoxelShape PIG_EAST_TAIL4_SHAPE = Block.makeCuboidShape(0.5D, 6.5D, 6.0D, 1.0D, 7.5D, 7.0D);
+	protected static final VoxelShape PIG_EAST_TAIL5_SHAPE = Block.makeCuboidShape(0.5D, 5.5D, 7.0D, 1.0D, 6.5D, 8.0D);
+	protected static final VoxelShape PIG_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 7.5D, 8.5D, 15.5D, 8.5D, 10.0D);
+	protected static final VoxelShape PIG_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 7.5D, 6.0D, 15.5D, 8.5D, 7.5D);
+	protected static final VoxelShape PIG_EAST_SNOUT_SHAPE = Block.makeCuboidShape(15.0D, 6.0D, 7.0D, 16.0D, 7.0D, 9.0D);
+	protected static final VoxelShape PIG_EAST_TAIL_1_AND_2_SHAPE = VoxelShapes.or(PIG_EAST_TAIL1_SHAPE, PIG_EAST_TAIL2_SHAPE);
+	protected static final VoxelShape PIG_EAST_TAIL_3_AND_4_SHAPE = VoxelShapes.or(PIG_EAST_TAIL3_SHAPE, PIG_EAST_TAIL4_SHAPE);
+	protected static final VoxelShape PIG_EAST_TAIL_1_2_3_AND_4_SHAPE = VoxelShapes.or(PIG_EAST_TAIL_1_AND_2_SHAPE, PIG_EAST_TAIL_3_AND_4_SHAPE);
+	protected static final VoxelShape PIG_EAST_TAIL_SHAPE = VoxelShapes.or(PIG_EAST_TAIL_1_2_3_AND_4_SHAPE, PIG_EAST_TAIL5_SHAPE);
+	protected static final VoxelShape PIG_EAST_BODY_AND_HEAD_SHAPE = VoxelShapes.or(PIG_EAST_BODY_SHAPE, PIG_EAST_HEAD_SHAPE);
+	protected static final VoxelShape PIG_EAST_FRONT_LEGS_SHAPE = VoxelShapes.or(PIG_EAST_FRONT_RIGHT_LEG_SHAPE, PIG_EAST_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape PIG_EAST_BACK_LEGS_SHAPE = VoxelShapes.or(PIG_EAST_BACK_RIGHT_LEG_SHAPE, PIG_EAST_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape PIG_EAST_LEGS_SHAPE = VoxelShapes.or(PIG_EAST_FRONT_LEGS_SHAPE, PIG_EAST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape PIG_EAST_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_EAST_LEGS_SHAPE, PIG_EAST_TAIL_SHAPE);
+	protected static final VoxelShape PIG_EAST_EYES_SHAPE = VoxelShapes.or(PIG_EAST_RIGHT_EYE_SHAPE, PIG_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape PIG_EAST_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_EAST_EYES_SHAPE, PIG_EAST_SNOUT_SHAPE);
+	protected static final VoxelShape PIG_EAST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_EAST_LEGS_AND_TAIL_SHAPE, PIG_EAST_EYES_AND_SNOUT_SHAPE);
+	protected static final VoxelShape PIG_EAST_SHAPE = VoxelShapes.or(PIG_EAST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_EAST_BODY_AND_HEAD_SHAPE);
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
@@ -758,7 +824,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.pig_plush)
 		{
-			return VePlushBlock.defineShapes(state, PIG_SOUTH_TAIL1_SHAPE, COW_Z_SHAPE, COW_X_SHAPE, COW_X_SHAPE);
+			return VePlushBlock.defineShapes(state, PIG_SOUTH_SHAPE, PIG_NORTH_TAIL3_SHAPE, COW_X_SHAPE, PIG_EAST_SHAPE);
 		}
 		
 		else if(this == VeBlocks.bat_plush)
