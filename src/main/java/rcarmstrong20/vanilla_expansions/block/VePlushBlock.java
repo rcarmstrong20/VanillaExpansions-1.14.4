@@ -656,7 +656,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape PIG_SOUTH_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_SOUTH_EYES_SHAPE, PIG_SOUTH_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_SOUTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_SOUTH_LEGS_AND_TAIL_SHAPE, PIG_SOUTH_EYES_AND_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_SOUTH_SHAPE = VoxelShapes.or(PIG_SOUTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_SOUTH_BODY_AND_HEAD_SHAPE);
-	
 	protected static final VoxelShape PIG_NORTH_BODY_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 4.0D, 11.5D, 9.0D, 15.0D);
 	protected static final VoxelShape PIG_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 5.0D, 1.0D, 10.5D, 10.0D, 5.0D);
 	protected static final VoxelShape PIG_NORTH_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 6.0D, 11.5D, 4.0D, 8.0D);
@@ -684,7 +683,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape PIG_NORTH_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_NORTH_EYES_SHAPE, PIG_NORTH_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_NORTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_NORTH_LEGS_AND_TAIL_SHAPE, PIG_NORTH_EYES_AND_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_NORTH_SHAPE = VoxelShapes.or(PIG_NORTH_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_NORTH_BODY_AND_HEAD_SHAPE);
-	
 	protected static final VoxelShape PIG_WEST_BODY_SHAPE = Block.makeCuboidShape(4.0D, 4.0D, 4.5D, 15.0D, 9.0D, 11.5D);
 	protected static final VoxelShape PIG_WEST_HEAD_SHAPE = Block.makeCuboidShape(1.0D, 5.0D, 5.5D, 5.0D, 10.0D, 10.5D);
 	protected static final VoxelShape PIG_WEST_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 9.0D, 8.0D, 4.0D, 11.5D);
@@ -712,7 +710,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape PIG_WEST_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_WEST_EYES_SHAPE, PIG_WEST_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_WEST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_WEST_LEGS_AND_TAIL_SHAPE, PIG_WEST_EYES_AND_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_WEST_SHAPE = VoxelShapes.or(PIG_WEST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_WEST_BODY_AND_HEAD_SHAPE);
-	
 	protected static final VoxelShape PIG_EAST_BODY_SHAPE = Block.makeCuboidShape(1.0D, 4.0D, 4.5D, 12.0D, 9.0D, 11.5D);
 	protected static final VoxelShape PIG_EAST_HEAD_SHAPE = Block.makeCuboidShape(11.0D, 5.0D, 5.5D, 15.0D, 10.0D, 10.5D);
 	protected static final VoxelShape PIG_EAST_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.0D, 0.0D, 9.0D, 10.0D, 4.0D, 11.5D);
@@ -740,6 +737,8 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape PIG_EAST_EYES_AND_SNOUT_SHAPE = VoxelShapes.or(PIG_EAST_EYES_SHAPE, PIG_EAST_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_EAST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(PIG_EAST_LEGS_AND_TAIL_SHAPE, PIG_EAST_EYES_AND_SNOUT_SHAPE);
 	protected static final VoxelShape PIG_EAST_SHAPE = VoxelShapes.or(PIG_EAST_EYES_SNOUT_LEGS_AND_TAIL_SHAPE, PIG_EAST_BODY_AND_HEAD_SHAPE);
+	
+	//Cow Bounding Boxes
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
