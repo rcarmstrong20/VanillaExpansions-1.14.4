@@ -740,6 +740,174 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Cow Bounding Boxes
 	
+	protected static final VoxelShape COW_SOUTH_EAST_RIGHT_FRONT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 9.0D, 11.0D, 4.0D, 11.0D);
+	protected static final VoxelShape COW_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 1.5D, 11.5D, 10.0D, 12.0D);
+	protected static final VoxelShape COW_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 12.0D, 10.5D, 11.0D, 15.0D);
+	protected static final VoxelShape COW_SOUTH_UTTERS_SHAPE = Block.makeCuboidShape(7.0D, 3.0D, 1.0D, 9.0D, 5.5D, 5.0D);
+	protected static final VoxelShape COW_SOUTH_MOUTH_SHAPE = Block.makeCuboidShape(6.5D, 6.5D, 15.0D, 9.5D, 9.0D, 15.5D);
+	protected static final VoxelShape COW_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 9.5D, 15.0D, 10.0D, 10.5D, 15.5D);
+	protected static final VoxelShape COW_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 9.5D, 15.0D, 7.0D, 10.5D, 15.5D);
+	protected static final VoxelShape COW_SOUTH_RIGHT_HORN_SHAPE = Block.makeCuboidShape(10.5D, 10.0D, 13.5D, 11.0D, 11.5D, 14.5D);
+	protected static final VoxelShape COW_SOUTH_LEFT_HORN_SHAPE = Block.makeCuboidShape(5.0D, 10.0D, 13.5D, 5.5D, 11.5D, 14.5D);
+	protected static final VoxelShape COW_SOUTH_LEFT_FRONT_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 9.0D, 7.0D, 4.0D, 11.0D);
+	protected static final VoxelShape COW_SOUTH_RIGHT_BACK_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 2.0D, 11.0D, 4.0D, 4.0D);
+	protected static final VoxelShape COW_SOUTH_LEFT_BACK_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 2.0D, 7.0D, 4.0D, 4.0D);
+	protected static final VoxelShape COW_SOUTH_BODY_SHAPE = VoxelShapes.or(COW_SOUTH_TORSO_SHAPE, COW_SOUTH_HEAD_SHAPE);
+	protected static final VoxelShape COW_SOUTH_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_SOUTH_UTTERS_SHAPE, COW_SOUTH_MOUTH_SHAPE);
+	protected static final VoxelShape COW_SOUTH_EYES_SHAPE = VoxelShapes.or(COW_SOUTH_RIGHT_EYE_SHAPE, COW_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape COW_SOUTH_HORNS_SHAPE = VoxelShapes.or(COW_SOUTH_RIGHT_HORN_SHAPE, COW_SOUTH_LEFT_HORN_SHAPE);
+	protected static final VoxelShape COW_SOUTH_FRONT_LEGS_SHAPE = VoxelShapes.or(COW_SOUTH_EAST_RIGHT_FRONT_LEG_SHAPE, COW_SOUTH_LEFT_FRONT_LEG_SHAPE);
+	protected static final VoxelShape COW_SOUTH_BACK_LEGS_SHAPE = VoxelShapes.or(COW_SOUTH_RIGHT_BACK_LEG_SHAPE, COW_SOUTH_LEFT_BACK_LEG_SHAPE);
+	protected static final VoxelShape COW_SOUTH_LEGS_SHAPE = VoxelShapes.or(COW_SOUTH_FRONT_LEGS_SHAPE, COW_SOUTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape COW_SOUTH_BODY_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_SOUTH_BODY_SHAPE, COW_SOUTH_UTTERS_AND_MOUTH_SHAPE);
+	protected static final VoxelShape COW_SOUTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_SOUTH_EYES_SHAPE, COW_SOUTH_HORNS_SHAPE);
+	protected static final VoxelShape COW_SOUTH_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_SOUTH_BODY_UTTERS_AND_MOUTH_SHAPE, COW_SOUTH_EYES_AND_HORNS_SHAPE);
+	protected static final VoxelShape COW_SOUTH_SHAPE = VoxelShapes.or(COW_SOUTH_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE, COW_SOUTH_LEGS_SHAPE);
+	protected static final VoxelShape COW_NORTH_WEST_LEFT_FRONT_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 7.0D, 4.0D, 7.0D);
+	protected static final VoxelShape COW_NORTH_TORSO_SHAPE = Block.makeCuboidShape(4.5D, 4.0D, 4.0D, 11.5D, 10.0D, 14.5D);
+	protected static final VoxelShape COW_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 1.0D, 10.5D, 11.0D, 4.0D);
+	protected static final VoxelShape COW_NORTH_UTTERS_SHAPE = Block.makeCuboidShape(7.0D, 3.0D, 11.0D, 9.0D, 5.5D, 15.0D);
+	protected static final VoxelShape COW_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(6.5D, 6.5D, 0.5D, 9.5D, 9.0D, 1.5D);
+	protected static final VoxelShape COW_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 9.5D, 0.5D, 10.0D, 10.5D, 1.5D);
+	protected static final VoxelShape COW_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 9.5D, 0.5D, 7.0D, 10.5D, 1.5D);
+	protected static final VoxelShape COW_NORTH_RIGHT_HORN_SHAPE = Block.makeCuboidShape(10.5D, 10.0D, 1.5D, 11.0D, 11.5D, 2.5D);
+	protected static final VoxelShape COW_NORTH_LEFT_HORN_SHAPE = Block.makeCuboidShape(5.0D, 10.0D, 1.5D, 5.5D, 11.5D, 2.5D);
+	protected static final VoxelShape COW_NORTH_RIGHT_FRONT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 5.0D, 11.0D, 4.0D, 7.0D);
+	protected static final VoxelShape COW_NORTH_RIGHT_BACK_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 12.0D, 11.0D, 4.0D, 14.0D);
+	protected static final VoxelShape COW_NORTH_LEFT_BACK_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 12.0D, 7.0D, 4.0D, 14.0D);
+	protected static final VoxelShape COW_NORTH_BODY_SHAPE = VoxelShapes.or(COW_NORTH_TORSO_SHAPE, COW_NORTH_HEAD_SHAPE);
+	protected static final VoxelShape COW_NORTH_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_NORTH_UTTERS_SHAPE, COW_NORTH_MOUTH_SHAPE);
+	protected static final VoxelShape COW_NORTH_EYES_SHAPE = VoxelShapes.or(COW_NORTH_RIGHT_EYE_SHAPE, COW_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape COW_NORTH_HORNS_SHAPE = VoxelShapes.or(COW_NORTH_RIGHT_HORN_SHAPE, COW_NORTH_LEFT_HORN_SHAPE);
+	protected static final VoxelShape COW_NORTH_FRONT_LEGS_SHAPE = VoxelShapes.or(COW_NORTH_WEST_LEFT_FRONT_LEG_SHAPE, COW_NORTH_RIGHT_FRONT_LEG_SHAPE);
+	protected static final VoxelShape COW_NORTH_BACK_LEGS_SHAPE = VoxelShapes.or(COW_NORTH_RIGHT_BACK_LEG_SHAPE, COW_NORTH_LEFT_BACK_LEG_SHAPE);
+	protected static final VoxelShape COW_NORTH_LEGS_SHAPE = VoxelShapes.or(COW_NORTH_FRONT_LEGS_SHAPE, COW_NORTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape COW_NORTH_BODY_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_NORTH_BODY_SHAPE, COW_NORTH_UTTERS_AND_MOUTH_SHAPE);
+	protected static final VoxelShape COW_NORTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_NORTH_EYES_SHAPE, COW_NORTH_HORNS_SHAPE);
+	protected static final VoxelShape COW_NORTH_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_NORTH_BODY_UTTERS_AND_MOUTH_SHAPE, COW_NORTH_EYES_AND_HORNS_SHAPE);
+	protected static final VoxelShape COW_NORTH_SHAPE = VoxelShapes.or(COW_NORTH_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE, COW_NORTH_LEGS_SHAPE);
+	protected static final VoxelShape COW_WEST_TORSO_SHAPE = Block.makeCuboidShape(4.0D, 4.0D, 4.5D, 14.5D, 10.0D, 11.5D);
+	protected static final VoxelShape COW_WEST_HEAD_SHAPE = Block.makeCuboidShape(1.0D, 6.0D, 5.5D, 4.0D, 11.0D, 10.5D);
+	protected static final VoxelShape COW_WEST_UTTERS_SHAPE = Block.makeCuboidShape(11.0D, 3.0D, 7.0D, 15.0D, 5.5D, 9.0D);
+	protected static final VoxelShape COW_WEST_MOUTH_SHAPE = Block.makeCuboidShape(0.5D, 6.5D, 6.5D, 1.5D, 9.0D, 9.5D);
+	protected static final VoxelShape COW_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 9.5D, 9.0D, 1.5D, 10.5D, 10.0D);
+	protected static final VoxelShape COW_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 9.5D, 6.0D, 1.5D, 10.5D, 7.0D);
+	protected static final VoxelShape COW_WEST_RIGHT_HORN_SHAPE = Block.makeCuboidShape(1.5D, 10.0D, 10.5D, 2.5D, 11.5D, 11.0D);
+	protected static final VoxelShape COW_WEST_LEFT_HORN_SHAPE = Block.makeCuboidShape(1.5D, 10.0D, 5.0D, 2.5D, 11.5D, 5.5D);
+	protected static final VoxelShape COW_WEST_RIGHT_FRONT_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 9.0D, 7.0D, 4.0D, 11.0D);
+	protected static final VoxelShape COW_WEST_RIGHT_BACK_LEG_SHAPE = Block.makeCuboidShape(12.0D, 0.0D, 9.0D, 14.0D, 4.0D, 11.0D);
+	protected static final VoxelShape COW_WEST_LEFT_BACK_LEG_SHAPE = Block.makeCuboidShape(12.0D, 0.0D, 5.0D, 14.0D, 4.0D, 7.0D);
+	protected static final VoxelShape COW_WEST_BODY_SHAPE = VoxelShapes.or(COW_WEST_TORSO_SHAPE, COW_WEST_HEAD_SHAPE);
+	protected static final VoxelShape COW_WEST_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_WEST_UTTERS_SHAPE, COW_WEST_MOUTH_SHAPE);
+	protected static final VoxelShape COW_WEST_EYES_SHAPE = VoxelShapes.or(COW_WEST_RIGHT_EYE_SHAPE, COW_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape COW_WEST_HORNS_SHAPE = VoxelShapes.or(COW_WEST_RIGHT_HORN_SHAPE, COW_WEST_LEFT_HORN_SHAPE);
+	protected static final VoxelShape COW_WEST_FRONT_LEGS_SHAPE = VoxelShapes.or(COW_NORTH_WEST_LEFT_FRONT_LEG_SHAPE, COW_WEST_RIGHT_FRONT_LEG_SHAPE);
+	protected static final VoxelShape COW_WEST_BACK_LEGS_SHAPE = VoxelShapes.or(COW_WEST_RIGHT_BACK_LEG_SHAPE, COW_WEST_LEFT_BACK_LEG_SHAPE);
+	protected static final VoxelShape COW_WEST_LEGS_SHAPE = VoxelShapes.or(COW_WEST_FRONT_LEGS_SHAPE, COW_WEST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape COW_WEST_BODY_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_WEST_BODY_SHAPE, COW_WEST_UTTERS_AND_MOUTH_SHAPE);
+	protected static final VoxelShape COW_WEST_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_WEST_EYES_SHAPE, COW_WEST_HORNS_SHAPE);
+	protected static final VoxelShape COW_WEST_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_WEST_BODY_UTTERS_AND_MOUTH_SHAPE, COW_WEST_EYES_AND_HORNS_SHAPE);
+	protected static final VoxelShape COW_WEST_SHAPE = VoxelShapes.or(COW_WEST_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE, COW_WEST_LEGS_SHAPE);
+	protected static final VoxelShape COW_EAST_TORSO_SHAPE = Block.makeCuboidShape(1.5D, 4.0D, 4.5D, 12.0D, 10.0D, 11.5D);
+	protected static final VoxelShape COW_EAST_HEAD_SHAPE = Block.makeCuboidShape(12.0D, 6.0D, 5.5D, 15.0D, 11.0D, 10.5D);
+	protected static final VoxelShape COW_EAST_UTTERS_SHAPE = Block.makeCuboidShape(1.0D, 3.0D, 7.0D, 5.0D, 5.5D, 9.0D);
+	protected static final VoxelShape COW_EAST_MOUTH_SHAPE = Block.makeCuboidShape(15.0D, 6.5D, 6.5D, 15.5D, 9.0D, 9.5D);
+	protected static final VoxelShape COW_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 9.5D, 9.0D, 15.5D, 10.5D, 10.0D);
+	protected static final VoxelShape COW_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 9.5D, 6.0D, 15.5D, 10.5D, 7.0D);
+	protected static final VoxelShape COW_EAST_RIGHT_HORN_SHAPE = Block.makeCuboidShape(13.5D, 10.0D, 10.5D, 14.5D, 11.5D, 11.0D);
+	protected static final VoxelShape COW_EAST_LEFT_HORN_SHAPE = Block.makeCuboidShape(13.5D, 10.0D, 5.0D, 14.5D, 11.5D, 5.5D);
+	protected static final VoxelShape COW_EAST_LEFT_FRONT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 5.0D, 11.0D, 4.0D, 7.0D);
+	protected static final VoxelShape COW_EAST_RIGHT_BACK_LEG_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 9.0D, 4.0D, 4.0D, 11.0D);
+	protected static final VoxelShape COW_EAST_LEFT_BACK_LEG_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 5.0D, 4.0D, 4.0D, 7.0D);
+	protected static final VoxelShape COW_EAST_BODY_SHAPE = VoxelShapes.or(COW_EAST_TORSO_SHAPE, COW_EAST_HEAD_SHAPE);
+	protected static final VoxelShape COW_EAST_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_EAST_UTTERS_SHAPE, COW_EAST_MOUTH_SHAPE);
+	protected static final VoxelShape COW_EAST_EYES_SHAPE = VoxelShapes.or(COW_EAST_RIGHT_EYE_SHAPE, COW_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape COW_EAST_HORNS_SHAPE = VoxelShapes.or(COW_EAST_RIGHT_HORN_SHAPE, COW_EAST_LEFT_HORN_SHAPE);
+	protected static final VoxelShape COW_EAST_FRONT_LEGS_SHAPE = VoxelShapes.or(COW_SOUTH_EAST_RIGHT_FRONT_LEG_SHAPE, COW_EAST_LEFT_FRONT_LEG_SHAPE);
+	protected static final VoxelShape COW_EAST_BACK_LEGS_SHAPE = VoxelShapes.or(COW_EAST_RIGHT_BACK_LEG_SHAPE, COW_EAST_LEFT_BACK_LEG_SHAPE);
+	protected static final VoxelShape COW_EAST_LEGS_SHAPE = VoxelShapes.or(COW_EAST_FRONT_LEGS_SHAPE, COW_EAST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape COW_EAST_BODY_UTTERS_AND_MOUTH_SHAPE = VoxelShapes.or(COW_EAST_BODY_SHAPE, COW_EAST_UTTERS_AND_MOUTH_SHAPE);
+	protected static final VoxelShape COW_EAST_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_EAST_EYES_SHAPE, COW_EAST_HORNS_SHAPE);
+	protected static final VoxelShape COW_EAST_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE = VoxelShapes.or(COW_EAST_BODY_UTTERS_AND_MOUTH_SHAPE, COW_EAST_EYES_AND_HORNS_SHAPE);
+	protected static final VoxelShape COW_EAST_SHAPE = VoxelShapes.or(COW_EAST_BODY_UTTERS_MOUTH_EYES_AND_HORNS_SHAPE, COW_EAST_LEGS_SHAPE);
+	
+	//Mooshroom Bounding Boxes
+	
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 11.0D, 13.0D, 8.5D, 12.0D, 14.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 12.0D, 12.0D, 9.5D, 13.0D, 15.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 13.0D, 12.5D, 9.0D, 13.5D, 14.5D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY1_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 10.0D, 8.0D, 8.5D, 11.0D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY1_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 11.0D, 7.0D, 9.5D, 12.0D, 10.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY1_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 12.0D, 7.5D, 9.0D, 12.5D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY2_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 10.0D, 4.0D, 8.5D, 11.0D, 5.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY2_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 11.0D, 3.0D, 9.5D, 12.0D, 6.0D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY2_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 12.0D, 3.5D, 9.0D, 12.5D, 5.5D);
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_HEAD_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_SOUTH_HEAD_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_HEAD_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_SOUTH_HEAD_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY1_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_BODY1_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_SOUTH_BODY1_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_BODY1_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_SOUTH_BODY1_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY2_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_BODY2_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_SOUTH_BODY2_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_BODY2_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_BODY2_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_SOUTH_BODY2_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_HEAD_AND_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_HEAD_MUSHROOM_SHAPE, MOOSHROOM_SOUTH_BODY1_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_MUSHROOMS_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_HEAD_AND_BODY1_MUSHROOM_SHAPE, MOOSHROOM_SOUTH_BODY2_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_SOUTH_SHAPE = VoxelShapes.or(MOOSHROOM_SOUTH_MUSHROOMS_SHAPE, COW_SOUTH_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 11.0D, 2.0D, 8.5D, 12.0D, 3.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 12.0D, 1.0D, 9.5D, 13.0D, 4.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 13.0D, 1.5D, 9.0D, 13.5D, 3.5D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY1_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 10.0D, 7.0D, 8.5D, 11.0D, 8.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY1_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 11.0D, 6.0D, 9.5D, 12.0D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY1_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 12.0D, 6.5D, 9.0D, 12.5D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY2_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 10.0D, 11.0D, 8.5D, 11.0D, 12.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY2_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.5D, 11.0D, 10.0D, 9.5D, 12.0D, 13.0D);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY2_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.0D, 12.0D, 10.5D, 9.0D, 12.5D, 12.5D);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_HEAD_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_NORTH_HEAD_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_HEAD_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_NORTH_HEAD_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY1_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_BODY1_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_NORTH_BODY1_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_BODY1_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_NORTH_BODY1_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY2_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_BODY2_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_NORTH_BODY2_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_BODY2_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_BODY2_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_NORTH_BODY2_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_AND_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_HEAD_MUSHROOM_SHAPE, MOOSHROOM_NORTH_BODY1_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_MUSHROOMS_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_HEAD_AND_BODY1_MUSHROOM_SHAPE, MOOSHROOM_NORTH_BODY2_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_NORTH_SHAPE = VoxelShapes.or(MOOSHROOM_NORTH_MUSHROOMS_SHAPE, COW_NORTH_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(2.0D, 11.0D, 7.5D, 3.0D, 12.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(1.0D, 12.0D, 6.5D, 4.0D, 13.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(1.5D, 13.0D, 7.0D, 3.5D, 13.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY1_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.0D, 10.0D, 7.5D, 8.0D, 11.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY1_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(6.0D, 11.0D, 6.5D, 9.0D, 12.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY1_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(6.5D, 12.0D, 7.0D, 8.5D, 12.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY2_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(11.0D, 10.0D, 7.5D, 12.0D, 11.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY2_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(10.0D, 11.0D, 6.5D, 13.0D, 12.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY2_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(10.5D, 12.0D, 7.0D, 12.5D, 12.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_HEAD_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_WEST_HEAD_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_HEAD_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_WEST_HEAD_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY1_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_BODY1_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_WEST_BODY1_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_BODY1_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_WEST_BODY1_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY2_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_BODY2_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_WEST_BODY2_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_BODY2_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_BODY2_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_WEST_BODY2_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_HEAD_AND_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_HEAD_MUSHROOM_SHAPE, MOOSHROOM_WEST_BODY1_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_MUSHROOMS_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_HEAD_AND_BODY1_MUSHROOM_SHAPE, MOOSHROOM_WEST_BODY2_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_WEST_SHAPE = VoxelShapes.or(MOOSHROOM_WEST_MUSHROOMS_SHAPE, COW_WEST_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(13.0D, 11.0D, 7.5D, 14.0D, 12.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(12.0D, 12.0D, 6.5D, 15.0D, 13.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(12.5D, 13.0D, 7.0D, 14.5D, 13.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY1_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(8.0D, 10.0D, 7.5D, 9.0D, 11.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY1_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(7.0D, 11.0D, 6.5D, 10.0D, 12.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY1_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(7.5D, 12.0D, 7.0D, 9.5D, 12.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY2_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(4.0D, 10.0D, 7.5D, 5.0D, 11.0D, 8.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY2_MUSHROOM_BOTTOM_SHAPE = Block.makeCuboidShape(3.0D, 11.0D, 6.5D, 6.0D, 12.0D, 9.5D);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY2_MUSHROOM_TOP_SHAPE = Block.makeCuboidShape(3.5D, 12.0D, 7.0D, 5.5D, 12.5D, 9.0D);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_HEAD_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_EAST_HEAD_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_HEAD_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_EAST_HEAD_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY1_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_BODY1_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_EAST_BODY1_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_BODY1_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_EAST_BODY1_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY2_MUSHROOM_TOP_HALF_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_BODY2_MUSHROOM_BOTTOM_SHAPE, MOOSHROOM_EAST_BODY2_MUSHROOM_TOP_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_BODY2_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_BODY2_MUSHROOM_TOP_HALF_SHAPE, MOOSHROOM_EAST_BODY2_MUSHROOM_STEM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_HEAD_AND_BODY1_MUSHROOM_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_HEAD_MUSHROOM_SHAPE, MOOSHROOM_EAST_BODY1_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_MUSHROOMS_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_HEAD_AND_BODY1_MUSHROOM_SHAPE, MOOSHROOM_EAST_BODY2_MUSHROOM_SHAPE);
+	protected static final VoxelShape MOOSHROOM_EAST_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_MUSHROOMS_SHAPE, COW_EAST_SHAPE);
+	
+	//
+	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
 	protected static final VoxelShape BAT_EAST_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 0.1D, 10.0D, 12.0D, 15.0D);
@@ -863,6 +1031,14 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, PIG_SOUTH_SHAPE, PIG_NORTH_SHAPE, PIG_WEST_SHAPE, PIG_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.cow_plush)
+		{
+			return VePlushBlock.defineShapes(state, COW_SOUTH_SHAPE, COW_NORTH_SHAPE, COW_WEST_SHAPE, COW_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush)
+		{
+			return VePlushBlock.defineShapes(state, MOOSHROOM_SOUTH_SHAPE, MOOSHROOM_NORTH_SHAPE, MOOSHROOM_WEST_SHAPE, MOOSHROOM_EAST_SHAPE);
+		}
 		
 		else if(this == VeBlocks.bat_plush)
 		{
@@ -884,7 +1060,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, ENDERMAN_SOUTH_SHAPE, ENDERMAN_NORTH_SHAPE, ENDERMAN_WEST_SHAPE, ENDERMAN_EAST_SHAPE);
 		}
-		else if(this == VeBlocks.cow_plush || this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush || this == VeBlocks.guardian_plush)
+		else if(this == VeBlocks.guardian_plush)
 		{
 			return VePlushBlock.defineShapes(state, COW_Z_SHAPE, COW_Z_SHAPE, COW_X_SHAPE, COW_X_SHAPE);
 		}
