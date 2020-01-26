@@ -4,7 +4,7 @@
 	"textures": {
 		"particle": "#body_color",
 		"red_wool": "#body_color",
-		"white_wool": "block/white_wool",
+		"white_wool": "#spot_color",
 		"pink_wool": "block/pink_wool",
 		"black_wool": "block/black_wool",
 		"light_gray_wool": "block/light_gray_wool",
@@ -231,7 +231,7 @@
 		},
 		{
 			"__comment": "Element",
-			"from": [ 8.5, 3.5, 12 ],
+			"from": [ 8.5, 3, 12 ],
 			"to": [ 9, 4, 13 ],
 			"faces": {
 				"down": { "uv": [ 8.5, 3, 9, 4 ], "texture": "#black_wool" }
@@ -249,7 +249,7 @@
 		},
 		{
 			"__comment": "Element",
-			"from": [ 7, 3.5, 12 ],
+			"from": [ 7, 3, 12 ],
 			"to": [ 7.5, 4, 13 ],
 			"faces": {
 				"down": { "uv": [ 7, 3, 7.5, 4 ], "texture": "#black_wool" }
