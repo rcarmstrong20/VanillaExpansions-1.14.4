@@ -2,3 +2,4 @@ zombie
 pigman
 endermite
 mooshroom
+ocelot
