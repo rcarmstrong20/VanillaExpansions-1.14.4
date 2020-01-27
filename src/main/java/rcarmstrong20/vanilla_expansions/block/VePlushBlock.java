@@ -906,7 +906,14 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape MOOSHROOM_EAST_MUSHROOMS_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_HEAD_AND_BODY1_MUSHROOM_SHAPE, MOOSHROOM_EAST_BODY2_MUSHROOM_SHAPE);
 	protected static final VoxelShape MOOSHROOM_EAST_SHAPE = VoxelShapes.or(MOOSHROOM_EAST_MUSHROOMS_SHAPE, COW_EAST_SHAPE);
 	
-	//
+	//Ocelot Bounding Boxes
+	
+	protected static final VoxelShape OCELOT_SOUTH_BODY_SHAPE = Block.makeCuboidShape(5.5D, 2.0D, 4.5D, 10.5D, 6.0D, 10.0D);
+	protected static final VoxelShape OCELOT_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 3.0D, 10.0D, 11.5D, 8.5D, 15.0D);
+	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 10.0D, 10.0D, 9.5D, 12.0D);
+	protected static final VoxelShape OCELOT_SOUTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(6.5D, 8.5D, 10.0D, 7.5D, 9.5D, 12.0D);
+	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 6.0D, 15.0D, 11.0D, 7.0D, 15.5D);
+	protected static final VoxelShape OCELOT_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 15.0D, 7.5D, 7.0D, 15.5D);
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
@@ -1039,6 +1046,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, MOOSHROOM_SOUTH_SHAPE, MOOSHROOM_NORTH_SHAPE, MOOSHROOM_WEST_SHAPE, MOOSHROOM_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.ocelot_plush)
+		{
+			return VePlushBlock.defineShapes(state, OCELOT_SOUTH_LEFT_EYE_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
+		}
 		
 		else if(this == VeBlocks.bat_plush)
 		{
@@ -1068,7 +1079,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, SILVERFISH_Z_SHAPE, SILVERFISH_Z_SHAPE, SILVERFISH_X_SHAPE, SILVERFISH_X_SHAPE);
 		}
-		else if(this == VeBlocks.ocelot_plush || this == VeBlocks.wolf_plush)
+		else if(this == VeBlocks.wolf_plush)
 		{
 			return VePlushBlock.defineShapes(state, OCELOT_Z_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
 		}
