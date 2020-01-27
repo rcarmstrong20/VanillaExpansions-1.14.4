@@ -915,6 +915,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 6.0D, 15.0D, 11.0D, 7.0D, 15.5D);
 	protected static final VoxelShape OCELOT_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 15.0D, 7.5D, 7.0D, 15.5D);
 	
+	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
 	protected static final VoxelShape BAT_EAST_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 0.1D, 10.0D, 12.0D, 15.0D);
