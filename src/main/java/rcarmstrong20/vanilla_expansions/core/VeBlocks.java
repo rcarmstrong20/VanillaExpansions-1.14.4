@@ -79,6 +79,19 @@ public class VeBlocks
 	public static Block red_mooshroom_plush = register(VanillaExpansions.location("red_mooshroom_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)));
 	public static Block brown_mooshroom_plush = register(VanillaExpansions.location("brown_mooshroom_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)));
 	public static Block ocelot_plush = register(VanillaExpansions.location("ocelot_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.YELLOW_WOOL)));
+	
+	public static Block tabby_cat_plush = register(VanillaExpansions.location("tabby_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)));
+	public static Block tuxedo_cat_plush = register(VanillaExpansions.location("tuxedo_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)));
+	public static Block red_cat_plush = register(VanillaExpansions.location("red_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.ORANGE_WOOL)));
+	public static Block siamese_cat_plush = register(VanillaExpansions.location("siamese_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
+	public static Block british_shorthair_cat_plush = register(VanillaExpansions.location("british_shorthair_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.LIGHT_GRAY_WOOL)));
+	public static Block calico_cat_plush = register(VanillaExpansions.location("calico_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
+	public static Block persian_cat_plush = register(VanillaExpansions.location("persian_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.YELLOW_WOOL)));
+	public static Block ragdoll_cat_plush = register(VanillaExpansions.location("ragdoll_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
+	public static Block white_cat_plush = register(VanillaExpansions.location("white_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
+	public static Block jellie_cat_plush = register(VanillaExpansions.location("jellie_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
+	public static Block black_cat_plush = register(VanillaExpansions.location("black_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)));
+	
 	public static Block pig_plush = register(VanillaExpansions.location("pig_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.PINK_WOOL)));
 	public static Block rabbit_plush = register(VanillaExpansions.location("rabbit_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)));
 	public static Block white_sheep_plush = register(VanillaExpansions.location("white_sheep_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
