@@ -908,12 +908,170 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Ocelot Bounding Boxes
 	
-	protected static final VoxelShape OCELOT_SOUTH_BODY_SHAPE = Block.makeCuboidShape(5.5D, 2.0D, 4.5D, 10.5D, 6.0D, 10.0D);
-	protected static final VoxelShape OCELOT_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 3.0D, 10.0D, 11.5D, 8.5D, 15.0D);
+	protected static final VoxelShape OCELOT_Z_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 7.5D, 10.0D, 2.0D, 8.5D);
+	protected static final VoxelShape OCELOT_Z_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 7.5D, 7.0D, 2.0D, 8.5D);
+	protected static final VoxelShape OCELOT_Z_FRONT_LEGS_SHAPE = VoxelShapes.or(OCELOT_Z_FRONT_RIGHT_LEG_SHAPE, OCELOT_Z_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(5.5D, 2.0D, 4.5D, 10.5D, 6.0D, 10.0D);
+	protected static final VoxelShape OCELOT_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 3.0D, 10.0D, 11.0D, 8.5D, 15.0D);
 	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 10.0D, 10.0D, 9.5D, 12.0D);
-	protected static final VoxelShape OCELOT_SOUTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(6.5D, 8.5D, 10.0D, 7.5D, 9.5D, 12.0D);
-	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 6.0D, 15.0D, 11.0D, 7.0D, 15.5D);
+	protected static final VoxelShape OCELOT_SOUTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(6.0D, 8.5D, 10.0D, 7.0D, 9.5D, 12.0D);
+	protected static final VoxelShape OCELOT_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 6.0D, 15.0D, 10.5D, 7.0D, 15.5D);
 	protected static final VoxelShape OCELOT_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 15.0D, 7.5D, 7.0D, 15.5D);
+	protected static final VoxelShape OCELOT_SOUTH_NOSE_SHAPE = Block.makeCuboidShape(6.5D, 3.5D, 15.0D, 9.5D, 5.5D, 16.0D);
+	protected static final VoxelShape OCELOT_SOUTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 5.0D, 10.0D, 2.0D, 6.0D);
+	protected static final VoxelShape OCELOT_SOUTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 5.0D, 7.0D, 2.0D, 6.0D);
+	protected static final VoxelShape OCELOT_SOUTH_PIECE_TAIL1_SHAPE = Block.makeCuboidShape(7.5D, 3.0D, 4.5D, 8.5D, 4.0D, 2.0D);
+	protected static final VoxelShape OCELOT_SOUTH_PIECE_TAIL2_SHAPE = Block.makeCuboidShape(7.5D, 2.0D, 3.0D, 8.5D, 3.0D, 0.0D);
+	protected static final VoxelShape OCELOT_SOUTH_TORSO_AND_HEAD_SHAPE = VoxelShapes.or(OCELOT_SOUTH_TORSO_SHAPE, OCELOT_SOUTH_HEAD_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_TAIL_SHAPE = VoxelShapes.or(OCELOT_SOUTH_PIECE_TAIL1_SHAPE, OCELOT_SOUTH_PIECE_TAIL2_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_EARS_SHAPE = VoxelShapes.or(OCELOT_SOUTH_RIGHT_EAR_SHAPE, OCELOT_SOUTH_LEFT_EAR_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_EYES_SHAPE = VoxelShapes.or(OCELOT_SOUTH_RIGHT_EYE_SHAPE, OCELOT_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_BACK_LEGS_SHAPE = VoxelShapes.or(OCELOT_SOUTH_BACK_RIGHT_LEG_SHAPE, OCELOT_SOUTH_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_LEGS_SHAPE = VoxelShapes.or(OCELOT_Z_FRONT_LEGS_SHAPE, OCELOT_SOUTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(OCELOT_SOUTH_LEGS_SHAPE, OCELOT_SOUTH_TAIL_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_TORSO_HEAD_AND_EARS_SHAPE = VoxelShapes.or(OCELOT_SOUTH_TORSO_AND_HEAD_SHAPE, OCELOT_SOUTH_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_SOUTH_EYES_SHAPE, OCELOT_SOUTH_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_BODY_SHAPE = VoxelShapes.or(OCELOT_SOUTH_LEGS_AND_TAIL_SHAPE, OCELOT_SOUTH_TORSO_HEAD_AND_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_SOUTH_SHAPE = VoxelShapes.or(OCELOT_SOUTH_BODY_SHAPE, OCELOT_SOUTH_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_TORSO_SHAPE = Block.makeCuboidShape(5.5D, 2.0D, 6.0D, 10.5D, 6.0D, 11.5D);
+	protected static final VoxelShape OCELOT_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 3.0D, 1.0D, 11.0D, 8.5D, 6.0D);
+	protected static final VoxelShape OCELOT_NORTH_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 4.0D, 10.0D, 9.5D, 6.0D);
+	protected static final VoxelShape OCELOT_NORTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(6.0D, 8.5D, 4.0D, 7.0D, 9.5D, 6.0D);
+	protected static final VoxelShape OCELOT_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 6.0D, 0.5D, 10.5D, 7.0D, 1.0D);
+	protected static final VoxelShape OCELOT_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 0.5D, 7.5D, 7.0D, 1.0D);
+	protected static final VoxelShape OCELOT_NORTH_NOSE_SHAPE = Block.makeCuboidShape(6.5D, 3.5D, 0.0D, 9.5D, 5.5D, 1.0D);
+	protected static final VoxelShape OCELOT_NORTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 10.0D, 10.0D, 2.0D, 11.0D);
+	protected static final VoxelShape OCELOT_NORTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 10.0D, 7.0D, 2.0D, 11.0D);
+	protected static final VoxelShape OCELOT_NORTH_PIECE_TAIL1_SHAPE = Block.makeCuboidShape(7.5D, 3.0D, 11.5D, 8.5D, 4.0D, 14.0D);
+	protected static final VoxelShape OCELOT_NORTH_PIECE_TAIL2_SHAPE = Block.makeCuboidShape(7.5D, 2.0D, 13.0D, 8.5D, 3.0D, 16.0D);
+	protected static final VoxelShape OCELOT_NORTH_TORSO_AND_HEAD_SHAPE = VoxelShapes.or(OCELOT_NORTH_TORSO_SHAPE, OCELOT_NORTH_HEAD_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_TAIL_SHAPE = VoxelShapes.or(OCELOT_NORTH_PIECE_TAIL1_SHAPE, OCELOT_NORTH_PIECE_TAIL2_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_EARS_SHAPE = VoxelShapes.or(OCELOT_NORTH_RIGHT_EAR_SHAPE, OCELOT_NORTH_LEFT_EAR_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_EYES_SHAPE = VoxelShapes.or(OCELOT_NORTH_RIGHT_EYE_SHAPE, OCELOT_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_BACK_LEGS_SHAPE = VoxelShapes.or(OCELOT_NORTH_BACK_RIGHT_LEG_SHAPE, OCELOT_NORTH_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_LEGS_SHAPE = VoxelShapes.or(OCELOT_Z_FRONT_LEGS_SHAPE, OCELOT_NORTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(OCELOT_NORTH_LEGS_SHAPE, OCELOT_NORTH_TAIL_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_TORSO_HEAD_AND_EARS_SHAPE = VoxelShapes.or(OCELOT_NORTH_TORSO_AND_HEAD_SHAPE, OCELOT_NORTH_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_NORTH_EYES_SHAPE, OCELOT_NORTH_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_BODY_SHAPE = VoxelShapes.or(OCELOT_NORTH_LEGS_AND_TAIL_SHAPE, OCELOT_NORTH_TORSO_HEAD_AND_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_NORTH_SHAPE = VoxelShapes.or(OCELOT_NORTH_BODY_SHAPE, OCELOT_NORTH_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_X_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(7.5D, 0.0D, 9.0D, 8.5D, 2.0D, 10.0D);
+	protected static final VoxelShape OCELOT_X_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(7.5D, 0.0D, 6.0D, 8.5D, 2.0D, 7.0D);
+	protected static final VoxelShape OCELOT_X_FRONT_LEGS_SHAPE = VoxelShapes.or(OCELOT_X_FRONT_RIGHT_LEG_SHAPE, OCELOT_X_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 5.5D, 11.5D, 6.0D, 10.5D);
+	protected static final VoxelShape OCELOT_WEST_HEAD_SHAPE = Block.makeCuboidShape(1.0D, 3.0D, 5.0D, 6.0D, 8.5D, 11.0D);
+	protected static final VoxelShape OCELOT_WEST_RIGHT_EAR_SHAPE = Block.makeCuboidShape(4.0D, 8.5D, 9.0D, 6.0D, 9.5D, 10.0D);
+	protected static final VoxelShape OCELOT_WEST_LEFT_EAR_SHAPE = Block.makeCuboidShape(4.0D, 8.5D, 6.0D, 6.0D, 9.5D, 7.0D);
+	protected static final VoxelShape OCELOT_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 6.0D, 8.5D, 1.0D, 7.0D, 10.5D);
+	protected static final VoxelShape OCELOT_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(0.5D, 6.0D, 5.5D, 1.0D, 7.0D, 7.5D);
+	protected static final VoxelShape OCELOT_WEST_NOSE_SHAPE = Block.makeCuboidShape(0.0D, 3.5D, 6.5D, 1.0D, 5.5D, 9.5D);
+	protected static final VoxelShape OCELOT_WEST_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(10.0D, 0.0D, 9.0D, 11.0D, 2.0D, 10.0D);
+	protected static final VoxelShape OCELOT_WEST_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(10.0D, 0.0D, 6.0D, 11.0D, 2.0D, 7.0D);
+	protected static final VoxelShape OCELOT_WEST_PIECE_TAIL1_SHAPE = Block.makeCuboidShape(11.5D, 3.0D, 7.5D, 14.0D, 4.0D, 8.5D);
+	protected static final VoxelShape OCELOT_WEST_PIECE_TAIL2_SHAPE = Block.makeCuboidShape(13.0D, 2.0D, 7.5D, 16.0D, 3.0D, 8.5D);
+	protected static final VoxelShape OCELOT_WEST_TORSO_AND_HEAD_SHAPE = VoxelShapes.or(OCELOT_WEST_TORSO_SHAPE, OCELOT_WEST_HEAD_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_TAIL_SHAPE = VoxelShapes.or(OCELOT_WEST_PIECE_TAIL1_SHAPE, OCELOT_WEST_PIECE_TAIL2_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_EARS_SHAPE = VoxelShapes.or(OCELOT_WEST_RIGHT_EAR_SHAPE, OCELOT_WEST_LEFT_EAR_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_EYES_SHAPE = VoxelShapes.or(OCELOT_WEST_RIGHT_EYE_SHAPE, OCELOT_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_BACK_LEGS_SHAPE = VoxelShapes.or(OCELOT_WEST_BACK_RIGHT_LEG_SHAPE, OCELOT_WEST_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_LEGS_SHAPE = VoxelShapes.or(OCELOT_X_FRONT_LEGS_SHAPE, OCELOT_WEST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(OCELOT_WEST_LEGS_SHAPE, OCELOT_WEST_TAIL_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_TORSO_HEAD_AND_EARS_SHAPE = VoxelShapes.or(OCELOT_WEST_TORSO_AND_HEAD_SHAPE, OCELOT_WEST_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_WEST_EYES_SHAPE, OCELOT_WEST_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_BODY_SHAPE = VoxelShapes.or(OCELOT_WEST_LEGS_AND_TAIL_SHAPE, OCELOT_WEST_TORSO_HEAD_AND_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_WEST_SHAPE = VoxelShapes.or(OCELOT_WEST_BODY_SHAPE, OCELOT_WEST_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_TORSO_SHAPE = Block.makeCuboidShape(4.5D, 2.0D, 5.5D, 10.0D, 6.0D, 10.5D);
+	protected static final VoxelShape OCELOT_EAST_HEAD_SHAPE = Block.makeCuboidShape(10.0D, 3.0D, 5.0D, 15.0D, 8.5D, 11.0D);
+	protected static final VoxelShape OCELOT_EAST_RIGHT_EAR_SHAPE = Block.makeCuboidShape(10.0D, 8.5D, 9.0D, 12.0D, 9.5D, 10.0D);
+	protected static final VoxelShape OCELOT_EAST_LEFT_EAR_SHAPE = Block.makeCuboidShape(10.0D, 8.5D, 6.0D, 12.0D, 9.5D, 7.0D);
+	protected static final VoxelShape OCELOT_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 6.0D, 8.5D, 15.5D, 7.0D, 10.5D);
+	protected static final VoxelShape OCELOT_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(15.0D, 6.0D, 5.5D, 15.5D, 7.0D, 7.5D);
+	protected static final VoxelShape OCELOT_EAST_NOSE_SHAPE = Block.makeCuboidShape(15.0D, 3.5D, 6.5D, 16.0D, 5.5D, 9.5D);
+	protected static final VoxelShape OCELOT_EAST_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 9.0D, 6.0D, 2.0D, 10.0D);
+	protected static final VoxelShape OCELOT_EAST_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 6.0D, 6.0D, 2.0D, 7.0D);
+	protected static final VoxelShape OCELOT_EAST_PIECE_TAIL1_SHAPE = Block.makeCuboidShape(4.5D, 3.0D, 7.5D, 2.0D, 4.0D, 8.5D);
+	protected static final VoxelShape OCELOT_EAST_PIECE_TAIL2_SHAPE = Block.makeCuboidShape(3.0D, 2.0D, 7.5D, 0.0D, 3.0D, 8.5D);
+	protected static final VoxelShape OCELOT_EAST_TORSO_AND_HEAD_SHAPE = VoxelShapes.or(OCELOT_EAST_TORSO_SHAPE, OCELOT_EAST_HEAD_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_TAIL_SHAPE = VoxelShapes.or(OCELOT_EAST_PIECE_TAIL1_SHAPE, OCELOT_EAST_PIECE_TAIL2_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_EARS_SHAPE = VoxelShapes.or(OCELOT_EAST_RIGHT_EAR_SHAPE, OCELOT_EAST_LEFT_EAR_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_EYES_SHAPE = VoxelShapes.or(OCELOT_EAST_RIGHT_EYE_SHAPE, OCELOT_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_BACK_LEGS_SHAPE = VoxelShapes.or(OCELOT_EAST_BACK_RIGHT_LEG_SHAPE, OCELOT_EAST_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_LEGS_SHAPE = VoxelShapes.or(OCELOT_X_FRONT_LEGS_SHAPE, OCELOT_EAST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_LEGS_AND_TAIL_SHAPE = VoxelShapes.or(OCELOT_EAST_LEGS_SHAPE, OCELOT_EAST_TAIL_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_TORSO_HEAD_AND_EARS_SHAPE = VoxelShapes.or(OCELOT_EAST_TORSO_AND_HEAD_SHAPE, OCELOT_EAST_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_EAST_EYES_SHAPE, OCELOT_EAST_NOSE_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_BODY_SHAPE = VoxelShapes.or(OCELOT_EAST_LEGS_AND_TAIL_SHAPE, OCELOT_EAST_TORSO_HEAD_AND_EARS_SHAPE);
+	protected static final VoxelShape OCELOT_EAST_SHAPE = VoxelShapes.or(OCELOT_EAST_BODY_SHAPE, OCELOT_EAST_EYES_AND_NOSE_SHAPE);
+	
+	//Persian Bounding Boxes
+	
+	protected static final VoxelShape PERSIAN_SOUTH_NOSE_SHAPE = Block.makeCuboidShape(7.5D, 5.0D, 15.0D, 8.5D, 6.0D, 15.5D);
+	protected static final VoxelShape PERSIAN_SOUTH_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_SOUTH_EYES_SHAPE, PERSIAN_SOUTH_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_SOUTH_SHAPE = VoxelShapes.or(OCELOT_SOUTH_BODY_SHAPE, PERSIAN_SOUTH_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_NORTH_NOSE_SHAPE = Block.makeCuboidShape(7.5D, 5.0D, 0.5D, 8.5D, 6.0D, 1.0D);
+	protected static final VoxelShape PERSIAN_NORTH_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_NORTH_EYES_SHAPE, PERSIAN_NORTH_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_NORTH_SHAPE = VoxelShapes.or(OCELOT_NORTH_BODY_SHAPE, PERSIAN_NORTH_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_WEST_NOSE_SHAPE = Block.makeCuboidShape(0.5D, 5.0D, 7.5D, 1.0D, 6.0D, 8.5D);
+	protected static final VoxelShape PERSIAN_WEST_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_WEST_EYES_SHAPE, PERSIAN_WEST_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_WEST_SHAPE = VoxelShapes.or(OCELOT_WEST_BODY_SHAPE, PERSIAN_WEST_EYES_AND_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_EAST_NOSE_SHAPE = Block.makeCuboidShape(15.0D, 5.0D, 7.5D, 15.5D, 6.0D, 8.5D);
+	protected static final VoxelShape PERSIAN_EAST_EYES_AND_NOSE_SHAPE = VoxelShapes.or(OCELOT_EAST_EYES_SHAPE, PERSIAN_EAST_NOSE_SHAPE);
+	protected static final VoxelShape PERSIAN_EAST_SHAPE = VoxelShapes.or(OCELOT_EAST_BODY_SHAPE, PERSIAN_EAST_EYES_AND_NOSE_SHAPE);
+	
+	//Wolf Bounding Boxes
+	
+	protected static final VoxelShape WOLF_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 2.0D, 8.0D, 11.0D, 8.5D, 12.0D);
+	protected static final VoxelShape WOLF_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 3.0D, 10.0D, 7.0D, 8.0D);
+	protected static final VoxelShape WOLF_SOUTH_SNOUT_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 12.0D, 10.0D, 5.5D, 15.5D);
+	protected static final VoxelShape WOLF_SOUTH_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 6.0D, 9.5D, 2.0D, 7.0D);
+	protected static final VoxelShape WOLF_SOUTH_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 6.0D, 7.5D, 2.0D, 7.0D);
+	protected static final VoxelShape WOLF_SOUTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 3.5D, 9.5D, 2.0D, 4.5D);
+	protected static final VoxelShape WOLF_SOUTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 3.5D, 7.5D, 2.0D, 4.5D);
+	protected static final VoxelShape WOLF_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 12.0D, 7.5D, 7.0D, 12.5D);
+	protected static final VoxelShape WOLF_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 6.0D, 12.0D, 10.5D, 7.0D, 12.5D);
+	protected static final VoxelShape WOLF_SOUTH_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 9.0D, 10.5D, 10.5D, 10.0D);
+	protected static final VoxelShape WOLF_SOUTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(5.5D, 8.5D, 9.0D, 7.0D, 10.5D, 10.0D);
+	protected static final VoxelShape WOLF_SOUTH_TAIL1_SHAPE = Block.makeCuboidShape(7.0D, 3.0D, 2.0D, 9.0D, 6.0D, 3.0D);
+	protected static final VoxelShape WOLF_SOUTH_TAIL2_SHAPE = Block.makeCuboidShape(7.0D, 2.0D, 0.0D, 9.0D, 5.0D, 2.0D);
+	protected static final VoxelShape WOLF_SOUTH_HEAD_AND_TORSO_SHAPE = VoxelShapes.or(WOLF_SOUTH_HEAD_SHAPE, WOLF_SOUTH_TORSO_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_FRONT_LEGS_SHAPE = VoxelShapes.or(WOLF_SOUTH_FRONT_RIGHT_LEG_SHAPE, WOLF_SOUTH_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_BACK_LEGS_SHAPE = VoxelShapes.or(WOLF_SOUTH_BACK_RIGHT_LEG_SHAPE, WOLF_SOUTH_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_LEGS_SHAPE = VoxelShapes.or(WOLF_SOUTH_FRONT_LEGS_SHAPE, WOLF_SOUTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_EYES_SHAPE = VoxelShapes.or(WOLF_SOUTH_RIGHT_EYE_SHAPE, WOLF_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_EARS_SHAPE = VoxelShapes.or(WOLF_SOUTH_RIGHT_EAR_SHAPE, WOLF_SOUTH_LEFT_EAR_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_TAIL_SHAPE = VoxelShapes.or(WOLF_SOUTH_TAIL1_SHAPE, WOLF_SOUTH_TAIL2_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_LEGS_AND_EARS_SHAPE = VoxelShapes.or(WOLF_SOUTH_LEGS_SHAPE, WOLF_SOUTH_EARS_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_LEGS_EARS_AND_TAIL_SHAPE = VoxelShapes.or(WOLF_SOUTH_LEGS_AND_EARS_SHAPE, WOLF_SOUTH_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_BODY_SHAPE = VoxelShapes.or(WOLF_SOUTH_HEAD_AND_TORSO_SHAPE, WOLF_SOUTH_LEGS_EARS_AND_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_FACE_SHAPE = VoxelShapes.or(WOLF_SOUTH_SNOUT_SHAPE, WOLF_SOUTH_EYES_SHAPE);
+	protected static final VoxelShape WOLF_SOUTH_SHAPE = VoxelShapes.or(WOLF_SOUTH_BODY_SHAPE, WOLF_SOUTH_FACE_SHAPE);
+	
+	protected static final VoxelShape WOLF_EAST_HEAD_SHAPE = Block.makeCuboidShape(8.0D, 2.0D, 5.0D, 12.0D, 8.5D, 11.0D);
+	protected static final VoxelShape WOLF_EAST_TORSO_SHAPE = Block.makeCuboidShape(3.0D, 2.0D, 6.0D, 8.0D, 7.0D, 10.0D);
+	protected static final VoxelShape WOLF_EAST_SNOUT_SHAPE = Block.makeCuboidShape(12.0D, 2.0D, 6.0D, 15.5D, 5.5D, 10.0D);
+	protected static final VoxelShape WOLF_EAST_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 8.5D, 7.0D, 2.0D, 9.5D);
+	protected static final VoxelShape WOLF_EAST_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 6.5D, 7.0D, 2.0D, 7.5D);
+	protected static final VoxelShape WOLF_EAST_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(3.5D, 0.0D, 8.5D, 4.5D, 2.0D, 9.5D);
+	protected static final VoxelShape WOLF_EAST_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(3.5D, 0.0D, 6.5D, 4.5D, 2.0D, 7.5D);
+	protected static final VoxelShape WOLF_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(12.0D, 6.0D, 5.5D, 12.5D, 7.0D, 7.5D);
+	protected static final VoxelShape WOLF_EAST_LEFT_EYE_SHAPE = Block.makeCuboidShape(12.0D, 6.0D, 8.5D, 12.5D, 7.0D, 10.5D);
+	protected static final VoxelShape WOLF_EAST_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 9.0D, 10.0D, 10.5D, 10.5D);
+	protected static final VoxelShape WOLF_EAST_LEFT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 5.5D, 10.0D, 10.5D, 7.0D);
+	protected static final VoxelShape WOLF_EAST_TAIL1_SHAPE = Block.makeCuboidShape(2.0D, 3.0D, 7.0D, 3.0D, 6.0D, 9.0D);
+	protected static final VoxelShape WOLF_EAST_TAIL2_SHAPE = Block.makeCuboidShape(0.0D, 2.0D, 7.0D, 2.0D, 5.0D, 9.0D);
+	protected static final VoxelShape WOLF_EAST_HEAD_AND_TORSO_SHAPE = VoxelShapes.or(WOLF_EAST_HEAD_SHAPE, WOLF_EAST_TORSO_SHAPE);
+	protected static final VoxelShape WOLF_EAST_FRONT_LEGS_SHAPE = VoxelShapes.or(WOLF_EAST_FRONT_RIGHT_LEG_SHAPE, WOLF_EAST_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_EAST_BACK_LEGS_SHAPE = VoxelShapes.or(WOLF_EAST_BACK_RIGHT_LEG_SHAPE, WOLF_EAST_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_EAST_LEGS_SHAPE = VoxelShapes.or(WOLF_EAST_FRONT_LEGS_SHAPE, WOLF_EAST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape WOLF_EAST_EYES_SHAPE = VoxelShapes.or(WOLF_EAST_RIGHT_EYE_SHAPE, WOLF_EAST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape WOLF_EAST_EARS_SHAPE = VoxelShapes.or(WOLF_EAST_RIGHT_EAR_SHAPE, WOLF_EAST_LEFT_EAR_SHAPE);
+	protected static final VoxelShape WOLF_EAST_TAIL_SHAPE = VoxelShapes.or(WOLF_EAST_TAIL1_SHAPE, WOLF_EAST_TAIL2_SHAPE);
+	protected static final VoxelShape WOLF_EAST_LEGS_AND_EARS_SHAPE = VoxelShapes.or(WOLF_EAST_LEGS_SHAPE, WOLF_EAST_EARS_SHAPE);
+	protected static final VoxelShape WOLF_EAST_LEGS_EARS_AND_TAIL_SHAPE = VoxelShapes.or(WOLF_EAST_LEGS_AND_EARS_SHAPE, WOLF_EAST_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_EAST_BODY_SHAPE = VoxelShapes.or(WOLF_EAST_HEAD_AND_TORSO_SHAPE, WOLF_EAST_LEGS_EARS_AND_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_EAST_FACE_SHAPE = VoxelShapes.or(WOLF_EAST_SNOUT_SHAPE, WOLF_EAST_EYES_SHAPE);
+	protected static final VoxelShape WOLF_EAST_SHAPE = VoxelShapes.or(WOLF_EAST_BODY_SHAPE, WOLF_EAST_FACE_SHAPE);
+	
 	
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
@@ -1047,9 +1205,17 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, MOOSHROOM_SOUTH_SHAPE, MOOSHROOM_NORTH_SHAPE, MOOSHROOM_WEST_SHAPE, MOOSHROOM_EAST_SHAPE);
 		}
-		else if(this == VeBlocks.ocelot_plush)
+		else if(this == VeBlocks.ocelot_plush || this == VeBlocks.tabby_cat_plush || this == VeBlocks.tuxedo_cat_plush || this == VeBlocks.red_cat_plush || this == VeBlocks.siamese_cat_plush || this == VeBlocks.british_shorthair_cat_plush || this == VeBlocks.calico_cat_plush || this == VeBlocks.ragdoll_cat_plush || this == VeBlocks.white_cat_plush || this == VeBlocks.jellie_cat_plush || this == VeBlocks.black_cat_plush)
 		{
-			return VePlushBlock.defineShapes(state, OCELOT_SOUTH_LEFT_EYE_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
+			return VePlushBlock.defineShapes(state, OCELOT_SOUTH_SHAPE, OCELOT_NORTH_SHAPE, OCELOT_WEST_SHAPE, OCELOT_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.persian_cat_plush)
+		{
+			return VePlushBlock.defineShapes(state, PERSIAN_SOUTH_SHAPE, PERSIAN_NORTH_SHAPE, PERSIAN_WEST_SHAPE, PERSIAN_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.wolf_plush)
+		{
+			return VePlushBlock.defineShapes(state, WOLF_SOUTH_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, WOLF_EAST_SHAPE);
 		}
 		
 		else if(this == VeBlocks.bat_plush)
@@ -1079,10 +1245,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		else if(this == VeBlocks.silverfish_plush)
 		{
 			return VePlushBlock.defineShapes(state, SILVERFISH_Z_SHAPE, SILVERFISH_Z_SHAPE, SILVERFISH_X_SHAPE, SILVERFISH_X_SHAPE);
-		}
-		else if(this == VeBlocks.wolf_plush)
-		{
-			return VePlushBlock.defineShapes(state, OCELOT_Z_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, OCELOT_X_SHAPE);
 		}
 		else if(this == VeBlocks.plains_villager_plush || this == VeBlocks.desert_villager_plush || this == VeBlocks.jungle_villager_plush || this == VeBlocks.taiga_villager_plush || this == VeBlocks.snow_villager_plush || this == VeBlocks.swamp_villager_plush  || this == VeBlocks.savanna_villager_plush|| this == VeBlocks.witch_plush)
 		{
