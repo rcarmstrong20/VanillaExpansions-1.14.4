@@ -3,3 +3,4 @@ pigman
 endermite
 mooshroom
 ocelot
+enderman
