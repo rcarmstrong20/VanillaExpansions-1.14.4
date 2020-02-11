@@ -1045,7 +1045,56 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape WOLF_SOUTH_BODY_SHAPE = VoxelShapes.or(WOLF_SOUTH_HEAD_AND_TORSO_SHAPE, WOLF_SOUTH_LEGS_EARS_AND_TAIL_SHAPE);
 	protected static final VoxelShape WOLF_SOUTH_FACE_SHAPE = VoxelShapes.or(WOLF_SOUTH_SNOUT_SHAPE, WOLF_SOUTH_EYES_SHAPE);
 	protected static final VoxelShape WOLF_SOUTH_SHAPE = VoxelShapes.or(WOLF_SOUTH_BODY_SHAPE, WOLF_SOUTH_FACE_SHAPE);
-	
+	protected static final VoxelShape WOLF_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 2.0D, 4.0D, 11.0D, 8.5D, 8.0D);
+	protected static final VoxelShape WOLF_NORTH_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 8.0D, 10.0D, 7.0D, 13.0D);
+	protected static final VoxelShape WOLF_NORTH_SNOUT_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 0.5D, 10.0D, 5.5D, 4.0D);
+	protected static final VoxelShape WOLF_NORTH_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 9.0D, 9.5D, 2.0D, 10.0D);
+	protected static final VoxelShape WOLF_NORTH_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 9.0D, 7.5D, 2.0D, 10.0D);
+	protected static final VoxelShape WOLF_NORTH_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 11.5D, 9.5D, 2.0D, 12.5D);
+	protected static final VoxelShape WOLF_NORTH_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 11.5D, 7.5D, 2.0D, 12.5D);
+	protected static final VoxelShape WOLF_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 6.0D, 3.5D, 7.5D, 7.0D, 4.0D);
+	protected static final VoxelShape WOLF_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 6.0D, 3.5D, 10.5D, 7.0D, 4.0D);
+	protected static final VoxelShape WOLF_NORTH_RIGHT_EAR_SHAPE = Block.makeCuboidShape(9.0D, 8.5D, 6.0D, 10.5D, 10.5D, 7.0D);
+	protected static final VoxelShape WOLF_NORTH_LEFT_EAR_SHAPE = Block.makeCuboidShape(5.5D, 8.5D, 6.0D, 7.0D, 10.5D, 7.0D);
+	protected static final VoxelShape WOLF_NORTH_TAIL1_SHAPE = Block.makeCuboidShape(7.0D, 3.0D, 13.0D, 9.0D, 6.0D, 14.0D);
+	protected static final VoxelShape WOLF_NORTH_TAIL2_SHAPE = Block.makeCuboidShape(7.0D, 2.0D, 14.0D, 9.0D, 5.0D, 16.0D);
+	protected static final VoxelShape WOLF_NORTH_HEAD_AND_TORSO_SHAPE = VoxelShapes.or(WOLF_NORTH_HEAD_SHAPE, WOLF_NORTH_TORSO_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_FRONT_LEGS_SHAPE = VoxelShapes.or(WOLF_NORTH_FRONT_RIGHT_LEG_SHAPE, WOLF_NORTH_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_BACK_LEGS_SHAPE = VoxelShapes.or(WOLF_NORTH_BACK_RIGHT_LEG_SHAPE, WOLF_NORTH_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_LEGS_SHAPE = VoxelShapes.or(WOLF_NORTH_FRONT_LEGS_SHAPE, WOLF_NORTH_BACK_LEGS_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_EYES_SHAPE = VoxelShapes.or(WOLF_NORTH_RIGHT_EYE_SHAPE, WOLF_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_EARS_SHAPE = VoxelShapes.or(WOLF_NORTH_RIGHT_EAR_SHAPE, WOLF_NORTH_LEFT_EAR_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_TAIL_SHAPE = VoxelShapes.or(WOLF_NORTH_TAIL1_SHAPE, WOLF_NORTH_TAIL2_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_LEGS_AND_EARS_SHAPE = VoxelShapes.or(WOLF_NORTH_LEGS_SHAPE, WOLF_NORTH_EARS_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_LEGS_EARS_AND_TAIL_SHAPE = VoxelShapes.or(WOLF_NORTH_LEGS_AND_EARS_SHAPE, WOLF_NORTH_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_BODY_SHAPE = VoxelShapes.or(WOLF_NORTH_HEAD_AND_TORSO_SHAPE, WOLF_NORTH_LEGS_EARS_AND_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_FACE_SHAPE = VoxelShapes.or(WOLF_NORTH_SNOUT_SHAPE, WOLF_NORTH_EYES_SHAPE);
+	protected static final VoxelShape WOLF_NORTH_SHAPE = VoxelShapes.or(WOLF_NORTH_BODY_SHAPE, WOLF_NORTH_FACE_SHAPE);
+	protected static final VoxelShape WOLF_WEST_HEAD_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 5.0D, 8.0D, 8.5D, 11.0D);
+	protected static final VoxelShape WOLF_WEST_TORSO_SHAPE = Block.makeCuboidShape(8.0D, 2.0D, 6.0D, 13.0D, 7.0D, 10.0D);
+	protected static final VoxelShape WOLF_WEST_SNOUT_SHAPE = Block.makeCuboidShape(0.5D, 2.0D, 6.0D, 4.0D, 5.5D, 10.0D);
+	protected static final VoxelShape WOLF_WEST_FRONT_RIGHT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 8.5D, 10.0D, 2.0D, 9.5D);
+	protected static final VoxelShape WOLF_WEST_FRONT_LEFT_LEG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 6.5D, 10.0D, 2.0D, 7.5D);
+	protected static final VoxelShape WOLF_WEST_BACK_RIGHT_LEG_SHAPE = Block.makeCuboidShape(11.5D, 0.0D, 8.5D, 12.5D, 2.0D, 9.5D);
+	protected static final VoxelShape WOLF_WEST_BACK_LEFT_LEG_SHAPE = Block.makeCuboidShape(11.5D, 0.0D, 6.5D, 12.5D, 2.0D, 7.5D);
+	protected static final VoxelShape WOLF_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 6.0D, 5.5D, 4.0D, 7.0D, 7.5D);
+	protected static final VoxelShape WOLF_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 6.0D, 8.5D, 4.0D, 7.0D, 10.5D);
+	protected static final VoxelShape WOLF_WEST_RIGHT_EAR_SHAPE = Block.makeCuboidShape(6.0D, 8.5D, 9.0D, 7.0D, 10.5D, 10.5D);
+	protected static final VoxelShape WOLF_WEST_LEFT_EAR_SHAPE = Block.makeCuboidShape(6.0D, 8.5D, 5.5D, 7.0D, 10.5D, 7.0D);
+	protected static final VoxelShape WOLF_WEST_TAIL1_SHAPE = Block.makeCuboidShape(13.0D, 3.0D, 7.0D, 14.0D, 6.0D, 9.0D);
+	protected static final VoxelShape WOLF_WEST_TAIL2_SHAPE = Block.makeCuboidShape(14.0D, 2.0D, 7.0D, 16.0D, 5.0D, 9.0D);
+	protected static final VoxelShape WOLF_WEST_HEAD_AND_TORSO_SHAPE = VoxelShapes.or(WOLF_WEST_HEAD_SHAPE, WOLF_WEST_TORSO_SHAPE);
+	protected static final VoxelShape WOLF_WEST_FRONT_LEGS_SHAPE = VoxelShapes.or(WOLF_WEST_FRONT_RIGHT_LEG_SHAPE, WOLF_WEST_FRONT_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_WEST_BACK_LEGS_SHAPE = VoxelShapes.or(WOLF_WEST_BACK_RIGHT_LEG_SHAPE, WOLF_WEST_BACK_LEFT_LEG_SHAPE);
+	protected static final VoxelShape WOLF_WEST_LEGS_SHAPE = VoxelShapes.or(WOLF_WEST_FRONT_LEGS_SHAPE, WOLF_WEST_BACK_LEGS_SHAPE);
+	protected static final VoxelShape WOLF_WEST_EYES_SHAPE = VoxelShapes.or(WOLF_WEST_RIGHT_EYE_SHAPE, WOLF_WEST_LEFT_EYE_SHAPE);
+	protected static final VoxelShape WOLF_WEST_EARS_SHAPE = VoxelShapes.or(WOLF_WEST_RIGHT_EAR_SHAPE, WOLF_WEST_LEFT_EAR_SHAPE);
+	protected static final VoxelShape WOLF_WEST_TAIL_SHAPE = VoxelShapes.or(WOLF_WEST_TAIL1_SHAPE, WOLF_WEST_TAIL2_SHAPE);
+	protected static final VoxelShape WOLF_WEST_LEGS_AND_EARS_SHAPE = VoxelShapes.or(WOLF_WEST_LEGS_SHAPE, WOLF_WEST_EARS_SHAPE);
+	protected static final VoxelShape WOLF_WEST_LEGS_EARS_AND_TAIL_SHAPE = VoxelShapes.or(WOLF_WEST_LEGS_AND_EARS_SHAPE, WOLF_WEST_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_WEST_BODY_SHAPE = VoxelShapes.or(WOLF_WEST_HEAD_AND_TORSO_SHAPE, WOLF_WEST_LEGS_EARS_AND_TAIL_SHAPE);
+	protected static final VoxelShape WOLF_WEST_FACE_SHAPE = VoxelShapes.or(WOLF_WEST_SNOUT_SHAPE, WOLF_WEST_EYES_SHAPE);
+	protected static final VoxelShape WOLF_WEST_SHAPE = VoxelShapes.or(WOLF_WEST_BODY_SHAPE, WOLF_WEST_FACE_SHAPE);
 	protected static final VoxelShape WOLF_EAST_HEAD_SHAPE = Block.makeCuboidShape(8.0D, 2.0D, 5.0D, 12.0D, 8.5D, 11.0D);
 	protected static final VoxelShape WOLF_EAST_TORSO_SHAPE = Block.makeCuboidShape(3.0D, 2.0D, 6.0D, 8.0D, 7.0D, 10.0D);
 	protected static final VoxelShape WOLF_EAST_SNOUT_SHAPE = Block.makeCuboidShape(12.0D, 2.0D, 6.0D, 15.5D, 5.5D, 10.0D);
@@ -1072,6 +1121,44 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape WOLF_EAST_FACE_SHAPE = VoxelShapes.or(WOLF_EAST_SNOUT_SHAPE, WOLF_EAST_EYES_SHAPE);
 	protected static final VoxelShape WOLF_EAST_SHAPE = VoxelShapes.or(WOLF_EAST_BODY_SHAPE, WOLF_EAST_FACE_SHAPE);
 	
+	//Enderman Bounding Boxes
+	
+	protected static final VoxelShape ENDERMAN_SOUTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 12.0D, 4.0D, 10.5D, 16.0D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 4.5D, 10.0D, 12.0D, 8.5D);
+	protected static final VoxelShape ENDERMAN_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 14.5D, 9.0D, 10.0D, 15.0D, 9.5D);
+	protected static final VoxelShape ENDERMAN_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 14.5D, 9.0D, 7.5D, 15.0D, 9.5D);
+	protected static final VoxelShape ENDERMAN_SOUTH_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 6.0D, 9.5D, 7.5D, 7.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 6.0D, 7.5D, 7.5D, 7.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_RIGHT_ARM1_SHAPE = Block.makeCuboidShape(10.0D, 9.5D, 8.0D, 11.0D, 11.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_RIGHT_ARM2_SHAPE = Block.makeCuboidShape(9.0D, 7.5D, 8.0D, 10.0D, 10.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_MIDDLE_ARM_SHAPE = Block.makeCuboidShape(7.0D, 4.5D, 8.0D, 9.0D, 8.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_LEFT_ARM1_SHAPE = Block.makeCuboidShape(5.0D, 9.5D, 8.0D, 6.0D, 11.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_LEFT_ARM2_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 8.0D, 7.0D, 10.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_GRASS_BLOCK_SHAPE = Block.makeCuboidShape(6.5D, 5.0D, 9.0D, 9.5D, 8.0D, 12.0D);
+	protected static final VoxelShape ENDERMAN_SOUTH_BODY_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_HEAD_SHAPE, ENDERMAN_SOUTH_TORSO_SHAPE);
+	protected static final VoxelShape ENDERMAN_SOUTH_EYES_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_RIGHT_EYE_SHAPE, ENDERMAN_SOUTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape ENDERMAN_SOUTH_LEGS_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_RIGHT_LEG_SHAPE, ENDERMAN_SOUTH_LEFT_LEG_SHAPE);
+	protected static final VoxelShape ENDERMAN_SOUTH_ARMS_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_RIGHT_ARM1_SHAPE, ENDERMAN_SOUTH_RIGHT_ARM2_SHAPE, ENDERMAN_SOUTH_MIDDLE_ARM_SHAPE, ENDERMAN_SOUTH_LEFT_ARM1_SHAPE, ENDERMAN_SOUTH_LEFT_ARM2_SHAPE);
+	protected static final VoxelShape ENDERMAN_SOUTH_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_BODY_SHAPE, ENDERMAN_SOUTH_EYES_SHAPE, ENDERMAN_SOUTH_LEGS_SHAPE, ENDERMAN_SOUTH_ARMS_SHAPE, ENDERMAN_SOUTH_GRASS_BLOCK_SHAPE);
+	
+	//Fix the bounding box positions
+	protected static final VoxelShape ENDERMAN_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 12.0D, 4.0D, 10.5D, 16.0D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 4.5D, 10.0D, 12.0D, 8.5D);
+	protected static final VoxelShape ENDERMAN_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 14.5D, 9.0D, 10.0D, 15.0D, 9.5D);
+	protected static final VoxelShape ENDERMAN_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 14.5D, 9.0D, 7.5D, 15.0D, 9.5D);
+	protected static final VoxelShape ENDERMAN_NORTH_RIGHT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 6.0D, 9.5D, 7.5D, 7.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_LEFT_LEG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 6.0D, 7.5D, 7.5D, 7.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_RIGHT_ARM1_SHAPE = Block.makeCuboidShape(10.0D, 9.5D, 8.0D, 11.0D, 11.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_RIGHT_ARM2_SHAPE = Block.makeCuboidShape(9.0D, 7.5D, 8.0D, 10.0D, 10.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_MIDDLE_ARM_SHAPE = Block.makeCuboidShape(7.0D, 4.5D, 8.0D, 9.0D, 8.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_LEFT_ARM1_SHAPE = Block.makeCuboidShape(5.0D, 9.5D, 8.0D, 6.0D, 11.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_LEFT_ARM2_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 8.0D, 7.0D, 10.5D, 9.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_GRASS_BLOCK_SHAPE = Block.makeCuboidShape(6.5D, 5.0D, 9.0D, 9.5D, 8.0D, 12.0D);
+	protected static final VoxelShape ENDERMAN_NORTH_BODY_SHAPE = VoxelShapes.or(ENDERMAN_NORTH_HEAD_SHAPE, ENDERMAN_NORTH_TORSO_SHAPE);
+	protected static final VoxelShape ENDERMAN_NORTH_EYES_SHAPE = VoxelShapes.or(ENDERMAN_NORTH_RIGHT_EYE_SHAPE, ENDERMAN_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape ENDERMAN_NORTH_LEGS_SHAPE = VoxelShapes.or(ENDERMAN_NORTH_RIGHT_LEG_SHAPE, ENDERMAN_NORTH_LEFT_LEG_SHAPE);
+	protected static final VoxelShape ENDERMAN_NORTH_ARMS_SHAPE = VoxelShapes.or(ENDERMAN_NORTH_RIGHT_ARM1_SHAPE, ENDERMAN_NORTH_RIGHT_ARM2_SHAPE, ENDERMAN_NORTH_MIDDLE_ARM_SHAPE, ENDERMAN_NORTH_LEFT_ARM1_SHAPE, ENDERMAN_NORTH_LEFT_ARM2_SHAPE);
+	protected static final VoxelShape ENDERMAN_NORTH_SHAPE = VoxelShapes.or(ENDERMAN_NORTH_BODY_SHAPE, ENDERMAN_NORTH_EYES_SHAPE, ENDERMAN_NORTH_LEGS_SHAPE, ENDERMAN_NORTH_ARMS_SHAPE, ENDERMAN_NORTH_GRASS_BLOCK_SHAPE);
 	
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
@@ -1089,8 +1176,8 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
     protected static final VoxelShape SKELETON_EAST_SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 2.0D, 13.0D, 16.0D, 14.0D);
     protected static final VoxelShape SKELETON_WEST_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 15.0D, 16.0D, 14.0D);
 	
-	protected static final VoxelShape ENDERMAN_NORTH_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 14.0D);
-	protected static final VoxelShape ENDERMAN_SOUTH_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 12.0D);
+	//protected static final VoxelShape ENDERMAN_NORTH_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 14.0D);
+	//protected static final VoxelShape ENDERMAN_SOUTH_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 2.0D, 12.0D, 16.0D, 12.0D);
 	protected static final VoxelShape ENDERMAN_EAST_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
 	protected static final VoxelShape ENDERMAN_WEST_SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 14.0D, 16.0D, 12.0D);
     
@@ -1215,7 +1302,11 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.wolf_plush)
 		{
-			return VePlushBlock.defineShapes(state, WOLF_SOUTH_SHAPE, OCELOT_Z_SHAPE, OCELOT_X_SHAPE, WOLF_EAST_SHAPE);
+			return VePlushBlock.defineShapes(state, WOLF_SOUTH_SHAPE, WOLF_NORTH_SHAPE, WOLF_WEST_SHAPE, WOLF_EAST_SHAPE);
+		}
+		else if(this == VeBlocks.enderman_plush)
+		{
+			return VePlushBlock.defineShapes(state, ENDERMAN_SOUTH_SHAPE, ENDERMAN_NORTH_SHAPE, ENDERMAN_WEST_SHAPE, ENDERMAN_EAST_SHAPE);
 		}
 		
 		else if(this == VeBlocks.bat_plush)
@@ -1233,10 +1324,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		else if(this == VeBlocks.white_horse_plush || this == VeBlocks.gray_horse_plush || this == VeBlocks.light_gray_horse_plush || this == VeBlocks.brown_horse_plush || this == VeBlocks.black_horse_plush || this == VeBlocks.purple_horse_plush)
 		{
 			return VePlushBlock.defineShapes(state, HORSE_Z_SHAPE, HORSE_Z_SHAPE, HORSE_X_SHAPE, HORSE_X_SHAPE);
-		}
-		else if(this == VeBlocks.enderman_plush)
-		{
-			return VePlushBlock.defineShapes(state, ENDERMAN_SOUTH_SHAPE, ENDERMAN_NORTH_SHAPE, ENDERMAN_WEST_SHAPE, ENDERMAN_EAST_SHAPE);
 		}
 		else if(this == VeBlocks.guardian_plush)
 		{
