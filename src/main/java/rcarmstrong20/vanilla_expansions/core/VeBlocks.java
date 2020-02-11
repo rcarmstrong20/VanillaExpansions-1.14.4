@@ -13,6 +13,7 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +22,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.VeBlock;
+import rcarmstrong20.vanilla_expansions.block.SleepingBagBlock;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCampfireBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
@@ -79,7 +81,6 @@ public class VeBlocks
 	public static Block red_mooshroom_plush = register(VanillaExpansions.location("red_mooshroom_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)));
 	public static Block brown_mooshroom_plush = register(VanillaExpansions.location("brown_mooshroom_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)));
 	public static Block ocelot_plush = register(VanillaExpansions.location("ocelot_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.YELLOW_WOOL)));
-	
 	public static Block tabby_cat_plush = register(VanillaExpansions.location("tabby_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)));
 	public static Block tuxedo_cat_plush = register(VanillaExpansions.location("tuxedo_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)));
 	public static Block red_cat_plush = register(VanillaExpansions.location("red_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.ORANGE_WOOL)));
@@ -91,7 +92,6 @@ public class VeBlocks
 	public static Block white_cat_plush = register(VanillaExpansions.location("white_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
 	public static Block jellie_cat_plush = register(VanillaExpansions.location("jellie_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
 	public static Block black_cat_plush = register(VanillaExpansions.location("black_cat_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)));
-	
 	public static Block pig_plush = register(VanillaExpansions.location("pig_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.PINK_WOOL)));
 	public static Block rabbit_plush = register(VanillaExpansions.location("rabbit_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)));
 	public static Block white_sheep_plush = register(VanillaExpansions.location("white_sheep_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.WHITE_WOOL)));
@@ -257,6 +257,7 @@ public class VeBlocks
 	public static Block bamboo_fence = register(VanillaExpansions.location("bamboo_fence"), true, new FenceBlock(Block.Properties.from(Blocks.BAMBOO)));
 	public static Block bamboo_fence_gate = register(VanillaExpansions.location("bamboo_fence_gate"), true, new FenceGateBlock(Block.Properties.from(Blocks.BAMBOO)));
 	public static Block bamboo_wall = register(VanillaExpansions.location("bamboo_wall"), true, new WallBlock(Block.Properties.from(Blocks.BAMBOO)));
+	public static Block blue_sleeping_bag = register(VanillaExpansions.location("blue_sleeping_bag"), true, new SleepingBagBlock(DyeColor.BLUE, Block.Properties.from(Blocks.BLUE_BED)));
 	
 	//Double slabs
 	
