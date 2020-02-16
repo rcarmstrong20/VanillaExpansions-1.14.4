@@ -1141,7 +1141,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape ENDERMAN_SOUTH_ARMS_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_RIGHT_ARM1_SHAPE, ENDERMAN_SOUTH_RIGHT_ARM2_SHAPE, ENDERMAN_SOUTH_MIDDLE_ARM_SHAPE, ENDERMAN_SOUTH_LEFT_ARM1_SHAPE, ENDERMAN_SOUTH_LEFT_ARM2_SHAPE);
 	protected static final VoxelShape ENDERMAN_SOUTH_SHAPE = VoxelShapes.or(ENDERMAN_SOUTH_BODY_SHAPE, ENDERMAN_SOUTH_EYES_SHAPE, ENDERMAN_SOUTH_LEGS_SHAPE, ENDERMAN_SOUTH_ARMS_SHAPE, ENDERMAN_SOUTH_GRASS_BLOCK_SHAPE);
 	
-	//Fix the bounding box positions
+	//TODO Fix the bounding box positions
 	protected static final VoxelShape ENDERMAN_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 12.0D, 4.0D, 10.5D, 16.0D, 9.0D);
 	protected static final VoxelShape ENDERMAN_NORTH_TORSO_SHAPE = Block.makeCuboidShape(6.0D, 7.5D, 4.5D, 10.0D, 12.0D, 8.5D);
 	protected static final VoxelShape ENDERMAN_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 14.5D, 9.0D, 10.0D, 15.0D, 9.5D);
