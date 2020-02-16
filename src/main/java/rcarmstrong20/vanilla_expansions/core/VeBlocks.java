@@ -1986,41 +1986,41 @@ public class VeBlocks
 	
 	//Vanilla Replacements
 	
-	public static Block prismarine_slab = register(VanillaExpansions.vanillaLocation("prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block prismarine_brick_slab = register(VanillaExpansions.vanillaLocation("prismarine_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block dark_prismarine_slab = register(VanillaExpansions.vanillaLocation("dark_prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DARK_PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block oak_slab = register(VanillaExpansions.vanillaLocation("oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block spruce_slab = register(VanillaExpansions.vanillaLocation("spruce_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SPRUCE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block birch_slab = register(VanillaExpansions.vanillaLocation("birch_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.BIRCH_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block jungle_slab = register(VanillaExpansions.vanillaLocation("jungle_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.JUNGLE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block acacia_slab = register(VanillaExpansions.vanillaLocation("acacia_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.ACACIA_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block dark_oak_slab = register(VanillaExpansions.vanillaLocation("dark_oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DARK_OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block stone_slab = register(VanillaExpansions.vanillaLocation("stone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.STONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block smooth_stone_slab = register(VanillaExpansions.vanillaLocation("smooth_stone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_STONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block sandstone_slab = register(VanillaExpansions.vanillaLocation("sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block cut_sandstone_slab = register(VanillaExpansions.vanillaLocation("cut_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.CUT_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block petrified_oak_slab = register(VanillaExpansions.vanillaLocation("petrified_oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PETRIFIED_OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block cobblestone_slab = register(VanillaExpansions.vanillaLocation("cobblestone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.COBBLESTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block brick_slab = register(VanillaExpansions.vanillaLocation("brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block stone_brick_slab = register(VanillaExpansions.vanillaLocation("stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block nether_brick_slab = register(VanillaExpansions.vanillaLocation("nether_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.NETHER_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block quartz_slab = register(VanillaExpansions.vanillaLocation("quartz_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.QUARTZ_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block red_sandstone_slab = register(VanillaExpansions.vanillaLocation("red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block cut_red_sandstone_slab = register(VanillaExpansions.vanillaLocation("cut_red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.CUT_RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block purpur_slab = register(VanillaExpansions.vanillaLocation("purpur_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PURPUR_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block polished_granite_slab = register(VanillaExpansions.vanillaLocation("polished_granite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_GRANITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block smooth_red_sandstone_slab = register(VanillaExpansions.vanillaLocation("smooth_red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block mossy_stone_brick_slab = register(VanillaExpansions.vanillaLocation("mossy_stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.MOSSY_STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block polished_diorite_slab = register(VanillaExpansions.vanillaLocation("polished_diorite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_DIORITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block mossy_cobblestone_slab = register(VanillaExpansions.vanillaLocation("mossy_cobblestone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.MOSSY_COBBLESTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block end_stone_brick_slab = register(VanillaExpansions.vanillaLocation("end_stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.END_STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block smooth_sandstone_slab = register(VanillaExpansions.vanillaLocation("smooth_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block smooth_quartz_slab = register(VanillaExpansions.vanillaLocation("smooth_quartz_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_QUARTZ_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block granite_slab = register(VanillaExpansions.vanillaLocation("granite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.GRANITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block andesite_slab = register(VanillaExpansions.vanillaLocation("andesite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.ANDESITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block red_nether_brick_slab = register(VanillaExpansions.vanillaLocation("red_nether_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.RED_NETHER_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block polished_andesite_slab = register(VanillaExpansions.vanillaLocation("polished_andesite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_ANDESITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
-	public static Block diorite_slab = register(VanillaExpansions.vanillaLocation("diorite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DIORITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block PRISMARINE_SLAB = register(VanillaExpansions.vanillaLocation("prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block PRISMARINE_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("prismarine_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PRISMARINE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block DARK_PRISMARINE_SLAB = register(VanillaExpansions.vanillaLocation("dark_prismarine_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DARK_PRISMARINE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block OAK_SLAB = register(VanillaExpansions.vanillaLocation("oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SPRUCE_SLAB = register(VanillaExpansions.vanillaLocation("spruce_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SPRUCE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block BIRCH_SLAB = register(VanillaExpansions.vanillaLocation("birch_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.BIRCH_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block JUNGLE_SLAB = register(VanillaExpansions.vanillaLocation("jungle_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.JUNGLE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block ACACIA_SLAB = register(VanillaExpansions.vanillaLocation("acacia_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.ACACIA_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block DARK_OAK_SLAB = register(VanillaExpansions.vanillaLocation("dark_oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DARK_OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block STONE_SLAB = register(VanillaExpansions.vanillaLocation("stone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.STONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SMOOTH_STONE_SLAB = register(VanillaExpansions.vanillaLocation("smooth_stone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_STONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block CUT_SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("cut_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.CUT_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block PETRIFIED_OAK_SLAB = register(VanillaExpansions.vanillaLocation("petrified_oak_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PETRIFIED_OAK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block COBBLESTONE_SLAB = register(VanillaExpansions.vanillaLocation("cobblestone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.COBBLESTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block BRICK_SLAB = register(VanillaExpansions.vanillaLocation("brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block STONE_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block NETHER_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("nether_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.NETHER_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block QUARTZ_SLAB = register(VanillaExpansions.vanillaLocation("quartz_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.QUARTZ_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block RED_SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block CUT_RED_SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("cut_red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.CUT_RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block PURPUR_SLAB = register(VanillaExpansions.vanillaLocation("purpur_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.PURPUR_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block POLISHED_GRANITE_SLAB = register(VanillaExpansions.vanillaLocation("polished_granite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_GRANITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SMOOTH_RED_SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("smooth_red_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_RED_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block MOSSY_STONE_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("mossy_stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.MOSSY_STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block POLISHED_DIORITE_SLAB = register(VanillaExpansions.vanillaLocation("polished_diorite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_DIORITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block MOSSY_COBBLESTONE_SLAB = register(VanillaExpansions.vanillaLocation("mossy_cobblestone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.MOSSY_COBBLESTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block END_STONE_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("end_stone_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.END_STONE_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SMOOTH_SANDSTONE_SLAB = register(VanillaExpansions.vanillaLocation("smooth_sandstone_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_SANDSTONE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block SMOOTH_QUARTZ_SLAB = register(VanillaExpansions.vanillaLocation("smooth_quartz_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.SMOOTH_QUARTZ_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block GRANITE_SLAB = register(VanillaExpansions.vanillaLocation("granite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.GRANITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block ANDESITE_SLAB = register(VanillaExpansions.vanillaLocation("andesite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.ANDESITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block RED_NETHER_BRICK_SLAB = register(VanillaExpansions.vanillaLocation("red_nether_brick_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.RED_NETHER_BRICK_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block POLISHED_ANDESITE_SLAB = register(VanillaExpansions.vanillaLocation("polished_andesite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.POLISHED_ANDESITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
+	public static final Block DIORITE_SLAB = register(VanillaExpansions.vanillaLocation("diorite_slab"), true, new VeSlabBlock(Block.Properties.from(Blocks.DIORITE_SLAB)), ItemGroup.BUILDING_BLOCKS);
 	
 	private static Block register(ResourceLocation name, boolean hasItemBlock, Block block)
 	{

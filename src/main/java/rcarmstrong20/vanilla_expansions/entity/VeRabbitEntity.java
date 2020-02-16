@@ -32,9 +32,12 @@ public class VeRabbitEntity extends RabbitEntity
 	@Override
 	public RabbitEntity createChild(AgeableEntity ageable)
 	{
-		VeRabbitEntity rabbitEntity = VeEntityType.rabbit.create(this.world);
+		return null;
+		/*
+		VeRabbitEntity rabbitEntity = VeEntityType.RABBIT.create(this.world);
 		int parentType = this.getRabbitType();
 		rabbitEntity.setRabbitType(parentType);
 		return rabbitEntity;
+		*/
 	}
 }

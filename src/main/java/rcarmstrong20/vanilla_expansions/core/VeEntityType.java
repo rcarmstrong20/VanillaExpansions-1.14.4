@@ -21,7 +21,7 @@ public class VeEntityType
 {
 	private static final List<EntityType<?>> ENTITY_TYPES = new ArrayList<>();
 	
-	public static final EntityType<VeRabbitEntity> rabbit = buildType(VanillaExpansions.MINECRAFT_ID, "rabbit", EntityType.Builder.create(VeRabbitEntity::new, EntityClassification.CREATURE));
+	//public static final EntityType<VeRabbitEntity> RABBIT = buildType(VanillaExpansions.MINECRAFT_ID, "rabbit", EntityType.Builder.create(VeRabbitEntity::new, EntityClassification.CREATURE));
 	
 	private static <T extends Entity> EntityType<T> buildType(String id, String name, EntityType.Builder<T> builder)
     {

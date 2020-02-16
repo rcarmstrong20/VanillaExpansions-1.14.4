@@ -118,7 +118,7 @@ public class VeItems
 	
 	//Vanilla Replacement Items
 	
-	public static Item rabbit_spawn_egg = register(VanillaExpansions.vanillaLocation("rabbit_spawn_egg"), new SpawnEggItem(VeEntityType.rabbit, 10051392, 7555121, (new Item.Properties()).group(ItemGroup.MISC)));
+	//public static Item rabbit_spawn_egg = register(VanillaExpansions.vanillaLocation("rabbit_spawn_egg"), new SpawnEggItem(VeEntityType.RABBIT, 10051392, 7555121, (new Item.Properties()).group(ItemGroup.MISC)));
 	
 	/*
 	 * Set the registry name the items and add them to the registry list.
