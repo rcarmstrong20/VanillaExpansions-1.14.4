@@ -122,7 +122,7 @@ public abstract class VoidFluid extends WaterFluid
 		@Override
 		public int getLevel(IFluidState state)
 		{
-			return state.get(VoidFluid.LEVEL_1_8);
+			return state.get(LEVEL_1_8);
 		}
 		
 		@Override
