@@ -10,6 +10,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.block.NetherWartBlock;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
@@ -19,6 +21,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -133,6 +136,30 @@ public class VanillaExpansions
 		world.setBlockState(pos, state.with(age, 0), 2);
 		Block.spawnDrops(state, world, pos);
 		world.playSound(null, pos, SoundEvents.BLOCK_GRASS_BREAK, SoundCategory.BLOCKS, 1.0F + random.nextFloat(), random.nextFloat() * 0.7F + 0.3F);
+	}
+	
+	@SubscribeEvent
+	public void onNameEntity(final PlayerInteractEvent.EntityInteractSpecific event)
+	{
+		if(event.getTarget() instanceof RabbitEntity)
+		{
+			RabbitEntity rabbit = (RabbitEntity) event.getTarget();
+			
+			if(rabbit.getRabbitType() == 1 || rabbit.getRabbitType() == 99)
+			{
+				if("The Killer Bunny".equals(event.getItemStack().getDisplayName().getUnformattedComponentText()) || !("The Killer Bunny".equals(event.getTarget().getName().getUnformattedComponentText())))
+				{
+					rabbit.setRabbitType(1);
+					rabbit.getRabbitType();
+					System.out.print("named");
+				}
+				else
+				{
+					rabbit.setRabbitType(99);
+					rabbit.getRabbitType();
+				}
+			}
+		}
 	}
 	
 	/*
