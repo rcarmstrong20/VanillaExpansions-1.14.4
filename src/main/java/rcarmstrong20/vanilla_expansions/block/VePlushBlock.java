@@ -12,6 +12,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Direction.Axis;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -19,6 +20,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.util.VeCollisionUtil;
 
 public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 {
@@ -1246,7 +1248,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	{
 		if(this == VeBlocks.blaze_plush)
 		{
-			return VePlushBlock.defineShapes(state, BLAZE_SOUTH_SHAPE, BLAZE_NORTH_SHAPE, BLAZE_WEST_SHAPE, BLAZE_EAST_SHAPE);
+			return VePlushBlock.defineShapes(state, VeCollisionUtil.rotate180(Axis.Y, BLAZE_NORTH_SHAPE), BLAZE_NORTH_SHAPE, BLAZE_WEST_SHAPE, BLAZE_EAST_SHAPE);
 		}
 		else if(this == VeBlocks.creeper_plush)
 		{

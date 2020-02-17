@@ -18,6 +18,7 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Direction.Axis;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -26,6 +27,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.VeBlockStateProperties;
 import rcarmstrong20.vanilla_expansions.core.VeBlocks;
+import rcarmstrong20.vanilla_expansions.util.VeCollisionUtil;
 
 public class VeTallPlushBlock extends VePlushBlock
 {
@@ -37,14 +39,18 @@ public class VeTallPlushBlock extends VePlushBlock
 	//One Magma Cube Bounding Boxes
 	
 	protected static final VoxelShape ONE_MAGMA_CUBE_BODY_SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
-	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(4.0D, 5.0D, 13.0D, 6.0D, 7.0D, 13.5D);
-	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(10.0D, 5.0D, 13.0D, 12.0D, 7.0D, 13.5D);
-	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, ONE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
-	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_BODY_SHAPE, ONE_MAGMA_CUBE_SOUTH_EYES_SHAPE);
 	protected static final VoxelShape ONE_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(10.0D, 5.0D, 3.0D, 12.0D, 7.0D, 2.5D);
 	protected static final VoxelShape ONE_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(4.0D, 5.0D, 3.0D, 6.0D, 7.0D, 2.5D);
 	protected static final VoxelShape ONE_MAGMA_CUBE_NORTH_EYES_SHAPES = VoxelShapes.or(ONE_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE, ONE_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape ONE_MAGMA_CUBE_NORTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_BODY_SHAPE, ONE_MAGMA_CUBE_NORTH_EYES_SHAPES);
+	
+	/*
+	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(4.0D, 5.0D, 13.0D, 6.0D, 7.0D, 13.5D);
+	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(10.0D, 5.0D, 13.0D, 12.0D, 7.0D, 13.5D);
+	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, ONE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
+	protected static final VoxelShape ONE_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_BODY_SHAPE, ONE_MAGMA_CUBE_SOUTH_EYES_SHAPE);
+	
+	
 	protected static final VoxelShape ONE_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(2.5D, 5.0D, 10.0D, 3.0D, 7.0D, 12.0D);
 	protected static final VoxelShape ONE_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(2.5D, 5.0D, 4.0D, 3.0D, 7.0D, 6.0D);
 	protected static final VoxelShape ONE_MAGMA_CUBE_WEST_EYES_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE, ONE_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE);
@@ -53,18 +59,22 @@ public class VeTallPlushBlock extends VePlushBlock
 	protected static final VoxelShape ONE_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(13.0D, 5.0D, 4.0D, 13.5D, 7.0D, 6.0D);
 	protected static final VoxelShape ONE_MAGMA_CUBE_EAST_EYES_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_EAST_LEFT_EYE_SHAPE, ONE_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape ONE_MAGMA_CUBE_EAST_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_BODY_SHAPE, ONE_MAGMA_CUBE_EAST_EYES_SHAPE);
-	
+	*/
 	//Two Magma Cube Bounding Box
 	
 	protected static final VoxelShape TWO_MAGMA_CUBE_BODY_SHAPE = Block.makeCuboidShape(4.0D, 8.0D, 4.0D, 12.0D, 17.0D, 12.0D);
-	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 14.0D, 12.0D, 7.0D, 15.5D, 12.5D);
-	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.5D, 14.0D, 12.0D, 11.0D, 15.5D, 12.5D);
-	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, TWO_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
-	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_BODY_SHAPE, TWO_MAGMA_CUBE_SOUTH_EYES_SHAPE, ONE_MAGMA_CUBE_SOUTH_SHAPE);
 	protected static final VoxelShape TWO_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 14.0D, 4.0D, 10.5D, 15.5D, 3.5D);
 	protected static final VoxelShape TWO_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.0D, 14.0D, 4.0D, 6.5D, 15.5D, 3.5D);
 	protected static final VoxelShape TWO_MAGMA_CUBE_NORTH_EYES_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE, TWO_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape TWO_MAGMA_CUBE_NORTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_BODY_SHAPE, TWO_MAGMA_CUBE_NORTH_EYES_SHAPE, ONE_MAGMA_CUBE_NORTH_SHAPE);
+	
+	/*
+	
+	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 14.0D, 12.0D, 7.0D, 15.5D, 12.5D);
+	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.5D, 14.0D, 12.0D, 11.0D, 15.5D, 12.5D);
+	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, TWO_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
+	protected static final VoxelShape TWO_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_BODY_SHAPE, TWO_MAGMA_CUBE_SOUTH_EYES_SHAPE, ONE_MAGMA_CUBE_SOUTH_SHAPE);
+	
 	protected static final VoxelShape TWO_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 14.0D, 9.5D, 4.0D, 15.5D, 11.0D);
 	protected static final VoxelShape TWO_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 14.0D, 5.5D, 4.0D, 15.5D, 7.0D);
 	protected static final VoxelShape TWO_MAGMA_CUBE_WEST_EYES_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE, TWO_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE);
@@ -73,18 +83,22 @@ public class VeTallPlushBlock extends VePlushBlock
 	protected static final VoxelShape TWO_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(12.0D, 14.0D, 5.0D, 12.5D, 15.5D, 6.5D);
 	protected static final VoxelShape TWO_MAGMA_CUBE_EAST_EYES_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_EAST_LEFT_EYE_SHAPE, TWO_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape TWO_MAGMA_CUBE_EAST_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_BODY_SHAPE, TWO_MAGMA_CUBE_EAST_EYES_SHAPE, ONE_MAGMA_CUBE_EAST_SHAPE);
+	*/
 	
 	//Three Magma Cube Bounding Box
 	
 	protected static final VoxelShape THREE_MAGMA_CUBE_BODY_SHAPE = Block.makeCuboidShape(6.0D, 1.0D, 6.0D, 10.0D, 5.0D, 10.0D);
-	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.5D, 3.0D, 10.0D, 7.5D, 4.0D, 10.5D);
-	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 3.0D, 10.0D, 9.5D, 4.0D, 10.5D);
-	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, THREE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
-	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_BODY_SHAPE, THREE_MAGMA_CUBE_SOUTH_EYES_SHAPE);
 	protected static final VoxelShape THREE_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.5D, 3.0D, 6.0D, 7.5D, 4.0D, 5.5D);
 	protected static final VoxelShape THREE_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 3.0D, 6.0D, 9.5D, 4.0D, 5.5D);
 	protected static final VoxelShape THREE_MAGMA_CUBE_NORTH_EYES_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_NORTH_LEFT_EYE_SHAPE, THREE_MAGMA_CUBE_NORTH_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape THREE_MAGMA_CUBE_NORTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_BODY_SHAPE, THREE_MAGMA_CUBE_NORTH_EYES_SHAPE);
+	
+	/*
+	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(6.5D, 3.0D, 10.0D, 7.5D, 4.0D, 10.5D);
+	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 3.0D, 10.0D, 9.5D, 4.0D, 10.5D);
+	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_EYES_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_SOUTH_LEFT_EYE_SHAPE, THREE_MAGMA_CUBE_SOUTH_RIGHT_EYE_SHAPE);
+	protected static final VoxelShape THREE_MAGMA_CUBE_SOUTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_BODY_SHAPE, THREE_MAGMA_CUBE_SOUTH_EYES_SHAPE);
+	
 	protected static final VoxelShape THREE_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 3.0D, 6.5D, 6.0D, 4.0D, 7.5D);
 	protected static final VoxelShape THREE_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 3.0D, 9.5D, 6.0D, 4.0D, 8.5D);
 	protected static final VoxelShape THREE_MAGMA_CUBE_WEST_EYES_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_WEST_LEFT_EYE_SHAPE, THREE_MAGMA_CUBE_WEST_RIGHT_EYE_SHAPE);
@@ -93,39 +107,50 @@ public class VeTallPlushBlock extends VePlushBlock
 	protected static final VoxelShape THREE_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE = Block.makeCuboidShape(10.5D, 3.0D, 9.5D, 10.0D, 4.0D, 8.5D);
 	protected static final VoxelShape THREE_MAGMA_CUBE_EAST_EYES_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_EAST_LEFT_EYE_SHAPE, THREE_MAGMA_CUBE_EAST_RIGHT_EYE_SHAPE);
 	protected static final VoxelShape THREE_MAGMA_CUBE_EAST_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_BODY_SHAPE, THREE_MAGMA_CUBE_EAST_EYES_SHAPE);
-	
+	*/
 	//One Slime Bounding Boxes
 	
-	protected static final VoxelShape ONE_SLIME_SOUTH_MOUTH_SHAPE = Block.makeCuboidShape(9.0D, 2.0D, 13.0D, 10.0D, 3.0D, 13.5D);
-	protected static final VoxelShape ONE_SLIME_SOUTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_SOUTH_SHAPE, ONE_SLIME_SOUTH_MOUTH_SHAPE);
 	protected static final VoxelShape ONE_SLIME_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(7.0D, 2.0D, 3.0D, 6.0D, 3.0D, 2.5D);
 	protected static final VoxelShape ONE_SLIME_NORTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_NORTH_SHAPE, ONE_SLIME_NORTH_MOUTH_SHAPE);
+	
+	/*
+	protected static final VoxelShape ONE_SLIME_SOUTH_MOUTH_SHAPE = Block.makeCuboidShape(9.0D, 2.0D, 13.0D, 10.0D, 3.0D, 13.5D);
+	protected static final VoxelShape ONE_SLIME_SOUTH_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_SOUTH_SHAPE, ONE_SLIME_SOUTH_MOUTH_SHAPE);
+	
 	protected static final VoxelShape ONE_SLIME_WEST_MOUTH_SHAPE = Block.makeCuboidShape(2.5D, 2.0D, 9.0D, 3.0D, 3.0D, 10.0D);
 	protected static final VoxelShape ONE_SLIME_WEST_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_WEST_SHAPE, ONE_SLIME_WEST_MOUTH_SHAPE);
 	protected static final VoxelShape ONE_SLIME_EAST_MOUTH_SHAPE = Block.makeCuboidShape(13.0D, 2.0D, 6.0D, 13.5D, 3.0D, 7.0D);
 	protected static final VoxelShape ONE_SLIME_EAST_SHAPE = VoxelShapes.or(ONE_MAGMA_CUBE_EAST_SHAPE, ONE_SLIME_EAST_MOUTH_SHAPE);
+	*/
 	
 	//Two Slime Bounding Boxes
 	
-	protected static final VoxelShape TWO_SLIME_SOUTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(8.5D, 11.5D, 12.0D, 9.5D, 12.5D, 12.5D);
-	protected static final VoxelShape TWO_SLIME_SOUTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_SOUTH_SHAPE, TWO_SLIME_SOUTH_MOUTH_EYE_SHAPE, ONE_SLIME_SOUTH_SHAPE);
 	protected static final VoxelShape TWO_SLIME_NORTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(6.5D, 11.5D, 4.0D, 7.5D, 12.5D, 3.5D);
 	protected static final VoxelShape TWO_SLIME_NORTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_NORTH_SHAPE, TWO_SLIME_NORTH_MOUTH_EYE_SHAPE, ONE_SLIME_NORTH_SHAPE);
+	
+	/*
+	protected static final VoxelShape TWO_SLIME_SOUTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(8.5D, 11.5D, 12.0D, 9.5D, 12.5D, 12.5D);
+	protected static final VoxelShape TWO_SLIME_SOUTH_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_SOUTH_SHAPE, TWO_SLIME_SOUTH_MOUTH_EYE_SHAPE, ONE_SLIME_SOUTH_SHAPE);
+	
 	protected static final VoxelShape TWO_SLIME_WEST_MOUTH_EYE_SHAPE = Block.makeCuboidShape(3.5D, 11.5D, 8.5D, 4.0D, 12.5D, 9.5D);
 	protected static final VoxelShape TWO_SLIME_WEST_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_WEST_SHAPE, TWO_SLIME_WEST_MOUTH_EYE_SHAPE, ONE_SLIME_WEST_SHAPE);
 	protected static final VoxelShape TWO_SLIME_EAST_MOUTH_EYE_SHAPE = Block.makeCuboidShape(12.0D, 11.5D, 6.5D, 12.5D, 12.5D, 7.5D);
 	protected static final VoxelShape TWO_SLIME_EAST_SHAPE = VoxelShapes.or(TWO_MAGMA_CUBE_EAST_SHAPE, TWO_SLIME_EAST_MOUTH_EYE_SHAPE, ONE_SLIME_EAST_SHAPE);
-	
+	*/
 	//Three Slime Bunding Boxes
 	
-	protected static final VoxelShape THREE_SLIME_SOUTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(8.5D, 2.0D, 10.0D, 9.0D, 2.5D, 10.5D);
-	protected static final VoxelShape THREE_SLIME_SOUTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_SOUTH_SHAPE, THREE_SLIME_SOUTH_MOUTH_EYE_SHAPE);
 	protected static final VoxelShape THREE_SLIME_NORTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(7.0D, 2.0D, 6.0D, 7.5D, 2.5D, 5.5D);
 	protected static final VoxelShape THREE_SLIME_NORTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_NORTH_SHAPE, THREE_SLIME_NORTH_MOUTH_EYE_SHAPE);
+	
+	/*
+	protected static final VoxelShape THREE_SLIME_SOUTH_MOUTH_EYE_SHAPE = Block.makeCuboidShape(8.5D, 2.0D, 10.0D, 9.0D, 2.5D, 10.5D);
+	protected static final VoxelShape THREE_SLIME_SOUTH_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_SOUTH_SHAPE, THREE_SLIME_SOUTH_MOUTH_EYE_SHAPE);
+	
 	protected static final VoxelShape THREE_SLIME_WEST_MOUTH_EYE_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 8.5D, 5.5D, 2.5D, 9.0D);
 	protected static final VoxelShape THREE_SLIME_WEST_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_WEST_SHAPE, THREE_SLIME_WEST_MOUTH_EYE_SHAPE);
 	protected static final VoxelShape THREE_SLIME_EAST_MOUTH_EYE_SHAPE = Block.makeCuboidShape(10.5D, 2.0D, 7.0D, 10.0D, 2.5D, 7.5D);
 	protected static final VoxelShape THREE_SLIME_EAST_SHAPE = VoxelShapes.or(THREE_MAGMA_CUBE_EAST_SHAPE, THREE_SLIME_EAST_MOUTH_EYE_SHAPE);
+	*/
 	
 	public VeTallPlushBlock(Properties properties)
 	{
@@ -214,16 +239,16 @@ public class VeTallPlushBlock extends VePlushBlock
 	{
 		if(this == VeBlocks.slime_plush)
 		{
-			return VeTallPlushBlock.defineShapes(state, ONE_SLIME_SOUTH_SHAPE, TWO_SLIME_SOUTH_SHAPE, THREE_SLIME_SOUTH_SHAPE, ONE_SLIME_NORTH_SHAPE, TWO_SLIME_NORTH_SHAPE, THREE_SLIME_NORTH_SHAPE, ONE_SLIME_WEST_SHAPE, TWO_SLIME_WEST_SHAPE, THREE_SLIME_WEST_SHAPE, ONE_SLIME_EAST_SHAPE, TWO_SLIME_EAST_SHAPE, THREE_SLIME_EAST_SHAPE);
+			return VeTallPlushBlock.defineShapes(state, ONE_SLIME_NORTH_SHAPE, TWO_SLIME_NORTH_SHAPE, THREE_SLIME_NORTH_SHAPE, VeCollisionUtil.rotate180(Axis.Y, ONE_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate180(Axis.Y, TWO_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate180(Axis.Y, THREE_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, ONE_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, TWO_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, THREE_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, ONE_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, TWO_SLIME_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, THREE_SLIME_NORTH_SHAPE));
 		}
 		else if(this == VeBlocks.magma_cube_plush)
 		{
-			return VeTallPlushBlock.defineShapes(state, ONE_MAGMA_CUBE_SOUTH_SHAPE, TWO_MAGMA_CUBE_SOUTH_SHAPE, THREE_MAGMA_CUBE_SOUTH_SHAPE, ONE_MAGMA_CUBE_NORTH_SHAPE, TWO_MAGMA_CUBE_NORTH_SHAPE, THREE_MAGMA_CUBE_NORTH_SHAPE, ONE_MAGMA_CUBE_WEST_SHAPE, TWO_MAGMA_CUBE_WEST_SHAPE, THREE_MAGMA_CUBE_WEST_SHAPE, ONE_MAGMA_CUBE_EAST_SHAPE, TWO_MAGMA_CUBE_EAST_SHAPE, THREE_MAGMA_CUBE_EAST_SHAPE);
+			return VeTallPlushBlock.defineShapes(state, ONE_MAGMA_CUBE_NORTH_SHAPE, TWO_MAGMA_CUBE_NORTH_SHAPE, THREE_MAGMA_CUBE_NORTH_SHAPE, VeCollisionUtil.rotate180(Axis.Y, ONE_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate180(Axis.Y, TWO_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate180(Axis.Y, THREE_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, ONE_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, TWO_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate270(Axis.Y, THREE_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, ONE_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, TWO_MAGMA_CUBE_NORTH_SHAPE), VeCollisionUtil.rotate90(Axis.Y, THREE_MAGMA_CUBE_NORTH_SHAPE));
 		}
 		return NORMAL_CUBE;
 	}
 	
-	private static VoxelShape defineShapes(BlockState state, VoxelShape southShape1, VoxelShape southShape2, VoxelShape southShape3, VoxelShape northShape1, VoxelShape northShape2, VoxelShape northShape3, VoxelShape westShape1, VoxelShape westShape2, VoxelShape westShape3, VoxelShape eastShape1, VoxelShape eastShape2, VoxelShape eastShape3)
+	private static VoxelShape defineShapes(BlockState state, VoxelShape northShape1, VoxelShape northShape2, VoxelShape northShape3, VoxelShape southShape1, VoxelShape southShape2, VoxelShape southShape3, VoxelShape westShape1, VoxelShape westShape2, VoxelShape westShape3, VoxelShape eastShape1, VoxelShape eastShape2, VoxelShape eastShape3)
 	{
 		switch((Direction)state.get(HORIZONTAL_FACING))
 		{
