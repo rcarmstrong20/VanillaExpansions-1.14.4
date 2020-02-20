@@ -482,23 +482,44 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape GHAST_NORTH_BODY_SHAPE = Block.makeCuboidShape(3.0D, 6.0D, 3.0D, 13.0D, 15.5D, 13.0D);
 	protected static final VoxelShape GHAST_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(3.5D, 13.0D, 2.5D, 6.5D, 14.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(8.5D, 13.0D, 2.5D, 11.5D, 14.0D, 3.0D);
+	protected static final VoxelShape GHAST_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(6.5D, 9.0D, 2.5D, 8.5D, 10.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_RIGHT_EYE_TEAR_TOP_SHAPE = Block.makeCuboidShape(4.0D, 12.0D, 2.5D, 6.0D, 13.0D, 3.0D);
-	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_TEAR_TOP_SHAPE = Block.makeCuboidShape(9.0D, 12.0D, 2.5D, 11.0D, 13.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_RIGHT_EYE_TEAR_MIDDLE_SHAPE = Block.makeCuboidShape(4.0D, 11.0D, 2.5D, 5.0D, 12.0D, 3.0D);
-	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_TEAR_MIDDLE_SHAPE = Block.makeCuboidShape(10.0D, 10.0D, 2.5D, 11.0D, 12.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_RIGHT_EYE_TEAR_BOTTOM_SHAPE = Block.makeCuboidShape(4.0D, 9.0D, 2.5D, 5.0D, 10.0D, 3.0D);
+	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_TEAR_TOP_SHAPE = Block.makeCuboidShape(9.0D, 12.0D, 2.5D, 11.0D, 13.0D, 3.0D);
+	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_TEAR_MIDDLE_SHAPE = Block.makeCuboidShape(10.0D, 10.0D, 2.5D, 11.0D, 12.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_LEFT_EYE_TEAR_BOTTOM_SHAPE = Block.makeCuboidShape(10.0D, 8.0D, 2.5D, 11.0D, 9.0D, 3.0D);
-	protected static final VoxelShape GHAST_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(3.0D, 9.0D, 2.5D, 13.0D, 10.0D, 3.0D);
 	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_1_PART_1_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 4.0D, 5.0D, 6.0D, 5.0D);
 	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_1_PART_2_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 5.0D, 5.0D, 3.0D, 6.0D);
-	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_2_PART_1_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 8.0D, 5.0D, 6.0D, 9.0D);
-	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_2_PART_2_SHAPE = Block.makeCuboidShape(4.0D, 1.0D, 9.0D, 5.0D, 2.0D, 10.0D);
-	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_3_PART_1_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 11.0D, 5.0D, 6.0D, 12.0D);
-	protected static final VoxelShape GHAST_NORTH_FRONT_RIGHT_TENTACE_3_PART_2_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 12.0D, 5.0D, 3.0D, 13.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_RIGHT_TENTACE_2_PART_1_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 8.0D, 5.0D, 6.0D, 9.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_RIGHT_TENTACE_2_PART_2_SHAPE = Block.makeCuboidShape(4.0D, 1.0D, 9.0D, 5.0D, 2.0D, 10.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_RIGHT_TENTACE_3_PART_1_SHAPE = Block.makeCuboidShape(4.0D, 3.0D, 11.0D, 5.0D, 6.0D, 12.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_RIGHT_TENTACE_3_PART_2_SHAPE = Block.makeCuboidShape(4.0D, 2.0D, 12.0D, 5.0D, 3.0D, 13.0D);
+	protected static final VoxelShape GHAST_NORTH_FRONT_MIDDLE_TENTACE_1_PART_1_SHAPE = Block.makeCuboidShape(7.5D, 3.0D, 4.0D, 8.5D, 6.0D, 5.0D);
+	protected static final VoxelShape GHAST_NORTH_FRONT_MIDDLE_TENTACE_1_PART_2_SHAPE = Block.makeCuboidShape(7.5D, 2.0D, 5.0D, 8.5D, 3.0D, 6.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_MIDDLE_TENTACE_2_PART_1_SHAPE = Block.makeCuboidShape(7.5D, 3.0D, 8.0D, 8.5D, 6.0D, 9.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_MIDDLE_TENTACE_2_PART_2_SHAPE = Block.makeCuboidShape(7.5D, 2.0D, 9.0D, 8.5D, 3.0D, 10.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_MIDDLE_TENTACE_3_PART_1_SHAPE = Block.makeCuboidShape(7.5D, 2.0D, 11.0D, 8.5D, 6.0D, 12.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_MIDDLE_TENTACE_3_PART_2_SHAPE = Block.makeCuboidShape(7.5D, 1.0D, 12.0D, 8.5D, 2.0D, 13.0D);
+	protected static final VoxelShape GHAST_NORTH_FRONT_LEFT_TENTACE_1_PART_1_SHAPE = Block.makeCuboidShape(11.0D, 3.0D, 4.0D, 12.0D, 6.0D, 5.0D);
+	protected static final VoxelShape GHAST_NORTH_FRONT_LEFT_TENTACE_1_PART_2_SHAPE = Block.makeCuboidShape(11.0D, 2.0D, 5.0D, 12.0D, 3.0D, 6.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_LEFT_TENTACE_2_PART_1_SHAPE = Block.makeCuboidShape(11.0D, 2.0D, 8.0D, 12.0D, 6.0D, 9.0D);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_LEFT_TENTACE_2_PART_2_SHAPE = Block.makeCuboidShape(11.0D, 1.0D, 9.0D, 12.0D, 2.0D, 10.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_LEFT_TENTACE_3_PART_1_SHAPE = Block.makeCuboidShape(11.0D, 3.0D, 11.0D, 12.0D, 6.0D, 12.0D);
+	protected static final VoxelShape GHAST_NORTH_BACK_LEFT_TENTACE_3_PART_2_SHAPE = Block.makeCuboidShape(11.0D, 2.0D, 12.0D, 12.0D, 3.0D, 13.0D);
+	protected static final VoxelShape GHAST_NORTH_EYE_SHAPES = VoxelShapes.or(GHAST_NORTH_RIGHT_EYE_SHAPE, GHAST_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_RIGHT_TEAR_SHAPES = VoxelShapes.or(GHAST_NORTH_RIGHT_EYE_TEAR_TOP_SHAPE, GHAST_NORTH_RIGHT_EYE_TEAR_MIDDLE_SHAPE, GHAST_NORTH_RIGHT_EYE_TEAR_BOTTOM_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_LEFT_TEAR_SHAPES = VoxelShapes.or(GHAST_NORTH_LEFT_EYE_TEAR_TOP_SHAPE, GHAST_NORTH_LEFT_EYE_TEAR_MIDDLE_SHAPE, GHAST_NORTH_LEFT_EYE_TEAR_BOTTOM_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_RIGHT_TENTACLES_SHAPES = VoxelShapes.or(GHAST_NORTH_FRONT_RIGHT_TENTACE_1_PART_1_SHAPE, GHAST_NORTH_FRONT_RIGHT_TENTACE_1_PART_2_SHAPE, GHAST_NORTH_MIDDLE_RIGHT_TENTACE_2_PART_1_SHAPE, GHAST_NORTH_MIDDLE_RIGHT_TENTACE_2_PART_2_SHAPE, GHAST_NORTH_BACK_RIGHT_TENTACE_3_PART_1_SHAPE, GHAST_NORTH_BACK_RIGHT_TENTACE_3_PART_2_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_MIDDLE_TENTACLES_SHAPES = VoxelShapes.or(GHAST_NORTH_FRONT_MIDDLE_TENTACE_1_PART_1_SHAPE, GHAST_NORTH_FRONT_MIDDLE_TENTACE_1_PART_2_SHAPE, GHAST_NORTH_MIDDLE_MIDDLE_TENTACE_2_PART_1_SHAPE, GHAST_NORTH_MIDDLE_MIDDLE_TENTACE_2_PART_2_SHAPE, GHAST_NORTH_BACK_MIDDLE_TENTACE_3_PART_1_SHAPE, GHAST_NORTH_BACK_MIDDLE_TENTACE_3_PART_2_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_LEFT_TENTACLES_SHAPES = VoxelShapes.or(GHAST_NORTH_FRONT_LEFT_TENTACE_1_PART_1_SHAPE, GHAST_NORTH_FRONT_LEFT_TENTACE_1_PART_2_SHAPE, GHAST_NORTH_MIDDLE_LEFT_TENTACE_2_PART_1_SHAPE, GHAST_NORTH_MIDDLE_LEFT_TENTACE_2_PART_2_SHAPE, GHAST_NORTH_BACK_LEFT_TENTACE_3_PART_1_SHAPE, GHAST_NORTH_BACK_LEFT_TENTACE_3_PART_2_SHAPE);
+	protected static final VoxelShape GHAST_NORTH_SHAPE = VoxelShapes.or(GHAST_NORTH_EYE_SHAPES, GHAST_NORTH_RIGHT_TEAR_SHAPES, GHAST_NORTH_LEFT_TEAR_SHAPES, GHAST_NORTH_RIGHT_TENTACLES_SHAPES, GHAST_NORTH_MIDDLE_TENTACLES_SHAPES, GHAST_NORTH_LEFT_TENTACLES_SHAPES, GHAST_NORTH_BODY_SHAPE, GHAST_NORTH_MOUTH_SHAPE);
 	
+	protected static final VoxelShape GHAST_SOUTH_SHAPE = VeCollisionUtil.rotate180(Axis.Y, GHAST_NORTH_SHAPE);
+	protected static final VoxelShape GHAST_WEST_SHAPE = VeCollisionUtil.rotate270(Axis.Y, GHAST_NORTH_SHAPE);
+	protected static final VoxelShape GHAST_EAST_SHAPE = VeCollisionUtil.rotate90(Axis.Y, GHAST_NORTH_SHAPE);
 	
-	
-	//protected static final VoxelShape GHAST_NORTH__SHAPE = Block.makeCuboidShape(3.0D, 6.0D, 2.5D, 13.0D, 15.5D, 3.0D);
+	//Spider Bounding Boxes
 	
 	
 	
@@ -534,7 +555,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	protected static final VoxelShape SPIDER_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
 	protected static final VoxelShape CAVE_SPIDER_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
-	protected static final VoxelShape GHAST_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 	protected static final VoxelShape VILLAGER_SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 	
 	public VePlushBlock(Block.Properties properties)
@@ -646,7 +666,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.ghast_plush)
 		{
-			return VePlushBlock.defineShapes(state, GHAST_NORTH_FRONT_RIGHT_TENTACE_3_PART_2_SHAPE, GHAST_SHAPE, GHAST_SHAPE, GHAST_SHAPE);
+			return VePlushBlock.defineShapes(state, GHAST_NORTH_SHAPE, GHAST_SOUTH_SHAPE, GHAST_WEST_SHAPE, GHAST_EAST_SHAPE);
 		}
 		
 		else if(this == VeBlocks.bat_plush)
