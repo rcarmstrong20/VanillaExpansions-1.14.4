@@ -4,3 +4,5 @@ endermite
 mooshroom
 ocelot
 enderman
+ghast
+persian
