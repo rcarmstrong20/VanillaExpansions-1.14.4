@@ -521,7 +521,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	
 	//Spider Bounding Boxes
 	
-	
+	protected static final VoxelShape SPIDER_NORTH_BODY_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 5.5D, 14.0D);
+	protected static final VoxelShape SPIDER_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 1.5D, 10.5D, 4.5D, 5.0D);
+	protected static final VoxelShape SPIDER_NORTH_MIDDLE_EYE_SHAPE = Block.makeCuboidShape(5.5D, 1.0D, 1.0D, 10.5D, 2.5D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 1.0D, 10.5D, 4.5D, 1.5D);
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
@@ -668,6 +671,11 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, GHAST_NORTH_SHAPE, GHAST_SOUTH_SHAPE, GHAST_WEST_SHAPE, GHAST_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.spider_plush)
+		{
+			return VePlushBlock.defineShapes(state, SPIDER_NORTH_MIDDLE_EYE_SHAPE, SPIDER_SHAPE, SPIDER_SHAPE, SPIDER_SHAPE);
+		}
+		
 		
 		else if(this == VeBlocks.bat_plush)
 		{
@@ -701,11 +709,6 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return CAVE_SPIDER_SHAPE;
 		}
-		else if(this == VeBlocks.spider_plush)
-		{
-			return SPIDER_SHAPE;
-		}
-		
 		return NORMAL_CUBE;
 	}
 	
