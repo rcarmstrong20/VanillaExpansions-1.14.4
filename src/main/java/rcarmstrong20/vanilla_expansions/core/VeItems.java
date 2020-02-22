@@ -10,9 +10,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SoupItem;
-import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -115,10 +113,6 @@ public class VeItems
 	public static Item witchs_cradle_soup = register(VanillaExpansions.location("witchs_cradle_soup"), new VeSoupItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(1).food(VeFoods.WITCHS_CRADLE_SOUP)));
 	public static Item glass_vial = register(VanillaExpansions.location("glass_vial"), new VeGlassVialItem(VE_ITEMS));
 	public static Item blood_vial = register(VanillaExpansions.location("blood_vial"), new VeDrinkItem(new Item.Properties().group(VanillaExpansions.VE_GROUP).maxStackSize(16).food(VeFoods.BLOOD_VIAL)));
-	
-	//Vanilla Replacement Items
-	
-	//public static Item rabbit_spawn_egg = register(VanillaExpansions.vanillaLocation("rabbit_spawn_egg"), new SpawnEggItem(VeEntityType.RABBIT, 10051392, 7555121, (new Item.Properties()).group(ItemGroup.MISC)));
 	
 	/*
 	 * Set the registry name the items and add them to the registry list.

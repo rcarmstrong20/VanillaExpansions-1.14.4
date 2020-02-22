@@ -12,6 +12,7 @@ import net.minecraft.block.CropsBlock;
 import net.minecraft.block.NetherWartBlock;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.util.ResourceLocation;
@@ -138,24 +139,27 @@ public class VanillaExpansions
 	}
 	
 	@SubscribeEvent
-	public void onNameEntity(final PlayerInteractEvent.EntityInteractSpecific event)
+	public void onNameBunnyEntity(final PlayerInteractEvent.EntityInteractSpecific event)
 	{
 		if(event.getTarget() instanceof RabbitEntity)
 		{
 			RabbitEntity rabbit = (RabbitEntity) event.getTarget();
+			ItemStack itemStack = event.getItemStack();
 			
 			if(rabbit.getRabbitType() == 1 || rabbit.getRabbitType() == 99)
 			{
-				if("The Killer Bunny".equals(event.getItemStack().getDisplayName().getUnformattedComponentText()) || !("The Killer Bunny".equals(event.getTarget().getName().getUnformattedComponentText())))
+				if(itemStack.getItem() == Items.NAME_TAG && itemStack.hasDisplayName())
 				{
-					rabbit.setRabbitType(1);
-					rabbit.getRabbitType();
-					System.out.print("named");
-				}
-				else
-				{
-					rabbit.setRabbitType(99);
-					rabbit.getRabbitType();
+					if("The Killer Bunny".equals(itemStack.getDisplayName().getUnformattedComponentText()))
+					{
+						rabbit.setRabbitType(99);
+						rabbit.getRabbitType();
+					}
+					else
+					{
+						rabbit.setRabbitType(1);
+						rabbit.getRabbitType();
+					}
 				}
 			}
 		}
