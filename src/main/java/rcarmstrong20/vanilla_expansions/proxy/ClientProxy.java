@@ -2,6 +2,7 @@ package rcarmstrong20.vanilla_expansions.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import rcarmstrong20.vanilla_expansions.client.renderer.VeBlockAndItemColors;
 import rcarmstrong20.vanilla_expansions.client.renderer.particle.VeUndervoidParticle;
@@ -10,6 +11,8 @@ import rcarmstrong20.vanilla_expansions.client.renderer.screen.VeWoodcutterScree
 import rcarmstrong20.vanilla_expansions.client.renderer.tile_entity.VeCampfireTileEntityRenderer;
 import rcarmstrong20.vanilla_expansions.core.VeContainerTypes;
 import rcarmstrong20.vanilla_expansions.core.VeParticleTypes;
+import rcarmstrong20.vanilla_expansions.core.VeVillagerProfessions;
+import rcarmstrong20.vanilla_expansions.core.VeVillagerTrades;
 import rcarmstrong20.vanilla_expansions.tile_entity.VeCampfireTileEntity;
 
 public class ClientProxy extends CommonProxy
@@ -22,6 +25,7 @@ public class ClientProxy extends CommonProxy
 		this.registerParticleFactories();
 		this.registerTileEntityRenders();
 		this.registerScreenFactories();
+		this.registerTrades();
 	}
 	
 	private void registerParticleFactories()
@@ -40,5 +44,10 @@ public class ClientProxy extends CommonProxy
 	private void registerTileEntityRenders()
 	{
 		ClientRegistry.bindTileEntitySpecialRenderer(VeCampfireTileEntity.class, new VeCampfireTileEntityRenderer());
+	}
+	
+	private void registerTrades()
+	{
+		VillagerTrades.field_221239_a.put(VeVillagerProfessions.LUMBERJACK, VeVillagerTrades.LUMBERJACK_TRADES);
 	}
 }
