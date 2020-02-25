@@ -127,6 +127,8 @@ public class VeBlocks
 	public static Block zombie_plush = register(VanillaExpansions.location("zombie_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.GREEN_WOOL)));
 	public static Block zombie_demon_plush = register(VanillaExpansions.location("zombie_demon_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BLACK_WOOL)));
 	public static Block zombie_pigman_plush = register(VanillaExpansions.location("zombie_pigman_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.PINK_WOOL)));
+	public static Block baby_mooshroom_plush = register(VanillaExpansions.location("baby_mooshroom_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.RED_WOOL)));
+	public static Block baby_cow_plush = register(VanillaExpansions.location("baby_cow_plush"), true, new VePlushBlock(Block.Properties.from(Blocks.BROWN_WOOL)));
 	public static Block regice_pokedoll = register(VanillaExpansions.location("regice_pokedoll"), true, new VeCutoutDirectionalBlock(Block.Properties.create(Material.CLAY, MaterialColor.ICE).hardnessAndResistance(VeBlock.CLOTH_HARDNESS).sound(SoundType.CLOTH)));
 	public static Block regirock_pokedoll = register(VanillaExpansions.location("regirock_pokedoll"), true, new VeCutoutDirectionalBlock(Block.Properties.create(Material.CLAY, MaterialColor.SAND).hardnessAndResistance(VeBlock.CLOTH_HARDNESS).sound(SoundType.CLOTH)));
 	public static Block registeel_pokedoll = register(VanillaExpansions.location("registeel_pokedoll"), true, new VeCutoutDirectionalBlock(Block.Properties.create(Material.CLAY, MaterialColor.IRON).hardnessAndResistance(VeBlock.CLOTH_HARDNESS).sound(SoundType.CLOTH)));

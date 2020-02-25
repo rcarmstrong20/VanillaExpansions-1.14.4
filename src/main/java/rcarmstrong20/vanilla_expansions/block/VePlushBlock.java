@@ -354,6 +354,21 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape COW_WEST_SHAPE = VeCollisionUtil.rotate270(Axis.Y, COW_NORTH_SHAPE);
 	protected static final VoxelShape COW_EAST_SHAPE = VeCollisionUtil.rotate90(Axis.Y, COW_NORTH_SHAPE);
 	
+	//Baby Cow Bounding Boxes
+	
+	protected static final VoxelShape BABY_COW_NORTH_BODY_SHAPE = Block.makeCuboidShape(6.0D, 2.0D, 6.0D, 10.0D, 6.0D, 12.0D);
+	protected static final VoxelShape BABY_COW_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.0D, 2.0D, 2.0D, 11.0D, 7.0D, 6.5D);
+	protected static final VoxelShape BABY_COW_NORTH_MOUTH_SHAPE = Block.makeCuboidShape(6.5D, 2.0D, 1.5D, 9.5D, 4.0D, 2.0D);
+	protected static final VoxelShape BABY_COW_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(6.0D, 4.0D, 1.5D, 7.0D, 5.0D, 2.0D);
+	protected static final VoxelShape BABY_COW_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(9.0D, 4.0D, 1.5D, 10.0D, 5.0D, 2.0D);
+	protected static final VoxelShape BABY_COW_NORTH_RIGHT_HORN_SHAPE = Block.makeCuboidShape(4.0D, 5.5D, 2.5D, 5.0D, 7.5D, 3.5D);
+	protected static final VoxelShape BABY_COW_NORTH_LEFT_HORN_SHAPE = Block.makeCuboidShape(11.0D, 5.5D, 2.5D, 12.0D, 7.5D, 3.5D);
+	protected static final VoxelShape BABY_COW_NORTH_RIGHT_FRONT_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 7.5D, 7.5D, 2.0D, 9.0D);
+	protected static final VoxelShape BABY_COW_NORTH_LEFT_FRONT_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 7.5D, 10.0D, 2.0D, 9.0D);
+	protected static final VoxelShape BABY_COW_NORTH_RIGHT_BACK_LEG_SHAPE = Block.makeCuboidShape(6.0D, 0.0D, 10.0D, 7.5D, 2.0D, 11.5D);
+	protected static final VoxelShape BABY_COW_NORTH_LEFT_BACK_LEG_SHAPE = Block.makeCuboidShape(8.5D, 0.0D, 10.0D, 10.0D, 2.0D, 11.5D);
+	protected static final VoxelShape BABY_COW_NORTH_UTTER_SHAPE = Block.makeCuboidShape(6.0D, 1.5D, 6.0D, 10.0D, 2.0D, 12.0D);
+	
 	//Mooshroom Bounding Boxes
 	
 	protected static final VoxelShape MOOSHROOM_NORTH_HEAD_MUSHROOM_STEM_SHAPE = Block.makeCuboidShape(7.5D, 11.0D, 2.0D, 8.5D, 12.0D, 3.0D);
@@ -524,9 +539,42 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 	protected static final VoxelShape SPIDER_NORTH_BODY_SHAPE = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 5.5D, 14.0D);
 	protected static final VoxelShape SPIDER_NORTH_HEAD_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 1.5D, 10.5D, 4.5D, 5.0D);
 	protected static final VoxelShape SPIDER_NORTH_MIDDLE_EYE_SHAPE = Block.makeCuboidShape(7.0D, 1.5D, 1.0D, 9.0D, 2.5D, 1.5D);
-	protected static final VoxelShape SPIDER_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 0.0D, 1.0D, 10.5D, 4.5D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_EYE_SHAPE = Block.makeCuboidShape(9.5D, 2.0D, 1.0D, 10.5D, 3.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_EYE_SHAPE = Block.makeCuboidShape(5.5D, 2.0D, 1.0D, 6.5D, 3.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_BOTTOM_EYEBROW_SHAPE = Block.makeCuboidShape(7.0D, 3.0D, 1.0D, 7.5D, 3.5D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_TOP_EYEBROW_SHAPE = Block.makeCuboidShape(6.5D, 3.5D, 1.0D, 7.0D, 4.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_BOTTOM_EYEBROW_SHAPE = Block.makeCuboidShape(8.5D, 3.0D, 1.0D, 9.0D, 3.5D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_TOP_EYEBROW_SHAPE = Block.makeCuboidShape(9.0D, 3.5D, 1.0D, 9.5D, 4.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_FANG_SHAPE = Block.makeCuboidShape(6.5D, 0.0D, 1.0D, 7.0D, 1.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_FANG_SHAPE = Block.makeCuboidShape(9.0D, 0.0D, 1.0D, 9.5D, 1.0D, 1.5D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG1_TOP_SHAPE = Block.makeCuboidShape(2.0D, 1.0D, 5.0D, 5.0D, 2.0D, 6.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG1_BOTTOM_SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 6.0D, 2.0D, 1.0D, 7.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG2_TOP_SHAPE = Block.makeCuboidShape(2.0D, 1.0D, 7.0D, 5.0D, 2.0D, 8.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG2_BOTTOM_SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 8.0D, 2.0D, 1.0D, 9.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG3_TOP_SHAPE = Block.makeCuboidShape(2.0D, 1.0D, 9.0D, 5.0D, 2.0D, 10.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG3_BOTTOM_SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 10.0D, 2.0D, 1.0D, 11.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG4_TOP_SHAPE = Block.makeCuboidShape(3.0D, 1.0D, 11.0D, 5.0D, 2.0D, 12.0D);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEG4_BOTTOM_SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 12.0D, 3.0D, 1.0D, 13.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG1_TOP_SHAPE = Block.makeCuboidShape(11.0D, 1.0D, 5.0D, 14.0D, 2.0D, 6.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG1_BOTTOM_SHAPE = Block.makeCuboidShape(14.0D, 0.0D, 6.0D, 15.0D, 1.0D, 7.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG2_TOP_SHAPE = Block.makeCuboidShape(11.0D, 1.0D, 7.0D, 14.0D, 2.0D, 8.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG2_BOTTOM_SHAPE = Block.makeCuboidShape(14.0D, 0.0D, 8.0D, 15.0D, 1.0D, 9.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG3_TOP_SHAPE = Block.makeCuboidShape(11.0D, 1.0D, 9.0D, 14.0D, 2.0D, 10.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG3_BOTTOM_SHAPE = Block.makeCuboidShape(14.0D, 0.0D, 10.0D, 15.0D, 1.0D, 11.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG4_TOP_SHAPE = Block.makeCuboidShape(11.0D, 1.0D, 11.0D, 13.0D, 2.0D, 12.0D);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEG4_BOTTOM_SHAPE = Block.makeCuboidShape(13.0D, 0.0D, 12.0D, 14.0D, 1.0D, 13.0D);
+	protected static final VoxelShape SPIDER_NORTH_EYES_SHAPE = VoxelShapes.or(SPIDER_NORTH_MIDDLE_EYE_SHAPE, SPIDER_NORTH_RIGHT_EYE_SHAPE, SPIDER_NORTH_LEFT_EYE_SHAPE);
+	protected static final VoxelShape SPIDER_NORTH_EYEBROWS_SHAPE = VoxelShapes.or(SPIDER_NORTH_RIGHT_BOTTOM_EYEBROW_SHAPE, SPIDER_NORTH_RIGHT_TOP_EYEBROW_SHAPE, SPIDER_NORTH_LEFT_BOTTOM_EYEBROW_SHAPE, SPIDER_NORTH_LEFT_TOP_EYEBROW_SHAPE);
+	protected static final VoxelShape SPIDER_NORTH_FANGS_SHAPE = VoxelShapes.or(SPIDER_NORTH_RIGHT_FANG_SHAPE, SPIDER_NORTH_LEFT_FANG_SHAPE);
+	protected static final VoxelShape SPIDER_NORTH_RIGHT_LEGS_SHAPE = VoxelShapes.or(SPIDER_NORTH_RIGHT_LEG1_TOP_SHAPE, SPIDER_NORTH_RIGHT_LEG1_BOTTOM_SHAPE, SPIDER_NORTH_RIGHT_LEG2_TOP_SHAPE, SPIDER_NORTH_RIGHT_LEG2_BOTTOM_SHAPE, SPIDER_NORTH_RIGHT_LEG3_TOP_SHAPE, SPIDER_NORTH_RIGHT_LEG3_BOTTOM_SHAPE, SPIDER_NORTH_RIGHT_LEG4_TOP_SHAPE, SPIDER_NORTH_RIGHT_LEG4_BOTTOM_SHAPE);
+	protected static final VoxelShape SPIDER_NORTH_LEFT_LEGS_SHAPE = VoxelShapes.or(SPIDER_NORTH_LEFT_LEG1_TOP_SHAPE, SPIDER_NORTH_LEFT_LEG1_BOTTOM_SHAPE, SPIDER_NORTH_LEFT_LEG2_TOP_SHAPE, SPIDER_NORTH_LEFT_LEG2_BOTTOM_SHAPE, SPIDER_NORTH_LEFT_LEG3_TOP_SHAPE, SPIDER_NORTH_LEFT_LEG3_BOTTOM_SHAPE, SPIDER_NORTH_LEFT_LEG4_TOP_SHAPE, SPIDER_NORTH_LEFT_LEG4_BOTTOM_SHAPE);
+	protected static final VoxelShape SPIDER_NORTH_SHAPE = VoxelShapes.or(SPIDER_NORTH_BODY_SHAPE, SPIDER_NORTH_HEAD_SHAPE, SPIDER_NORTH_EYES_SHAPE, SPIDER_NORTH_EYEBROWS_SHAPE, SPIDER_NORTH_FANGS_SHAPE, SPIDER_NORTH_RIGHT_LEGS_SHAPE, SPIDER_NORTH_LEFT_LEGS_SHAPE);
 	
 	
+	
+	protected static final VoxelShape SPIDER_SOUTH_SHAPE = VeCollisionUtil.rotate180(Axis.Y, SPIDER_NORTH_SHAPE);
+	protected static final VoxelShape SPIDER_WEST_SHAPE = VeCollisionUtil.rotate270(Axis.Y, SPIDER_NORTH_SHAPE);
+	protected static final VoxelShape SPIDER_EAST_SHAPE = VeCollisionUtil.rotate90(Axis.Y, SPIDER_NORTH_SHAPE);
 	
 	protected static final VoxelShape BAT_NORTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 6.0D, 15.0D, 12.0D, 11.0D);
 	protected static final VoxelShape BAT_SOUTH_SHAPE = Block.makeCuboidShape(0.1D, 0.0D, 5.0D, 16.0D, 12.0D, 10.0D);
@@ -649,6 +697,10 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		{
 			return VePlushBlock.defineShapes(state, COW_NORTH_SHAPE, COW_SOUTH_SHAPE, COW_WEST_SHAPE, COW_EAST_SHAPE);
 		}
+		else if(this == VeBlocks.baby_cow_plush)
+		{
+			return VePlushBlock.defineShapes(state, BABY_COW_NORTH_RIGHT_BACK_LEG_SHAPE, SPIDER_SOUTH_SHAPE, SPIDER_WEST_SHAPE, SPIDER_EAST_SHAPE);
+		}
 		else if(this == VeBlocks.red_mooshroom_plush || this == VeBlocks.brown_mooshroom_plush)
 		{
 			return VePlushBlock.defineShapes(state, MOOSHROOM_NORTH_SHAPE, MOOSHROOM_SOUTH_SHAPE, MOOSHROOM_WEST_SHAPE, MOOSHROOM_EAST_SHAPE);
@@ -675,7 +727,7 @@ public class VePlushBlock extends HorizontalBlock implements IWaterLoggable
 		}
 		else if(this == VeBlocks.spider_plush)
 		{
-			return VePlushBlock.defineShapes(state, SPIDER_NORTH_MIDDLE_EYE_SHAPE, SPIDER_SHAPE, SPIDER_SHAPE, SPIDER_SHAPE);
+			return VePlushBlock.defineShapes(state, SPIDER_NORTH_SHAPE, SPIDER_SOUTH_SHAPE, SPIDER_WEST_SHAPE, SPIDER_EAST_SHAPE);
 		}
 		
 		
