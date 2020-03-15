@@ -12,6 +12,9 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 
+/*
+ * From link: https://www.youtube.com/watch?v=I9Qn_oIx6Oo
+ */
 public class VeCollisionUtil
 {
 	private static final double CENTER = 0.5;
