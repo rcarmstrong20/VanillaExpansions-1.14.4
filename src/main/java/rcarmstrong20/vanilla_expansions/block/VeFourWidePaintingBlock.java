@@ -1,5 +1,6 @@
 package rcarmstrong20.vanilla_expansions.block;
 
+/*
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -13,6 +14,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.VeBlockStateProperties;
 import rcarmstrong20.vanilla_expansions.enums.VeFourTilePainting;
+
 
 public class VeFourWidePaintingBlock extends VeSinglePaintingBlock
 {
@@ -65,10 +67,9 @@ public class VeFourWidePaintingBlock extends VeSinglePaintingBlock
 				worldIn.setBlockState(pos.south(), this.getDefaultState().with(PAINTING_PART, VeMultiPartPainting.LEFT).with(HORIZONTAL_FACING, Direction.SOUTH), 3);
 				worldIn.setBlockState(pos.up().south(), this.getDefaultState().with(PAINTING_PART, VeMultiPartPainting.TOP_LEFT).with(HORIZONTAL_FACING, Direction.SOUTH), 3);
 			}
-			*/
 		}
 	}
-	/*
+	
 	public void placeAt(IWorld worldIn, BlockPos pos, int flags)
 	{
 		worldIn.setBlockState(pos, this.getDefaultState().with(PAINTING_PART, VeMultiPartPainting.MAIN), flags);
@@ -76,10 +77,11 @@ public class VeFourWidePaintingBlock extends VeSinglePaintingBlock
 		worldIn.setBlockState(pos.west(), this.getDefaultState().with(PAINTING_PART, VeMultiPartPainting.LEFT), flags);
 		worldIn.setBlockState(pos.up().west(), this.getDefaultState().with(PAINTING_PART, VeMultiPartPainting.TOP_LEFT), flags);
 	}
-	*/
+	
 	@Override
 	protected void fillStateContainer(Builder<Block, BlockState> builder)
 	{
 		builder.add(PAINTING_PART, HORIZONTAL_FACING);
 	}
 }
+*/
