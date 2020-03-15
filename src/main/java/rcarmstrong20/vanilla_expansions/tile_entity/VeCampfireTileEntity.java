@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import rcarmstrong20.vanilla_expansions.block.VeCampfireBlock;
+import rcarmstrong20.vanilla_expansions.block.VeCampfireBlockOld;
 import rcarmstrong20.vanilla_expansions.core.VeTileEntityType;
 
 public class VeCampfireTileEntity extends TileEntity implements IClearable, ITickableTileEntity
@@ -66,11 +67,13 @@ public class VeCampfireTileEntity extends TileEntity implements IClearable, ITic
     * corresponding held item.
     */
    private void cookAndDrop() {
-      for(int i = 0; i < this.inventory.size(); ++i) {
+      for(int i = 0; i < this.inventory.size(); ++i)
+      {
          ItemStack itemstack = this.inventory.get(i);
          if (!itemstack.isEmpty()) {
             ++this.cookingTimes[i];
-            if (this.cookingTimes[i] >= this.cookingTotalTimes[i]) {
+            if (this.cookingTimes[i] >= this.cookingTotalTimes[i])
+            {
                IInventory iinventory = new Inventory(itemstack);
                ItemStack itemstack1 = this.world.getRecipeManager().getRecipe(IRecipeType.CAMPFIRE_COOKING, iinventory, this.world).map((p_213979_1_) -> {
                   return p_213979_1_.getCraftingResult(iinventory);
@@ -92,11 +95,11 @@ public class VeCampfireTileEntity extends TileEntity implements IClearable, ITic
          Random random = world.rand;
          if (random.nextFloat() < 0.11F) {
             for(int i = 0; i < random.nextInt(2) + 2; ++i) {
-               VeCampfireBlock.func_220098_a(world, blockpos, this.getBlockState().get(VeCampfireBlock.SIGNAL_FIRE), false);
+               VeCampfireBlockOld.func_220098_a(world, blockpos, this.getBlockState().get(VeCampfireBlockOld.SIGNAL_FIRE), false);
             }
          }
 
-         int l = this.getBlockState().get(VeCampfireBlock.FACING).getHorizontalIndex();
+         int l = this.getBlockState().get(VeCampfireBlockOld.FACING).getHorizontalIndex();
 
          for(int j = 0; j < this.inventory.size(); ++j) {
             if (!this.inventory.get(j).isEmpty() && random.nextFloat() < 0.2F) {
