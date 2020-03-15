@@ -33,7 +33,7 @@ public class VeTallPlushBlock extends VePlushBlock
 {
 	//Block Properties
 	
-	public static final IntegerProperty PLUSH_STACK = VeBlockStateProperties.PLUSH_STACK_1_3;
+	public static final IntegerProperty PLUSH_STACK_SIZE = VeBlockStateProperties.PLUSH_STACK_SIZE_1_3;
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	
 	//One Magma Cube Bounding Boxes
@@ -102,7 +102,7 @@ public class VeTallPlushBlock extends VePlushBlock
 	public VeTallPlushBlock(Properties properties)
 	{
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HALF, DoubleBlockHalf.LOWER).with(PLUSH_STACK, 1));
+		this.setDefaultState(this.stateContainer.getBaseState().with(HALF, DoubleBlockHalf.LOWER).with(PLUSH_STACK_SIZE, 1));
 	}
 	
 	@Override
@@ -114,7 +114,7 @@ public class VeTallPlushBlock extends VePlushBlock
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack)
 	{
-		if(state.get(PLUSH_STACK) == 3)
+		if(state.get(PLUSH_STACK_SIZE) == 3)
 		{
 			worldIn.setBlockState(pos.up(), state.with(HALF, DoubleBlockHalf.UPPER), 3);
 		}
@@ -126,7 +126,7 @@ public class VeTallPlushBlock extends VePlushBlock
 		BlockState blockstate = context.getWorld().getBlockState(context.getPos());
 		if (blockstate.getBlock() == this)
 		{
-			return blockstate.with(PLUSH_STACK, Integer.valueOf(Math.min(3, blockstate.get(PLUSH_STACK) + 1)));
+			return blockstate.with(PLUSH_STACK_SIZE, Integer.valueOf(Math.min(3, blockstate.get(PLUSH_STACK_SIZE) + 1)));
 		}
 		else
 		{
@@ -143,7 +143,7 @@ public class VeTallPlushBlock extends VePlushBlock
 		BlockState worldState = useContext.getWorld().getBlockState(pos);
 		if(useContext.getItem().getItem() == this.asItem())
 		{
-			return state.get(PLUSH_STACK) == 1 || worldState == Blocks.AIR.getDefaultState() || worldState == Blocks.WATER.getDefaultState() || worldState == Blocks.LAVA.getDefaultState() && state.get(PLUSH_STACK) < 3 ? true : false;
+			return state.get(PLUSH_STACK_SIZE) == 1 || worldState == Blocks.AIR.getDefaultState() || worldState == Blocks.WATER.getDefaultState() || worldState == Blocks.LAVA.getDefaultState() && state.get(PLUSH_STACK_SIZE) < 3 ? true : false;
 		}
 		return false;
 	}
@@ -153,7 +153,7 @@ public class VeTallPlushBlock extends VePlushBlock
 	{
 		if(state.has(HALF))
 		{
-			if(state.get(PLUSH_STACK) == 3)
+			if(state.get(PLUSH_STACK_SIZE) == 3)
 			{
 				if(state.get(HALF) == DoubleBlockHalf.UPPER)
 				{
@@ -178,7 +178,7 @@ public class VeTallPlushBlock extends VePlushBlock
 	@Override
 	protected void fillStateContainer(Builder<Block, BlockState> builder)
 	{
-		builder.add(HORIZONTAL_FACING, WATERLOGGED, PLUSH_STACK, HALF);
+		builder.add(HORIZONTAL_FACING, WATERLOGGED, PLUSH_STACK_SIZE, HALF);
 	}
 	
 	@Override
@@ -212,7 +212,7 @@ public class VeTallPlushBlock extends VePlushBlock
 	
 	private static VoxelShape getStackSizeShapes(BlockState state, VoxelShape stackSizeShape1, VoxelShape stackSizeShape2, VoxelShape stackSizeShapeTop3, VoxelShape stackSizeShapeBottom3)
 	{
-		switch((int)state.get(PLUSH_STACK))
+		switch((int)state.get(PLUSH_STACK_SIZE))
 		{
 		case 1:
 			return stackSizeShape1;
