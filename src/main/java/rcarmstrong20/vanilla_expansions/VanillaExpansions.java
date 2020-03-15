@@ -15,7 +15,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -37,7 +36,6 @@ public class VanillaExpansions
 {
 	public static Object modInstance;
 	public static final String MOD_ID = "ve";
-	public static final String MINECRAFT_ID = "minecraft";
 	public static final Logger LOGGER = LogManager.getLogger(VanillaExpansions.MOD_ID);
 	public static final VeItemGroup VE_GROUP = new VeItemGroup(VanillaExpansions.MOD_ID);
 	public static final CommonProxy PROXY = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
@@ -62,22 +60,6 @@ public class VanillaExpansions
 	{
 		LOGGER.info("client method registered");
 		PROXY.onSetupClient();
-	}
-	
-	/**
-	 * Get the resource location ve:name
-	 */
-	public static ResourceLocation location(String name)
-	{
-		return new ResourceLocation(VanillaExpansions.MOD_ID, name);
-	}
-	
-	/**
-	 * Get the resource location minecraft:name
-	 */
-	public static ResourceLocation vanillaLocation(String name)
-	{
-		return new ResourceLocation(VanillaExpansions.MINECRAFT_ID, name);
 	}
 	
 	@SubscribeEvent
