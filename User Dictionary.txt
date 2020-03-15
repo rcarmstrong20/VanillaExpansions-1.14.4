@@ -6,3 +6,4 @@ ocelot
 enderman
 ghast
 persian
+pufferfish
