@@ -12,7 +12,6 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,7 +24,7 @@ public class VePointOfInterestTypes
 {
 	private static final List<PointOfInterestType> POINT_OF_INTEREST_TYPES = new ArrayList<>();
 	
-	public static final PointOfInterestType LUMBERJACK = register(VanillaExpansions.MOD_ID, "lumberjack", getAllStates(VeBlocks.woodcutter), 1, SoundEvents.ENTITY_VILLAGER_WORK_MASON, 1);
+	public static final PointOfInterestType LUMBERJACK = register(VanillaExpansions.MOD_ID, "lumberjack", getAllStates(VeBlocks.woodcutter), 1, VeSoundEvents.UI_WOODCUTTER_TAKE_RESULT, 1);
 	
 	private static Set<BlockState> getAllStates(Block block)
 	{
@@ -39,7 +38,7 @@ public class VePointOfInterestTypes
 	
 	private static PointOfInterestType register(String name, PointOfInterestType pointOfInterest)
 	{
-		pointOfInterest.setRegistryName(VanillaExpansions.location(name));
+		pointOfInterest.setRegistryName(VanillaExpansions.MOD_ID, name);
 		POINT_OF_INTEREST_TYPES.add(pointOfInterest);
 		return pointOfInterest;
 	}

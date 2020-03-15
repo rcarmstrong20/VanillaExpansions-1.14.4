@@ -17,11 +17,11 @@ public class VeRecipeSerializers
 {
     private static final List<IRecipeSerializer<?>> RECIPES = new ArrayList<>();
 
-    public static final IRecipeSerializer<VeWoodCuttingRecipe> WOODCUTTING = register(VanillaExpansions.location("woodcutting"), new VeWoodCuttingRecipe.Serializer<>(VeWoodCuttingRecipe::new));
+    public static final IRecipeSerializer<VeWoodCuttingRecipe> WOODCUTTING = register("woodcutting", new VeWoodCuttingRecipe.Serializer<>(VeWoodCuttingRecipe::new));
     
-	private static <S extends IRecipeSerializer<? extends IRecipe<?>>> S register(ResourceLocation name, S recipe)
+	private static <S extends IRecipeSerializer<? extends IRecipe<?>>> S register(String name, S recipe)
     {
-        recipe.setRegistryName(name);
+        recipe.setRegistryName(new ResourceLocation(VanillaExpansions.MOD_ID, name));
         RECIPES.add(recipe);
         return recipe;
     }

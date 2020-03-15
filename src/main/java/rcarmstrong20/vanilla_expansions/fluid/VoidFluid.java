@@ -14,6 +14,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -65,7 +66,7 @@ public abstract class VoidFluid extends WaterFluid
 	
 	protected FluidAttributes createAttributes()
 	{
-		return FluidAttributes.builder(VanillaExpansions.location("block/void_still"), VanillaExpansions.location("block/void_flow")).luminosity(20).density(1000).viscosity(3000).build(this);
+		return FluidAttributes.builder(new ResourceLocation(VanillaExpansions.MOD_ID, "block/void_still"), new ResourceLocation(VanillaExpansions.MOD_ID, "block/void_flow")).luminosity(20).density(1000).viscosity(3000).build(this);
 	}
 	
 	@Nullable

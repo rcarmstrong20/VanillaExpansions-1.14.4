@@ -31,19 +31,19 @@ public class VeFeature
 	private static final List<IStructurePieceType> STRUCTURE_PIECES = new ArrayList<>();
 	private static final List<Structure<?>> STRUCTURES = new ArrayList<>();
 	
-	public static final IStructurePieceType CABIN_PIECE = register(VanillaExpansions.location("cabin"), CabinPiece::new);
+	public static final IStructurePieceType CABIN_PIECE = register("cabin", CabinPiece::new);
 	
-	public static final Feature<BigMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM = register(VanillaExpansions.location("huge_purple_mushroom"), new VeBigPurpleMushroomFeature(BigMushroomFeatureConfig::deserialize));
-	public static final Feature<NoFeatureConfig> BLUEBERRY_BUSH = register(VanillaExpansions.location("blueberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.blueberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
-	public static final Feature<NoFeatureConfig> CRANBERRY_BUSH = register(VanillaExpansions.location("cranberry_bush"), new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.cranberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
-	public static final Structure<NoFeatureConfig> CABIN = register(VanillaExpansions.location("cabin"), new CabinStructure(NoFeatureConfig::deserialize));
+	public static final Feature<BigMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM = register("huge_purple_mushroom", new VeBigPurpleMushroomFeature(BigMushroomFeatureConfig::deserialize));
+	public static final Feature<NoFeatureConfig> BLUEBERRY_BUSH = register("blueberry_bush", new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.blueberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
+	public static final Feature<NoFeatureConfig> CRANBERRY_BUSH = register("cranberry_bush", new ScatteredPlantFeature(NoFeatureConfig::deserialize, VeBlocks.cranberry_bush.getDefaultState().with(VeBerryBushBlock.AGE, Integer.valueOf(3))));
+	public static final Structure<NoFeatureConfig> CABIN = register("cabin", new CabinStructure(NoFeatureConfig::deserialize));
 	
 	/**
 	 * Set the registry name for the features and add them to the registry list.
 	 */
-	private static <C extends IFeatureConfig> Feature<C> register(ResourceLocation name, Feature<C> feature)
+	private static <C extends IFeatureConfig> Feature<C> register(String name, Feature<C> feature)
 	{
-		feature.setRegistryName(name);
+		feature.setRegistryName(VanillaExpansions.MOD_ID, name);
 		FEATURES.add(feature);
 		return feature;
 	}
@@ -51,9 +51,9 @@ public class VeFeature
 	/**
 	 * Create registers for the structure pieces and add them to the registry list.
 	 */
-	private static IStructurePieceType register(ResourceLocation name, IStructurePieceType structurePieceType)
+	private static IStructurePieceType register(String name, IStructurePieceType structurePieceType)
 	{
-		IStructurePieceType pieceRegistry = Registry.register(Registry.STRUCTURE_PIECE, name, structurePieceType);
+		IStructurePieceType pieceRegistry = Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation(VanillaExpansions.MOD_ID, name), structurePieceType);
 		STRUCTURE_PIECES.add(pieceRegistry);
 		return pieceRegistry;
 	}
@@ -61,9 +61,9 @@ public class VeFeature
 	/**
 	 * Set the registry name for the structures and add them to the registry list.
 	 */
-	private static <C extends IFeatureConfig> Structure<C> register(ResourceLocation name, Structure<C> structure)
+	private static <C extends IFeatureConfig> Structure<C> register(String name, Structure<C> structure)
 	{
-		structure.setRegistryName(name);
+		structure.setRegistryName(VanillaExpansions.MOD_ID, name);
 		STRUCTURES.add(structure);
 		return structure;
 	}
@@ -74,12 +74,15 @@ public class VeFeature
 	@SubscribeEvent
 	public static void registerFeaturesAndStructures(final RegistryEvent.Register<Feature<?>> event)
 	{
+		//Register the features
 		FEATURES.forEach(feature -> event.getRegistry().register(feature));
 		FEATURES.clear();
 		
+		//Register the cabin pieces
 		STRUCTURE_PIECES.forEach(structurePiece -> STRUCTURE_PIECES.iterator());
 		STRUCTURE_PIECES.clear();
 		
+		//Register the structures
 		STRUCTURES.forEach(structure -> event.getRegistry().register(structure));
 		STRUCTURES.clear();
 		

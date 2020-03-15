@@ -24,9 +24,14 @@ public class VeContainerTypes
 {
 	public static final List<ContainerType<?>> CONTAINER_TYPES = new ArrayList<>();
 	
-	public static final ContainerType<VeWoodcutterContainer> WOODCUTTER = register(VanillaExpansions.location("saw"), VeWoodcutterContainer::new);
+	public static final ContainerType<VeWoodcutterContainer> WOODCUTTER = register("saw", VeWoodcutterContainer::new);
 	
-	public static <T extends Container> ContainerType<T> register(ResourceLocation name, ContainerType.IFactory<T> factory)
+	private static <T extends Container> ContainerType<T> register(String name, ContainerType.IFactory<T> factory)
+	{
+		return register(new ResourceLocation(VanillaExpansions.MOD_ID, name), factory);
+	}
+	
+	private static <T extends Container> ContainerType<T> register(ResourceLocation name, ContainerType.IFactory<T> factory)
 	{
 		ContainerType<T> type = new ContainerType<>(factory);
 		type.setRegistryName(name);

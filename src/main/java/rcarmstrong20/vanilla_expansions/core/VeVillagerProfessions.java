@@ -22,7 +22,7 @@ public class VeVillagerProfessions
 	private static VillagerProfession register(String id, String name, PointOfInterestType pointOfInterest)
 	{
 		VillagerProfession profession = new VillagerProfession(id + ":" + name, pointOfInterest, ImmutableSet.of(), ImmutableSet.of());
-		profession.setRegistryName(VanillaExpansions.location(name));
+		profession.setRegistryName(id, name);
 		VILLAGER_PROFESSIONS.add(profession);
 		return profession;
 	}

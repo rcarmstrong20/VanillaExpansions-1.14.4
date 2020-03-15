@@ -16,14 +16,14 @@ public class VeParticleTypes
 {
 	private static final List<BasicParticleType> PARTICLES = new ArrayList<>();
 	
-	public static final BasicParticleType DRIPPING_VOID = register(VanillaExpansions.location("dripping_void"), false);
-	public static final BasicParticleType FALLING_VOID = register(VanillaExpansions.location("falling_void"), false);
-	public static final BasicParticleType LANDING_VOID = register(VanillaExpansions.location("landing_void"), false);
-	public static final BasicParticleType UNDERVOID = register(VanillaExpansions.location("undervoid"), false);
+	public static final BasicParticleType DRIPPING_VOID = register("dripping_void", false);
+	public static final BasicParticleType FALLING_VOID = register("falling_void", false);
+	public static final BasicParticleType LANDING_VOID = register("landing_void", false);
+	public static final BasicParticleType UNDERVOID = register("undervoid", false);
 	
-	private static BasicParticleType register(ResourceLocation name, boolean alwaysShow)
+	private static BasicParticleType register(String name, boolean alwaysShow)
 	{
-		return register(name, new BasicParticleType(alwaysShow));
+		return register(new ResourceLocation(VanillaExpansions.MOD_ID, name), new BasicParticleType(alwaysShow));
 	}
 	
 	private static BasicParticleType register(ResourceLocation name, BasicParticleType particle)
