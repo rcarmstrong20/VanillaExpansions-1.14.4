@@ -66,11 +66,11 @@ public class VeTurkeyBlock extends CakeBlock
 		if (player.canEat(false))
 		{
 			player.getFoodStats().addStats(3, 0.5F);
-			int i = state.get(BITES);
+			int bites = state.get(BITES);
 			
-			if (i < 6)
+			if (bites < 6)
 			{
-				worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(i + 1)), 3);
+				worldIn.setBlockState(pos, state.with(BITES, Integer.valueOf(bites + 1)), 3);
 			}
 			else
 			{
