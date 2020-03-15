@@ -5,11 +5,15 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CampfireBlock;
+import net.minecraft.block.ContainerBlock;
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.fluid.Fluids;
@@ -20,12 +24,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CampfireCookingRecipe;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.pathfinding.PathType;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -39,14 +50,20 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rcarmstrong20.vanilla_expansions.tile_entity.VeCampfireTileEntity;
 
-public class VeCampfireBlock extends CampfireBlock
+public class VeCampfireBlockOld extends ContainerBlock implements IWaterLoggable
 {
-	public VeCampfireBlock(Properties properties)
+	protected static final VoxelShape SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+	public static final BooleanProperty LIT = BlockStateProperties.LIT;
+	public static final BooleanProperty SIGNAL_FIRE = BlockStateProperties.SIGNAL_FIRE;
+	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	
+	public VeCampfireBlockOld(Block.Properties p_i49989_1_)
 	{
-		super(properties);
+		super(p_i49989_1_);
+		this.setDefaultState(this.stateContainer.getBaseState().with(LIT, Boolean.valueOf(true)).with(SIGNAL_FIRE, Boolean.valueOf(false)).with(WATERLOGGED, Boolean.valueOf(false)).with(FACING, Direction.NORTH));
 	}
 	
-	@Override
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
 	{
 		if (state.get(LIT))
@@ -68,6 +85,14 @@ public class VeCampfireBlock extends CampfireBlock
 			}
 		}
 		return false;
+	}
+	
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn)
+	{
+		if (!entityIn.isImmuneToFire() && state.get(LIT) && entityIn instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entityIn))
+		{
+			entityIn.attackEntityFrom(DamageSource.IN_FIRE, 1.0F);
+		}
 	}
 	
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
@@ -242,16 +267,40 @@ public class VeCampfireBlock extends CampfireBlock
 		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
 	}
 	
-	@Override
-	public boolean hasTileEntity()
+	/**
+	 * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
+	 * blockstate.
+	 * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
+	 * fine.
+	 */
+	
+	public BlockState rotate(BlockState state, Rotation rot)
 	{
-		return true;
+		return state.with(FACING, rot.rotate(state.get(FACING)));
 	}
 	
-	@Override
-	public TileEntity createTileEntity(BlockState state, IBlockReader world)
+	/**
+	 * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
+	 * blockstate.
+	 * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
+	 */
+	public BlockState mirror(BlockState state, Mirror mirrorIn)
+	{
+		return state.rotate(mirrorIn.toRotation(state.get(FACING)));
+	}
+	
+	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
+	{
+		builder.add(LIT, SIGNAL_FIRE, WATERLOGGED, FACING);
+	}
+	
+	public TileEntity createNewTileEntity(IBlockReader worldIn)
 	{
 		return new VeCampfireTileEntity();
 	}
 	
+	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type)
+	{
+		return false;
+	}
 }
