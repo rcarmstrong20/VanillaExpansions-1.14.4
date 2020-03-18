@@ -15,25 +15,32 @@ import rcarmstrong20.vanilla_expansions.core.VeItems;
 
 public enum VeArmorMaterial implements IArmorMaterial
 {
-	EMERALD("ve:emerald", 18, new int[]{2, 6, 7, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F, () -> {
+	EMERALD("ve:emerald", 18, new int[]{2, 6, 7, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F, () ->
+	{
 		return Ingredient.fromItems(Items.EMERALD);
 	}),
-	RUBY("ve:ruby", 51, new int[]{4, 10, 7, 4}, 11, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> {
+	RUBY("ve:ruby", 51, new int[]{4, 10, 7, 4}, 11, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () ->
+	{
 		return Ingredient.fromItems(VeItems.ruby);
 	}),
-	AIR_IRON("ve:air_iron", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, () -> {
+	AIR_IRON("ve:air_iron", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, () ->
+	{
 		return Ingredient.fromItems(Items.IRON_INGOT);
 	}),
-	AIR_GOLD("ve:air_gold", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, () -> {
+	AIR_GOLD("ve:air_gold", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, () ->
+	{
 		return Ingredient.fromItems(Items.GOLD_INGOT);
 	}),
-	AIR_DIAMOND("ve:air_diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
+	AIR_DIAMOND("ve:air_diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () ->
+	{
 		return Ingredient.fromItems(Items.DIAMOND);
 	}),
-	AIR_EMERALD("ve:air_emerald", 34, new int[]{2, 6, 7, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F, () -> {
+	AIR_EMERALD("ve:air_emerald", 34, new int[]{2, 6, 7, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0F, () ->
+	{
 		return Ingredient.fromItems(Items.EMERALD);
 	}),
-	AIR_RUBY("ve:air_ruby", 51, new int[]{4, 10, 7, 4}, 11, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> {
+	AIR_RUBY("ve:air_ruby", 51, new int[]{4, 10, 7, 4}, 11, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () ->
+	{
 		return Ingredient.fromItems(VeItems.ruby);
 	});
 	

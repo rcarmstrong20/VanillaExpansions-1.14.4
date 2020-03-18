@@ -22,7 +22,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import rcarmstrong20.vanilla_expansions.VanillaExpansions;
 import rcarmstrong20.vanilla_expansions.VeBlock;
-import rcarmstrong20.vanilla_expansions.block.SleepingBagBlock;
+import rcarmstrong20.vanilla_expansions.block.VeSleepingBagBlock;
 import rcarmstrong20.vanilla_expansions.block.VeBerryBushBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCampfireBlock;
 import rcarmstrong20.vanilla_expansions.block.VeCutoutDirectionalBlock;
@@ -263,7 +263,7 @@ public class VeBlocks
 	public static Block bamboo_fence = register("bamboo_fence", true, new FenceBlock(Block.Properties.from(Blocks.BAMBOO)));
 	public static Block bamboo_fence_gate = register("bamboo_fence_gate", true, new FenceGateBlock(Block.Properties.from(Blocks.BAMBOO)));
 	public static Block bamboo_wall = register("bamboo_wall", true, new WallBlock(Block.Properties.from(Blocks.BAMBOO)));
-	public static Block blue_sleeping_bag = register("blue_sleeping_bag", true, new SleepingBagBlock(DyeColor.BLUE, Block.Properties.from(Blocks.BLUE_BED)));
+	public static Block blue_sleeping_bag = register("blue_sleeping_bag", true, new VeSleepingBagBlock(DyeColor.BLUE, Block.Properties.from(Blocks.BLUE_BED)));
 	
 	//Double slabs
 	

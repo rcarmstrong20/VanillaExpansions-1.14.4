@@ -8,6 +8,7 @@ import com.google.common.base.Suppliers;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockNamedItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SoupItem;
@@ -25,11 +26,11 @@ import rcarmstrong20.vanilla_expansions.item.VePickaxeItem;
 import rcarmstrong20.vanilla_expansions.item.VeShovelItem;
 import rcarmstrong20.vanilla_expansions.item.VeSoupItem;
 import rcarmstrong20.vanilla_expansions.item.VeSwordItem;
-import rcarmstrong20.vanilla_expansions.item.VeVoidBucketItem;
 
 /**
  * Author: rcarmstrong20
  */
+
 @Mod.EventBusSubscriber(modid = VanillaExpansions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VeItems
 {
@@ -97,7 +98,7 @@ public class VeItems
 	public static Item chop_sticks = register("chop_sticks", new Item(VE_ITEMS));
 	public static Item quinoa_cerceal = register("quinoa_cerceal", new SoupItem(new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.QUINOA_CERCEAL)));
 	public static Item smoky_quartz = register("smoky_quartz", new Item(VE_ITEMS));
-	public static Item void_bucket = register("void_bucket", new VeVoidBucketItem(Suppliers.ofInstance(VeFluids.VOID), new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.VOID_WATER_BUCKET)));
+	public static Item void_bucket = register("void_bucket", new BucketItem(Suppliers.ofInstance(VeFluids.VOID), new Item.Properties().maxStackSize(1).group(VanillaExpansions.VE_GROUP).food(VeFoods.VOID_BUCKET)));
 	public static Item frosting = register("frosting", new Item(VE_ITEMS));
 	public static Item gingerbread = register("gingerbread", new Item(VE_ITEMS));
 	public static Item orange_gumdrop = register("orange_gumdrop", new Item(VE_ITEMS));

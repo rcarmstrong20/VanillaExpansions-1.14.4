@@ -48,6 +48,7 @@ public class VeTurkeyBlock extends CakeBlock
 		return BlockRenderLayer.CUTOUT;
 	}
 	
+	@Override
 	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
 	{
 		if (!worldIn.isRemote)

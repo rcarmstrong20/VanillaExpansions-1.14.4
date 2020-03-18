@@ -7,3 +7,5 @@ enderman
 ghast
 persian
 pufferfish
+biome
+magma

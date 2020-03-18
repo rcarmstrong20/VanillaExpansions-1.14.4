@@ -17,7 +17,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class SleepingBagBlock extends BedBlock
+public class VeSleepingBagBlock extends BedBlock
 {
 	protected static final VoxelShape SLEEPING_BAG_NORTH_BASE = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 16.0D);
 	protected static final VoxelShape SLEEPING_BAG_NORTH_TOP = Block.makeCuboidShape(2.0D, 4.0D, 2.0D, 14.0D, 5.0D, 16.0D);
@@ -40,7 +40,7 @@ public class SleepingBagBlock extends BedBlock
 	protected static final VoxelShape SLEEPING_BAG_EAST_HEAD = VoxelShapes.or(SLEEPING_BAG_EAST_BASE, SLEEPING_BAG_EAST_TOP, SLEEPING_BAG_EAST_PILLOW);
 	protected static final VoxelShape SLEEPING_BAG_WEST_FOOT = VoxelShapes.or(SLEEPING_BAG_EAST_BASE, SLEEPING_BAG_EAST_TOP);
 	
-	public SleepingBagBlock(DyeColor color, Properties properties)
+	public VeSleepingBagBlock(DyeColor color, Properties properties)
 	{
 		super(color, properties);
 	}
